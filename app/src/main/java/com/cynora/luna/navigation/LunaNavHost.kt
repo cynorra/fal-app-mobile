@@ -1,0 +1,134 @@
+package com.cynora.luna.navigation
+
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import androidx.navigation.navDeepLink
+import com.cynora.luna.core.ui.components.BottomNavItem
+import com.cynora.luna.core.ui.components.LunaBottomNavigation
+import com.cynora.luna.feature.fortune.FortuneScreen
+import com.cynora.luna.feature.fortune.affirmations.AffirmationsScreen
+import com.cynora.luna.feature.fortune.angelnumbers.AngelNumbersScreen
+import com.cynora.luna.feature.fortune.birthchart.BirthChartScreen
+import com.cynora.luna.feature.fortune.compatibility.CompatibilityScreen
+import com.cynora.luna.feature.fortune.dailycard.DailyCardScreen
+import com.cynora.luna.feature.fortune.luckynumbers.LuckyNumbersScreen
+import com.cynora.luna.feature.home.HomeScreen
+import com.cynora.luna.feature.onboarding.OnboardingScreen
+import com.cynora.luna.feature.profile.ProfileScreen
+import com.cynora.luna.feature.social.SocialScreen
+
+object Routes {
+    const val HOME = "home"
+    const val FORTUNE = "fortune"
+    const val SOCIAL = "social"
+    const val PROFILE = "profile"
+    const val BIRTH_CHART = "birth_chart"
+    const val DAILY_CARD = "daily_card"
+    const val COMPATIBILITY = "compatibility"
+    const val ANGEL_NUMBERS = "angel_numbers"
+    const val LUCKY_NUMBERS = "lucky_numbers"
+    const val AFFIRMATIONS = "affirmations"
+}
+
+@Composable
+fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
+    val nav = rememberNavController()
+    val appState by appVM.state.collectAsStateWithLifecycle()
+
+    val items = listOf(
+        BottomNavItem(Routes.HOME, Icons.Default.Home, "Home"),
+        BottomNavItem(Routes.FORTUNE, Icons.Default.Star, "Fortune"),
+        BottomNavItem(Routes.SOCIAL, Icons.Default.Favorite, "Community"),
+        BottomNavItem(Routes.PROFILE, Icons.Default.Person, "Profile")
+    )
+
+    val backStack by nav.currentBackStackEntryAsState()
+    val currentRoute = backStack?.destination?.route
+    val showBottom = currentRoute in listOf(
+        Routes.HOME, Routes.FORTUNE, Routes.SOCIAL, Routes.PROFILE
+    )
+
+    if (appState.isOnboardingComplete) {
+        Scaffold(
+            bottomBar = {
+                if (showBottom) {
+                    LunaBottomNavigation(items, currentRoute) { item ->
+                        nav.navigate(item.route) {
+                            popUpTo(nav.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
+                }
+            }
+        ) { pad ->
+            NavHost(nav, Routes.HOME, Modifier.padding(pad)) {
+                composable(Routes.HOME) {
+                    HomeScreen(
+                        onNavigateToFortune = { nav.navigate(Routes.FORTUNE) },
+                        onNavigateToBirthChart = { nav.navigate(Routes.BIRTH_CHART) },
+                        onNavigateToDailyCard = { nav.navigate(Routes.DAILY_CARD) },
+                        onNavigateToCompatibility = { nav.navigate(Routes.COMPATIBILITY) },
+                        onNavigateToAngelNumbers = { nav.navigate(Routes.ANGEL_NUMBERS) },
+                        onNavigateToLuckyNumbers = { nav.navigate(Routes.LUCKY_NUMBERS) },
+                        onNavigateToAffirmations = { nav.navigate(Routes.AFFIRMATIONS) }
+                    )
+                }
+                composable(Routes.FORTUNE) { FortuneScreen() }
+                composable(Routes.SOCIAL) { SocialScreen() }
+                composable(Routes.PROFILE) { ProfileScreen() }
+                composable(Routes.BIRTH_CHART) {
+                    BirthChartScreen { nav.popBackStack() }
+                }
+                composable(Routes.DAILY_CARD) {
+                    DailyCardScreen { nav.popBackStack() }
+                }
+                composable(Routes.COMPATIBILITY) {
+                    CompatibilityScreen { nav.popBackStack() }
+                }
+                composable(Routes.ANGEL_NUMBERS) {
+                    AngelNumbersScreen { nav.popBackStack() }
+                }
+                composable(Routes.LUCKY_NUMBERS) {
+                    LuckyNumbersScreen { nav.popBackStack() }
+                }
+                composable(Routes.AFFIRMATIONS) {
+                    AffirmationsScreen { nav.popBackStack() }
+                }
+                composable(
+                    route = "${Routes.FORTUNE}/{fortuneId}",
+                    deepLinks = listOf(
+                        navDeepLink { uriPattern = "https://luna.cynora.com/fortune/{fortuneId}" }
+                    ),
+                    arguments = listOf(navArgument("fortuneId") { defaultValue = "" })
+                ) { backStackEntry ->
+                    val fortuneId = backStackEntry.arguments?.getString("fortuneId")
+                    FortuneScreen(initialFortuneId = fortuneId)
+                }
+            }
+        }
+    } else {
+        OnboardingScreen {
+            appVM.onIntent(AppIntent.CompleteOnboarding)
+        }
+    }
+}

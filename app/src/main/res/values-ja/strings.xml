@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">タロット＆星占い: Luna</string>
+    <string name="notification_daily_title">✨ 今日の運勢</string>
+    <string name="notification_daily_message">宇宙からあなたへのメッセージ</string>
+</resources>

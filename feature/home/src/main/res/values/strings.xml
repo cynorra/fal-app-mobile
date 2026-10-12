@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="horoscope_aries">Don\'t be afraid to take bold steps. The universe supports you.</string>
+    <string name="horoscope_taurus">Your patience will be rewarded. Prosperous day ahead.</string>
+    <string name="horoscope_gemini">Your communication is strong. Important conversation awaits.</string>
+    <string name="horoscope_cancer">Time for emotional depth. Spend time with loved ones.</string>
+    <string name="horoscope_leo">The stage is yours. Your creativity shines.</string>
+    <string name="horoscope_virgo">Pay attention to details. Perfectionism is your strength.</string>
+    <string name="horoscope_libra">Find balance. Harmony in relationships.</string>
+    <string name="horoscope_scorpio">Transformation begins. Break old patterns.</string>
+    <string name="horoscope_sagittarius">Adventure calls. Be open to new experiences.</string>
+    <string name="horoscope_capricorn">Work with discipline. Approaching your goals.</string>
+    <string name="horoscope_aquarius">Innovative ideas emerge. Step forward.</string>
+    <string name="horoscope_pisces">Your intuition is sharp. Listen to your inner voice.</string>
+</resources>

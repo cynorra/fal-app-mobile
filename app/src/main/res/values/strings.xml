@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name (ASO Optimized) -->
+    <string name="app_name">Tarot &amp; Horoscope: Luna</string>
+    
+    <!-- Bottom Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_fortune">Fortune</string>
+    <string name="nav_social">Community</string>
+    <string name="nav_profile">Profile</string>
+    
+    <!-- Home Screen -->
+    <string name="home_welcome">Your Personal Cosmic Guide ✨</string>
+    <string name="home_subtitle">Premium tarot, birth charts &amp; offline fortune telling.</string>
+    <string name="home_mystic_calendar">🌙 Mystic Calendar</string>
+    <string name="home_moon_phase">Moon Phase</string>
+    <string name="home_planet">Planet</string>
+    <string name="home_energy">Energy</string>
+    <string name="home_lucky_hour">Lucky Hour</string>
+    <string name="home_quick_actions">Quick Actions</string>
+    <string name="home_birth_chart">Birth Chart</string>
+    <string name="home_daily_card">Daily Card</string>
+    <string name="home_compatibility">Compatibility</string>
+    <string name="home_angel_numbers">Angel Numbers</string>
+    <string name="home_lucky_numbers">Lucky Numbers</string>
+    <string name="home_affirmations">Affirmations</string>
+    
+    <!-- Fortune Screen -->
+    <string name="fortune_title">What do you seek today?</string>
+    <string name="fortune_subtitle">Choose your mood and focus, receive the universe\'s message</string>
+    <string name="fortune_type_label">Fortune Type</string>
+    <string name="fortune_mood_label">Current Mood</string>
+    <string name="fortune_focus_label">Focus Area</string>
+    <string name="fortune_get_button">✨ Read My Fortune</string>
+    <string name="fortune_retry">Try Again</string>
+    <string name="fortune_share">Share</string>
+    <string name="fortune_daily_intention">✨ Daily Intention</string>
+    <string name="fortune_loading">Reading the cosmos...</string>
+    <string name="fortune_error">Fortune failed</string>
+    <string name="fortune_offline">Luna is working offline. Connect to sync new cosmic messages.</string>
+    <string name="fortune_not_found">No fortune found right now. Please try again later.</string>
+    
+    <!-- Birth Chart -->
+    <string name="birth_chart_title">Birth Chart 🌌</string>
+    <string name="birth_chart_heading">🌌 Your Birth Chart</string>
+    <string name="birth_chart_subtitle">Discover the cosmic blueprint of your soul</string>
+    <string name="birth_chart_date">Birth Date</string>
+    <string name="birth_chart_time">Birth Time (optional)</string>
+    <string name="birth_chart_place">Birth Place (optional)</string>
+    <string name="birth_chart_day">Day</string>
+    <string name="birth_chart_month">Month</string>
+    <string name="birth_chart_year">Year</string>
+    <string name="birth_chart_hour">Hour</string>
+    <string name="birth_chart_minute">Minute</string>
+    <string name="birth_chart_city">City, Country</string>
+    <string name="birth_chart_reveal">Reveal My Chart ✨</string>
+    <string name="birth_chart_big_three">Your Big Three</string>
+    <string name="birth_chart_sun">☀️ Sun</string>
+    <string name="birth_chart_moon">🌙 Moon</string>
+    <string name="birth_chart_rising">⬆️ Rising</string>
+    <string name="birth_chart_planets">Planets</string>
+    <string name="birth_chart_additional">Additional Insights</string>
+    <string name="birth_chart_personality">✨ Your Personality</string>
+    <string name="birth_chart_strengths">💪 Strengths</string>
+    <string name="birth_chart_growth">🌱 Growth</string>
+    <string name="birth_chart_another">Calculate Another</string>
+    
+    <!-- Daily Card -->
+    <string name="daily_card_title">Card of the Day 🎯</string>
+    <string name="daily_card_tap">Tap to reveal\nyour card</string>
+    <string name="daily_card_breathe">Take a deep breath and tap the card</string>
+    <string name="daily_card_general">✨ General</string>
+    <string name="daily_card_love">💕 Love</string>
+    <string name="daily_card_career">💼 Career</string>
+    <string name="daily_card_spiritual">🙏 Spiritual</string>
+    <string name="daily_card_advice">💡 Today\'s Advice</string>
+    <string name="daily_card_affirmation">🌟 Affirmation</string>
+    <string name="daily_card_another">Draw Another Card</string>
+    
+    <!-- Compatibility -->
+    <string name="compatibility_title">Zodiac Compatibility 💑</string>
+    <string name="compatibility_your_sign">Your Sign</string>
+    <string name="compatibility_partner_sign">Partner\'s Sign</string>
+    <string name="compatibility_calculate">Calculate Compatibility 💕</string>
+    <string name="compatibility_overall">Overall Compatibility</string>
+    <string name="compatibility_love">💕 Love</string>
+    <string name="compatibility_friendship">🤝 Friendship</string>
+    <string name="compatibility_communication">💬 Communication</string>
+    <string name="compatibility_trust">🤞 Trust</string>
+    <string name="compatibility_passion">🔥 Passion</string>
+    <string name="compatibility_strengths">💪 Strengths</string>
+    <string name="compatibility_challenges">🌱 Challenges</string>
+    <string name="compatibility_advice">💡 Advice</string>
+    <string name="compatibility_another">Try Another</string>
+    
+    <!-- Angel Numbers -->
+    <string name="angel_numbers_title">Angel Numbers 🔮</string>
+    <string name="angel_numbers_search">Search (e.g. 111, 222...)</string>
+    <string name="angel_numbers_back">← Back to list</string>
+    <string name="angel_numbers_meaning">✨ Meaning</string>
+    <string name="angel_numbers_love">💕 Love</string>
+    <string name="angel_numbers_career">💼 Career</string>
+    <string name="angel_numbers_spiritual">🙏 Spiritual</string>
+    <string name="angel_numbers_action">🎯 Action</string>
+    
+    <!-- Lucky Numbers -->
+    <string name="lucky_numbers_title">Lucky Numbers 🍀</string>
+    <string name="lucky_numbers_your">Your Lucky Numbers</string>
+    <string name="lucky_numbers_for">For</string>
+    <string name="lucky_numbers_main">Main Numbers</string>
+    <string name="lucky_numbers_bonus">Bonus</string>
+    <string name="lucky_numbers_color">🎨 Lucky Color</string>
+    <string name="lucky_numbers_day">📅 Lucky Day</string>
+    <string name="lucky_numbers_element">🌍 Lucky Element</string>
+    <string name="lucky_numbers_planet">🪐 Lucky Planet</string>
+    <string name="lucky_numbers_crystal">💎 Lucky Crystal</string>
+    <string name="lucky_numbers_message">✨ Today\'s Message</string>
+    
+    <!-- Affirmations -->
+    <string name="affirmations_title">Daily Affirmations 💫</string>
+    <string name="affirmations_today">✨ Today\'s Affirmation</string>
+    <string name="affirmations_browse">Browse by Category</string>
+    
+    <!-- Social -->
+    <string name="social_title">✨ Mystic Community</string>
+    <string name="social_hint">Write today\'s intention...</string>
+    <string name="social_share">Share</string>
+    <string name="social_empty">No posts yet. Share your first intention ✨</string>
+    <string name="social_just_now">Just now</string>
+    <string name="social_min_ago">%1$d min ago</string>
+    <string name="social_hours_ago">%1$d hours ago</string>
+    <string name="social_days_ago">%1$d days ago</string>
+    
+    <!-- Profile -->
+    <string name="profile_title">Profile</string>
+    <string name="profile_fortunes_read">Fortunes Read</string>
+    <string name="profile_daily_streak">Daily Streak</string>
+    <string name="profile_rare_cards">Rare Cards</string>
+    <string name="profile_settings">Settings</string>
+    <string name="profile_notifications">Notifications</string>
+    <string name="profile_dark_mode">Dark Mode</string>
+    <string name="profile_language">Language</string>
+    <string name="profile_about">About</string>
+    <string name="profile_privacy">Privacy Policy</string>
+    <string name="profile_about_app">About App</string>
+    <string name="profile_version">Version</string>
+    <string name="profile_version_number">1.0.0</string>
+    
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Welcome to Luna</string>
+    <string name="onboarding_welcome_subtitle">Your personal cosmic guide\nto the universe\'s whispers</string>
+    <string name="onboarding_begin">Begin Journey ✨</string>
+    <string name="onboarding_zodiac_title">What\'s Your Sign?</string>
+    <string name="onboarding_zodiac_subtitle">Select your zodiac for personalized readings</string>
+    <string name="onboarding_continue">Continue</string>
+    <string name="onboarding_permission_title">Stay Connected</string>
+    <string name="onboarding_permission_subtitle">Receive daily fortune readings\nand intention messages</string>
+    <string name="onboarding_allow">Allow Notifications</string>
+    <string name="onboarding_skip">Not Now</string>
+    <string name="onboarding_final_title">You\'re Ready!</string>
+    <string name="onboarding_final_subtitle">Discover the universe\'s\npersonalized messages for you</string>
+    <string name="onboarding_start">Start Exploring ✨</string>
+    
+    <!-- Permissions -->
+    <string name="permission_required">Notification Permission Required</string>
+    <string name="permission_message">Daily fortune and intention messages require notification permission. You can allow it from settings.</string>
+    <string name="permission_allow">Allow</string>
+    <string name="permission_cancel">Cancel</string>
+    
+    <!-- Notifications (Çok dilli bildirimler için) -->
+    <string name="notification_daily_title">✨ Your Daily Fortune</string>
+    <string name="notification_daily_message">The universe has a message for you today</string>
+    <string name="notification_moon_title">🌙 Moon Phase Update</string>
+    <string name="notification_moon_message">The moon is entering a new phase</string>
+    <string name="notification_special_title">🌟 Special Cosmic Event</string>
+    <string name="notification_special_message">A rare cosmic alignment is happening</string>
+    <string name="notification_streak_title">🔥 Keep Your Streak!</string>
+    <string name="notification_streak_message">Don\'t break your %1$d day streak</string>
+    <string name="notification_new_feature_title">✨ New Feature</string>
+    <string name="notification_new_feature_message">Discover what\'s new in Luna</string>
+    
+    <!-- Common -->
+    <string name="common_back">Back</string>
+    <string name="common_refresh">Refresh</string>
+    <string name="common_share">Share</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="common_ok">OK</string>
+    <string name="common_error">Error</string>
+    <string name="common_loading">Loading...</string>
+    <string name="common_retry">Retry</string>
+</resources>

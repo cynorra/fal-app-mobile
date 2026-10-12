@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tarot ve Burç: Luna</string>
+    
+    <string name="nav_home">Ana Sayfa</string>
+    <string name="nav_fortune">Fal</string>
+    <string name="nav_social">Topluluk</string>
+    <string name="nav_profile">Profil</string>
+    
+    <string name="home_welcome">Kişisel Kozmik Rehberin ✨</string>
+    <string name="home_subtitle">Premium tarot, doğum haritası ve çevrimdışı fal yorumları.</string>
+    <string name="home_mystic_calendar">🌙 Mistik Takvim</string>
+    <string name="home_quick_actions">Hızlı İşlemler</string>
+    <string name="home_birth_chart">Doğum Haritası</string>
+    <string name="home_daily_card">Günün Kartı</string>
+    <string name="home_compatibility">Burç Uyumu</string>
+    <string name="home_angel_numbers">Melek Sayıları</string>
+    <string name="home_lucky_numbers">Şanslı Sayılar</string>
+    <string name="home_affirmations">Olumlamalar</string>
+    
+    <string name="fortune_title">Bugün ne arıyorsun?</string>
+    <string name="fortune_subtitle">Ruh halini ve odak alanını seç, evrenin mesajını al</string>
+    <string name="fortune_type_label">Fal Türü</string>
+    <string name="fortune_mood_label">Şu Anki Ruh Halin</string>
+    <string name="fortune_focus_label">Odak Alanı</string>
+    <string name="fortune_get_button">✨ Falıma Bak</string>
+    <string name="fortune_retry">Tekrar Dene</string>
+    <string name="fortune_share">Paylaş</string>
+    <string name="fortune_daily_intention">✨ Günün Niyeti</string>
+    <string name="fortune_loading">Evren okunuyor...</string>
+    
+    <string name="onboarding_welcome_title">Luna\'ya Hoş Geldin</string>
+    <string name="onboarding_welcome_subtitle">Evrenin fısıltılarına\nkişisel kozmik rehberin</string>
+    <string name="onboarding_begin">Yolculuğa Başla ✨</string>
+    <string name="onboarding_zodiac_title">Burcun Hangisi?</string>
+    <string name="onboarding_zodiac_subtitle">Kişiselleştirilmiş yorumlar için burcunu seç</string>
+    <string name="onboarding_continue">Devam Et</string>
+    <string name="onboarding_final_title">Hazırsın!</string>
+    <string name="onboarding_final_subtitle">Evrenin sana özel\nmesajlarını keşfet</string>
+    <string name="onboarding_start">Keşfe Başla ✨</string>
+    
+    <!-- Notifications -->
+    <string name="notification_daily_title">✨ Günlük Falın</string>
+    <string name="notification_daily_message">Evrenin sana bir mesajı var</string>
+    <string name="notification_moon_title">🌙 Ay Evresi Güncellemesi</string>
+    <string name="notification_moon_message">Ay yeni bir evreye giriyor</string>
+    <string name="notification_special_title">🌟 Özel Kozmik Olay</string>
+    <string name="notification_special_message">Nadir bir kozmik hizalanma gerçekleşiyor</string>
+    <string name="notification_streak_title">🔥 Serini Koru!</string>
+    <string name="notification_streak_message">%1$d günlük serini bozma</string>
+    <string name="notification_new_feature_title">✨ Yeni Özellik</string>
+    <string name="notification_new_feature_message">Luna\'daki yenilikleri keşfet</string>
+</resources>

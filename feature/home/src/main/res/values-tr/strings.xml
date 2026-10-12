@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="horoscope_aries">Cesur adımlar atmaktan korkma. Evren seni destekliyor.</string>
+    <string name="horoscope_taurus">Sabrın ödüllendirilecek. Bereketli bir gün.</string>
+    <string name="horoscope_gemini">İletişimin güçlü. Önemli konuşma seni bekliyor.</string>
+    <string name="horoscope_cancer">Duygusal derinleşme zamanı. Sevdiklerinle vakit geçir.</string>
+    <string name="horoscope_leo">Sahne senin. Yaratıcılığın parlıyor.</string>
+    <string name="horoscope_virgo">Detaylara dikkat et. Mükemmeliyetçiliğin gücün.</string>
+    <string name="horoscope_libra">Denge kur. İlişkilerde uyum zamanı.</string>
+    <string name="horoscope_scorpio">Dönüşüm başlıyor. Eski kalıpları kır.</string>
+    <string name="horoscope_sagittarius">Macera çağırıyor. Yeni deneyimlere açık ol.</string>
+    <string name="horoscope_capricorn">Disiplinli çalış. Hedeflerine yaklaşıyorsun.</string>
+    <string name="horoscope_aquarius">Yenilikçi fikirler ortaya çıkıyor.</string>
+    <string name="horoscope_pisces">Sezgilerin keskin. İç sesini dinle.</string>
+</resources>

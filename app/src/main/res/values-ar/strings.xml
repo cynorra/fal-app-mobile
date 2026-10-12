@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تاروت وأبراج: لونا</string>
+    <string name="notification_daily_title">✨ حظك اليومي</string>
+    <string name="notification_daily_message">الكون لديه رسالة لك اليوم</string>
+    <string name="notification_moon_title">🌙 مرحلة القمر</string>
+    <string name="notification_moon_message">القمر يدخل مرحلة جديدة</string>
+</resources>

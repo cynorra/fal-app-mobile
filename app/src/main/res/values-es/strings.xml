@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tarot y Horóscopo: Luna</string>
+    <string name="notification_daily_title">✨ Tu Fortuna Diaria</string>
+    <string name="notification_daily_message">El universo tiene un mensaje para ti hoy</string>
+    <string name="notification_moon_title">🌙 Fase Lunar</string>
+    <string name="notification_moon_message">La luna entra en una nueva fase</string>
+</resources>

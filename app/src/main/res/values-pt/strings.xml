@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tarot e Horóscopo: Luna</string>
+    <string name="notification_daily_title">✨ Sua Fortuna Diária</string>
+    <string name="notification_daily_message">O universo tem uma mensagem para você hoje</string>
+</resources>

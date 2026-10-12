@@ -1,0 +1,59 @@
+{
+  "fortunes": [
+    {
+      "id": "coffee_001",
+      "type": "coffee",
+      "text": "A path appears in your cup, opening the door to a new chapter in your life. Be brave, the universe awaits you.",
+      "dailyIntention": "Today I am open to new beginnings.",
+      "moodTags": ["hopeful", "excited"],
+      "focusTags": ["career", "general"],
+      "keywordTags": ["path", "new beginning", "opportunity", "courage"],
+      "rarity": "rare",
+      "createdAt": 1704067200000
+    },
+    {
+      "id": "coffee_002",
+      "type": "coffee",
+      "text": "A heart symbol shines at the bottom of your cup. An unexpected beauty awaits in your love life.",
+      "dailyIntention": "I keep my heart open to love.",
+      "moodTags": ["hopeful", "peaceful"],
+      "focusTags": ["love"],
+      "keywordTags": ["heart", "love", "relationship", "unexpected"],
+      "rarity": "epic",
+      "createdAt": 1704067200000
+    },
+    {
+      "id": "tarot_001",
+      "type": "tarot",
+      "text": "The Strength card is drawn. Recognize your inner power, you can overcome any challenge.",
+      "dailyIntention": "I trust my inner strength.",
+      "moodTags": ["stressed", "confused"],
+      "focusTags": ["career", "general"],
+      "keywordTags": ["strength", "power", "courage", "inner strength"],
+      "rarity": "rare",
+      "createdAt": 1704067200000
+    },
+    {
+      "id": "horoscope_001",
+      "type": "horoscope",
+      "text": "The Moon's movement in Aries increases your courage. Don't be afraid to take risks today.",
+      "dailyIntention": "I take bold steps.",
+      "moodTags": ["excited", "hopeful"],
+      "focusTags": ["career", "general"],
+      "keywordTags": ["moon", "aries", "courage", "risk"],
+      "rarity": "common",
+      "createdAt": 1704067200000
+    },
+    {
+      "id": "angel_001",
+      "type": "angel",
+      "text": "Archangel Michael protects you. Let go of your fears, you are safe.",
+      "dailyIntention": "I know I am protected.",
+      "moodTags": ["stressed", "peaceful"],
+      "focusTags": ["spiritual", "health"],
+      "keywordTags": ["angel", "michael", "protection", "safety"],
+      "rarity": "rare",
+      "createdAt": 1704067200000
+    }
+  ]
+}

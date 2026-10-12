@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tarot &amp; Horoskop: Luna</string>
+    <string name="notification_daily_title">✨ Dein Tägliches Horoskop</string>
+    <string name="notification_daily_message">Das Universum hat heute eine Botschaft für dich</string>
+</resources>
