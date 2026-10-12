@@ -34,6 +34,6 @@ class HapticFeedbackManager(private val haptic: HapticFeedback) {
     }
     
     fun selection() {
-        haptic.performHapticFeedback(HapticFeedbackType.KeyboardPress)
+        haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
     }
 }
