@@ -48,6 +48,7 @@ dependencies {
     implementation("androidx.compose.animation:animation-graphics")
     implementation("androidx.compose.foundation:foundation")
     implementation("androidx.compose.foundation:foundation-layout")
+    implementation("androidx.compose.material:material")
 
     // Lifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.3")

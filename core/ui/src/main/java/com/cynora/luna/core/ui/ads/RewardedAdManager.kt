@@ -116,7 +116,7 @@ class RewardedAdManager(
 @Composable
 fun rememberRewardedAdManager(): RewardedAdManager {
     val context = LocalContext.current
-    val activity = findActivity(context)
+    val activity = context.findActivity()
         ?: throw IllegalStateException("Activity not found")
     
     val lifecycleOwner = LocalLifecycleOwner.current

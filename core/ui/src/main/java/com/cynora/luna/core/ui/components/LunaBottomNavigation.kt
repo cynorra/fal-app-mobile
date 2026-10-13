@@ -1,7 +1,8 @@
 package com.cynora.luna.core.ui.components
 
-import androidx.compose.animation.core.animateColorAsState
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -18,7 +19,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
-import androidx.compose.material3.ripple
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -94,7 +95,7 @@ private fun BottomNavItemView(
             .clip(RoundedCornerShape(12.dp))
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
-                indication = ripple(bounded = true, color = LunaColors.Gold.copy(alpha = 0.2f)),
+                indication = rememberRipple(bounded = true, color = LunaColors.Gold.copy(alpha = 0.2f)),
                 onClick = onClick
             )
             .padding(horizontal = 16.dp, vertical = 8.dp),
