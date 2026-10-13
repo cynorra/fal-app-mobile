@@ -19,6 +19,14 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.14"
+    }
 }
 
 dependencies {
@@ -34,8 +42,11 @@ dependencies {
     // Lifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.3")
 
-    // Compose (sadece temel)
-    implementation("androidx.compose.ui:ui:1.6.7")
+    // Compose
+    val composeBom = platform("androidx.compose:compose-bom:2024.06.00")
+    implementation(composeBom)
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.runtime:runtime")
 
     // Permissions
     implementation("com.google.accompanist:accompanist-permissions:0.34.0")
