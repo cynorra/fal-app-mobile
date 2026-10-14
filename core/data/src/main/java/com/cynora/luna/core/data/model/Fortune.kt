@@ -1,8 +1,5 @@
 package com.cynora.luna.core.data.model
 
-import androidx.compose.runtime.Immutable
-
-@Immutable
 enum class FortuneType(val id: String, val displayName: String, val icon: String) {
     COFFEE("coffee", "Coffee Reading", "☕"),
     TAROT("tarot", "Tarot", "🎴"),
@@ -28,7 +25,6 @@ enum class FortuneType(val id: String, val displayName: String, val icon: String
     }
 }
 
-@Immutable
 enum class Mood(val id: String, val displayName: String) {
     STRESSED("stressed", "Stressed"),
     HOPEFUL("hopeful", "Hopeful"),
@@ -44,7 +40,6 @@ enum class Mood(val id: String, val displayName: String) {
     }
 }
 
-@Immutable
 enum class FocusArea(val id: String, val displayName: String) {
     LOVE("love", "Love & Relationships"),
     CAREER("career", "Career & Work"),
@@ -60,7 +55,6 @@ enum class FocusArea(val id: String, val displayName: String) {
     }
 }
 
-@Immutable
 enum class Rarity(val id: String, val displayName: String, val colorHex: Long) {
     COMMON("common", "Common", 0xFF9E9E9E),
     RARE("rare", "Rare", 0xFF2196F3),
@@ -74,7 +68,6 @@ enum class Rarity(val id: String, val displayName: String, val colorHex: Long) {
     }
 }
 
-@Immutable
 data class Fortune(
     val id: String,
     val type: FortuneType,
