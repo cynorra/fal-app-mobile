@@ -6,6 +6,8 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.compose.runtime.Immutable
 import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.cynora.luna.core.data.model.ZodiacSign
@@ -40,7 +42,7 @@ sealed interface ProfileIntent {
     data class ToggleNotifications(val enabled: Boolean) : ProfileIntent
     data class ToggleDarkMode(val enabled: Boolean) : ProfileIntent
     data class ChangeZodiac(val zodiac: ZodiacSign) : ProfileIntent
-    data class ChangeLanguage(val language: String) : ProfileIntent
+    data class ChangeLanguage(val displayName: String, val code: String) : ProfileIntent
     data object DismissPermissionDialog : ProfileIntent
 }
 
@@ -49,13 +51,30 @@ sealed interface ProfileEffect {
     data object OpenSettings : ProfileEffect
 }
 
+val SupportedLanguages: List<Pair<String, String>> = listOf(
+    "English" to "en",
+    "Türkçe" to "tr",
+    "Español" to "es",
+    "العربية" to "ar",
+    "Deutsch" to "de",
+    "Français" to "fr",
+    "Português" to "pt",
+    "日本語" to "ja"
+)
+
+private fun currentLanguageDisplayName(): String {
+    val tag = AppCompatDelegate.getApplicationLocales().get(0)?.language
+        ?: java.util.Locale.getDefault().language
+    return SupportedLanguages.firstOrNull { it.second == tag }?.first ?: "English"
+}
+
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val dataStore: UserPreferencesDataStore
 ) : ViewModel() {
 
-    private val _state = MutableStateFlow(ProfileState())
+    private val _state = MutableStateFlow(ProfileState(language = currentLanguageDisplayName()))
     val state: StateFlow<ProfileState> = _state.asStateFlow()
 
     // ✅ Buffer eklendi
@@ -141,8 +160,9 @@ class ProfileViewModel @Inject constructor(
                 }
             }
             is ProfileIntent.ChangeLanguage -> {
-                _state.update { it.copy(language = intent.language) }
-                // TODO: AppCompatDelegate.setApplicationLocales() ile gerçek dil değişimi
+                _state.update { it.copy(language = intent.displayName) }
+                // Recreates the activity; AppCompat persists the choice (see AppLocalesMetadataHolderService)
+                AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(intent.code))
             }
             is ProfileIntent.DismissPermissionDialog -> {
                 _state.update { it.copy(showPermissionDialog = false) }

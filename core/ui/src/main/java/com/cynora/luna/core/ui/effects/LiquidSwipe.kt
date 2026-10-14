@@ -55,8 +55,6 @@ private class LiquidShape(
         layoutDirection: LayoutDirection,
         density: Density
     ): Outline {
-        // ✅ with(density) scope içinde toPx()
-        val radius = with(density) { cornerRadius.toPx() }
         val waveAmplitude = size.height * 0.1f * (1f - progress)
         val controlX = size.width * progress
         

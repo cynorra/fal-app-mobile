@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Luna" parent="android:Theme.Material.NoActionBar">
+    <style name="Theme.Luna" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/deep_black</item>
         <item name="android:colorBackground">@color/deep_black</item>
         <item name="android:statusBarColor">@color/deep_black</item>
         <item name="android:navigationBarColor">@color/deep_black</item>

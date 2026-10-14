@@ -120,20 +120,10 @@ fun ProfileScreen(
             title = { Text("Select Language") },
             text = {
                 Column {
-                    listOf(
-                        "English" to "en",
-                        "Türkçe" to "tr",
-                        "Español" to "es",
-                        "العربية" to "ar",
-                        "Deutsch" to "de",
-                        "Français" to "fr",
-                        "Português" to "pt",
-                        "日本語" to "ja"
-                    ).forEach { (displayName, code) ->
+                    SupportedLanguages.forEach { (displayName, code) ->
                         TextButton(onClick = {
-                            viewModel.onIntent(ProfileIntent.ChangeLanguage(displayName))
+                            viewModel.onIntent(ProfileIntent.ChangeLanguage(displayName, code))
                             showLanguageDialog = false
-                            // TODO: AppCompatDelegate.setApplicationLocales()
                         }) {
                             Text(displayName, color = Color.White)
                         }
