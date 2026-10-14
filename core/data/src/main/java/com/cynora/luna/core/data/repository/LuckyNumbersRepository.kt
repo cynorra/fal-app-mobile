@@ -2,7 +2,10 @@ package com.cynora.luna.core.data.repository
 
 import com.cynora.luna.core.data.model.ZodiacSign
 import kotlinx.datetime.Clock
+import kotlinx.datetime.DateTimeUnit
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.isoDayNumber
+import kotlinx.datetime.plus
 import kotlinx.datetime.toLocalDateTime
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -86,7 +89,7 @@ class LuckyNumbersRepository @Inject constructor() {
     fun getWeeklyLuckyNumbers(sign: ZodiacSign): List<LuckyNumbersResult> {
         val today = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).date
         return (0..6).map { dayOffset ->
-            val date = today.plusDays(dayOffset.toLong())
+            val date = today.plus(dayOffset, DateTimeUnit.DAY)
             val seed = date.toEpochDays() + sign.ordinal
             val seededRandom = Random(seed.toLong())
             
