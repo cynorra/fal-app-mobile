@@ -10,9 +10,6 @@ import com.cynora.luna.core.data.seed.SeedDataLoader
 import com.cynora.luna.work.WorkScheduler
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
-import com.google.android.ump.ConsentInformation
-import com.google.android.ump.ConsentRequestParameters
-import com.google.android.ump.UserMessagingPlatform
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -31,7 +28,6 @@ class LunaApplication : Application(), Configuration.Provider {
     lateinit var workerFactory: HiltWorkerFactory
 
     private val appScope = CoroutineScope(Job() + Dispatchers.IO)
-    private lateinit var consentInfo: ConsentInformation
 
     override val workManagerConfiguration: Configuration
         get() = Configuration.Builder()
@@ -51,7 +47,6 @@ class LunaApplication : Application(), Configuration.Provider {
         }
 
         createNotificationChannels()
-        initConsent()
 
         appScope.launch {
             try {
@@ -62,60 +57,6 @@ class LunaApplication : Application(), Configuration.Provider {
         }
 
         WorkScheduler.scheduleDailyFortune(this, 9, 0)
-    }
-
-    private fun initAdsIfAllowed() {
-        val info = UserMessagingPlatform.getConsentInformation(this)
-        if (info.canRequestAds()) {
-            MobileAds.initialize(this) { status ->
-                Timber.d("AdMob initialized: $status")
-            }
-        }
-    }
-
-    private fun initConsent() {
-        val info = UserMessagingPlatform.getConsentInformation(this)
-        consentInfo = info
-
-        if (info.canRequestAds()) {
-            initAdsIfAllowed()
-        }
-
-        info.requestConsentInfoUpdate(
-            this,
-            ConsentRequestParameters.Builder()
-                .setTagForUnderAgeOfConsent(false)
-                .build(),
-            {
-                if (info.isConsentFormAvailable) {
-                    loadConsentForm()
-                }
-            },
-            { error ->
-                Timber.e("Consent update failed: ${error.message}")
-            }
-        )
-    }
-
-    private fun loadConsentForm() {
-        UserMessagingPlatform.loadConsentForm(
-            this,
-            { form ->
-                if (consentInfo.consentStatus == ConsentInformation.ConsentStatus.REQUIRED) {
-                    form.show(this) { error ->
-                        if (error != null) {
-                            Timber.e("Consent form show failed: ${error.message}")
-                        }
-                        initAdsIfAllowed()
-                    }
-                } else {
-                    initAdsIfAllowed()
-                }
-            },
-            { error ->
-                Timber.e("Consent form load failed: ${error.message}")
-            }
-        )
     }
 
     private fun createNotificationChannels() {

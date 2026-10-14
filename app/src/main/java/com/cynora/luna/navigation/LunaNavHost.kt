@@ -69,7 +69,7 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
         Scaffold(
             bottomBar = {
                 if (showBottom) {
-                    LunaBottomNavigation(items, currentRoute) { item ->
+                    LunaBottomNavigation(items, currentRoute, onItemSelected = { item ->
                         nav.navigate(item.route) {
                             popUpTo(nav.graph.findStartDestination().id) {
                                 saveState = true
@@ -77,7 +77,7 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
                             launchSingleTop = true
                             restoreState = true
                         }
-                    }
+                    })
                 }
             }
         ) { pad ->
@@ -97,22 +97,22 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
                 composable(Routes.SOCIAL) { SocialScreen() }
                 composable(Routes.PROFILE) { ProfileScreen() }
                 composable(Routes.BIRTH_CHART) {
-                    BirthChartScreen { nav.popBackStack() }
+                    BirthChartScreen(onBack = { nav.popBackStack() })
                 }
                 composable(Routes.DAILY_CARD) {
-                    DailyCardScreen { nav.popBackStack() }
+                    DailyCardScreen(onBack = { nav.popBackStack() })
                 }
                 composable(Routes.COMPATIBILITY) {
-                    CompatibilityScreen { nav.popBackStack() }
+                    CompatibilityScreen(onBack = { nav.popBackStack() })
                 }
                 composable(Routes.ANGEL_NUMBERS) {
-                    AngelNumbersScreen { nav.popBackStack() }
+                    AngelNumbersScreen(onBack = { nav.popBackStack() })
                 }
                 composable(Routes.LUCKY_NUMBERS) {
-                    LuckyNumbersScreen { nav.popBackStack() }
+                    LuckyNumbersScreen(onBack = { nav.popBackStack() })
                 }
                 composable(Routes.AFFIRMATIONS) {
-                    AffirmationsScreen { nav.popBackStack() }
+                    AffirmationsScreen(onBack = { nav.popBackStack() })
                 }
                 composable(
                     route = "${Routes.FORTUNE}/{fortuneId}",
@@ -127,8 +127,8 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
             }
         }
     } else {
-        OnboardingScreen {
+        OnboardingScreen(onComplete = {
             appVM.onIntent(AppIntent.CompleteOnboarding)
-        }
+        })
     }
 }

@@ -97,6 +97,10 @@ dependencies {
     implementation(project(":feature:profile"))
     implementation(project(":feature:onboarding"))
 
+    // Room (DatabaseModule builds the database directly)
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+
     // Compose BOM
     val composeBom = platform("androidx.compose:compose-bom:2024.06.00")
     implementation(composeBom)
