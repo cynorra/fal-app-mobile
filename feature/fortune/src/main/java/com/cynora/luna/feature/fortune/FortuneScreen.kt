@@ -19,6 +19,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -180,7 +181,7 @@ private fun FortuneSelectionContent(
             verticalArrangement = Arrangement.spacedBy(12.dp),
             modifier = Modifier.height(240.dp)
         ) {
-            androidx.compose.foundation.lazy.grid.items(FortuneType.entries.take(8)) { type ->
+            items(FortuneType.entries.take(8)) { type ->
                 FortuneTypeCard(type, state.selectedType == type) {
                     onIntent(FortuneIntent.SelectType(type))
                 }
@@ -198,7 +199,7 @@ private fun FortuneSelectionContent(
             verticalArrangement = Arrangement.spacedBy(8.dp),
             modifier = Modifier.height(120.dp)
         ) {
-            androidx.compose.foundation.lazy.grid.items(Mood.entries.toList()) { mood ->
+            items(Mood.entries.toList()) { mood ->
                 MoodChip(mood, state.selectedMood == mood) {
                     onIntent(FortuneIntent.SelectMood(mood))
                 }
@@ -216,7 +217,7 @@ private fun FortuneSelectionContent(
             verticalArrangement = Arrangement.spacedBy(8.dp),
             modifier = Modifier.height(160.dp)
         ) {
-            androidx.compose.foundation.lazy.grid.items(FocusArea.entries.toList()) { focus ->
+            items(FocusArea.entries.toList()) { focus ->
                 FocusChip(focus, state.selectedFocus == focus) {
                     onIntent(FortuneIntent.SelectFocus(focus))
                 }
