@@ -20,9 +20,9 @@ data class LuckyNumbersResult(
 )
 
 @Singleton
-class LuckyNumbersRepository @Inject constructor(
+class LuckyNumbersRepository @Inject constructor() {
     private val random: Random = Random.Default
-) {
+
     
     fun getDailyLuckyNumbers(sign: ZodiacSign): LuckyNumbersResult {
         val today = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).date

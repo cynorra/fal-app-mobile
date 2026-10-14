@@ -23,9 +23,9 @@ data class TarotCard(
 )
 
 @Singleton
-class DailyCardRepository @Inject constructor(
+class DailyCardRepository @Inject constructor() {
     private val random: Random = Random.Default
-) {
+
     
     private val majorArcana = listOf(
         TarotCard(0, "The Fool", "🃏", 

@@ -9,9 +9,9 @@ import javax.inject.Singleton
 import kotlin.random.Random
 
 @Singleton
-class SmartPoolSelector @Inject constructor(
+class SmartPoolSelector @Inject constructor() {
     private val random: Random = Random.Default
-) {
+
 
     fun selectFortune(
         pool: List<Fortune>,
