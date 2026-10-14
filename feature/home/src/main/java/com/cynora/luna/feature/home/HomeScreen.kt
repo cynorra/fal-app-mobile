@@ -141,6 +141,9 @@ fun HomeScreen(
                     QuickActionCard("Lucky Numbers", "🍀", Modifier.weight(1f), onNavigateToLuckyNumbers)
                     QuickActionCard("Affirmations", "💫", Modifier.weight(1f), onNavigateToAffirmations)
                 }
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                    QuickActionCard("Fortune Reading", "☕", Modifier.weight(1f), onNavigateToFortune)
+                }
             }
 
             Spacer(modifier = Modifier.height(32.dp))

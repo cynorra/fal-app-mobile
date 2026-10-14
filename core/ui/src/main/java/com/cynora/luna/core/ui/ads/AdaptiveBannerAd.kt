@@ -42,9 +42,9 @@ fun AdaptiveBannerAd(
     
     DisposableEffect(owner, adUnitId, adSize) {
         val observer = object : DefaultLifecycleObserver {
-            override fun onResume(o: LifecycleOwner) { holder.value?.resume() }
-            override fun onPause(o: LifecycleOwner) { holder.value?.pause() }
-            override fun onDestroy(o: LifecycleOwner) {
+            override fun onResume(owner: LifecycleOwner) { holder.value?.resume() }
+            override fun onPause(owner: LifecycleOwner) { holder.value?.pause() }
+            override fun onDestroy(owner: LifecycleOwner) {
                 holder.value?.destroy()
                 holder.value = null
             }
