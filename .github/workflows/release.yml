@@ -36,16 +36,37 @@ jobs:
         run: chmod +x gradlew
       
       - name: Decode google-services.json
+        env:
+          GSERVICES_DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
         run: |
-          SECRET_CONTENT='${{ secrets.GOOGLE_SERVICES_JSON }}'
-          if echo "$SECRET_CONTENT" | grep -q "project_info"; then
-            echo "$SECRET_CONTENT" > app/google-services.json
-          else
-            echo "$SECRET_CONTENT" | base64 -d > app/google-services.json
-          fi
-      
+          python3 -c "
+          import os, base64, json
+          data = os.environ.get('GSERVICES_DATA', '').strip()
+          try:
+              decoded = base64.b64decode(data).decode('utf-8')
+              json.loads(decoded)
+              with open('app/google-services.json', 'w') as f:
+                  f.write(decoded)
+              print('Successfully decoded base64 google-services.json')
+          except Exception:
+              with open('app/google-services.json', 'w') as f:
+                  f.write(data)
+              print('Wrote plain text google-services.json')
+          "
+          ls -la app/google-services.json
+
       - name: Decode Keystore
-        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > app/luna-release.jks
+        env:
+          KEYSTORE_DATA: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          python3 -c "
+          import os, base64
+          data = os.environ.get('KEYSTORE_DATA', '').strip()
+          with open('app/luna-release.jks', 'wb') as f:
+              f.write(base64.b64decode(data))
+          print('Successfully decoded keystore')
+          "
+          ls -la app/luna-release.jks
       
       - name: Extract Version
         id: version
