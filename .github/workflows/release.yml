@@ -36,7 +36,13 @@ jobs:
         run: chmod +x gradlew
       
       - name: Decode google-services.json
-        run: echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 -d > app/google-services.json
+        run: |
+          SECRET_CONTENT='${{ secrets.GOOGLE_SERVICES_JSON }}'
+          if echo "$SECRET_CONTENT" | grep -q "project_info"; then
+            echo "$SECRET_CONTENT" > app/google-services.json
+          else
+            echo "$SECRET_CONTENT" | base64 -d > app/google-services.json
+          fi
       
       - name: Decode Keystore
         run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > app/luna-release.jks
