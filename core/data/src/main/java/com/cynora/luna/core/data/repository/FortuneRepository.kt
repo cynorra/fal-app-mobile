@@ -14,6 +14,8 @@ interface FortuneRepository {
         seenIds: Set<String>
     ): Result<Fortune>
 
+    suspend fun getFortuneById(fortuneId: String): Result<Fortune>
+
     suspend fun syncFromFirestore(): Result<Unit>
 
     fun observeSeenIds(): Flow<Set<String>>

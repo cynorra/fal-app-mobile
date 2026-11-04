@@ -10,7 +10,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.cynora.luna.core.data.model.LunaUser
 import com.cynora.luna.core.data.model.ZodiacSign
+import com.cynora.luna.core.data.repository.AuthRepository
 import com.cynora.luna.core.database.datastore.UserPreferencesDataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -35,7 +37,10 @@ data class ProfileState(
     val notificationsEnabled: Boolean = false,
     val darkModeEnabled: Boolean = true,
     val language: String = "English",
-    val showPermissionDialog: Boolean = false
+    val showPermissionDialog: Boolean = false,
+    val currentUser: LunaUser? = null,
+    val isAuthLoading: Boolean = false,
+    val authErrorMessage: String? = null
 )
 
 sealed interface ProfileIntent {
@@ -44,11 +49,15 @@ sealed interface ProfileIntent {
     data class ChangeZodiac(val zodiac: ZodiacSign) : ProfileIntent
     data class ChangeLanguage(val displayName: String, val code: String) : ProfileIntent
     data object DismissPermissionDialog : ProfileIntent
+    data class SignInWithGoogleToken(val idToken: String) : ProfileIntent
+    data object SignOut : ProfileIntent
+    data class SetAuthError(val error: String) : ProfileIntent
 }
 
 sealed interface ProfileEffect {
     data object RequestPermission : ProfileEffect
     data object OpenSettings : ProfileEffect
+    data class ShowSnackbar(val message: String) : ProfileEffect
 }
 
 val SupportedLanguages: List<Pair<String, String>> = listOf(
@@ -71,7 +80,8 @@ private fun currentLanguageDisplayName(): String {
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
-    private val dataStore: UserPreferencesDataStore
+    private val dataStore: UserPreferencesDataStore,
+    private val authRepository: AuthRepository
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(ProfileState(language = currentLanguageDisplayName()))
@@ -85,6 +95,13 @@ class ProfileViewModel @Inject constructor(
     val effects: SharedFlow<ProfileEffect> = _effects.asSharedFlow()
 
     init {
+        // Oturum durumunu dinle
+        viewModelScope.launch {
+            authRepository.currentUser.collect { user ->
+                _state.update { it.copy(currentUser = user, isAuthLoading = false) }
+            }
+        }
+
         viewModelScope.launch {
             dataStore.getUserZodiac().collect { zodiacName ->
                 zodiacName?.let {
@@ -99,7 +116,6 @@ class ProfileViewModel @Inject constructor(
                 _state.update { 
                     it.copy(
                         fortuneCount = count,
-                        // ✅ Rare cards hesaplama: her 50 fal için 1 rare card
                         rareCards = count / 50
                     ) 
                 }
@@ -145,7 +161,6 @@ class ProfileViewModel @Inject constructor(
                 }
             }
             is ProfileIntent.ToggleDarkMode -> {
-                // ✅ Gerçekten DataStore'a yazılıyor
                 viewModelScope.launch {
                     dataStore.setDarkModeEnabled(intent.enabled)
                     _state.update { it.copy(darkModeEnabled = intent.enabled) }
@@ -161,11 +176,36 @@ class ProfileViewModel @Inject constructor(
             }
             is ProfileIntent.ChangeLanguage -> {
                 _state.update { it.copy(language = intent.displayName) }
-                // Recreates the activity; AppCompat persists the choice (see AppLocalesMetadataHolderService)
                 AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(intent.code))
             }
             is ProfileIntent.DismissPermissionDialog -> {
                 _state.update { it.copy(showPermissionDialog = false) }
+            }
+            is ProfileIntent.SignInWithGoogleToken -> {
+                viewModelScope.launch {
+                    _state.update { it.copy(isAuthLoading = true, authErrorMessage = null) }
+                    val result = authRepository.signInWithGoogle(intent.idToken)
+                    result.fold(
+                        onSuccess = { user ->
+                            _state.update { it.copy(isAuthLoading = false, currentUser = user) }
+                            _effects.tryEmit(ProfileEffect.ShowSnackbar("Welcome ${user.displayName ?: ""}! ✨"))
+                        },
+                        onFailure = { error ->
+                            _state.update { it.copy(isAuthLoading = false, authErrorMessage = error.message) }
+                            _effects.tryEmit(ProfileEffect.ShowSnackbar("Sign in failed: ${error.localizedMessage}"))
+                        }
+                    )
+                }
+            }
+            is ProfileIntent.SignOut -> {
+                viewModelScope.launch {
+                    authRepository.signOut()
+                    _effects.tryEmit(ProfileEffect.ShowSnackbar("Signed out successfully."))
+                }
+            }
+            is ProfileIntent.SetAuthError -> {
+                _state.update { it.copy(isAuthLoading = false, authErrorMessage = intent.error) }
+                _effects.tryEmit(ProfileEffect.ShowSnackbar(intent.error))
             }
         }
     }

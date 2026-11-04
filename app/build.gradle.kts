@@ -132,6 +132,16 @@ dependencies {
     implementation("com.google.firebase:firebase-messaging-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-installations-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+    // Google Sign-In & Credential Manager
+    implementation("androidx.credentials:credentials:1.3.0")
+    implementation("androidx.credentials:credentials-play-services-auth:1.3.0")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
+
+    // Image loading
+    implementation("io.coil-kt:coil-compose:2.6.0")
 
     // AdMob & UMP (GDPR/KVKK)
     implementation("com.google.android.gms:play-services-ads:23.2.0")

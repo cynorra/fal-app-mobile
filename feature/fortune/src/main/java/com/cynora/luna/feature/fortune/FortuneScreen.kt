@@ -76,7 +76,7 @@ fun FortuneScreen(
     // Deep link handling
     LaunchedEffect(initialFortuneId) {
         if (!initialFortuneId.isNullOrEmpty()) {
-            // TODO: ViewModel'e loadFortuneById metodu eklenebilir
+            viewModel.loadFortuneById(initialFortuneId)
         }
     }
 

@@ -96,6 +96,16 @@ class UserPreferencesDataStore @Inject constructor(
         return result
     }
 
+    suspend fun saveUserId(userId: String) {
+        dataStore.edit { prefs ->
+            prefs[USER_ID_KEY] = userId
+        }
+    }
+
+    fun getUserId(): Flow<String?> {
+        return dataStore.data.map { it[USER_ID_KEY] }
+    }
+
     // --- Zodiac ---
     suspend fun saveUserZodiac(zodiacName: String) {
         dataStore.edit { it[USER_ZODIAC_KEY] = zodiacName }

@@ -1,6 +1,7 @@
 package com.cynora.luna.feature.profile
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -24,16 +25,24 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
@@ -43,6 +52,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -50,15 +60,29 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.credentials.CredentialManager
+import androidx.credentials.CustomCredential
+import androidx.credentials.GetCredentialRequest
+import androidx.credentials.GetCredentialResponse
+import androidx.credentials.exceptions.GetCredentialCancellationException
+import androidx.credentials.exceptions.GetCredentialException
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import coil.compose.AsyncImage
 import com.cynora.luna.core.ui.theme.LunaColors
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberPermissionState
+import com.google.android.libraries.identity.googleid.GetGoogleIdOption
+import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
@@ -67,13 +91,15 @@ fun ProfileScreen(
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
-    
+    val coroutineScope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
+
     val notificationPermission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
         rememberPermissionState(Manifest.permission.POST_NOTIFICATIONS) { granted ->
             viewModel.onPermissionResult(granted)
         }
     } else null
-    
+
     LaunchedEffect(viewModel) {
         viewModel.effects.collect { effect ->
             when (effect) {
@@ -86,13 +112,16 @@ fun ProfileScreen(
                     }
                     context.startActivity(intent)
                 }
+                is ProfileEffect.ShowSnackbar -> {
+                    snackbarHostState.showSnackbar(effect.message)
+                }
             }
         }
     }
-    
-    // Dil seçimi dialog
+
     var showLanguageDialog by remember { mutableStateOf(false) }
-    
+    var showAboutDialog by remember { mutableStateOf(false) }
+
     if (state.showPermissionDialog) {
         AlertDialog(
             onDismissRequest = { viewModel.onIntent(ProfileIntent.DismissPermissionDialog) },
@@ -103,17 +132,17 @@ fun ProfileScreen(
                     viewModel.onIntent(ProfileIntent.DismissPermissionDialog)
                     notificationPermission?.launchPermissionRequest()
                 }) {
-                    Text("Allow")
+                    Text("Allow", color = LunaColors.Gold)
                 }
             },
             dismissButton = {
                 TextButton(onClick = { viewModel.onIntent(ProfileIntent.DismissPermissionDialog) }) {
-                    Text("Cancel")
+                    Text("Cancel", color = Color.White.copy(alpha = 0.6f))
                 }
             }
         )
     }
-    
+
     if (showLanguageDialog) {
         AlertDialog(
             onDismissRequest = { showLanguageDialog = false },
@@ -132,126 +161,375 @@ fun ProfileScreen(
             },
             confirmButton = {
                 TextButton(onClick = { showLanguageDialog = false }) {
-                    Text("Cancel")
+                    Text("Cancel", color = LunaColors.Gold)
                 }
             }
         )
     }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(LunaColors.DeepBlack)
-            .verticalScroll(rememberScrollState())
-    ) {
-        Box(
-            modifier = Modifier.fillMaxWidth().padding(24.dp),
-            contentAlignment = Alignment.Center
-        ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Box(
-                    modifier = Modifier
-                        .size(80.dp)
-                        .clip(CircleShape)
-                        .background(
-                            Brush.linearGradient(listOf(LunaColors.Gold, LunaColors.MysticPurple))
-                        ),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = state.zodiacSymbol, fontSize = 36.sp)
+    if (showAboutDialog) {
+        AlertDialog(
+            onDismissRequest = { showAboutDialog = false },
+            title = { Text("About Luna ✨") },
+            text = {
+                Column {
+                    Text(
+                        text = "Luna v1.0.0",
+                        fontWeight = FontWeight.Bold,
+                        color = LunaColors.Gold,
+                        fontSize = 16.sp
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "Your personal cosmic guide for tarot, astrology, birth charts, daily card readings, and angel numbers.",
+                        color = Color.White.copy(alpha = 0.8f),
+                        fontSize = 14.sp
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text(
+                        text = "© 2026 Cynora Studio. All rights reserved.",
+                        color = Color.White.copy(alpha = 0.5f),
+                        fontSize = 12.sp
+                    )
                 }
-
-                Spacer(modifier = Modifier.height(12.dp))
-
-                Text(
-                    text = state.zodiacName,
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.White
-                )
-
-                Spacer(modifier = Modifier.height(24.dp))
-
-                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-                    ProfileStat("Fortunes Read", state.fortuneCount.toString())
-                    ProfileStat("Daily Streak", "${state.streak} days")
-                    ProfileStat("Rare Cards", state.rareCards.toString())
+            },
+            confirmButton = {
+                TextButton(onClick = { showAboutDialog = false }) {
+                    Text("Close", color = LunaColors.Gold)
                 }
             }
-        }
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Text(
-            text = "Settings",
-            fontSize = 18.sp,
-            fontWeight = FontWeight.SemiBold,
-            color = LunaColors.Gold,
-            modifier = Modifier.padding(horizontal = 16.dp)
         )
+    }
 
-        Spacer(modifier = Modifier.height(12.dp))
+    Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) },
+        containerColor = LunaColors.DeepBlack
+    ) { paddingValues ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
+                .background(LunaColors.DeepBlack)
+                .verticalScroll(rememberScrollState())
+        ) {
+            // Profil ve Burç Başlığı
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(24.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Box(
+                        modifier = Modifier
+                            .size(80.dp)
+                            .clip(CircleShape)
+                            .background(
+                                Brush.linearGradient(listOf(LunaColors.Gold, LunaColors.MysticPurple))
+                            ),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = state.zodiacSymbol, fontSize = 36.sp)
+                    }
 
-        SettingsSection {
-            SettingsToggleItem(
-                icon = Icons.Default.Notifications,
-                title = "Notifications",
-                isChecked = state.notificationsEnabled,
-                onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleNotifications(it)) }
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    Text(
+                        text = state.zodiacName,
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White
+                    )
+
+                    Spacer(modifier = Modifier.height(24.dp))
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ) {
+                        ProfileStat("Fortunes Read", state.fortuneCount.toString())
+                        ProfileStat("Daily Streak", "${state.streak} days")
+                        ProfileStat("Rare Cards", state.rareCards.toString())
+                    }
+                }
+            }
+
+            // Google Hesabı Kartı
+            Text(
+                text = "Account",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = LunaColors.Gold,
+                modifier = Modifier.padding(horizontal = 16.dp)
             )
 
-            SettingsToggleItem(
-                // ✅ Icons.Default.DarkMode YOK → Settings kullan
-                icon = Icons.Default.Settings,
-                title = "Dark Mode",
-                isChecked = state.darkModeEnabled,
-                onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleDarkMode(it)) }
+            Spacer(modifier = Modifier.height(12.dp))
+
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    val user = state.currentUser
+                    if (user != null) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            if (!user.photoUrl.isNullOrEmpty()) {
+                                AsyncImage(
+                                    model = user.photoUrl,
+                                    contentDescription = "User Avatar",
+                                    modifier = Modifier
+                                        .size(48.dp)
+                                        .clip(CircleShape),
+                                    contentScale = ContentScale.Crop
+                                )
+                            } else {
+                                Box(
+                                    modifier = Modifier
+                                        .size(48.dp)
+                                        .clip(CircleShape)
+                                        .background(LunaColors.Gold.copy(alpha = 0.2f)),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.AccountCircle,
+                                        contentDescription = null,
+                                        tint = LunaColors.Gold,
+                                        modifier = Modifier.size(32.dp)
+                                    )
+                                }
+                            }
+
+                            Spacer(modifier = Modifier.width(16.dp))
+
+                            Column(modifier = Modifier.weight(1f)) {
+                                Text(
+                                    text = user.displayName ?: "Cosmic Traveler",
+                                    fontSize = 16.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White
+                                )
+                                Text(
+                                    text = user.email ?: "",
+                                    fontSize = 13.sp,
+                                    color = Color.White.copy(alpha = 0.6f)
+                                )
+                            }
+
+                            TextButton(
+                                onClick = { viewModel.onIntent(ProfileIntent.SignOut) }
+                            ) {
+                                Text("Sign Out", color = LunaColors.Gold, fontSize = 13.sp)
+                            }
+                        }
+                    } else {
+                        Column {
+                            Text(
+                                text = "Save & Sync Your Cosmic Journey",
+                                fontSize = 15.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = Color.White
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "Sign in with Google to sync your fortune readings, streaks, and preferences across devices.",
+                                fontSize = 13.sp,
+                                color = Color.White.copy(alpha = 0.6f)
+                            )
+                            Spacer(modifier = Modifier.height(16.dp))
+
+                            if (state.isAuthLoading) {
+                                Box(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    CircularProgressIndicator(
+                                        color = LunaColors.Gold,
+                                        modifier = Modifier.size(32.dp)
+                                    )
+                                }
+                            } else {
+                                Button(
+                                    onClick = {
+                                        triggerGoogleSignIn(
+                                            context = context,
+                                            coroutineScope = coroutineScope,
+                                            onIdTokenReceived = { idToken ->
+                                                viewModel.onIntent(ProfileIntent.SignInWithGoogleToken(idToken))
+                                            },
+                                            onError = { errorMsg ->
+                                                viewModel.onIntent(ProfileIntent.SetAuthError(errorMsg))
+                                            }
+                                        )
+                                    },
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(48.dp),
+                                    colors = ButtonDefaults.buttonColors(
+                                        containerColor = LunaColors.Gold
+                                    ),
+                                    shape = RoundedCornerShape(24.dp)
+                                ) {
+                                    Text(
+                                        text = "G  Sign in with Google",
+                                        fontWeight = FontWeight.Bold,
+                                        color = Color.Black,
+                                        fontSize = 15.sp
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Ayarlar Bölümü
+            Text(
+                text = "Settings",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = LunaColors.Gold,
+                modifier = Modifier.padding(horizontal = 16.dp)
             )
 
-            SettingsClickItem(
-                // ✅ Icons.Default.Language YOK → Info kullan
-                icon = Icons.Default.Info,
-                title = "Language",
-                subtitle = state.language,
-                onClick = { showLanguageDialog = true }
+            Spacer(modifier = Modifier.height(12.dp))
+
+            SettingsSection {
+                SettingsToggleItem(
+                    icon = Icons.Default.Notifications,
+                    title = "Notifications",
+                    isChecked = state.notificationsEnabled,
+                    onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleNotifications(it)) }
+                )
+
+                SettingsToggleItem(
+                    icon = Icons.Default.Settings,
+                    title = "Dark Mode",
+                    isChecked = state.darkModeEnabled,
+                    onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleDarkMode(it)) }
+                )
+
+                SettingsClickItem(
+                    icon = Icons.Default.Info,
+                    title = "Language",
+                    subtitle = state.language,
+                    onClick = { showLanguageDialog = true }
+                )
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Hakkında Bölümü
+            Text(
+                text = "About",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = LunaColors.Gold,
+                modifier = Modifier.padding(horizontal = 16.dp)
             )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            SettingsSection {
+                SettingsClickItem(
+                    icon = Icons.Default.Lock,
+                    title = "Privacy Policy",
+                    onClick = {
+                        try {
+                            val intent = Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("https://luna.cynora.com/privacy")
+                            )
+                            context.startActivity(intent)
+                        } catch (e: Exception) {
+                            Timber.e(e, "Could not open privacy policy URL")
+                        }
+                    }
+                )
+
+                SettingsClickItem(
+                    icon = Icons.Default.Info,
+                    title = "About App",
+                    onClick = { showAboutDialog = true }
+                )
+
+                SettingsInfoItem(
+                    icon = Icons.Default.Star,
+                    title = "Version",
+                    subtitle = "1.0.0"
+                )
+            }
+
+            Spacer(modifier = Modifier.height(32.dp))
         }
+    }
+}
 
-        Spacer(modifier = Modifier.height(24.dp))
+private fun triggerGoogleSignIn(
+    context: Context,
+    coroutineScope: CoroutineScope,
+    onIdTokenReceived: (String) -> Unit,
+    onError: (String) -> Unit
+) {
+    val credentialManager = CredentialManager.create(context)
 
-        Text(
-            text = "About",
-            fontSize = 18.sp,
-            fontWeight = FontWeight.SemiBold,
-            color = LunaColors.Gold,
-            modifier = Modifier.padding(horizontal = 16.dp)
-        )
+    // Firebase google-services tarafından üretilen default_web_client_id aranır
+    val webClientIdResId = context.resources.getIdentifier(
+        "default_web_client_id",
+        "string",
+        context.packageName
+    )
 
-        Spacer(modifier = Modifier.height(12.dp))
+    if (webClientIdResId == 0) {
+        onError("Google Client ID not found. Please ensure google-services.json is configured.")
+        return
+    }
 
-        SettingsSection {
-            SettingsClickItem(
-                // ✅ Icons.Default.Policy YOK → Lock kullan
-                icon = Icons.Default.Lock,
-                title = "Privacy Policy",
-                onClick = { /* URL aç */ }
+    val serverClientId = context.getString(webClientIdResId)
+
+    val googleIdOption = GetGoogleIdOption.Builder()
+        .setFilterByAuthorizedAccounts(false)
+        .setServerClientId(serverClientId)
+        .setAutoSelectEnabled(false)
+        .build()
+
+    val request = GetCredentialRequest.Builder()
+        .addCredentialOption(googleIdOption)
+        .build()
+
+    coroutineScope.launch {
+        try {
+            val response: GetCredentialResponse = credentialManager.getCredential(
+                context = context,
+                request = request
             )
 
-            SettingsClickItem(
-                icon = Icons.Default.Info,
-                title = "About App",
-                onClick = { /* Dialog */ }
-            )
-
-            SettingsInfoItem(
-                // ✅ Icons.Default.Tag YOK → Star kullan
-                icon = Icons.Default.Star,
-                title = "Version",
-                subtitle = "1.0.0"
-            )
+            val credential = response.credential
+            if (credential is CustomCredential &&
+                credential.type == GoogleIdTokenCredential.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL
+            ) {
+                val googleIdTokenCredential = GoogleIdTokenCredential.createFrom(credential.data)
+                onIdTokenReceived(googleIdTokenCredential.idToken)
+            } else {
+                onError("Unexpected credential format received.")
+            }
+        } catch (e: GetCredentialCancellationException) {
+            // Kullanıcı seçimi iptal etti
+            Timber.d("Google Sign-In was cancelled by user")
+        } catch (e: GetCredentialException) {
+            Timber.e(e, "Google Sign-In Credential error")
+            onError(e.message ?: "Sign-in error")
+        } catch (e: Exception) {
+            Timber.e(e, "Google Sign-In failed")
+            onError(e.message ?: "Sign-in error")
         }
-
-        Spacer(modifier = Modifier.height(32.dp))
     }
 }
 
@@ -267,7 +545,9 @@ private fun ProfileStat(label: String, value: String) {
 @Composable
 private fun SettingsSection(content: @Composable ColumnScope.() -> Unit) {
     Card(
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp),
         colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
         shape = RoundedCornerShape(16.dp)
     ) {
@@ -283,7 +563,10 @@ private fun SettingsToggleItem(
     onCheckedChange: (Boolean) -> Unit
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth().clickable { onCheckedChange(!isChecked) }.padding(16.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onCheckedChange(!isChecked) }
+            .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(imageVector = icon, contentDescription = null, tint = LunaColors.Gold, modifier = Modifier.size(24.dp))
@@ -308,7 +591,10 @@ private fun SettingsClickItem(
     onClick: () -> Unit
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth().clickable(onClick = onClick).padding(16.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick)
+            .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(imageVector = icon, contentDescription = null, tint = LunaColors.Gold, modifier = Modifier.size(24.dp))
@@ -319,7 +605,6 @@ private fun SettingsClickItem(
                 Text(text = it, fontSize = 12.sp, color = Color.White.copy(alpha = 0.5f))
             }
         }
-        // ✅ Icons.Default.ChevronRight YOK → KeyboardArrowRight kullan
         Icon(
             imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
             contentDescription = null,
@@ -336,7 +621,9 @@ private fun SettingsInfoItem(
     subtitle: String
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth().padding(16.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(imageVector = icon, contentDescription = null, tint = LunaColors.Gold, modifier = Modifier.size(24.dp))

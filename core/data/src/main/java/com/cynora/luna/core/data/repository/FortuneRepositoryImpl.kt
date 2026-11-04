@@ -69,6 +69,32 @@ class FortuneRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun getFortuneById(fortuneId: String): Result<Fortune> {
+        return withContext(Dispatchers.IO) {
+            try {
+                // 1. Önce yerel veritabanında ara
+                val localEntity = fortuneDao.getById(fortuneId)
+                if (localEntity != null) {
+                    return@withContext Result.success(localEntity.toDomain())
+                }
+
+                // 2. Yoksa Firestore'dan çek
+                val doc = firestore.collection("fortunes").document(fortuneId).get().await()
+                val fortuneDto = doc.toObject(FortuneDto::class.java)
+                if (fortuneDto != null) {
+                    val fortune = fortuneDto.toDomain()
+                    fortuneDao.insert(fortune.toEntity())
+                    Result.success(fortune)
+                } else {
+                    Result.failure(Exception("Fortune reading not found ($fortuneId)"))
+                }
+            } catch (e: Exception) {
+                Timber.e(e, "getFortuneById failed for $fortuneId")
+                Result.failure(e)
+            }
+        }
+    }
+
     override suspend fun syncFromFirestore(): Result<Unit> {
         return withContext(Dispatchers.IO) {
             try {

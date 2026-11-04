@@ -89,6 +89,31 @@ class FortuneViewModel @Inject constructor(
         }
     }
 
+    fun loadFortuneById(fortuneId: String) {
+        viewModelScope.launch {
+            _state.update { it.copy(isLoading = true, error = null, isTypewriterComplete = false) }
+            val result = repository.getFortuneById(fortuneId)
+            result.fold(
+                onSuccess = { fortune ->
+                    _state.update {
+                        it.copy(
+                            isLoading = false,
+                            fortune = fortune,
+                            selectedType = fortune.type,
+                            error = null,
+                            isTypewriterComplete = false
+                        )
+                    }
+                    dataStore.incrementFortuneCount()
+                },
+                onFailure = { error ->
+                    _state.update { it.copy(isLoading = false, error = error.message) }
+                    _effects.tryEmit(FortuneEffect.ShowSnackbar(error.message ?: "Could not load reading"))
+                }
+            )
+        }
+    }
+
     private fun getFortune() {
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true, error = null, isTypewriterComplete = false) }
