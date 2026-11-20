@@ -56,7 +56,8 @@ class LunaApplication : Application(), Configuration.Provider {
             }
         }
 
-        WorkScheduler.scheduleDailyFortune(this, 9, 0)
+        WorkScheduler.scheduleDailyFortune(this, 8, 30)
+        WorkScheduler.scheduleHourlyCosmic(this)
     }
 
     private fun createNotificationChannels() {
@@ -73,6 +74,16 @@ class LunaApplication : Application(), Configuration.Provider {
                     enableLights(true)
                     enableVibration(true)
                     lightColor = 0xFFD4AF37.toInt()
+                },
+                NotificationChannel(
+                    "luna_hourly_cosmic",
+                    "Hourly Cosmic Pulse",
+                    NotificationManager.IMPORTANCE_DEFAULT
+                ).apply {
+                    description = "Hourly planetary hours, affirmations, and lucky energy windows"
+                    enableLights(true)
+                    enableVibration(true)
+                    lightColor = 0xFF9D8DF1.toInt()
                 },
                 NotificationChannel(
                     "luna_social",

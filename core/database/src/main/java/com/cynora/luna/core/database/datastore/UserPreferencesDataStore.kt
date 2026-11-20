@@ -31,6 +31,12 @@ class UserPreferencesDataStore @Inject constructor(
         val USER_ID_KEY = stringPreferencesKey("user_id")
         val ONBOARDING_COMPLETE_KEY = booleanPreferencesKey("onboarding_complete")
         val NOTIFICATIONS_ENABLED_KEY = booleanPreferencesKey("notifications_enabled")
+        val HOURLY_NOTIFICATIONS_ENABLED_KEY = booleanPreferencesKey("hourly_notifications_enabled")
+        val QUIET_HOURS_ENABLED_KEY = booleanPreferencesKey("quiet_hours_enabled")
+        val USER_SUN_SIGN_KEY = stringPreferencesKey("user_sun_sign")
+        val USER_MOON_SIGN_KEY = stringPreferencesKey("user_moon_sign")
+        val USER_RISING_SIGN_KEY = stringPreferencesKey("user_rising_sign")
+        val USER_NAME_KEY = stringPreferencesKey("user_name")
         val DARK_MODE_ENABLED_KEY = booleanPreferencesKey("dark_mode_enabled")
         val FORTUNE_COUNT_KEY = intPreferencesKey("fortune_count")
         val STREAK_COUNT_KEY = intPreferencesKey("streak_count")
@@ -131,6 +137,48 @@ class UserPreferencesDataStore @Inject constructor(
 
     fun areNotificationsEnabled(): Flow<Boolean> {
         return dataStore.data.map { it[NOTIFICATIONS_ENABLED_KEY] ?: true }
+    }
+
+    suspend fun setHourlyNotificationsEnabled(enabled: Boolean) {
+        dataStore.edit { it[HOURLY_NOTIFICATIONS_ENABLED_KEY] = enabled }
+    }
+
+    fun areHourlyNotificationsEnabled(): Flow<Boolean> {
+        return dataStore.data.map { it[HOURLY_NOTIFICATIONS_ENABLED_KEY] ?: true }
+    }
+
+    suspend fun setQuietHoursEnabled(enabled: Boolean) {
+        dataStore.edit { it[QUIET_HOURS_ENABLED_KEY] = enabled }
+    }
+
+    fun isQuietHoursEnabled(): Flow<Boolean> {
+        return dataStore.data.map { it[QUIET_HOURS_ENABLED_KEY] ?: true }
+    }
+
+    // --- Big 3 & Name ---
+    suspend fun saveBigThree(sun: String, moon: String, rising: String) {
+        dataStore.edit { prefs ->
+            prefs[USER_SUN_SIGN_KEY] = sun
+            prefs[USER_MOON_SIGN_KEY] = moon
+            prefs[USER_RISING_SIGN_KEY] = rising
+        }
+    }
+
+    fun getBigThree(): Flow<Triple<String, String, String>> {
+        return dataStore.data.map { prefs ->
+            val sun = prefs[USER_SUN_SIGN_KEY] ?: prefs[USER_ZODIAC_KEY] ?: "Leo"
+            val moon = prefs[USER_MOON_SIGN_KEY] ?: "Scorpio"
+            val rising = prefs[USER_RISING_SIGN_KEY] ?: "Libra"
+            Triple(sun, moon, rising)
+        }
+    }
+
+    suspend fun saveUserName(name: String) {
+        dataStore.edit { it[USER_NAME_KEY] = name }
+    }
+
+    fun getUserName(): Flow<String> {
+        return dataStore.data.map { it[USER_NAME_KEY] ?: "Seeker" }
     }
 
     // --- Dark Mode ---

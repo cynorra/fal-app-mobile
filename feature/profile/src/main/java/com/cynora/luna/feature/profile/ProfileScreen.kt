@@ -404,9 +404,23 @@ fun ProfileScreen(
             SettingsSection {
                 SettingsToggleItem(
                     icon = Icons.Default.Notifications,
-                    title = "Notifications",
+                    title = "Daily Notifications (08:30)",
                     isChecked = state.notificationsEnabled,
                     onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleNotifications(it)) }
+                )
+
+                SettingsToggleItem(
+                    icon = Icons.Default.Star,
+                    title = "Hourly Cosmic Pulse (09:00 - 22:00)",
+                    isChecked = state.hourlyNotificationsEnabled,
+                    onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleHourlyNotifications(it)) }
+                )
+
+                SettingsToggleItem(
+                    icon = Icons.Default.Lock,
+                    title = "Quiet Hours (Mute 22:00 - 09:00)",
+                    isChecked = state.quietHoursEnabled,
+                    onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleQuietHours(it)) }
                 )
 
                 SettingsToggleItem(

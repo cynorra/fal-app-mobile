@@ -35,6 +35,8 @@ data class ProfileState(
     val streak: Int = 0,
     val rareCards: Int = 0,
     val notificationsEnabled: Boolean = false,
+    val hourlyNotificationsEnabled: Boolean = true,
+    val quietHoursEnabled: Boolean = true,
     val darkModeEnabled: Boolean = true,
     val language: String = "English",
     val showPermissionDialog: Boolean = false,
@@ -45,6 +47,8 @@ data class ProfileState(
 
 sealed interface ProfileIntent {
     data class ToggleNotifications(val enabled: Boolean) : ProfileIntent
+    data class ToggleHourlyNotifications(val enabled: Boolean) : ProfileIntent
+    data class ToggleQuietHours(val enabled: Boolean) : ProfileIntent
     data class ToggleDarkMode(val enabled: Boolean) : ProfileIntent
     data class ChangeZodiac(val zodiac: ZodiacSign) : ProfileIntent
     data class ChangeLanguage(val displayName: String, val code: String) : ProfileIntent
@@ -135,6 +139,18 @@ class ProfileViewModel @Inject constructor(
         }
 
         viewModelScope.launch {
+            dataStore.areHourlyNotificationsEnabled().collect { enabled ->
+                _state.update { it.copy(hourlyNotificationsEnabled = enabled) }
+            }
+        }
+
+        viewModelScope.launch {
+            dataStore.isQuietHoursEnabled().collect { enabled ->
+                _state.update { it.copy(quietHoursEnabled = enabled) }
+            }
+        }
+
+        viewModelScope.launch {
             dataStore.isDarkModeEnabled().collect { enabled ->
                 _state.update { it.copy(darkModeEnabled = enabled) }
             }
@@ -158,6 +174,18 @@ class ProfileViewModel @Inject constructor(
                         dataStore.setNotificationsEnabled(false)
                         _state.update { it.copy(notificationsEnabled = false) }
                     }
+                }
+            }
+            is ProfileIntent.ToggleHourlyNotifications -> {
+                viewModelScope.launch {
+                    dataStore.setHourlyNotificationsEnabled(intent.enabled)
+                    _state.update { it.copy(hourlyNotificationsEnabled = intent.enabled) }
+                }
+            }
+            is ProfileIntent.ToggleQuietHours -> {
+                viewModelScope.launch {
+                    dataStore.setQuietHoursEnabled(intent.enabled)
+                    _state.update { it.copy(quietHoursEnabled = intent.enabled) }
                 }
             }
             is ProfileIntent.ToggleDarkMode -> {

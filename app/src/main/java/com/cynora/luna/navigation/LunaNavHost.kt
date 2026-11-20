@@ -28,7 +28,11 @@ import com.cynora.luna.feature.fortune.angelnumbers.AngelNumbersScreen
 import com.cynora.luna.feature.fortune.birthchart.BirthChartScreen
 import com.cynora.luna.feature.fortune.compatibility.CompatibilityScreen
 import com.cynora.luna.feature.fortune.dailycard.DailyCardScreen
+import com.cynora.luna.feature.fortune.dreams.DreamInterpreterScreen
 import com.cynora.luna.feature.fortune.luckynumbers.LuckyNumbersScreen
+import com.cynora.luna.feature.fortune.oracle.YesNoOracleScreen
+import com.cynora.luna.feature.fortune.tarot.TarotReadingScreen
+import com.cynora.luna.feature.fortune.zodiac.ZodiacGuideScreen
 import com.cynora.luna.feature.home.HomeScreen
 import com.cynora.luna.feature.onboarding.OnboardingScreen
 import com.cynora.luna.feature.profile.ProfileScreen
@@ -45,6 +49,10 @@ object Routes {
     const val ANGEL_NUMBERS = "angel_numbers"
     const val LUCKY_NUMBERS = "lucky_numbers"
     const val AFFIRMATIONS = "affirmations"
+    const val YES_NO_ORACLE = "yes_no_oracle"
+    const val DREAM_INTERPRETER = "dream_interpreter"
+    const val TAROT_READING = "tarot_reading"
+    const val ZODIAC_GUIDE = "zodiac_guide"
 }
 
 @Composable
@@ -90,7 +98,11 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
                         onNavigateToCompatibility = { nav.navigate(Routes.COMPATIBILITY) },
                         onNavigateToAngelNumbers = { nav.navigate(Routes.ANGEL_NUMBERS) },
                         onNavigateToLuckyNumbers = { nav.navigate(Routes.LUCKY_NUMBERS) },
-                        onNavigateToAffirmations = { nav.navigate(Routes.AFFIRMATIONS) }
+                        onNavigateToAffirmations = { nav.navigate(Routes.AFFIRMATIONS) },
+                        onNavigateToYesNoOracle = { nav.navigate(Routes.YES_NO_ORACLE) },
+                        onNavigateToDreamInterpreter = { nav.navigate(Routes.DREAM_INTERPRETER) },
+                        onNavigateToTarotReading = { nav.navigate(Routes.TAROT_READING) },
+                        onNavigateToZodiacGuide = { nav.navigate(Routes.ZODIAC_GUIDE) }
                     )
                 }
                 composable(Routes.FORTUNE) { FortuneScreen() }
@@ -113,6 +125,18 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
                 }
                 composable(Routes.AFFIRMATIONS) {
                     AffirmationsScreen(onBack = { nav.popBackStack() })
+                }
+                composable(Routes.YES_NO_ORACLE) {
+                    YesNoOracleScreen(onBack = { nav.popBackStack() })
+                }
+                composable(Routes.DREAM_INTERPRETER) {
+                    DreamInterpreterScreen(onBack = { nav.popBackStack() })
+                }
+                composable(Routes.TAROT_READING) {
+                    TarotReadingScreen(onBack = { nav.popBackStack() })
+                }
+                composable(Routes.ZODIAC_GUIDE) {
+                    ZodiacGuideScreen(onBack = { nav.popBackStack() })
                 }
                 composable(
                     route = "${Routes.FORTUNE}/{fortuneId}",

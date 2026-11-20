@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object WorkScheduler {
 
-    fun scheduleDailyFortune(context: Context, hour: Int = 9, minute: Int = 0) {
+    fun scheduleDailyFortune(context: Context, hour: Int = 8, minute: Int = 30) {
         val now = Calendar.getInstance()
         val target = Calendar.getInstance().apply {
             set(Calendar.HOUR_OF_DAY, hour)
@@ -31,6 +31,18 @@ object WorkScheduler {
         WorkManager.getInstance(context).enqueueUniquePeriodicWork(
             DailyFortuneWorker.WORK_NAME,
             ExistingPeriodicWorkPolicy.UPDATE,
+            workRequest
+        )
+    }
+
+    fun scheduleHourlyCosmic(context: Context) {
+        // Enqueue periodic work every 1 hour (WorkManager minimum is 15 minutes, 1 hour is standard)
+        val workRequest = PeriodicWorkRequestBuilder<HourlyCosmicWorker>(1, TimeUnit.HOURS)
+            .build()
+
+        WorkManager.getInstance(context).enqueueUniquePeriodicWork(
+            HourlyCosmicWorker.WORK_NAME,
+            ExistingPeriodicWorkPolicy.KEEP,
             workRequest
         )
     }
