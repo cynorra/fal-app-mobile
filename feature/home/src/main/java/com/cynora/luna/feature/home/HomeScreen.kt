@@ -1,6 +1,5 @@
 package com.cynora.luna.feature.home
 
-import android.app.Activity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -21,8 +20,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -34,12 +32,14 @@ import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -53,6 +53,10 @@ import com.cynora.luna.core.ui.effects.adaptiveParticleCount
 import com.cynora.luna.core.ui.effects.adaptiveStarCount
 import com.cynora.luna.core.ui.effects.shouldEnableNebula
 import com.cynora.luna.core.ui.effects.shouldEnableShootingStars
+import com.cynora.luna.core.ui.modern.CmdkAction
+import com.cynora.luna.core.ui.modern.CmdkPalette
+import com.cynora.luna.core.ui.modern.NumberFlow
+import com.cynora.luna.core.ui.modern.borderBeam
 import com.cynora.luna.core.ui.theme.LunaColors
 import com.cynora.luna.core.ui.util.WindowSize
 import com.cynora.luna.core.ui.util.windowSize
@@ -75,11 +79,28 @@ fun HomeScreen(
     val state by viewModel.state.collectAsStateWithLifecycle()
     val windowSize = windowSize()
     val rewardedAdManager = rememberRewardedAdManager()
+    var isCmdkOpen by remember { mutableStateOf(false) }
 
     val starCount = adaptiveStarCount()
     val particleCount = adaptiveParticleCount()
     val nebulaEnabled = shouldEnableNebula()
     val shootingStarInterval = if (shouldEnableShootingStars()) 8000L else Long.MAX_VALUE
+
+    val cmdkActions = remember {
+        listOf(
+            CmdkAction("Tarot Divination", "1-Card daily draw & 3-card spread", "🎴", "Divination", onNavigateToTarotReading),
+            CmdkAction("Yes / No Oracle", "Ask a question and channel celestial clarity", "🔮", "Oracle", onNavigateToYesNoOracle),
+            CmdkAction("Dream Interpreter", "Search dictionary of dream symbols & meanings", "💭", "Dreams", onNavigateToDreamInterpreter),
+            CmdkAction("12 Zodiac Signs", "Elements, modalities, ruling planets & profiles", "♈", "Astrology", onNavigateToZodiacGuide),
+            CmdkAction("Birth Chart", "Sun, Moon, Rising & planetary placements", "🌌", "Astrology", onNavigateToBirthChart),
+            CmdkAction("Daily Card", "Guidance & intention for today", "🎯", "Daily", onNavigateToDailyCard),
+            CmdkAction("Zodiac Compatibility", "Love, friendship, trust & communication sync", "💑", "Love", onNavigateToCompatibility),
+            CmdkAction("Angel Numbers", "Spiritual messages behind 111, 444, 777", "🔢", "Numerology", onNavigateToAngelNumbers),
+            CmdkAction("Lucky Numbers", "Daily lucky numbers & fortune matrix", "🍀", "Daily", onNavigateToLuckyNumbers),
+            CmdkAction("Daily Affirmations", "Empowering celestial affirmations", "💫", "Daily", onNavigateToAffirmations),
+            CmdkAction("Full Fortune Reading", "Coffee, Tarot, Lenormand & Palmistry", "☕", "Divination", onNavigateToFortune)
+        )
+    }
 
     CosmicBackground(
         starCount = starCount,
@@ -102,34 +123,58 @@ fun HomeScreen(
         ) {
             Spacer(modifier = Modifier.height(28.dp))
 
-            // Greeting + Big 3 Badge
-            Text(
-                text = "Welcome, ${state.userName} ✨",
-                fontSize = 26.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.White
-            )
-
-            Spacer(modifier = Modifier.height(6.dp))
-
-            Box(
-                modifier = Modifier
-                    .clip(RoundedCornerShape(12.dp))
-                    .background(Color(0xFF15192B))
-                    .border(0.5.dp, LunaColors.Gold.copy(alpha = 0.3f), RoundedCornerShape(12.dp))
-                    .padding(horizontal = 12.dp, vertical = 6.dp)
+            // Greeting + Big 3 Badge + cmdk Quick Command Trigger
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = state.bigThree,
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = LunaColors.Gold
-                )
+                Column {
+                    Text(
+                        text = "Welcome, ${state.userName} ✨",
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White
+                    )
+
+                    Spacer(modifier = Modifier.height(6.dp))
+
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(12.dp))
+                            .background(Color(0xFF15192B))
+                            .border(0.5.dp, LunaColors.Gold.copy(alpha = 0.3f), RoundedCornerShape(12.dp))
+                            .padding(horizontal = 12.dp, vertical = 6.dp)
+                    ) {
+                        Text(
+                            text = state.bigThree,
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = LunaColors.Gold
+                        )
+                    }
+                }
+
+                // cmdk Spotlight Search Pill Button
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(Color(0xFF15192B))
+                        .border(0.5.dp, LunaColors.Gold.copy(alpha = 0.5f), RoundedCornerShape(12.dp))
+                        .clickable { isCmdkOpen = true }
+                        .padding(horizontal = 12.dp, vertical = 8.dp)
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Default.Search, contentDescription = "Search", tint = LunaColors.Gold, modifier = Modifier.size(16.dp))
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text("⌘ Search", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                    }
+                }
             }
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Cosmic Metrics (Love, Career, Energy)
+            // Cosmic Metrics (Love, Career, Energy) with Magic UI Border Beam & NumberFlow
             CosmicMetricsCard(
                 loveScore = state.loveScore,
                 careerScore = state.careerScore,
@@ -138,7 +183,7 @@ fun HomeScreen(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // Current Planetary Hour Live Card
+            // Current Planetary Hour Live Card with Border Beam
             PlanetaryHourCard(planetaryHour = state.planetaryHour)
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -220,6 +265,13 @@ fun HomeScreen(
 
             Spacer(modifier = Modifier.height(36.dp))
         }
+
+        // cmdk Spotlight Palette Overlay
+        CmdkPalette(
+            isOpen = isCmdkOpen,
+            onDismiss = { isCmdkOpen = false },
+            actions = cmdkActions
+        )
     }
 }
 
@@ -232,7 +284,7 @@ private fun CosmicMetricsCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .border(0.5.dp, LunaColors.Gold.copy(alpha = 0.25f), RoundedCornerShape(20.dp)),
+            .borderBeam(durationMillis = 3500, beamColor = LunaColors.Gold, cornerRadius = 20.dp),
         colors = CardDefaults.cardColors(containerColor = Color(0xFF15192B)),
         shape = RoundedCornerShape(20.dp)
     ) {
@@ -267,9 +319,11 @@ private fun MetricGauge(label: String, score: Int, color: Color) {
                 strokeWidth = 4.dp,
                 modifier = Modifier.fillMaxSize()
             )
-            Text(
-                text = "$score%",
-                fontSize = 13.sp,
+            // NumberFlow by Barvian - Odometer Tumbling Number
+            NumberFlow(
+                value = score,
+                suffix = "%",
+                fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
@@ -284,7 +338,7 @@ private fun PlanetaryHourCard(planetaryHour: PlanetaryHourInfo) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .border(0.5.dp, LunaColors.MysticPurple.copy(alpha = 0.3f), RoundedCornerShape(18.dp)),
+            .borderBeam(durationMillis = 5000, beamColor = LunaColors.MysticPurple, cornerRadius = 18.dp),
         colors = CardDefaults.cardColors(containerColor = Color(0xFF15192B)),
         shape = RoundedCornerShape(18.dp)
     ) {

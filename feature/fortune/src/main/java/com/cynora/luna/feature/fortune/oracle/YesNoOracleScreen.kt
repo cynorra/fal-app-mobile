@@ -58,6 +58,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.cynora.luna.core.data.model.OracleOutcome
+import com.cynora.luna.core.ui.modern.ShimmerGlowButton
 import com.cynora.luna.core.ui.theme.LunaColors
 import com.cynora.luna.core.utils.rememberHapticFeedback
 import com.cynora.luna.core.utils.ShareUtils
@@ -219,26 +220,23 @@ fun YesNoOracleScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Action Button
-        Button(
+        // Action Button (Magic UI Shimmer & Aceternity Glow)
+        ShimmerGlowButton(
             onClick = {
                 haptic.success()
                 viewModel.consultOracle()
             },
             enabled = !state.isConsulting,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(54.dp),
-            shape = RoundedCornerShape(16.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = LunaColors.Gold,
-                contentColor = Color.Black
-            )
+            modifier = Modifier.fillMaxWidth(),
+            height = 54.dp,
+            cornerRadius = 16.dp,
+            containerColor = LunaColors.Gold
         ) {
             Text(
-                text = if (state.isConsulting) "Channelling the Stars..." else "Consult the Oracle",
+                text = if (state.isConsulting) "Channelling the Stars..." else "✨ Consult the Oracle",
                 fontWeight = FontWeight.Bold,
-                fontSize = 16.sp
+                fontSize = 16.sp,
+                color = Color.Black
             )
         }
 

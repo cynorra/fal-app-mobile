@@ -60,6 +60,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.cynora.luna.core.data.model.DrawnTarotCard
 import com.cynora.luna.core.ui.ads.rememberRewardedAdManager
+import com.cynora.luna.core.ui.modern.ShimmerGlowButton
+import com.cynora.luna.core.ui.modern.borderBeam
 import com.cynora.luna.core.ui.theme.LunaColors
 import com.cynora.luna.core.utils.rememberHapticFeedback
 import com.cynora.luna.core.utils.ShareUtils
@@ -185,24 +187,28 @@ fun TarotReadingScreen(
                 }
             }
         } else {
-            Button(
+            ShimmerGlowButton(
                 onClick = {
                     haptic.buttonClick()
                     viewModel.drawCards()
                 },
                 enabled = !state.isShuffling,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(52.dp),
-                shape = RoundedCornerShape(16.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold, contentColor = Color.Black)
+                modifier = Modifier.fillMaxWidth(),
+                height = 54.dp,
+                cornerRadius = 16.dp,
+                containerColor = LunaColors.Gold
             ) {
                 if (state.isShuffling) {
                     CircularProgressIndicator(modifier = Modifier.size(22.dp), color = Color.Black, strokeWidth = 2.dp)
                     Spacer(modifier = Modifier.width(10.dp))
-                    Text("Shuffling 22 Major Arcana...", fontWeight = FontWeight.Bold)
+                    Text("Shuffling 22 Major Arcana...", fontWeight = FontWeight.Bold, color = Color.Black)
                 } else {
-                    Text(if (state.isCardRevealed) "Shuffle & Draw Again" else "Shuffle & Draw Cards", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                    Text(
+                        if (state.isCardRevealed) "✨ Shuffle & Draw Again" else "✨ Shuffle & Draw Cards",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp,
+                        color = Color.Black
+                    )
                 }
             }
         }
@@ -264,7 +270,7 @@ private fun TarotCard3DView(drawn: DrawnTarotCard) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .border(1.dp, LunaColors.Gold.copy(alpha = 0.4f), RoundedCornerShape(20.dp)),
+            .borderBeam(durationMillis = 4000, beamColor = LunaColors.Gold, cornerRadius = 20.dp),
         colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
         shape = RoundedCornerShape(20.dp)
     ) {
