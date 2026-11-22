@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Luna - Firestore Seed Data Upload Script
-Uploads 820+ fortune readings to Firestore
+Uploads the bundled fortune readings (app/src/main/assets/seed_fortunes.json) to Firestore
 """
 
 import json
@@ -15,7 +15,7 @@ def main():
     firebase_admin.initialize_app(cred)
     db = firestore.client()
     
-    json_file = "firestore_fortunes_seed.json"
+    json_file = "app/src/main/assets/seed_fortunes.json"
     print(f"📖 Reading {json_file}...")
     
     try:
@@ -23,7 +23,7 @@ def main():
             data = json.load(f)
     except FileNotFoundError:
         print(f"❌ ERROR: {json_file} not found!")
-        print("   Make sure the file is in the project root.")
+        print("   Run this script from the project root.")
         sys.exit(1)
     
     fortunes = data.get("fortunes", [])

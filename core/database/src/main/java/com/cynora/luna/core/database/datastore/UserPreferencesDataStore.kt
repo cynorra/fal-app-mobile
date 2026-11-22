@@ -7,6 +7,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -41,6 +42,34 @@ class UserPreferencesDataStore @Inject constructor(
         val FORTUNE_COUNT_KEY = intPreferencesKey("fortune_count")
         val STREAK_COUNT_KEY = intPreferencesKey("streak_count")
         val LAST_FORTUNE_DATE_KEY = stringPreferencesKey("last_fortune_date")
+        val BLOCKED_USER_IDS_KEY = stringSetPreferencesKey("blocked_user_ids")
+        val HIDDEN_POST_IDS_KEY = stringSetPreferencesKey("hidden_post_ids")
+    }
+
+    // --- Community safety: blocked authors and hidden posts (local only) ---
+    fun getBlockedUserIds(): Flow<Set<String>> =
+        dataStore.data.map { prefs -> prefs[BLOCKED_USER_IDS_KEY] ?: emptySet() }
+
+    fun getHiddenPostIds(): Flow<Set<String>> =
+        dataStore.data.map { prefs -> prefs[HIDDEN_POST_IDS_KEY] ?: emptySet() }
+
+    suspend fun blockUser(userId: String) {
+        if (userId.isBlank()) return
+        dataStore.edit { prefs ->
+            prefs[BLOCKED_USER_IDS_KEY] = (prefs[BLOCKED_USER_IDS_KEY] ?: emptySet()) + userId
+        }
+    }
+
+    suspend fun hidePost(postId: String) {
+        if (postId.isBlank()) return
+        dataStore.edit { prefs ->
+            prefs[HIDDEN_POST_IDS_KEY] = (prefs[HIDDEN_POST_IDS_KEY] ?: emptySet()) + postId
+        }
+    }
+
+    /** Removes every locally stored preference (used when the user deletes their account). */
+    suspend fun clearAll() {
+        dataStore.edit { it.clear() }
     }
 
     // --- Seen List (JSON ile sıralama korunur) ---

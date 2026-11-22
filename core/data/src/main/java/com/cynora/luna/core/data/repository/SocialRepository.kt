@@ -15,6 +15,7 @@ import javax.inject.Singleton
 
 data class IntentionPost(
     val id: String = "",
+    val authorUid: String = "",
     val mysticName: String = "",
     val avatarEmoji: String = "",
     val intentionText: String = "",
@@ -74,6 +75,7 @@ class SocialRepository @Inject constructor(
                         
                         IntentionPost(
                             id = doc.id,
+                            authorUid = doc.getString("authorUid") ?: "",
                             mysticName = doc.getString("mysticName") ?: "",
                             avatarEmoji = doc.getString("avatarEmoji") ?: "",
                             intentionText = doc.getString("intentionText") ?: "",
@@ -144,6 +146,43 @@ class SocialRepository @Inject constructor(
             Result.success(newIsLiked)
         } catch (e: Exception) {
             Timber.e(e, "Toggle like failed")
+            Result.failure(e)
+        }
+    }
+
+    // --- Community safety (user generated content) ---
+
+    fun observeBlockedUserIds(): Flow<Set<String>> = dataStore.getBlockedUserIds()
+
+    fun observeHiddenPostIds(): Flow<Set<String>> = dataStore.getHiddenPostIds()
+
+    /** Hides one post on this device only. */
+    suspend fun hidePost(postId: String) = dataStore.hidePost(postId)
+
+    /** Hides every post of this author on this device only. */
+    suspend fun blockAuthor(authorUid: String) = dataStore.blockUser(authorUid)
+
+    /**
+     * Reports a post for moderation. The post is hidden locally first, so the reporter never has to
+     * see it again even if the network call fails or the post was already reported.
+     */
+    suspend fun reportPost(post: IntentionPost, reason: String): Result<Unit> {
+        dataStore.hidePost(post.id)
+        val uid = ensureSignedIn()
+            ?: return Result.failure(IllegalStateException("Not signed in"))
+        return try {
+            val report = mapOf(
+                "postId" to post.id,
+                "authorUid" to post.authorUid,
+                "reporterUid" to uid,
+                "reason" to reason,
+                "createdAt" to System.currentTimeMillis()
+            )
+            // One report per reporter and post: the document id enforces it (see firestore.rules).
+            firestore.collection("reports").document("${uid}_${post.id}").set(report).await()
+            Result.success(Unit)
+        } catch (e: Exception) {
+            Timber.e(e, "Report post failed")
             Result.failure(e)
         }
     }

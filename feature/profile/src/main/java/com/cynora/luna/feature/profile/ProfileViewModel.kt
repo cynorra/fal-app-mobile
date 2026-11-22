@@ -13,6 +13,7 @@ import androidx.lifecycle.viewModelScope
 import com.cynora.luna.core.data.model.LunaUser
 import com.cynora.luna.core.data.model.ZodiacSign
 import com.cynora.luna.core.data.repository.AuthRepository
+import com.cynora.luna.core.data.repository.ERROR_RECENT_LOGIN_REQUIRED
 import com.cynora.luna.core.database.datastore.UserPreferencesDataStore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -42,7 +43,8 @@ data class ProfileState(
     val showPermissionDialog: Boolean = false,
     val currentUser: LunaUser? = null,
     val isAuthLoading: Boolean = false,
-    val authErrorMessage: String? = null
+    val authErrorMessage: String? = null,
+    val isDeletingAccount: Boolean = false
 )
 
 sealed interface ProfileIntent {
@@ -55,6 +57,7 @@ sealed interface ProfileIntent {
     data object DismissPermissionDialog : ProfileIntent
     data class SignInWithGoogleToken(val idToken: String) : ProfileIntent
     data object SignOut : ProfileIntent
+    data object DeleteAccount : ProfileIntent
     data class SetAuthError(val error: String) : ProfileIntent
 }
 
@@ -229,6 +232,29 @@ class ProfileViewModel @Inject constructor(
                 viewModelScope.launch {
                     authRepository.signOut()
                     _effects.tryEmit(ProfileEffect.ShowSnackbar("Signed out successfully."))
+                }
+            }
+            is ProfileIntent.DeleteAccount -> {
+                if (_state.value.isDeletingAccount) return
+                viewModelScope.launch {
+                    _state.update { it.copy(isDeletingAccount = true) }
+                    authRepository.deleteAccount().fold(
+                        onSuccess = {
+                            _state.update { it.copy(isDeletingAccount = false, currentUser = null) }
+                            _effects.tryEmit(
+                                ProfileEffect.ShowSnackbar("Your account and community posts were deleted.")
+                            )
+                        },
+                        onFailure = { error ->
+                            _state.update { it.copy(isDeletingAccount = false) }
+                            val message = if (error.message == ERROR_RECENT_LOGIN_REQUIRED) {
+                                "For security, please sign out, sign in again and retry."
+                            } else {
+                                "Could not delete the account. Check your connection and try again."
+                            }
+                            _effects.tryEmit(ProfileEffect.ShowSnackbar(message))
+                        }
+                    )
                 }
             }
             is ProfileIntent.SetAuthError -> {

@@ -55,7 +55,24 @@ service cloud.firestore {
           )
         );
 
-      allow delete: if false;
+      // Kullanıcı yalnızca kendi gönderisini silebilir (hesap silme akışı)
+      allow delete: if request.auth != null
+        && resource.data.authorUid == request.auth.uid;
+    }
+
+    // Şikayetler: yalnızca oluşturulabilir (kullanıcı başına gönderi başına bir kez), istemci okuyamaz
+    match /reports/{reportId} {
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(
+             ['postId', 'authorUid', 'reporterUid', 'reason', 'createdAt'])
+        && request.resource.data.reporterUid == request.auth.uid
+        && request.resource.data.postId is string
+        && request.resource.data.authorUid is string
+        && reportId == request.auth.uid + '_' + request.resource.data.postId
+        && request.resource.data.reason is string
+        && request.resource.data.reason.size() <= 40
+        && request.resource.data.createdAt is int;
+      allow read, update, delete: if false;
     }
 
     // Diğer her şey kapalı

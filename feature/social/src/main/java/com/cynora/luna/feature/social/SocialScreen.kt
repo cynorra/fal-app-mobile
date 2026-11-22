@@ -21,15 +21,19 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.automirrored.filled.Send
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -49,6 +53,14 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.cynora.luna.core.data.repository.IntentionPost
 import com.cynora.luna.core.ui.theme.LunaColors
 
+private val ReportReasons = listOf(
+    "Spam or advertising",
+    "Harassment or hate",
+    "Sexual or violent content",
+    "Personal information",
+    "Something else"
+)
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SocialScreen(
@@ -56,6 +68,40 @@ fun SocialScreen(
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     var intentionText by remember { mutableStateOf("") }
+    var reportTarget by remember { mutableStateOf<IntentionPost?>(null) }
+    val currentUserId = viewModel.getCurrentUserIdSync()
+
+    reportTarget?.let { target ->
+        AlertDialog(
+            onDismissRequest = { reportTarget = null },
+            title = { Text("Report this post") },
+            text = {
+                Column {
+                    Text(
+                        "Why are you reporting it? The post will be hidden for you.",
+                        color = Color.White.copy(alpha = 0.7f),
+                        fontSize = 14.sp
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    ReportReasons.forEach { reason ->
+                        TextButton(
+                            onClick = {
+                                viewModel.onIntent(SocialIntent.ReportPost(target, reason))
+                                reportTarget = null
+                            }
+                        ) {
+                            Text(reason, color = Color.White)
+                        }
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { reportTarget = null }) {
+                    Text("Cancel", color = LunaColors.Gold)
+                }
+            }
+        )
+    }
 
     Column(
         modifier = Modifier
@@ -70,6 +116,29 @@ fun SocialScreen(
             modifier = Modifier.padding(16.dp)
         )
 
+        state.notice?.let { notice ->
+            Card(
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp),
+                colors = CardDefaults.cardColors(containerColor = LunaColors.Gold.copy(alpha = 0.18f)),
+                shape = RoundedCornerShape(12.dp)
+            ) {
+                Row(
+                    modifier = Modifier.padding(start = 12.dp, end = 4.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = notice,
+                        color = Color.White,
+                        fontSize = 13.sp,
+                        modifier = Modifier.weight(1f)
+                    )
+                    TextButton(onClick = { viewModel.onIntent(SocialIntent.DismissNotice) }) {
+                        Text("OK", color = LunaColors.Gold)
+                    }
+                }
+            }
+        }
+
         Card(
             modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
             colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
@@ -78,7 +147,7 @@ fun SocialScreen(
             Column(modifier = Modifier.padding(16.dp)) {
                 TextField(
                     value = intentionText,
-                    onValueChange = { intentionText = it },
+                    onValueChange = { if (it.length <= MAX_POST_LENGTH) intentionText = it },
                     placeholder = { Text("Write today's intention...", color = Color.White.copy(alpha = 0.4f)) },
                     colors = TextFieldDefaults.colors(
                         focusedContainerColor = Color.Transparent,
@@ -90,22 +159,41 @@ fun SocialScreen(
                     modifier = Modifier.fillMaxWidth()
                 )
 
+                Spacer(modifier = Modifier.height(4.dp))
+
+                Text(
+                    text = "Be kind. Harassment, hate, spam and personal information are not allowed. " +
+                        "Posts are public and can be reported and removed.",
+                    fontSize = 11.sp,
+                    color = Color.White.copy(alpha = 0.45f)
+                )
+
                 Spacer(modifier = Modifier.height(8.dp))
 
-                Button(
-                    onClick = {
-                        if (intentionText.isNotBlank()) {
-                            viewModel.onIntent(SocialIntent.PostIntention(intentionText))
-                            intentionText = ""
-                        }
-                    },
-                    enabled = intentionText.isNotBlank(),
-                    colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold),
-                    modifier = Modifier.align(Alignment.End)
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Icon(Icons.AutoMirrored.Filled.Send, contentDescription = "Send", modifier = Modifier.size(16.dp))
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text("Share")
+                    Text(
+                        text = "${intentionText.length}/$MAX_POST_LENGTH",
+                        fontSize = 12.sp,
+                        color = Color.White.copy(alpha = 0.5f)
+                    )
+                    Button(
+                        onClick = {
+                            if (intentionText.isNotBlank()) {
+                                viewModel.onIntent(SocialIntent.PostIntention(intentionText))
+                                intentionText = ""
+                            }
+                        },
+                        enabled = intentionText.isNotBlank(),
+                        colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold)
+                    ) {
+                        Icon(Icons.AutoMirrored.Filled.Send, contentDescription = "Send", modifier = Modifier.size(16.dp))
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text("Share")
+                    }
                 }
             }
         }
@@ -133,11 +221,13 @@ fun SocialScreen(
                 items(state.posts, key = { it.id }) { post ->
                     IntentionPostCard(
                         post = post,
-                        // ✅ SYNC çağrı - Compose'dan güvenli
-                        currentUserId = viewModel.getCurrentUserIdSync(),
+                        currentUserId = currentUserId,
                         onLike = { liked ->
                             viewModel.onIntent(SocialIntent.LikePost(post.id, liked))
-                        }
+                        },
+                        onReport = { reportTarget = post },
+                        onHide = { viewModel.onIntent(SocialIntent.HidePost(post)) },
+                        onBlock = { viewModel.onIntent(SocialIntent.BlockAuthor(post)) }
                     )
                 }
             }
@@ -149,10 +239,15 @@ fun SocialScreen(
 private fun IntentionPostCard(
     post: IntentionPost,
     currentUserId: String,
-    onLike: (Boolean) -> Unit
+    onLike: (Boolean) -> Unit,
+    onReport: () -> Unit,
+    onHide: () -> Unit,
+    onBlock: () -> Unit
 ) {
     val isLiked = post.likedBy.contains(currentUserId)
-    
+    val isOwnPost = post.authorUid.isNotEmpty() && post.authorUid == currentUserId
+    var menuOpen by remember { mutableStateOf(false) }
+
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
@@ -172,7 +267,7 @@ private fun IntentionPostCard(
 
                 Spacer(modifier = Modifier.width(12.dp))
 
-                Column {
+                Column(modifier = Modifier.weight(1f)) {
                     Text(
                         text = post.mysticName,
                         fontSize = 14.sp,
@@ -184,6 +279,37 @@ private fun IntentionPostCard(
                         fontSize = 12.sp,
                         color = Color.White.copy(alpha = 0.5f)
                     )
+                }
+
+                if (!isOwnPost) {
+                    Box {
+                        IconButton(onClick = { menuOpen = true }) {
+                            Text(text = "⋮", fontSize = 20.sp, color = Color.White.copy(alpha = 0.7f))
+                        }
+                        DropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
+                            DropdownMenuItem(
+                                text = { Text("Report post") },
+                                onClick = {
+                                    menuOpen = false
+                                    onReport()
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text("Hide post") },
+                                onClick = {
+                                    menuOpen = false
+                                    onHide()
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text("Block this user") },
+                                onClick = {
+                                    menuOpen = false
+                                    onBlock()
+                                }
+                            )
+                        }
+                    }
                 }
             }
 
@@ -224,7 +350,7 @@ private fun formatTimeAgo(timestamp: Long): String {
     val minutes = diff / 60000
     val hours = minutes / 60
     val days = hours / 24
-    
+
     return when {
         minutes < 1 -> "Just now"
         minutes < 60 -> "$minutes min ago"

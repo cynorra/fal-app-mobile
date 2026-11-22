@@ -27,6 +27,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Notifications
@@ -84,6 +85,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
+// The language picker is hidden until the UI strings are translated; switching languages
+// currently changes nothing visible because most screens still use English text.
+private const val LANGUAGE_SWITCHER_ENABLED = false
+
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun ProfileScreen(
@@ -121,6 +126,14 @@ fun ProfileScreen(
 
     var showLanguageDialog by remember { mutableStateOf(false) }
     var showAboutDialog by remember { mutableStateOf(false) }
+    var showDeleteDialog by remember { mutableStateOf(false) }
+    val versionName = remember {
+        try {
+            context.packageManager.getPackageInfo(context.packageName, 0).versionName ?: ""
+        } catch (e: Exception) {
+            ""
+        }
+    }
 
     if (state.showPermissionDialog) {
         AlertDialog(
@@ -174,7 +187,7 @@ fun ProfileScreen(
             text = {
                 Column {
                     Text(
-                        text = "Luna v1.0.0",
+                        text = "Luna v$versionName",
                         fontWeight = FontWeight.Bold,
                         color = LunaColors.Gold,
                         fontSize = 16.sp
@@ -196,6 +209,36 @@ fun ProfileScreen(
             confirmButton = {
                 TextButton(onClick = { showAboutDialog = false }) {
                     Text("Close", color = LunaColors.Gold)
+                }
+            }
+        )
+    }
+
+    if (showDeleteDialog) {
+        AlertDialog(
+            onDismissRequest = { showDeleteDialog = false },
+            title = { Text("Delete account and data?") },
+            text = {
+                Text(
+                    "This permanently deletes your community posts and your Luna account, and clears " +
+                        "everything stored on this device (preferences, history and streak). " +
+                        "This cannot be undone."
+                )
+            },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        showDeleteDialog = false
+                        viewModel.onIntent(ProfileIntent.DeleteAccount)
+                    },
+                    enabled = !state.isDeletingAccount
+                ) {
+                    Text("Delete", color = Color(0xFFEF5350))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDeleteDialog = false }) {
+                    Text("Cancel", color = Color.White.copy(alpha = 0.6f))
                 }
             }
         )
@@ -430,12 +473,14 @@ fun ProfileScreen(
                     onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleDarkMode(it)) }
                 )
 
-                SettingsClickItem(
-                    icon = Icons.Default.Info,
-                    title = "Language",
-                    subtitle = state.language,
-                    onClick = { showLanguageDialog = true }
-                )
+                if (LANGUAGE_SWITCHER_ENABLED) {
+                    SettingsClickItem(
+                        icon = Icons.Default.Info,
+                        title = "Language",
+                        subtitle = state.language,
+                        onClick = { showLanguageDialog = true }
+                    )
+                }
             }
 
             Spacer(modifier = Modifier.height(24.dp))
@@ -469,6 +514,13 @@ fun ProfileScreen(
                 )
 
                 SettingsClickItem(
+                    icon = Icons.Default.Delete,
+                    title = "Delete account and data",
+                    subtitle = if (state.isDeletingAccount) "Deleting..." else null,
+                    onClick = { showDeleteDialog = true }
+                )
+
+                SettingsClickItem(
                     icon = Icons.Default.Info,
                     title = "About App",
                     onClick = { showAboutDialog = true }
@@ -477,7 +529,7 @@ fun ProfileScreen(
                 SettingsInfoItem(
                     icon = Icons.Default.Star,
                     title = "Version",
-                    subtitle = "1.0.0"
+                    subtitle = versionName
                 )
             }
 
