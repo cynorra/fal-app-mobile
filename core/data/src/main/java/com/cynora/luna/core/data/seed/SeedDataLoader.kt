@@ -45,6 +45,8 @@ class SeedDataLoader @Inject constructor(
             seedData.fortunes.map { it.toEntity() }
         } catch (e: Exception) {
             Timber.e(e, "❌ Seed data load failed")
+            // Timber is not planted in release builds, so also log with android.util.Log.
+            android.util.Log.e("SeedDataLoader", "Seed data load failed", e)
             emptyList()
         }
     }

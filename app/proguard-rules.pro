@@ -76,3 +76,10 @@
 -keepattributes Signature
 -keepattributes Exceptions
 -keepattributes *Annotation*
+
+# Seed fortunes are parsed with Gson reflection (SeedDataWrapper, SeedFortuneDto).
+# Without this R8 strips/renames them and no fortune is ever loaded in release builds.
+-keep class com.cynora.luna.core.data.seed.** { *; }
+-keepclassmembers class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
