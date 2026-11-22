@@ -111,6 +111,24 @@ fun CompatibilityScreen(
             } else {
                 CompatibilityResultView(state.result!!)
                 Spacer(modifier = Modifier.height(16.dp))
+                val shareContext = androidx.compose.ui.platform.LocalContext.current
+                LunaPrimaryButton(
+                    text = "Share with your partner",
+                    onClick = {
+                        val res = state.result!!
+                        val a = state.sign1?.displayName ?: ""
+                        val b = state.sign2?.displayName ?: ""
+                        com.cynora.luna.core.utils.ShareUtils.shareCard(
+                            context = shareContext,
+                            title = "$a + $b: ${res.overallScore}% compatible",
+                            body = "Love ${res.loveScore}%  |  Friendship ${res.friendshipScore}%  |  Trust ${res.trustScore}%\n\n${res.advice}",
+                            footer = "How compatible are you two?",
+                            medium = "compatibility"
+                        )
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(12.dp))
                 LunaPrimaryButton(
                     text = "Try Another",
                     onClick = { viewModel.onIntent(CompatibilityIntent.Reset) },

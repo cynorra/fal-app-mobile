@@ -51,6 +51,13 @@ class HomeViewModel @Inject constructor(
     val state: StateFlow<HomeState> = _state.asStateFlow()
 
     init {
+        // Friend perk: tomorrow's horoscope stays unlocked
+        viewModelScope.launch {
+            dataStore.hasInvitePerk().collect { perk ->
+                if (perk) _state.update { it.copy(isTomorrowUnlocked = true) }
+            }
+        }
+
         viewModelScope.launch {
             dataStore.getUserName().collect { name ->
                 _state.update { it.copy(userName = name) }

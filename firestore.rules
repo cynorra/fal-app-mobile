@@ -75,6 +75,30 @@ service cloud.firestore {
       allow read, update, delete: if false;
     }
 
+    // Davet kodları: sahibi kendi kodunu oluşturur. Arkadaş katılımı alt koleksiyonda tutulur,
+    // sayaç yok (sahibi sayıyı count() ile okur), kendi kodunla katılamazsın, katılım silinemez/güncellenemez.
+    match /invites/{code} {
+      allow get: if request.auth != null;
+      allow list: if false;
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['ownerUid', 'createdAt'])
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.createdAt is int
+        && code.size() == 6;
+      allow update, delete: if false;
+
+      match /joins/{joinerUid} {
+        allow read: if request.auth != null
+          && get(/databases/$(database)/documents/invites/$(code)).data.ownerUid == request.auth.uid;
+        allow create: if request.auth != null
+          && joinerUid == request.auth.uid
+          && get(/databases/$(database)/documents/invites/$(code)).data.ownerUid != request.auth.uid
+          && request.resource.data.keys().hasOnly(['joinedAt'])
+          && request.resource.data.joinedAt is int;
+        allow update, delete: if false;
+      }
+    }
+
     // Diğer her şey kapalı
     match /{document=**} {
       allow read, write: if false;

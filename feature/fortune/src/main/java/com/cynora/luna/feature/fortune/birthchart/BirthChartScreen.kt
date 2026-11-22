@@ -91,6 +91,25 @@ fun BirthChartScreen(
             } else if (state.birthChart != null) {
                 BirthChartResult(state.birthChart!!)
                 Spacer(modifier = Modifier.height(16.dp))
+                val shareContext = androidx.compose.ui.platform.LocalContext.current
+                LunaPrimaryButton(
+                    text = "Share my Big Three",
+                    onClick = {
+                        val chart = state.birthChart!!
+                        com.cynora.luna.core.utils.ShareUtils.shareCard(
+                            context = shareContext,
+                            title = "My Big Three",
+                            body = "Sun: ${chart.sunSign.symbol} ${chart.sunSign.displayName}\n" +
+                                "Moon: ${chart.moonSign.symbol} ${chart.moonSign.displayName}\n" +
+                                "Rising: ${chart.risingSign.symbol} ${chart.risingSign.displayName}\n\n" +
+                                chart.personality,
+                            footer = "What is yours?",
+                            medium = "big_three"
+                        )
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(12.dp))
                 LunaPrimaryButton(
                     text = "Calculate Another",
                     onClick = { viewModel.onIntent(BirthChartIntent.Reset) },

@@ -13,6 +13,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -44,6 +45,10 @@ class UserPreferencesDataStore @Inject constructor(
         val LAST_FORTUNE_DATE_KEY = stringPreferencesKey("last_fortune_date")
         val BLOCKED_USER_IDS_KEY = stringSetPreferencesKey("blocked_user_ids")
         val HIDDEN_POST_IDS_KEY = stringSetPreferencesKey("hidden_post_ids")
+        val INVITE_CODE_KEY = stringPreferencesKey("invite_code")
+        val INVITE_JOINED_KEY = intPreferencesKey("invite_joined")
+        val INVITE_CLAIM_DONE_KEY = booleanPreferencesKey("invite_claim_done")
+        val INVITE_PERK_KEY = booleanPreferencesKey("invite_perk")
     }
 
     // --- Community safety: blocked authors and hidden posts (local only) ---
@@ -173,7 +178,7 @@ class UserPreferencesDataStore @Inject constructor(
     }
 
     fun areHourlyNotificationsEnabled(): Flow<Boolean> {
-        return dataStore.data.map { it[HOURLY_NOTIFICATIONS_ENABLED_KEY] ?: true }
+        return dataStore.data.map { it[HOURLY_NOTIFICATIONS_ENABLED_KEY] ?: false }
     }
 
     suspend fun setQuietHoursEnabled(enabled: Boolean) {
@@ -238,11 +243,62 @@ class UserPreferencesDataStore @Inject constructor(
     suspend fun updateStreak(todayDate: String) {
         dataStore.edit { prefs ->
             val lastDate = prefs[LAST_FORTUNE_DATE_KEY]
-            val currentStreak = prefs[STREAK_COUNT_KEY] ?: 0
-            if (lastDate != todayDate) {
-                prefs[STREAK_COUNT_KEY] = currentStreak + 1
-                prefs[LAST_FORTUNE_DATE_KEY] = todayDate
-            }
+            if (lastDate == todayDate) return@edit
+            val current = prefs[STREAK_COUNT_KEY] ?: 0
+            // A streak only continues when the previous reading was exactly yesterday (UTC days)
+            prefs[STREAK_COUNT_KEY] = if (lastDate != null && isNextDay(lastDate, todayDate)) current + 1 else 1
+            prefs[LAST_FORTUNE_DATE_KEY] = todayDate
         }
+    }
+
+    /** The streak as it stands today: 0 when the last reading was before yesterday (UTC days). */
+    suspend fun getActiveStreak(): Int {
+        val prefs = dataStore.data.first()
+        val last = prefs[LAST_FORTUNE_DATE_KEY] ?: return 0
+        val streak = prefs[STREAK_COUNT_KEY] ?: 0
+        val today = utcDayFormat().format(java.util.Date())
+        return if (last == today || isNextDay(last, today)) streak else 0
+    }
+
+    suspend fun hasReadToday(): Boolean {
+        val last = dataStore.data.first()[LAST_FORTUNE_DATE_KEY] ?: return false
+        return last == utcDayFormat().format(java.util.Date())
+    }
+
+    private fun utcDayFormat() = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US).apply {
+        timeZone = java.util.TimeZone.getTimeZone("UTC")
+    }
+
+    private fun isNextDay(previous: String, today: String): Boolean = try {
+        val fmt = utcDayFormat()
+        fmt.parse(today)!!.time - fmt.parse(previous)!!.time == 24L * 60L * 60L * 1000L
+    } catch (e: Exception) {
+        false
+    }
+
+    // --- Invite a friend ---
+    fun getInviteCode(): Flow<String?> = dataStore.data.map { it[INVITE_CODE_KEY] }
+
+    suspend fun setInviteCode(code: String) {
+        dataStore.edit { it[INVITE_CODE_KEY] = code }
+    }
+
+    fun getInviteJoined(): Flow<Int> = dataStore.data.map { it[INVITE_JOINED_KEY] ?: 0 }
+
+    suspend fun setInviteJoined(count: Int) {
+        dataStore.edit { it[INVITE_JOINED_KEY] = count }
+    }
+
+    suspend fun isInviteClaimDone(): Boolean = dataStore.data.first()[INVITE_CLAIM_DONE_KEY] ?: false
+
+    suspend fun setInviteClaimDone() {
+        dataStore.edit { it[INVITE_CLAIM_DONE_KEY] = true }
+    }
+
+    /** Friend perk: unlocks tomorrow's horoscope and the 3-card spread once someone joined through you (or you joined through a friend). */
+    fun hasInvitePerk(): Flow<Boolean> = dataStore.data.map { it[INVITE_PERK_KEY] ?: false }
+
+    suspend fun setInvitePerk() {
+        dataStore.edit { it[INVITE_PERK_KEY] = true }
     }
 }

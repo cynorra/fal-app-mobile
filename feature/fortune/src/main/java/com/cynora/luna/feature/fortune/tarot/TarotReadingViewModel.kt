@@ -28,11 +28,21 @@ data class TarotUiState(
 
 @HiltViewModel
 class TarotReadingViewModel @Inject constructor(
-    private val tarotRepository: TarotRepository
+    private val tarotRepository: TarotRepository,
+    dataStore: com.cynora.luna.core.database.datastore.UserPreferencesDataStore
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(TarotUiState())
     val uiState: StateFlow<TarotUiState> = _uiState.asStateFlow()
+
+    init {
+        // Friend perk: the 3-card spread stays unlocked
+        viewModelScope.launch {
+            dataStore.hasInvitePerk().collect { perk ->
+                if (perk) _uiState.update { it.copy(isThreeCardUnlocked = true) }
+            }
+        }
+    }
 
     fun setSpreadMode(mode: TarotSpreadMode) {
         if (mode == TarotSpreadMode.THREE_CARD_SPREAD && !_uiState.value.isThreeCardUnlocked) {

@@ -40,6 +40,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -100,7 +101,7 @@ fun DailyCardScreen(
                 Card(
                     modifier = Modifier
                         .size(280.dp)
-                        .rotate(rotation)
+                        .graphicsLayer { rotationY = rotation.coerceAtMost(90f); cameraDistance = 12f * density }
                         .clickable(enabled = !isAnimating) {
                             if (!isFlipped) {
                                 isAnimating = true
@@ -142,7 +143,7 @@ fun DailyCardScreen(
                     Card(
                         modifier = Modifier
                             .size(280.dp)
-                            .rotate(rotation)
+                            .graphicsLayer { rotationY = -(180f - rotation).coerceAtLeast(0f).coerceAtMost(90f); cameraDistance = 12f * density }
                             .border(
                                 width = 2.dp,
                                 brush = Brush.linearGradient(listOf(LunaColors.Gold, LunaColors.MysticPurple)),
@@ -214,6 +215,25 @@ fun DailyCardScreen(
                     
                     Spacer(modifier = Modifier.height(16.dp))
                     
+                    val shareContext = androidx.compose.ui.platform.LocalContext.current
+                    Button(
+                        onClick = {
+                            com.cynora.luna.core.utils.ShareUtils.shareCard(
+                                context = shareContext,
+                                title = "My card of the day: ${card.name}",
+                                body = card.generalMeaning + "\n\n" + card.advice,
+                                footer = "\"${card.affirmation}\"",
+                                medium = "daily_card"
+                            )
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = ButtonDefaults.buttonColors(containerColor = LunaColors.MysticPurple)
+                    ) {
+                        Text("Share my card", color = Color.White)
+                    }
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
                     Button(
                         onClick = {
                             isAnimating = true

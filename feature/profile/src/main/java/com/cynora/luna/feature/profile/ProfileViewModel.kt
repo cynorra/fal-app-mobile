@@ -36,7 +36,10 @@ data class ProfileState(
     val streak: Int = 0,
     val rareCards: Int = 0,
     val notificationsEnabled: Boolean = false,
-    val hourlyNotificationsEnabled: Boolean = true,
+    val hourlyNotificationsEnabled: Boolean = false,
+    val inviteCode: String? = null,
+    val invitedCount: Int = 0,
+    val invitePerk: Boolean = false,
     val quietHoursEnabled: Boolean = true,
     val darkModeEnabled: Boolean = true,
     val language: String = "English",
@@ -88,7 +91,8 @@ private fun currentLanguageDisplayName(): String {
 class ProfileViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val dataStore: UserPreferencesDataStore,
-    private val authRepository: AuthRepository
+    private val authRepository: AuthRepository,
+    private val inviteRepository: com.cynora.luna.core.data.repository.InviteRepository
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(ProfileState(language = currentLanguageDisplayName()))
@@ -157,6 +161,18 @@ class ProfileViewModel @Inject constructor(
             dataStore.isDarkModeEnabled().collect { enabled ->
                 _state.update { it.copy(darkModeEnabled = enabled) }
             }
+        }
+
+        viewModelScope.launch {
+            dataStore.getInviteJoined().collect { n -> _state.update { it.copy(invitedCount = n) } }
+        }
+        viewModelScope.launch {
+            dataStore.hasInvitePerk().collect { p -> _state.update { it.copy(invitePerk = p) } }
+        }
+        viewModelScope.launch {
+            val code = inviteRepository.getOrCreateInviteCode()
+            _state.update { it.copy(inviteCode = code) }
+            inviteRepository.refreshJoinedCount()
         }
     }
 

@@ -30,6 +30,9 @@ class LunaApplication : Application(), Configuration.Provider {
     lateinit var workerFactory: HiltWorkerFactory
 
     @Inject
+    lateinit var inviteRepository: com.cynora.luna.core.data.repository.InviteRepository
+
+    @Inject
     lateinit var adConfig: AdConfig
 
     private val appScope = CoroutineScope(Job() + Dispatchers.IO)
@@ -63,6 +66,15 @@ class LunaApplication : Application(), Configuration.Provider {
                 seedDataLoader.loadSeedDataIfNeeded()
             } catch (e: Exception) {
                 Timber.e(e, "Seed data load failed")
+            }
+        }
+
+        // Friend invite: read the Play install referrer once after install and register the join
+        appScope.launch {
+            try {
+                inviteRepository.claimInviteIfAny()
+            } catch (e: Exception) {
+                Timber.w(e, "Invite claim failed")
             }
         }
 

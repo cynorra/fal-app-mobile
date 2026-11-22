@@ -32,6 +32,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -480,6 +481,41 @@ fun ProfileScreen(
                         title = "Language",
                         subtitle = state.language,
                         onClick = { showLanguageDialog = true }
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Invite a friend
+            Text(
+                text = "Invite a friend",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = LunaColors.Gold,
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            SettingsSection {
+                SettingsClickItem(
+                    icon = Icons.Default.Share,
+                    title = "Share Luna with a friend",
+                    subtitle = when {
+                        state.inviteCode == null -> "Preparing your invite link..."
+                        state.invitePerk -> "Friend perk unlocked: tomorrow's horoscope and the 3-card spread"
+                        else -> "When a friend joins with your link, you both unlock tomorrow's horoscope and the 3-card spread"
+                    },
+                    onClick = {
+                        state.inviteCode?.let { com.cynora.luna.core.utils.ShareUtils.shareInvite(context, it) }
+                    }
+                )
+                if (state.invitedCount > 0) {
+                    SettingsInfoItem(
+                        icon = Icons.Default.Star,
+                        title = "Friends joined",
+                        subtitle = state.invitedCount.toString()
                     )
                 }
             }

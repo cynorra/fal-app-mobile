@@ -1,6 +1,9 @@
 package com.cynora.luna
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -28,9 +31,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var consentInfo: ConsentInformation
 
+    private var pendingRoute by mutableStateOf<String?>(null)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
+        pendingRoute = intent?.getStringExtra(EXTRA_ROUTE)
         initConsent()
 
         setContent {
@@ -39,10 +45,23 @@ class MainActivity : AppCompatActivity() {
 
             LunaTheme(darkTheme = isDark) {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    LunaNavHost()
+                    LunaNavHost(
+                        deepLinkRoute = pendingRoute,
+                        onDeepLinkHandled = { pendingRoute = null }
+                    )
                 }
             }
         }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        intent.getStringExtra(EXTRA_ROUTE)?.let { pendingRoute = it }
+    }
+
+    companion object {
+        const val EXTRA_ROUTE = "luna_route"
     }
 
     private fun initAdsIfAllowed() {

@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
 import com.cynora.luna.core.ui.modern.LunaBackdrop
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -63,7 +64,11 @@ object Routes {
 }
 
 @Composable
-fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
+fun LunaNavHost(
+    deepLinkRoute: String? = null,
+    onDeepLinkHandled: () -> Unit = {},
+    appVM: AppViewModel = hiltViewModel()
+) {
     val nav = rememberNavController()
     val appState by appVM.state.collectAsStateWithLifecycle()
 
@@ -102,6 +107,12 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
                 modifier = Modifier.fillMaxSize().padding(pad),
                 contentAlignment = Alignment.TopCenter
             ) {
+            LaunchedEffect(deepLinkRoute) {
+                if (deepLinkRoute != null) {
+                    nav.navigate(deepLinkRoute) { launchSingleTop = true }
+                    onDeepLinkHandled()
+                }
+            }
             NavHost(nav, Routes.HOME, Modifier.widthIn(max = 840.dp).fillMaxSize()) {
                 composable(Routes.HOME) {
                     HomeScreen(
