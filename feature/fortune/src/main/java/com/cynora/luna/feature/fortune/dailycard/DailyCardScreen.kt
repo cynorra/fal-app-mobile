@@ -80,7 +80,7 @@ fun DailyCardScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = LunaColors.DeepBlack,
+                    containerColor = androidx.compose.ui.graphics.Color.Transparent,
                     titleContentColor = LunaColors.Gold
                 )
             )
@@ -90,7 +90,7 @@ fun DailyCardScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(LunaColors.DeepBlack)
+                
                 .verticalScroll(rememberScrollState())
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -116,7 +116,8 @@ fun DailyCardScreen(
                             brush = Brush.linearGradient(listOf(LunaColors.Gold, LunaColors.MysticPurple)),
                             shape = RoundedCornerShape(16.dp)
                         ),
-                    colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+                    colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
                     shape = RoundedCornerShape(16.dp)
                 ) {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -146,7 +147,8 @@ fun DailyCardScreen(
                                 brush = Brush.linearGradient(listOf(LunaColors.Gold, LunaColors.MysticPurple)),
                                 shape = RoundedCornerShape(16.dp)
                             ),
-                        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+                        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
                         shape = RoundedCornerShape(16.dp)
                     ) {
                         Column(
@@ -237,7 +239,8 @@ fun DailyCardScreen(
 private fun MeaningSection(title: String, meaning: String) {
     Card(
         modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {

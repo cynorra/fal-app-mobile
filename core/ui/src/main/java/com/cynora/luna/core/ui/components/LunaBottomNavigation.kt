@@ -2,6 +2,12 @@ package com.cynora.luna.core.ui.components
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.spring
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.ui.graphics.Brush
+import kotlin.math.abs
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -47,22 +53,48 @@ fun LunaBottomNavigation(
     onItemSelected: (BottomNavItem) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val selectedIndex = items.indexOfFirst { it.route == selectedRoute }
+    val shape = RoundedCornerShape(32.dp)
+
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .background(LunaColors.DeepBlack)
-            .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp)
+            .padding(horizontal = 20.dp, vertical = 10.dp),
+        contentAlignment = Alignment.Center
     ) {
+        // Floating glass dock (Cult UI "MacOS Dock" idea): the selected item and its neighbours magnify.
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .widthIn(max = 520.dp)
+                .fillMaxWidth()
+                .clip(shape)
+                .background(
+                    Brush.verticalGradient(
+                        listOf(Color(0xE61C1635), Color(0xF20B0919))
+                    )
+                )
+                .border(
+                    width = 1.dp,
+                    brush = Brush.linearGradient(
+                        listOf(
+                            Color.White.copy(alpha = 0.22f),
+                            LunaColors.Gold.copy(alpha = 0.35f),
+                            Color.White.copy(alpha = 0.06f)
+                        )
+                    ),
+                    shape = shape
+                )
+                .padding(horizontal = 8.dp, vertical = 6.dp),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            items.forEach { item ->
+            items.forEachIndexed { index, item ->
                 BottomNavItemView(
                     item = item,
-                    isSelected = item.route == selectedRoute,
-                    onClick = { onItemSelected(item) }
+                    isSelected = index == selectedIndex,
+                    distance = if (selectedIndex < 0) 99 else abs(index - selectedIndex),
+                    onClick = { onItemSelected(item) },
+                    modifier = Modifier.weight(1f)
                 )
             }
         }
@@ -73,47 +105,63 @@ fun LunaBottomNavigation(
 private fun BottomNavItemView(
     item: BottomNavItem,
     isSelected: Boolean,
-    onClick: () -> Unit
+    distance: Int,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     val scale by animateFloatAsState(
-        targetValue = if (isSelected) 1.1f else 1.0f,
+        targetValue = when {
+            isSelected -> 1.3f
+            distance == 1 -> 1.1f
+            else -> 1.0f
+        },
+        animationSpec = spring(dampingRatio = 0.55f, stiffness = 300f),
         label = "scale"
     )
 
-    val iconColor by animateColorAsState(
+    val tint by animateColorAsState(
         targetValue = if (isSelected) LunaColors.Gold else Color.White.copy(alpha = 0.6f),
-        label = "iconColor"
-    )
-
-    val textColor by animateColorAsState(
-        targetValue = if (isSelected) LunaColors.Gold else Color.White.copy(alpha = 0.6f),
-        label = "textColor"
+        label = "tint"
     )
 
     Column(
-        modifier = Modifier
-            .clip(RoundedCornerShape(12.dp))
+        modifier = modifier
+            .clip(RoundedCornerShape(22.dp))
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = rememberRipple(bounded = true, color = LunaColors.Gold.copy(alpha = 0.2f)),
                 onClick = onClick
             )
-            .padding(horizontal = 16.dp, vertical = 8.dp),
+            .padding(vertical = 6.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(4.dp)
+        verticalArrangement = Arrangement.spacedBy(2.dp)
     ) {
-        Icon(
-            imageVector = item.icon,
-            contentDescription = item.label,
-            tint = iconColor,
-            modifier = Modifier.size(24.dp).scale(scale)
-        )
+        Box(contentAlignment = Alignment.Center) {
+            if (isSelected) {
+                Box(
+                    modifier = Modifier
+                        .size(46.dp)
+                        .background(
+                            Brush.radialGradient(
+                                listOf(LunaColors.Gold.copy(alpha = 0.28f), Color.Transparent)
+                            ),
+                            CircleShape
+                        )
+                )
+            }
+            Icon(
+                imageVector = item.icon,
+                contentDescription = item.label,
+                tint = tint,
+                modifier = Modifier.size(24.dp).scale(scale)
+            )
+        }
 
         Text(
             text = item.label,
-            fontSize = 12.sp,
+            fontSize = 11.sp,
             fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal,
-            color = textColor
+            color = tint
         )
     }
 }

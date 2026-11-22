@@ -7,6 +7,8 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Scaffold
+import androidx.compose.ui.graphics.Color
+import com.cynora.luna.core.ui.modern.LunaBackdrop
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -73,8 +75,10 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
         Routes.HOME, Routes.FORTUNE, Routes.SOCIAL, Routes.PROFILE
     )
 
+    LunaBackdrop {
     if (appState.isOnboardingComplete) {
         Scaffold(
+            containerColor = Color.Transparent,
             bottomBar = {
                 if (showBottom) {
                     LunaBottomNavigation(items, currentRoute, onItemSelected = { item ->
@@ -154,5 +158,6 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
         OnboardingScreen(onComplete = {
             appVM.onIntent(AppIntent.CompleteOnboarding)
         })
+    }
     }
 }

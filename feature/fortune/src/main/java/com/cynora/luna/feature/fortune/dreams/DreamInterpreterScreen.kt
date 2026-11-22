@@ -65,7 +65,7 @@ fun DreamInterpreterScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(LunaColors.DeepBlack)
+            
             .padding(horizontal = 20.dp)
     ) {
         Spacer(modifier = Modifier.height(16.dp))
@@ -268,7 +268,8 @@ private fun DreamSymbolCard(
             .border(0.5.dp, Color.White.copy(alpha = 0.1f), RoundedCornerShape(16.dp))
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark)
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder
     ) {
         Row(
             modifier = Modifier.padding(16.dp),

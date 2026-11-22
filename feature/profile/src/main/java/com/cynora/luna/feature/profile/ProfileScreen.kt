@@ -246,13 +246,13 @@ fun ProfileScreen(
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
-        containerColor = LunaColors.DeepBlack
+        containerColor = androidx.compose.ui.graphics.Color.Transparent
     ) { paddingValues ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .background(LunaColors.DeepBlack)
+                
                 .verticalScroll(rememberScrollState())
         ) {
             // Profil ve Burç Başlığı
@@ -312,7 +312,8 @@ fun ProfileScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp),
-                colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+                colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
                 shape = RoundedCornerShape(16.dp)
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
@@ -614,7 +615,8 @@ private fun SettingsSection(content: @Composable ColumnScope.() -> Unit) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(16.dp)
     ) {
         Column { content() }

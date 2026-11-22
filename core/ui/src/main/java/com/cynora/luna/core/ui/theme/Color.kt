@@ -1,7 +1,10 @@
 package com.cynora.luna.core.ui.theme
 
 import androidx.compose.material3.darkColorScheme
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 
 object LunaColors {
     val DeepBlack = Color(0xFF0A0A0A)
@@ -22,6 +25,19 @@ object LunaColors {
     val Purple: Color get() = MysticPurple
     val Text: Color get() = TextPrimary
     val TextSec: Color get() = TextSecondary
+
+    // Glass surfaces: translucent wash and gradient hairline used by every card
+    val GlassFill = Color.White.copy(alpha = 0.07f)
+    val GlassBorder: BorderStroke = BorderStroke(
+        width = 1.dp,
+        brush = Brush.linearGradient(
+            listOf(
+                Color.White.copy(alpha = 0.22f),
+                Gold.copy(alpha = 0.30f),
+                Color.White.copy(alpha = 0.05f)
+            )
+        )
+    )
 }
 
 val LunaDark = darkColorScheme(

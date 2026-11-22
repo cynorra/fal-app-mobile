@@ -68,7 +68,7 @@ fun BirthChartScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = LunaColors.DeepBlack,
+                    containerColor = androidx.compose.ui.graphics.Color.Transparent,
                     titleContentColor = LunaColors.Gold
                 )
             )
@@ -78,7 +78,7 @@ fun BirthChartScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(LunaColors.DeepBlack)
+                
                 .verticalScroll(rememberScrollState())
                 .padding(16.dp)
         ) {
@@ -115,7 +115,8 @@ private fun BirthInfoForm(
     
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(
@@ -242,7 +243,8 @@ private fun BirthChartResult(birthChart: BirthChartData) {
                 brush = Brush.linearGradient(listOf(LunaColors.Gold, LunaColors.MysticPurple, LunaColors.Gold)),
                 shape = RoundedCornerShape(24.dp)
             ),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark.copy(alpha = 0.8f)),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(
@@ -263,7 +265,8 @@ private fun BirthChartResult(birthChart: BirthChartData) {
     
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
@@ -279,7 +282,8 @@ private fun BirthChartResult(birthChart: BirthChartData) {
     
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
@@ -295,7 +299,8 @@ private fun BirthChartResult(birthChart: BirthChartData) {
     
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
@@ -310,7 +315,8 @@ private fun BirthChartResult(birthChart: BirthChartData) {
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         Card(
             modifier = Modifier.weight(1f),
-            colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+            colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
             shape = RoundedCornerShape(24.dp)
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
@@ -321,7 +327,8 @@ private fun BirthChartResult(birthChart: BirthChartData) {
         }
         Card(
             modifier = Modifier.weight(1f),
-            colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+            colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
             shape = RoundedCornerShape(24.dp)
         ) {
             Column(modifier = Modifier.padding(16.dp)) {

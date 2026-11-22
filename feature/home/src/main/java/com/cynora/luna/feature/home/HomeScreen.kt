@@ -102,16 +102,12 @@ fun HomeScreen(
         )
     }
 
-    CosmicBackground(
-        starCount = starCount,
-        particleCount = particleCount,
-        nebulaEnabled = nebulaEnabled,
-        shootingStarInterval = shootingStarInterval
-    ) {
+    // The animated LunaBackdrop (aurora, stars, dot grid) is drawn by the navigation host.
+    Box(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(LunaColors.DeepBlack)
+                
                 .verticalScroll(rememberScrollState())
                 .padding(
                     horizontal = when (windowSize) {
@@ -142,7 +138,7 @@ fun HomeScreen(
                     Box(
                         modifier = Modifier
                             .clip(RoundedCornerShape(12.dp))
-                            .background(Color(0xFF15192B))
+                            .background(LunaColors.GlassFill)
                             .border(0.5.dp, LunaColors.Gold.copy(alpha = 0.3f), RoundedCornerShape(12.dp))
                             .padding(horizontal = 12.dp, vertical = 6.dp)
                     ) {
@@ -159,7 +155,7 @@ fun HomeScreen(
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(12.dp))
-                        .background(Color(0xFF15192B))
+                        .background(LunaColors.GlassFill)
                         .border(0.5.dp, LunaColors.Gold.copy(alpha = 0.5f), RoundedCornerShape(12.dp))
                         .clickable { isCmdkOpen = true }
                         .padding(horizontal = 12.dp, vertical = 8.dp)
@@ -285,7 +281,8 @@ private fun CosmicMetricsCard(
         modifier = Modifier
             .fillMaxWidth()
             .borderBeam(durationMillis = 3500, beamColor = LunaColors.Gold, cornerRadius = 20.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF15192B)),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
@@ -339,7 +336,8 @@ private fun PlanetaryHourCard(planetaryHour: PlanetaryHourInfo) {
         modifier = Modifier
             .fillMaxWidth()
             .borderBeam(durationMillis = 5000, beamColor = LunaColors.MysticPurple, cornerRadius = 18.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF15192B)),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(18.dp)
     ) {
         Row(
@@ -392,7 +390,8 @@ private fun HoroscopeTabsCard(
         modifier = Modifier
             .fillMaxWidth()
             .border(0.5.dp, LunaColors.Gold.copy(alpha = 0.25f), RoundedCornerShape(20.dp)),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF15192B)),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(modifier = Modifier.padding(18.dp)) {
@@ -476,7 +475,8 @@ private fun DailyLuckyStrip(
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF15192B)),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(16.dp)
     ) {
         Row(
@@ -521,7 +521,7 @@ private fun MysticCalendarWidget(
                 .clip(RoundedCornerShape(20.dp))
                 .background(
                     brush = Brush.linearGradient(
-                        colors = listOf(Color(0xFF15192B), Color(0xFF1E1E2E))
+                        colors = listOf(Color.White.copy(alpha = 0.08f), Color.White.copy(alpha = 0.03f))
                     )
                 )
                 .padding(18.dp)
@@ -583,7 +583,8 @@ private fun QuickActionCard(
             .border(0.5.dp, Color.White.copy(alpha = 0.08f), RoundedCornerShape(16.dp))
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF15192B))
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder
     ) {
         Row(
             modifier = Modifier

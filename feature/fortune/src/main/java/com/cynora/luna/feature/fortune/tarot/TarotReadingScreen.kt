@@ -79,7 +79,7 @@ fun TarotReadingScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(LunaColors.DeepBlack)
+            
             .verticalScroll(rememberScrollState())
             .padding(20.dp)
     ) {
@@ -152,7 +152,8 @@ fun TarotReadingScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .border(1.dp, LunaColors.Gold.copy(alpha = 0.4f), RoundedCornerShape(20.dp)),
-                colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+                colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
                 shape = RoundedCornerShape(20.dp)
             ) {
                 Column(
@@ -271,7 +272,8 @@ private fun TarotCard3DView(drawn: DrawnTarotCard) {
         modifier = Modifier
             .fillMaxWidth()
             .borderBeam(durationMillis = 4000, beamColor = LunaColors.Gold, cornerRadius = 20.dp),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {

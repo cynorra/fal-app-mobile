@@ -60,7 +60,7 @@ fun AffirmationsScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = LunaColors.DeepBlack,
+                    containerColor = androidx.compose.ui.graphics.Color.Transparent,
                     titleContentColor = LunaColors.Gold
                 )
             )
@@ -70,7 +70,7 @@ fun AffirmationsScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(LunaColors.DeepBlack)
+                
                 .padding(16.dp)
         ) {
             state.dailyAffirmation?.let { affirmation ->
@@ -133,7 +133,8 @@ fun AffirmationsScreen(
                         modifier = Modifier
                             .aspectRatio(1.2f)
                             .clickable { viewModel.onIntent(AffirmationsIntent.SelectCategory(category)) },
-                        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+                        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
                         shape = RoundedCornerShape(16.dp)
                     ) {
                         Column(
@@ -171,7 +172,8 @@ fun AffirmationsScreen(
                     items(state.allAffirmations) { affirmation ->
                         Card(
                             modifier = Modifier.fillMaxWidth(),
-                            colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+                            colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
                             shape = RoundedCornerShape(12.dp)
                         ) {
                             Text(

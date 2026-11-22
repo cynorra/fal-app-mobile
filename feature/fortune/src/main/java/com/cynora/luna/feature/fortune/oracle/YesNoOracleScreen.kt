@@ -86,7 +86,7 @@ fun YesNoOracleScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(LunaColors.DeepBlack)
+            
             .verticalScroll(rememberScrollState())
             .padding(20.dp)
     ) {
@@ -253,7 +253,8 @@ fun YesNoOracleScreen(
                         .fillMaxWidth()
                         .border(1.dp, LunaColors.Gold.copy(alpha = 0.35f), RoundedCornerShape(20.dp)),
                     shape = RoundedCornerShape(20.dp),
-                    colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark)
+                    colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder
                 ) {
                     Column(
                         modifier = Modifier.padding(20.dp),

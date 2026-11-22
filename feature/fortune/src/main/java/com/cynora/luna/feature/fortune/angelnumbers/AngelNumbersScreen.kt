@@ -63,7 +63,7 @@ fun AngelNumbersScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = LunaColors.DeepBlack,
+                    containerColor = androidx.compose.ui.graphics.Color.Transparent,
                     titleContentColor = LunaColors.Gold
                 )
             )
@@ -73,7 +73,7 @@ fun AngelNumbersScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(LunaColors.DeepBlack)
+                
                 .padding(16.dp)
         ) {
             OutlinedTextField(
@@ -115,7 +115,8 @@ fun AngelNumbersScreen(
 private fun AngelNumberCard(number: AngelNumber, onClick: () -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth().clickable(onClick = onClick),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(16.dp)
     ) {
         Row(
@@ -172,7 +173,8 @@ private fun AngelNumberDetail(number: AngelNumber, onBack: () -> Unit) {
 private fun DetailCard(title: String, content: String) {
     Card(
         modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {

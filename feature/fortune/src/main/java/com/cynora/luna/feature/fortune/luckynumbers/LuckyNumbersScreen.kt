@@ -66,7 +66,7 @@ fun LuckyNumbersScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = LunaColors.DeepBlack,
+                    containerColor = androidx.compose.ui.graphics.Color.Transparent,
                     titleContentColor = LunaColors.Gold
                 )
             )
@@ -76,7 +76,7 @@ fun LuckyNumbersScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(LunaColors.DeepBlack)
+                
                 .verticalScroll(rememberScrollState())
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -101,7 +101,8 @@ fun LuckyNumbersScreen(
             state.result?.let { result ->
                 Card(
                     modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+                    colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
                     shape = RoundedCornerShape(24.dp)
                 ) {
                     Column(
@@ -154,7 +155,8 @@ fun LuckyNumbersScreen(
                 
                 Card(
                     modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+                    colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
                     shape = RoundedCornerShape(24.dp)
                 ) {
                     Column(modifier = Modifier.padding(20.dp)) {

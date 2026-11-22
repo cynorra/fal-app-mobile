@@ -61,6 +61,15 @@ import com.cynora.luna.core.data.model.FocusArea
 import com.cynora.luna.core.data.model.Mood
 import com.cynora.luna.core.data.model.FortuneType
 import com.cynora.luna.core.ui.theme.LunaColors
+import com.cynora.luna.core.ui.modern.DotMatrixLoader
+import com.cynora.luna.core.ui.modern.GlassCard
+import com.cynora.luna.core.ui.modern.KineticReveal
+import com.cynora.luna.core.ui.modern.LunaPrimaryButton
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.ui.text.TextStyle
 import com.cynora.luna.core.utils.ShareUtils
 import kotlinx.coroutines.delay
 
@@ -109,7 +118,7 @@ fun FortuneScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .background(LunaColors.DeepBlack)
+                
         ) {
             if (state.fortune == null) {
                 FortuneSelectionContent(state, viewModel::onIntent)
@@ -125,7 +134,7 @@ fun FortuneScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        CircularProgressIndicator(color = LunaColors.Gold)
+                        DotMatrixLoader(loaderSize = 80.dp)
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
                             "Reading the cosmos...",
@@ -139,115 +148,103 @@ fun FortuneScreen(
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun FortuneSelectionContent(
     state: FortuneState,
     onIntent: (FortuneIntent) -> Unit
 ) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState())
-            .padding(24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Spacer(modifier = Modifier.height(32.dp))
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
+        BoxWithConstraints(modifier = Modifier.widthIn(max = 640.dp).fillMaxSize()) {
+            val typeColumns = if (maxWidth >= 520.dp) 4 else 2
 
-        Text(
-            text = "What do you seek today?",
-            fontSize = 28.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color.White,
-            textAlign = TextAlign.Center
-        )
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+                    .padding(horizontal = 20.dp, vertical = 24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Spacer(modifier = Modifier.height(8.dp))
 
-        Spacer(modifier = Modifier.height(8.dp))
+                KineticReveal(
+                    text = "What do you seek today?",
+                    style = TextStyle(
+                        fontSize = 28.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White,
+                        textAlign = TextAlign.Center
+                    ),
+                    staggerMillis = 60,
+                    centered = true
+                )
 
-        Text(
-            text = "Choose your mood and focus, receive the universe's message",
-            fontSize = 16.sp,
-            color = Color.White.copy(alpha = 0.6f),
-            textAlign = TextAlign.Center
-        )
+                Spacer(modifier = Modifier.height(8.dp))
 
-        Spacer(modifier = Modifier.height(32.dp))
+                Text(
+                    text = "Choose your mood and focus, receive the universe's message",
+                    fontSize = 15.sp,
+                    color = Color.White.copy(alpha = 0.62f),
+                    textAlign = TextAlign.Center
+                )
 
-        Text("Fortune Type", fontSize = 14.sp, fontWeight = FontWeight.SemiBold, color = LunaColors.Gold)
-        Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(28.dp))
 
-        androidx.compose.foundation.lazy.grid.LazyVerticalGrid(
-            columns = androidx.compose.foundation.lazy.grid.GridCells.Fixed(2),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            modifier = Modifier.height(240.dp)
-        ) {
-            items(FortuneType.entries.take(8)) { type ->
-                FortuneTypeCard(type, state.selectedType == type) {
-                    onIntent(FortuneIntent.SelectType(type))
+                FortuneSectionLabel("Fortune Type")
+                FlowRow(
+                    modifier = Modifier.fillMaxWidth(),
+                    maxItemsInEachRow = typeColumns,
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    FortuneType.entries.take(8).forEach { type ->
+                        FortuneTypeCard(type, state.selectedType == type, Modifier.weight(1f)) {
+                            onIntent(FortuneIntent.SelectType(type))
+                        }
+                    }
                 }
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                FortuneSectionLabel("Current Mood")
+                FlowRow(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Mood.entries.forEach { mood ->
+                        MoodChip(mood, state.selectedMood == mood) {
+                            onIntent(FortuneIntent.SelectMood(mood))
+                        }
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                FortuneSectionLabel("Focus Area")
+                FlowRow(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    FocusArea.entries.forEach { focus ->
+                        FocusChip(focus, state.selectedFocus == focus) {
+                            onIntent(FortuneIntent.SelectFocus(focus))
+                        }
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(32.dp))
+
+                LunaPrimaryButton(
+                    text = "✨ Read My Fortune",
+                    onClick = { onIntent(FortuneIntent.GetFortune) },
+                    modifier = Modifier.fillMaxWidth()
+                )
+
+                Spacer(modifier = Modifier.height(24.dp))
             }
         }
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Text("Current Mood", fontSize = 14.sp, fontWeight = FontWeight.SemiBold, color = LunaColors.Gold)
-        Spacer(modifier = Modifier.height(12.dp))
-
-        androidx.compose.foundation.lazy.grid.LazyVerticalGrid(
-            columns = androidx.compose.foundation.lazy.grid.GridCells.Fixed(3),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.height(120.dp)
-        ) {
-            items(Mood.entries.toList()) { mood ->
-                MoodChip(mood, state.selectedMood == mood) {
-                    onIntent(FortuneIntent.SelectMood(mood))
-                }
-            }
-        }
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Text("Focus Area", fontSize = 14.sp, fontWeight = FontWeight.SemiBold, color = LunaColors.Gold)
-        Spacer(modifier = Modifier.height(12.dp))
-
-        androidx.compose.foundation.lazy.grid.LazyVerticalGrid(
-            columns = androidx.compose.foundation.lazy.grid.GridCells.Fixed(2),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.height(160.dp)
-        ) {
-            items(FocusArea.entries.toList()) { focus ->
-                FocusChip(focus, state.selectedFocus == focus) {
-                    onIntent(FortuneIntent.SelectFocus(focus))
-                }
-            }
-        }
-
-        Spacer(modifier = Modifier.height(32.dp))
-
-        Button(
-            onClick = { onIntent(FortuneIntent.GetFortune) },
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(56.dp)
-                .clip(RoundedCornerShape(28.dp))
-                .background(
-                    brush = Brush.linearGradient(
-                        colors = listOf(LunaColors.Gold, LunaColors.GoldLight, LunaColors.Gold)
-                    )
-                ),
-            colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent)
-        ) {
-            Text(
-                text = "✨ Read My Fortune",
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color(0xFF121212)
-            )
-        }
-
-        Spacer(modifier = Modifier.height(24.dp))
     }
 }
 
@@ -260,20 +257,21 @@ private fun FortuneResultContent(
     val context = LocalContext.current
     val fullText = fortune.text
 
-    // ✅ fortune.id ile key - yeni fortune gelince sıfırlansın
+    // Keyed by fortune.id so every new fortune restarts the reveal
     var targetLength by remember(fortune.id) { mutableIntStateOf(0) }
     var reported by remember(fortune.id) { mutableStateOf(false) }
 
+    // The reveal itself is drawn word by word (KineticReveal). This timer only tells us when the
+    // reading has been fully shown, to mark it as seen and show the actions.
     val animatedLength by animateIntAsState(
         targetValue = targetLength,
         animationSpec = tween(
             durationMillis = (fullText.length * 25).coerceIn(400, 2500),
             easing = LinearEasing
         ),
-        label = "typewriter"
+        label = "revealTimer"
     )
 
-    // Animasyonu başlat
     LaunchedEffect(fortune.id) {
         targetLength = 0
         reported = false
@@ -281,7 +279,6 @@ private fun FortuneResultContent(
         targetLength = fullText.length
     }
 
-    // ✅ KRİTİK: Bitiş tespiti + seen işaretleme
     LaunchedEffect(animatedLength, fullText.length) {
         if (!reported && animatedLength >= fullText.length && fullText.isNotEmpty()) {
             reported = true
@@ -290,155 +287,153 @@ private fun FortuneResultContent(
         }
     }
 
-    val visibleText = fullText.take(animatedLength)
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState())
-            .padding(24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Spacer(modifier = Modifier.height(32.dp))
-
-        Text(
-            text = fortune.type.icon + " " + fortune.type.displayName,
-            fontSize = 14.sp,
-            fontWeight = FontWeight.SemiBold,
-            color = LunaColors.Gold
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Box(
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(24.dp))
-                .background(LunaColors.SurfaceDark.copy(alpha = 0.6f))
-                .border(
-                    width = 1.dp,
-                    brush = Brush.linearGradient(
-                        colors = listOf(
-                            Color.Transparent,
-                            LunaColors.Gold.copy(alpha = 0.5f),
-                            Color.Transparent
-                        )
-                    ),
-                    shape = RoundedCornerShape(24.dp)
-                )
-                .padding(24.dp)
+                .widthIn(max = 640.dp)
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState())
+                .padding(horizontal = 20.dp, vertical = 24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Column {
-                Text(
-                    text = visibleText,
-                    fontSize = 18.sp,
-                    lineHeight = 28.sp,
-                    color = Color.White,
-                    fontWeight = FontWeight.Medium
-                )
+            Spacer(modifier = Modifier.height(16.dp))
 
-                if (!state.isTypewriterComplete) {
-                    Text(text = "▌", color = LunaColors.Gold, fontSize = 18.sp)
-                }
-            }
-        }
+            Text(
+                text = fortune.type.icon + " " + fortune.type.displayName,
+                fontSize = 14.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = LunaColors.Gold
+            )
 
-        Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
-        AnimatedVisibility(
-            visible = state.isTypewriterComplete,
-            enter = fadeIn() + slideInVertically { it }
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clip(RoundedCornerShape(16.dp))
-                    .background(LunaColors.SurfaceVariant)
-                    .padding(20.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = "✨ Daily Intention",
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = LunaColors.Gold
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = fortune.dailyIntention,
-                    fontSize = 16.sp,
-                    color = Color.White.copy(alpha = 0.9f),
-                    textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Medium
-                )
-            }
-        }
-
-        Spacer(modifier = Modifier.weight(1f))
-
-        AnimatedVisibility(
-            visible = state.isTypewriterComplete,
-            enter = fadeIn()
-        ) {
-            Row(
+            GlassCard(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(12.dp)
+                selected = true,
+                cornerRadius = 24.dp,
+                contentPadding = 24.dp
             ) {
-                OutlinedButton(
-                    onClick = { onIntent(FortuneIntent.GetFortune) },
-                    modifier = Modifier.weight(1f).height(48.dp),
-                    colors = ButtonDefaults.outlinedButtonColors(contentColor = LunaColors.Gold)
-                ) {
-                    Text("Try Again")
-                }
+                KineticReveal(
+                    text = fullText,
+                    style = TextStyle(
+                        fontSize = 19.sp,
+                        lineHeight = 30.sp,
+                        color = Color.White,
+                        fontWeight = FontWeight.Medium
+                    ),
+                    staggerMillis = 60
+                )
+            }
 
-                Button(
-                    onClick = {
-                        ShareUtils.shareFortune(
-                            context = context,
-                            fortuneText = fortune.text,
-                            dailyIntention = fortune.dailyIntention,
-                            fortuneType = fortune.type.displayName
-                        )
-                    },
-                    modifier = Modifier.weight(1f).height(48.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold)
+            Spacer(modifier = Modifier.height(24.dp))
+
+            AnimatedVisibility(
+                visible = state.isTypewriterComplete,
+                enter = fadeIn() + slideInVertically { it }
+            ) {
+                GlassCard(
+                    modifier = Modifier.fillMaxWidth(),
+                    accent = LunaColors.MysticPurple,
+                    cornerRadius = 18.dp,
+                    contentPadding = 20.dp
                 ) {
-                    Text("Share", color = Color(0xFF121212))
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = "✨ Daily Intention",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = LunaColors.Gold
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = fortune.dailyIntention,
+                            fontSize = 16.sp,
+                            color = Color.White.copy(alpha = 0.92f),
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Medium
+                        )
+                    }
                 }
             }
-        }
 
-        Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(28.dp))
+
+            AnimatedVisibility(
+                visible = state.isTypewriterComplete,
+                enter = fadeIn()
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    GlassCard(
+                        modifier = Modifier.weight(1f),
+                        cornerRadius = 28.dp,
+                        contentPadding = 0.dp,
+                        onClick = { onIntent(FortuneIntent.GetFortune) }
+                    ) {
+                        Box(
+                            modifier = Modifier.fillMaxWidth().height(56.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = "Try Again",
+                                fontSize = 17.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = LunaColors.Gold
+                            )
+                        }
+                    }
+
+                    LunaPrimaryButton(
+                        text = "Share",
+                        onClick = {
+                            ShareUtils.shareFortune(
+                                context = context,
+                                fortuneText = fortune.text,
+                                dailyIntention = fortune.dailyIntention,
+                                fortuneType = fortune.type.displayName
+                            )
+                        },
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+        }
     }
 }
 
 @Composable
-private fun FortuneTypeCard(type: FortuneType, isSelected: Boolean, onClick: () -> Unit) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(80.dp)
-            .clickable(onClick = onClick)
-            .then(
-                if (isSelected) Modifier.border(2.dp, LunaColors.Gold, RoundedCornerShape(16.dp))
-                else Modifier
-            ),
-        colors = CardDefaults.cardColors(
-            containerColor = if (isSelected) LunaColors.Gold.copy(alpha = 0.1f) else LunaColors.SurfaceDark
-        ),
-        shape = RoundedCornerShape(16.dp)
+private fun FortuneTypeCard(
+    type: FortuneType,
+    isSelected: Boolean,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
+) {
+    GlassCard(
+        modifier = modifier.height(88.dp),
+        selected = isSelected,
+        cornerRadius = 18.dp,
+        contentPadding = 8.dp,
+        onClick = onClick
     ) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(text = type.icon, fontSize = 24.sp)
+                Text(text = type.icon, fontSize = 26.sp)
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = type.displayName,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = if (isSelected) LunaColors.Gold else Color.White,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    maxLines = 1
                 )
             }
         }
@@ -447,26 +442,41 @@ private fun FortuneTypeCard(type: FortuneType, isSelected: Boolean, onClick: () 
 
 @Composable
 private fun MoodChip(mood: Mood, isSelected: Boolean, onClick: () -> Unit) {
-    FilterChip(
-        selected = isSelected,
-        onClick = onClick,
-        label = { Text(text = mood.displayName, fontSize = 12.sp) },
-        colors = FilterChipDefaults.filterChipColors(
-            selectedContainerColor = LunaColors.Gold.copy(alpha = 0.2f),
-            selectedLabelColor = LunaColors.Gold
-        )
-    )
+    FortuneGlassChip(label = mood.displayName, selected = isSelected, onClick = onClick)
 }
 
 @Composable
 private fun FocusChip(focus: FocusArea, isSelected: Boolean, onClick: () -> Unit) {
-    FilterChip(
-        selected = isSelected,
-        onClick = onClick,
-        label = { Text(text = focus.displayName, fontSize = 12.sp) },
-        colors = FilterChipDefaults.filterChipColors(
-            selectedContainerColor = LunaColors.Gold.copy(alpha = 0.2f),
-            selectedLabelColor = LunaColors.Gold
+    FortuneGlassChip(label = focus.displayName, selected = isSelected, onClick = onClick)
+}
+
+
+@Composable
+private fun FortuneGlassChip(label: String, selected: Boolean, onClick: () -> Unit) {
+    GlassCard(
+        selected = selected,
+        cornerRadius = 22.dp,
+        contentPadding = 0.dp,
+        onClick = onClick
+    ) {
+        Text(
+            text = label,
+            fontSize = 13.sp,
+            fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Medium,
+            color = if (selected) LunaColors.Gold else Color.White.copy(alpha = 0.86f),
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 10.dp)
         )
+    }
+}
+
+@Composable
+private fun FortuneSectionLabel(text: String) {
+    Text(
+        text = text,
+        fontSize = 13.sp,
+        fontWeight = FontWeight.SemiBold,
+        color = LunaColors.Gold,
+        letterSpacing = 1.sp,
+        modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp)
     )
 }

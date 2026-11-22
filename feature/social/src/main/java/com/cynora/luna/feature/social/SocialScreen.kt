@@ -106,7 +106,7 @@ fun SocialScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(LunaColors.DeepBlack)
+            
     ) {
         Text(
             text = "✨ Mystic Community",
@@ -141,7 +141,8 @@ fun SocialScreen(
 
         Card(
             modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
-            colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+            colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
             shape = RoundedCornerShape(16.dp)
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
@@ -250,7 +251,8 @@ private fun IntentionPostCard(
 
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = LunaColors.SurfaceDark),
+        colors = CardDefaults.cardColors(containerColor = LunaColors.GlassFill),
+        border = LunaColors.GlassBorder,
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
