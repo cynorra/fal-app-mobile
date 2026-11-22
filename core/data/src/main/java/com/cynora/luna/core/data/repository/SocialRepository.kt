@@ -1,6 +1,7 @@
 package com.cynora.luna.core.data.repository
 
 import com.cynora.luna.core.database.datastore.UserPreferencesDataStore
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import kotlinx.coroutines.channels.awaitClose
@@ -25,22 +26,36 @@ data class IntentionPost(
 @Singleton
 class SocialRepository @Inject constructor(
     private val firestore: FirebaseFirestore,
+    private val auth: FirebaseAuth,
     private val dataStore: UserPreferencesDataStore
 ) {
     private val postsCollection = firestore.collection("posts")
     
-    // ✅ Thread-safe atomic reference
+    // Çevrimdışı/anonim giriş başarısız olursa okuma için yerel yedek kimlik
     private val userIdRef = AtomicReference<String?>(null)
-    
-    suspend fun ensureUserId() {
-        if (userIdRef.get() == null) {
-            userIdRef.set(dataStore.getOrCreateUserId())
+
+    /**
+     * Firestore kuralları request.auth.uid gerektirir. Oturum yoksa anonim giriş yapar
+     * (Google ile giriş sonradan bu hesaba bağlanır, UID korunur).
+     */
+    private suspend fun ensureSignedIn(): String? {
+        auth.currentUser?.uid?.let { return it }
+        return try {
+            auth.signInAnonymously().await().user?.uid
+        } catch (e: Exception) {
+            Timber.e(e, "Anonymous sign-in failed")
+            null
         }
     }
-    
-    // ✅ Compose'dan çağrılabilir (suspend değil)
-    fun currentUserIdSync(): String = userIdRef.get() ?: "anonymous"
-    
+
+    suspend fun ensureUserId() {
+        val uid = ensureSignedIn() ?: dataStore.getOrCreateUserId()
+        userIdRef.set(uid)
+    }
+
+    // Compose'dan çağrılabilir (suspend değil)
+    fun currentUserIdSync(): String = auth.currentUser?.uid ?: userIdRef.get() ?: "anonymous"
+
     fun observePosts(): Flow<List<IntentionPost>> = callbackFlow {
         val registration: ListenerRegistration = postsCollection
             .orderBy("timestamp", com.google.firebase.firestore.Query.Direction.DESCENDING)
@@ -80,7 +95,10 @@ class SocialRepository @Inject constructor(
     
     suspend fun addPost(post: IntentionPost): Result<Unit> {
         return try {
+            val uid = ensureSignedIn()
+                ?: return Result.failure(IllegalStateException("Not signed in"))
             val postData = mapOf(
+                "authorUid" to uid,
                 "mysticName" to post.mysticName,
                 "avatarEmoji" to post.avatarEmoji,
                 "intentionText" to post.intentionText,
@@ -97,8 +115,8 @@ class SocialRepository @Inject constructor(
     }
     
     suspend fun toggleLike(postId: String): Result<Boolean> {
-        ensureUserId()
-        val uid = userIdRef.get() ?: return Result.failure(IllegalStateException("User ID not initialized"))
+        val uid = ensureSignedIn()
+            ?: return Result.failure(IllegalStateException("Not signed in"))
         
         return try {
             val postRef = postsCollection.document(postId)

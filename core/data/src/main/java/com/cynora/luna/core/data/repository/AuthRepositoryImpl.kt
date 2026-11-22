@@ -3,6 +3,7 @@ package com.cynora.luna.core.data.repository
 import com.cynora.luna.core.data.model.LunaUser
 import com.cynora.luna.core.database.datastore.UserPreferencesDataStore
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.channels.awaitClose
@@ -21,7 +22,7 @@ class AuthRepositoryImpl @Inject constructor(
 
     override val currentUser: Flow<LunaUser?> = callbackFlow {
         val listener = FirebaseAuth.AuthStateListener { firebaseAuth ->
-            val user = firebaseAuth.currentUser?.toLunaUser()
+            val user = firebaseAuth.currentUser?.takeIf { !it.isAnonymous }?.toLunaUser()
             trySend(user)
         }
         auth.addAuthStateListener(listener)
@@ -29,13 +30,24 @@ class AuthRepositoryImpl @Inject constructor(
     }
 
     override fun getCurrentUser(): LunaUser? {
-        return auth.currentUser?.toLunaUser()
+        return auth.currentUser?.takeIf { !it.isAnonymous }?.toLunaUser()
     }
 
     override suspend fun signInWithGoogle(idToken: String): Result<LunaUser> {
         return try {
             val credential = GoogleAuthProvider.getCredential(idToken, null)
-            val authResult = auth.signInWithCredential(credential).await()
+            val current = auth.currentUser
+            // Anonim hesap varsa Google'a bağla: UID (ve bu UID'ye ait beğeni/gönderiler) korunur
+            val authResult = if (current != null && current.isAnonymous) {
+                try {
+                    current.linkWithCredential(credential).await()
+                } catch (e: FirebaseAuthUserCollisionException) {
+                    // Bu Google hesabı daha önce kullanılmış: mevcut hesabına geç
+                    auth.signInWithCredential(credential).await()
+                }
+            } else {
+                auth.signInWithCredential(credential).await()
+            }
             val user = authResult.user?.toLunaUser()
                 ?: return Result.failure(Exception("Google Sign-In returned null user"))
 
