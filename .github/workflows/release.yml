@@ -78,7 +78,12 @@ jobs:
           fi
       
       - name: Build Release AAB
-        run: ./gradlew bundleRelease
+        run: >
+          ./gradlew bundleRelease
+          -PLUNA_STORE_FILE="$LUNA_STORE_FILE"
+          -PLUNA_STORE_PASSWORD="$LUNA_STORE_PASSWORD"
+          -PLUNA_KEY_ALIAS="$LUNA_KEY_ALIAS"
+          -PLUNA_KEY_PASSWORD="$LUNA_KEY_PASSWORD"
         env:
           LUNA_STORE_FILE: luna-release.jks
           LUNA_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
