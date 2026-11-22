@@ -90,6 +90,26 @@ jobs:
           LUNA_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           LUNA_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
       
+      - name: Build release APK (device testing)
+        run: >
+          ./gradlew assembleRelease
+          -PLUNA_STORE_FILE="$LUNA_STORE_FILE"
+          -PLUNA_STORE_PASSWORD="$LUNA_STORE_PASSWORD"
+          -PLUNA_KEY_ALIAS="$LUNA_KEY_ALIAS"
+          -PLUNA_KEY_PASSWORD="$LUNA_KEY_PASSWORD"
+        env:
+          LUNA_STORE_FILE: luna-release.jks
+          LUNA_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          LUNA_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          LUNA_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: luna-release-apk
+          path: app/build/outputs/apk/release/app-release.apk
+          retention-days: 14
+
       - name: Upload AAB artifact
         uses: actions/upload-artifact@v4
         with:
