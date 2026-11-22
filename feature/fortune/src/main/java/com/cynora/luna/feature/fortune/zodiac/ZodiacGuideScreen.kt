@@ -101,7 +101,7 @@ fun ZodiacGuideScreen(
                 colors = FilterChipDefaults.filterChipColors(
                     selectedContainerColor = LunaColors.Gold,
                     selectedLabelColor = Color.Black,
-                    containerColor = LunaColors.SurfaceDark,
+                    containerColor = LunaColors.GlassFill,
                     labelColor = Color.White
                 )
             )
@@ -114,7 +114,7 @@ fun ZodiacGuideScreen(
                     colors = FilterChipDefaults.filterChipColors(
                         selectedContainerColor = LunaColors.Gold,
                         selectedLabelColor = Color.Black,
-                        containerColor = LunaColors.SurfaceDark,
+                        containerColor = LunaColors.GlassFill,
                         labelColor = Color.White
                     )
                 )

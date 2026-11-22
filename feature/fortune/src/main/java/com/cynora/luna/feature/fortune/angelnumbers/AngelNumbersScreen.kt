@@ -86,8 +86,8 @@ fun AngelNumbersScreen(
                 colors = TextFieldDefaults.colors(
                     focusedTextColor = Color.White,
                     unfocusedTextColor = Color.White,
-                    focusedContainerColor = LunaColors.SurfaceDark,
-                    unfocusedContainerColor = LunaColors.SurfaceDark
+                    focusedContainerColor = LunaColors.GlassFill,
+                    unfocusedContainerColor = LunaColors.GlassFill
                 ),
                 shape = RoundedCornerShape(12.dp)
             )

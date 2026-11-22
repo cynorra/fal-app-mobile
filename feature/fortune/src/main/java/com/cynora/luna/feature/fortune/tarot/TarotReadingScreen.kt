@@ -109,7 +109,7 @@ fun TarotReadingScreen(
         // Spread Mode Tabs
         TabRow(
             selectedTabIndex = if (state.spreadMode == TarotSpreadMode.DAILY_ONE_CARD) 0 else 1,
-            containerColor = LunaColors.SurfaceDark,
+            containerColor = LunaColors.GlassFill,
             contentColor = LunaColors.Gold,
             indicator = { tabPositions ->
                 val index = if (state.spreadMode == TarotSpreadMode.DAILY_ONE_CARD) 0 else 1

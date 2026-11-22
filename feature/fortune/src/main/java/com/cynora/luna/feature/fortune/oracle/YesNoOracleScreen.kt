@@ -132,8 +132,8 @@ fun YesNoOracleScreen(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
             colors = OutlinedTextFieldDefaults.colors(
-                focusedContainerColor = LunaColors.SurfaceDark,
-                unfocusedContainerColor = LunaColors.SurfaceDark,
+                focusedContainerColor = LunaColors.GlassFill,
+                unfocusedContainerColor = LunaColors.GlassFill,
                 focusedBorderColor = LunaColors.Gold,
                 unfocusedBorderColor = Color.White.copy(alpha = 0.15f),
                 focusedTextColor = Color.White,

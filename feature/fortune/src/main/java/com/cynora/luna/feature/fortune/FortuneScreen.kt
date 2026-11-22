@@ -61,6 +61,7 @@ import com.cynora.luna.core.data.model.FocusArea
 import com.cynora.luna.core.data.model.Mood
 import com.cynora.luna.core.data.model.FortuneType
 import com.cynora.luna.core.ui.theme.LunaColors
+import com.cynora.luna.core.ui.modern.BalloonsBurst
 import com.cynora.luna.core.ui.modern.DotMatrixLoader
 import com.cynora.luna.core.ui.modern.GlassCard
 import com.cynora.luna.core.ui.modern.KineticReveal
@@ -407,6 +408,8 @@ private fun FortuneResultContent(
 
             Spacer(modifier = Modifier.height(24.dp))
         }
+
+        BalloonsBurst(trigger = if (state.isTypewriterComplete) fortune.id else null)
     }
 }
 
