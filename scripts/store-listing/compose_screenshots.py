@@ -15,6 +15,7 @@ import sys
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 RAW, OUT = sys.argv[1], sys.argv[2]
+BG_DIR = sys.argv[3] if len(sys.argv) > 3 else None  # optional AI-made art: <name>.png (1080x1920) and feature.png (1024x500)
 ICON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "store-listing", "assets", "icon-512.png")
 os.makedirs(OUT, exist_ok=True)
 
@@ -28,14 +29,14 @@ GOLD, GOLD_HI = (212, 175, 55), (243, 215, 126)
 
 # (file, [(text, is_gold), ...] headline words, subline)
 SHOTS = [
-    ("home", [("Your ", 0), ("cosmic", 1), (" guide,", 0), (" every day", 0)], "Tarot, horoscope and dreams in one calm place", "violet-right"),
-    ("daily", [("Draw your ", 0), ("card", 1), (" of the day", 0)], "A fresh reading each morning", "gold-left"),
-    ("tarot", [("Let the ", 0), ("cards", 1), (" speak", 0)], "Draw a spread whenever you need a nudge", "violet-left"),
-    ("birth", [("Map your ", 0), ("birth chart", 1)], "Sun, Moon and Rising at a glance", "gold-right"),
-    ("compat", [("Check zodiac ", 0), ("compatibility", 1)], "Love, trust and passion between signs", "violet-right"),
-    ("dream", [("Decode your ", 0), ("dreams", 1)], "Search symbols and their meanings", "gold-left"),
-    ("oracle", [("Yes or no? ", 0), ("Ask the orb", 1)], "A quick nudge when you need one", "violet-left"),
-    ("fortune", [("Readings that ", 0), ("feel", 1), (" personal", 0)], "Pick your mood and focus", "gold-right"),
+    ("home", [("Daily ", 0), ("Horoscope", 1), (" Today", 0)], "Free horoscope for every zodiac sign", "violet-right"),
+    ("daily", [("Free Daily ", 0), ("Tarot Card", 1)], "Your card of the day for love and career", "gold-left"),
+    ("tarot", [("Tarot Card ", 0), ("Reading", 1)], "Draw a spread for love, career and more", "violet-left"),
+    ("birth", [("Free ", 0), ("Birth Chart", 1), (" Calculator", 0)], "Find your Sun, Moon and Rising sign", "gold-right"),
+    ("compat", [("Zodiac ", 0), ("Compatibility", 1)], "Love match for every pair of signs", "violet-right"),
+    ("dream", [("Dream ", 0), ("Meanings", 1)], "Search symbols in the dream dictionary", "gold-left"),
+    ("oracle", [("Yes or No ", 0), ("Oracle", 1)], "A quick answer for any question", "violet-left"),
+    ("fortune", [("Free ", 0), ("Fortune Telling", 1)], "Coffee, tarot, horoscope and more", "gold-right"),
 ]
 
 
@@ -186,6 +187,24 @@ def with_shadow(canvas, ph, pos, glow=(91, 53, 166), blur=60, alpha=150):
     canvas.alpha_composite(ph, pos)
 
 
+def art_background(name, w, h):
+    """Optional AI background art; falls back to the generated one. Top is darkened so the headline stays readable."""
+    if not BG_DIR:
+        return None
+    path = os.path.join(BG_DIR, name + ".png")
+    if not os.path.exists(path):
+        return None
+    im = Image.open(path).convert("RGB")
+    k = max(w / im.width, h / im.height)
+    im = im.resize((int(im.width * k), int(im.height * k)), Image.LANCZOS)
+    im = im.crop(((im.width - w) // 2, (im.height - h) // 2, (im.width - w) // 2 + w, (im.height - h) // 2 + h))
+    shade = Image.new("L", (w, h))
+    sd = ImageDraw.Draw(shade)
+    for y in range(h):
+        sd.line([(0, y), (w, y)], fill=int(150 * max(0, 1 - y / (h * 0.3))))
+    return Image.composite(Image.new("RGB", (w, h), INDIGO), im, shade)
+
+
 def build_phone_shots():
     for i, (name, words, sub, mood) in enumerate(SHOTS, 1):
         path = os.path.join(RAW, f"{name}.png")
@@ -193,7 +212,7 @@ def build_phone_shots():
             print("missing", path)
             continue
         W, H = 1080, 1920
-        canvas = background(W, H, mood, seed=i).convert("RGBA")
+        canvas = (art_background(name, W, H) or background(W, H, mood, seed=i)).convert("RGBA")
         y_end = draw_headline(canvas, words, 150, W - 160)
         d = ImageDraw.Draw(canvas)
         sf = font(SANS, 42)
@@ -209,7 +228,7 @@ def build_phone_shots():
 
 def build_feature_graphic():
     W, H = 1024, 500
-    canvas = background(W, H, "violet-right", seed=99).convert("RGBA")
+    canvas = (art_background("feature", W, H) or background(W, H, "violet-right", seed=99)).convert("RGBA")
     d = ImageDraw.Draw(canvas)
 
     icon = Image.open(ICON).convert("RGBA").resize((150, 150), Image.LANCZOS)
@@ -219,7 +238,7 @@ def build_feature_graphic():
     gt, bb = gold_gradient_text("Luna", lf)
     canvas.paste(gt, (240, 104 - bb[1] + 22), gt)
     tf = font(SANS, 33)
-    d.text((72, 300), "Tarot, horoscope & dreams", font=tf, fill=(255, 255, 255, 235))
+    d.text((72, 300), "Tarot, horoscope & birth chart", font=tf, fill=(255, 255, 255, 235))
     d.text((72, 348), "Your daily cosmic guide", font=font(SANS, 26), fill=GOLD_HI + (230,))
 
     for k, (name, ang, x, y, wd) in enumerate([("daily", 8, 690, 40, 210), ("home", -7, 820, 90, 210)]):
