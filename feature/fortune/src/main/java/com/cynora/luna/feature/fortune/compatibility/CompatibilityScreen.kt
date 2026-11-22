@@ -48,6 +48,11 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.cynora.luna.core.data.model.ZodiacSign
 import com.cynora.luna.core.data.repository.CompatibilityResult
 import com.cynora.luna.core.ui.theme.LunaColors
+import com.cynora.luna.core.ui.modern.GlassCard
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -119,38 +124,34 @@ fun CompatibilityScreen(
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun ZodiacGrid(selected: ZodiacSign?, onSelect: (ZodiacSign) -> Unit) {
-    // ✅ Sabit height - verticalScroll içinde crash önlendi
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(4),
-        modifier = Modifier.fillMaxWidth().height(240.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
+    // Fixed-size glass tiles in a flowing layout: compact on tablets, no nested scrolling
+    FlowRow(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        items(ZodiacSign.entries.size) { index ->
-            val sign = ZodiacSign.entries[index]
-            Card(
-                modifier = Modifier
-                    .aspectRatio(1f)
-                    .clickable { onSelect(sign) }
-                    .then(
-                        if (selected == sign) Modifier.border(
-                            2.dp, LunaColors.Gold, RoundedCornerShape(12.dp)
-                        ) else Modifier
-                    ),
-                colors = CardDefaults.cardColors(
-                    containerColor = if (selected == sign) LunaColors.Gold.copy(alpha = 0.2f) else LunaColors.SurfaceDark
-                ),
-                shape = RoundedCornerShape(12.dp)
+        ZodiacSign.entries.forEach { sign ->
+            GlassCard(
+                modifier = Modifier.size(76.dp),
+                selected = selected == sign,
+                cornerRadius = 14.dp,
+                contentPadding = 4.dp,
+                onClick = { onSelect(sign) }
             ) {
-                Column(
-                    modifier = Modifier.fillMaxSize().padding(8.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    Text(sign.symbol, fontSize = 24.sp)
-                    Text(sign.displayName, fontSize = 10.sp, color = Color.White, textAlign = TextAlign.Center)
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(sign.symbol, fontSize = 24.sp)
+                        Text(
+                            sign.displayName,
+                            fontSize = 10.sp,
+                            color = if (selected == sign) LunaColors.Gold else Color.White,
+                            textAlign = TextAlign.Center,
+                            maxLines = 1
+                        )
+                    }
                 }
             }
         }
