@@ -7,6 +7,11 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Scaffold
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
 import com.cynora.luna.core.ui.modern.LunaBackdrop
 import androidx.compose.runtime.Composable
@@ -93,7 +98,11 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
                 }
             }
         ) { pad ->
-            NavHost(nav, Routes.HOME, Modifier.padding(pad)) {
+            Box(
+                modifier = Modifier.fillMaxSize().padding(pad),
+                contentAlignment = Alignment.TopCenter
+            ) {
+            NavHost(nav, Routes.HOME, Modifier.widthIn(max = 840.dp).fillMaxSize()) {
                 composable(Routes.HOME) {
                     HomeScreen(
                         onNavigateToFortune = { nav.navigate(Routes.FORTUNE) },
@@ -152,6 +161,7 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
                     val fortuneId = backStackEntry.arguments?.getString("fortuneId")
                     FortuneScreen(initialFortuneId = fortuneId)
                 }
+            }
             }
         }
     } else {

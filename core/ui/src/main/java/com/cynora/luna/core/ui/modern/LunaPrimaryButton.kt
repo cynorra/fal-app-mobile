@@ -53,17 +53,17 @@ fun LunaPrimaryButton(
         modifier = modifier
             .alpha(if (enabled) 1f else 0.4f)
             .drawBehind {
-                // soft golden glow around the pill
-                drawRoundRect(
-                    brush = Brush.radialGradient(
-                        colors = listOf(LunaColors.Gold.copy(alpha = 0.28f), Color.Transparent),
-                        center = Offset(size.width / 2f, size.height / 2f),
-                        radius = size.width * 0.6f
-                    ),
-                    cornerRadius = CornerRadius(size.height / 2f + 12f),
-                    topLeft = Offset(-12f, -12f),
-                    size = androidx.compose.ui.geometry.Size(size.width + 24f, size.height + 24f)
-                )
+                // soft golden glow: concentric strokes that fade outwards
+                for (i in 1..6) {
+                    val grow = i * 3.5f
+                    drawRoundRect(
+                        color = LunaColors.Gold.copy(alpha = 0.075f * (7 - i) / 6f),
+                        topLeft = Offset(-grow, -grow),
+                        size = androidx.compose.ui.geometry.Size(size.width + grow * 2f, size.height + grow * 2f),
+                        cornerRadius = CornerRadius(size.height / 2f + grow),
+                        style = androidx.compose.ui.graphics.drawscope.Stroke(width = 3.5f)
+                    )
+                }
             }
             .clip(shape)
             .background(

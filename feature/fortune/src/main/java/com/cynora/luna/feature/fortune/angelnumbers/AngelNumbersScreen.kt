@@ -54,6 +54,7 @@ fun AngelNumbersScreen(
     val state by viewModel.state.collectAsStateWithLifecycle()
     
     Scaffold(
+        containerColor = androidx.compose.ui.graphics.Color.Transparent,
         topBar = {
             TopAppBar(
                 title = { Text("Angel Numbers 🔮") },

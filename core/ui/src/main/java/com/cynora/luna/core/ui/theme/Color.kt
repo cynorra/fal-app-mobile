@@ -27,7 +27,7 @@ object LunaColors {
     val TextSec: Color get() = TextSecondary
 
     // Glass surfaces: translucent wash and gradient hairline used by every card
-    val GlassFill = Color.White.copy(alpha = 0.07f)
+    val GlassFill = Color.White.copy(alpha = 0.085f)
     val GlassBorder: BorderStroke = BorderStroke(
         width = 1.dp,
         brush = Brush.linearGradient(

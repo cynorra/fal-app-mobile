@@ -192,7 +192,7 @@ private fun WelcomePage(onNext: () -> Unit) {
         CascadeText(text = "Welcome to Luna", style = PageTitleStyle)
         Spacer(modifier = Modifier.height(14.dp))
         KineticReveal(
-            text = "Your personal cosmic guide to tarot, horoscopes, dreams and the stars",
+            text = "Your personal cosmic guide to tarot, horoscopes and dreams",
             style = PageBodyStyle,
             centered = true
         )
@@ -222,7 +222,7 @@ private fun ZodiacPage(
         Spacer(modifier = Modifier.height(16.dp))
 
         LazyVerticalGrid(
-            columns = GridCells.Adaptive(minSize = 84.dp),
+            columns = GridCells.Adaptive(minSize = 74.dp),
             horizontalArrangement = Arrangement.spacedBy(10.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp),
             modifier = Modifier.weight(1f)

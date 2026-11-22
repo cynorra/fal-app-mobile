@@ -71,6 +71,7 @@ fun DailyCardScreen(
     )
     
     Scaffold(
+        containerColor = androidx.compose.ui.graphics.Color.Transparent,
         topBar = {
             TopAppBar(
                 title = { Text("Card of the Day 🎯") },

@@ -136,7 +136,7 @@ private fun BottomNavItemView(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(2.dp)
     ) {
-        Box(contentAlignment = Alignment.Center) {
+        Box(modifier = Modifier.size(46.dp), contentAlignment = Alignment.Center) {
             if (isSelected) {
                 Box(
                     modifier = Modifier

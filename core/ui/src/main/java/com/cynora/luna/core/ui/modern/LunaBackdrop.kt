@@ -119,7 +119,7 @@ private fun DotGridLayer() {
                 val distance = hypot(x - center.x, y - center.y)
                 val delta = distance - ringRadius
                 val lift = exp(-(delta * delta) / twoSigmaSq)
-                val alpha = 0.05f + 0.22f * lift
+                val alpha = 0.035f + 0.15f * lift
                 drawCircle(color = Color.White.copy(alpha = alpha), radius = dotRadius, center = Offset(x, y))
                 x += spacing
             }

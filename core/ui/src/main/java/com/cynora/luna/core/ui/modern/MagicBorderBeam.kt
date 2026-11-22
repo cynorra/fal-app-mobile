@@ -14,6 +14,11 @@ import androidx.compose.ui.composed
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.PathOperation
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.RoundRect
+import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.withTransform
@@ -22,10 +27,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.cynora.luna.core.ui.theme.LunaColors
 
-/**
- * Magic UI - Border Beam Effect
- * Traces an animated radiant beam along the perimeter of any card or container.
- */
 fun Modifier.borderBeam(
     durationMillis: Int = 4000,
     borderWidth: Dp = 1.5.dp,
@@ -52,6 +53,24 @@ fun Modifier.borderBeam(
             val center = Offset(size.width / 2f, size.height / 2f)
             val strokePx = borderWidth.toPx()
             val radiusPx = cornerRadius.toPx()
+            val innerRadius = kotlin.math.max(radiusPx - strokePx, 0f)
+
+            // The beam only lives on the border ring: clip to the ring, then rotate the gradient
+            // (not the geometry), so nothing is ever drawn outside the card.
+            val outer = Path().apply {
+                addRoundRect(
+                    RoundRect(0f, 0f, size.width, size.height, CornerRadius(radiusPx, radiusPx))
+                )
+            }
+            val inner = Path().apply {
+                addRoundRect(
+                    RoundRect(
+                        strokePx, strokePx, size.width - strokePx, size.height - strokePx,
+                        CornerRadius(innerRadius, innerRadius)
+                    )
+                )
+            }
+            val ring = Path.combine(PathOperation.Difference, outer, inner)
 
             val sweepBrush = Brush.sweepGradient(
                 colors = listOf(
@@ -66,20 +85,17 @@ fun Modifier.borderBeam(
                 center = center
             )
 
-            // Draw animated traveling border beam
-            withTransform({
-                rotate(degrees = angle, pivot = center)
-            }) {
-                drawRoundRect(
-                    brush = sweepBrush,
-                    topLeft = Offset(strokePx / 2f, strokePx / 2f),
-                    size = androidx.compose.ui.geometry.Size(
-                        size.width - strokePx,
-                        size.height - strokePx
-                    ),
-                    cornerRadius = androidx.compose.ui.geometry.CornerRadius(radiusPx, radiusPx),
-                    style = Stroke(width = strokePx, cap = StrokeCap.Round)
-                )
+            val reach = kotlin.math.max(size.width, size.height) * 2f
+            clipPath(ring) {
+                withTransform({
+                    rotate(degrees = angle, pivot = center)
+                }) {
+                    drawRect(
+                        brush = sweepBrush,
+                        topLeft = Offset(center.x - reach, center.y - reach),
+                        size = androidx.compose.ui.geometry.Size(reach * 2f, reach * 2f)
+                    )
+                }
             }
         }
 }

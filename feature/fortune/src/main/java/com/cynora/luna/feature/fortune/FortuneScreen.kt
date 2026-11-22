@@ -103,6 +103,7 @@ fun FortuneScreen(
     }
 
     Scaffold(
+        containerColor = androidx.compose.ui.graphics.Color.Transparent,
         snackbarHost = {
             SnackbarHost(snackbarHostState) { data ->
                 Snackbar(

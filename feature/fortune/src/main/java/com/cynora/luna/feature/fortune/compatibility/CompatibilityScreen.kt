@@ -58,6 +58,7 @@ fun CompatibilityScreen(
     val state by viewModel.state.collectAsStateWithLifecycle()
     
     Scaffold(
+        containerColor = androidx.compose.ui.graphics.Color.Transparent,
         topBar = {
             TopAppBar(
                 title = { Text("Zodiac Compatibility 💑") },
