@@ -54,6 +54,7 @@ class RewardedAdManager(
             object : RewardedAdLoadCallback() {
                 override fun onAdLoaded(ad: RewardedAd) {
                     rewardedAd = ad
+                    android.util.Log.d("LunaAds", "Rewarded ad loaded")
                     loadRetryCount = 0  // ✅ Başarıda sıfırla
                     _adState.value = AdState.Loaded
 
@@ -74,6 +75,7 @@ class RewardedAdManager(
                 }
 
                 override fun onAdFailedToLoad(error: LoadAdError) {
+                    android.util.Log.w("LunaAds", "Rewarded ad failed to load: code=${error.code} ${error.message}")
                     loadRetryCount++  // ✅ Sadece load failure'da artar
                     _adState.value = AdState.Error("Ad failed to load: ${error.message}")
                     rewardedAd = null

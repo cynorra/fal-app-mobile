@@ -19,6 +19,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import android.util.Log
+import androidx.compose.foundation.layout.width
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
@@ -30,16 +36,19 @@ fun AdaptiveBannerAd(
 ) {
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
-    val density = LocalDensity.current
     val owner = LocalLifecycleOwner.current
-    
-    val widthDp = configuration.screenWidthDp
+
+    // Adaptive banners must be requested for the width they are drawn in. Cap it for tablets.
+    val widthDp = minOf(configuration.screenWidthDp, 728)
     val adSize = remember(widthDp) {
         AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(context, widthDp)
     }
-    val height = with(density) { adSize.height.toDp() }
+    // AdSize.height / width are already in dp: do not convert them as pixels (that clipped the ad)
+    val heightDp = adSize.height.dp
+    val widthAdDp = adSize.width.dp
     val holder = remember { mutableStateOf<AdView?>(null) }
-    
+    var failed by remember { mutableStateOf(false) }
+
     DisposableEffect(owner, adUnitId, adSize) {
         val observer = object : DefaultLifecycleObserver {
             override fun onResume(owner: LifecycleOwner) { holder.value?.resume() }
@@ -56,18 +65,36 @@ fun AdaptiveBannerAd(
             holder.value = null
         }
     }
-    
-    key(adUnitId, adSize) {
-        AndroidView(
-            factory = { ctx ->
-                AdView(ctx).apply {
-                    this.adUnitId = adUnitId
-                    setAdSize(adSize)
-                    holder.value = this
-                    loadAd(AdRequest.Builder().build())
-                }
-            },
-            modifier = modifier.fillMaxWidth().height(height)
-        )
+
+    Box(modifier = modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+        key(adUnitId, adSize) {
+            AndroidView(
+                factory = { ctx ->
+                    AdView(ctx).apply {
+                        this.adUnitId = adUnitId
+                        setAdSize(adSize)
+                        adListener = object : AdListener() {
+                            override fun onAdLoaded() {
+                                failed = false
+                                Log.d(LOG_TAG, "Banner loaded")
+                            }
+
+                            override fun onAdFailedToLoad(error: LoadAdError) {
+                                // Collapse the empty strip when there is no fill
+                                failed = true
+                                Log.w(LOG_TAG, "Banner failed to load: code=${error.code} ${error.message}")
+                            }
+                        }
+                        holder.value = this
+                        loadAd(AdRequest.Builder().build())
+                    }
+                },
+                modifier = Modifier
+                    .width(widthAdDp)
+                    .height(if (failed) 0.dp else heightDp)
+            )
+        }
     }
 }
+
+private const val LOG_TAG = "LunaAds"

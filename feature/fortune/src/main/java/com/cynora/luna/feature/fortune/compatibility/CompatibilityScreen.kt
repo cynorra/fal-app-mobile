@@ -48,6 +48,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.cynora.luna.core.data.model.ZodiacSign
 import com.cynora.luna.core.data.repository.CompatibilityResult
 import com.cynora.luna.core.ui.theme.LunaColors
+import com.cynora.luna.core.ui.modern.LunaPrimaryButton
 import com.cynora.luna.core.ui.modern.GlassCard
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -101,24 +102,20 @@ fun CompatibilityScreen(
                 
                 Spacer(modifier = Modifier.height(24.dp))
                 
-                Button(
+                LunaPrimaryButton(
+                    text = "Calculate Compatibility 💕",
                     onClick = { viewModel.onIntent(CompatibilityIntent.Calculate) },
                     enabled = state.sign1 != null && state.sign2 != null,
-                    modifier = Modifier.fillMaxWidth().height(56.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold)
-                ) {
-                    Text("Calculate Compatibility 💕", color = Color.Black, fontWeight = FontWeight.Bold)
-                }
+                    modifier = Modifier.fillMaxWidth().height(56.dp)
+                )
             } else {
                 CompatibilityResultView(state.result!!)
                 Spacer(modifier = Modifier.height(16.dp))
-                Button(
+                LunaPrimaryButton(
+                    text = "Try Another",
                     onClick = { viewModel.onIntent(CompatibilityIntent.Reset) },
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold)
-                ) {
-                    Text("Try Another", color = Color.Black)
-                }
+                    modifier = Modifier.fillMaxWidth()
+                )
             }
         }
     }

@@ -86,7 +86,7 @@ fun LunaNavHost(appVM: AppViewModel = hiltViewModel()) {
             containerColor = Color.Transparent,
             bottomBar = {
                 if (showBottom) {
-                    LunaBottomNavigation(items, currentRoute, onItemSelected = { item ->
+                    LunaBottomNavigation(items, currentRoute, showBanner = true, onItemSelected = { item ->
                         nav.navigate(item.route) {
                             popUpTo(nav.graph.findStartDestination().id) {
                                 saveState = true

@@ -2,6 +2,9 @@ package com.cynora.luna.core.ui.ads
 
 import android.content.Context
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
+import kotlinx.coroutines.delay
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import com.google.android.ump.ConsentInformation
@@ -38,4 +41,27 @@ object AdManager {
 fun rememberCanShowAds(): Boolean {
     val context = LocalContext.current
     return remember { AdManager.canShowAds(context) }
+}
+
+
+/**
+ * True once the user's consent state allows requesting ads (UMP). Re-checks every two seconds until
+ * it becomes true, because the consent form can finish after this screen is first composed.
+ */
+@Composable
+fun rememberAdsAllowed(): Boolean {
+    val context = LocalContext.current
+    val allowed by produceState(initialValue = false, context) {
+        while (true) {
+            val ok = try {
+                UserMessagingPlatform.getConsentInformation(context).canRequestAds()
+            } catch (e: Exception) {
+                false
+            }
+            value = ok
+            if (ok) break
+            delay(2000)
+        }
+    }
+    return allowed
 }

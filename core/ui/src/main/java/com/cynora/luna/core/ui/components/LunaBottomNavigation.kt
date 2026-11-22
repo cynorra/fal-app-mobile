@@ -38,6 +38,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.cynora.luna.core.ui.ads.AdUnits
+import com.cynora.luna.core.ui.ads.AdaptiveBannerAd
+import com.cynora.luna.core.ui.ads.rememberAdsAllowed
 import com.cynora.luna.core.ui.theme.LunaColors
 
 data class BottomNavItem(
@@ -48,6 +51,25 @@ data class BottomNavItem(
 
 @Composable
 fun LunaBottomNavigation(
+    items: List<BottomNavItem>,
+    selectedRoute: String?,
+    onItemSelected: (BottomNavItem) -> Unit,
+    modifier: Modifier = Modifier,
+    showBanner: Boolean = false
+) {
+    val adsAllowed = rememberAdsAllowed()
+    Column(modifier = modifier.fillMaxWidth()) {
+        LunaDock(items, selectedRoute, onItemSelected)
+        // Banner sits below the dock, at the very bottom of the screen
+        if (showBanner && adsAllowed) {
+            AdaptiveBannerAd(adUnitId = AdUnits.banner)
+        }
+    }
+}
+
+
+@Composable
+private fun LunaDock(
     items: List<BottomNavItem>,
     selectedRoute: String?,
     onItemSelected: (BottomNavItem) -> Unit,

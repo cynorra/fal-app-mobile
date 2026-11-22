@@ -47,6 +47,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.cynora.luna.core.data.repository.BirthChartData
 import com.cynora.luna.core.ui.theme.LunaColors
+import com.cynora.luna.core.ui.modern.LunaPrimaryButton
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalTime
 
@@ -90,13 +91,11 @@ fun BirthChartScreen(
             } else if (state.birthChart != null) {
                 BirthChartResult(state.birthChart!!)
                 Spacer(modifier = Modifier.height(16.dp))
-                Button(
+                LunaPrimaryButton(
+                    text = "Calculate Another",
                     onClick = { viewModel.onIntent(BirthChartIntent.Reset) },
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold)
-                ) {
-                    Text("Calculate Another", color = Color.Black)
-                }
+                    modifier = Modifier.fillMaxWidth()
+                )
             }
         }
     }

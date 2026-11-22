@@ -10,11 +10,16 @@ plugins {
 // AdMob app id for release builds, set in gradle.properties (LUNA_ADMOB_APP_ID).
 val googleTestAdmobAppId = "ca-app-pub-3940256099942544~3347511713"
 val lunaAdmobAppId: String = (findProperty("LUNA_ADMOB_APP_ID") as String?) ?: googleTestAdmobAppId
+// Device-test builds can force Google test ad units even in release mode (never for tagged releases).
+val forceTestAds: Boolean = (findProperty("LUNA_FORCE_TEST_ADS") as String?) == "true"
 
 // Never ship a release tag with Google's test app id.
 gradle.taskGraph.whenReady {
     val isTagBuild = System.getenv("GITHUB_REF")?.startsWith("refs/tags/v") == true
     val buildsRelease = allTasks.any { it.name.contains("Release", ignoreCase = true) && it.project == project }
+    if (isTagBuild && buildsRelease && forceTestAds) {
+        throw GradleException("LUNA_FORCE_TEST_ADS must not be set for a tagged release build.")
+    }
     if (isTagBuild && buildsRelease && lunaAdmobAppId == googleTestAdmobAppId) {
         throw GradleException("LUNA_ADMOB_APP_ID is still Google's test app id. Set the real AdMob app id in gradle.properties before tagging a release.")
     }
@@ -54,10 +59,12 @@ android {
             applicationIdSuffix = ".debug"
             // Google's public test app id: debug builds never serve live ads.
             manifestPlaceholders["admobAppId"] = "ca-app-pub-3940256099942544~3347511713"
+            buildConfigField("boolean", "FORCE_TEST_ADS", "true")
         }
         
         release {
             manifestPlaceholders["admobAppId"] = lunaAdmobAppId
+            buildConfigField("boolean", "FORCE_TEST_ADS", forceTestAds.toString())
             isMinifyEnabled = true
             isShrinkResources = true
             signingConfig = signingConfigs.getByName("release")
