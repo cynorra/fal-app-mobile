@@ -16,7 +16,7 @@ export const A = {
       "Daily affirmations to start the day with intention",
       "3D tarot cards and a zodiac guide for every sign",
       "Mystic community: share your daily intention with others",
-      "Offline mode, dark mode, 8 languages and optional daily reminders"
+      "Offline mode, dark mode and optional daily reminders"
     ],
     outro: "Luna is made for entertainment and self-reflection. It does not replace professional medical, legal or financial advice. Download Luna: tarot, horoscope and astrology in one place."
   },
@@ -36,7 +36,7 @@ export const A = {
       "Güne niyetle başlamak için günlük olumlamalar",
       "3D tarot kartları ve her burç için burç rehberi",
       "Mistik topluluk: günlük niyetini diğer kullanıcılarla paylaş",
-      "Çevrimdışı mod, karanlık tema, 8 dil ve isteğe bağlı günlük hatırlatmalar"
+      "Çevrimdışı mod, karanlık tema ve isteğe bağlı günlük hatırlatmalar"
     ],
     outro: "Luna eğlence ve kendini yansıtma amacıyla hazırlanmıştır; tıbbi, hukuki veya finansal tavsiyenin yerini tutmaz. Luna'yı indir: tarot, burç ve astroloji tek uygulamada."
   },
@@ -56,7 +56,7 @@ export const A = {
       "Afirmaciones diarias para empezar el día con intención",
       "Cartas de tarot en 3D y una guía de cada signo del zodiaco",
       "Comunidad mística: comparte tu intención del día",
-      "Modo sin conexión, modo oscuro, 8 idiomas y recordatorios opcionales"
+      "Modo sin conexión, modo oscuro y recordatorios opcionales"
     ],
     outro: "Luna está hecha para el entretenimiento y la reflexión personal; no sustituye el consejo médico, legal o financiero profesional. Descarga Luna: tarot, horóscopo y astrología en un solo lugar."
   },
@@ -76,7 +76,7 @@ export const A = {
       "تأكيدات يومية لتبدأ يومك بنية صافية",
       "بطاقات تاروت ثلاثية الأبعاد ودليل لكل برج",
       "مجتمع صوفي: شارك نيّتك اليومية مع الآخرين",
-      "وضع بلا إنترنت ووضع داكن و8 لغات وتذكيرات يومية اختيارية"
+      "وضع بلا إنترنت ووضع داكن وتذكيرات يومية اختيارية"
     ],
     outro: "تم إعداد لونا للترفيه والتأمل الذاتي ولا تغني عن المشورة الطبية أو القانونية أو المالية المتخصصة. حمّل لونا: التاروت والأبراج والفلك في مكان واحد."
   },
@@ -96,7 +96,7 @@ export const A = {
       "Tägliche Affirmationen für einen bewussten Start in den Tag",
       "3D-Tarotkarten und ein Sternzeichen-Guide",
       "Mystische Community: Teile deine Tagesabsicht",
-      "Offline-Modus, Dark Mode, 8 Sprachen und optionale tägliche Erinnerungen"
+      "Offline-Modus, Dark Mode und optionale tägliche Erinnerungen"
     ],
     outro: "Luna dient der Unterhaltung und Selbstreflexion und ersetzt keine ärztliche, rechtliche oder finanzielle Beratung. Lade Luna herunter: Tarot, Horoskop und Astrologie an einem Ort."
   },
@@ -116,7 +116,7 @@ export const A = {
       "Affirmations quotidiennes pour bien commencer la journée",
       "Cartes de tarot en 3D et guide de chaque signe du zodiaque",
       "Communauté mystique : partage ton intention du jour",
-      "Mode hors connexion, mode sombre, 8 langues et rappels facultatifs"
+      "Mode hors connexion, mode sombre et rappels facultatifs"
     ],
     outro: "Luna est conçue pour le divertissement et l'introspection ; elle ne remplace pas un avis médical, juridique ou financier professionnel. Télécharge Luna : tarot, horoscope et astrologie au même endroit."
   },
@@ -136,7 +136,7 @@ export const A = {
       "Afirmações diárias para começar o dia com intenção",
       "Cartas de tarô em 3D e guia de cada signo do zodíaco",
       "Comunidade mística: compartilhe sua intenção do dia",
-      "Modo offline, modo escuro, 8 idiomas e lembretes opcionais"
+      "Modo offline, modo escuro e lembretes opcionais"
     ],
     outro: "A Luna foi feita para entretenimento e autorreflexão e não substitui aconselhamento médico, jurídico ou financeiro profissional. Baixe a Luna: tarô, horóscopo e astrologia em um só lugar."
   },
@@ -156,7 +156,7 @@ export const A = {
       "毎日のアファメーションで意図をもって一日を始める",
       "3Dタロットカードと各星座のガイド",
       "ミスティックコミュニティ：今日の意図をシェア",
-      "オフライン対応、ダークモード、8言語、任意のデイリー通知"
+      "オフライン対応、ダークモード、任意のデイリー通知"
     ],
     outro: "Lunaはエンターテインメントと自己省察を目的としており、医療・法律・金融の専門的な助言に代わるものではありません。タロット、星占い、占星術をLunaで。"
   },
@@ -176,7 +176,7 @@ export const A = {
       "Ежедневные аффирмации для осознанного начала дня",
       "3D-карты Таро и путеводитель по знакам зодиака",
       "Мистическое сообщество: делитесь намерением дня",
-      "Офлайн-режим, тёмная тема, 8 языков и необязательные напоминания"
+      "Офлайн-режим, тёмная тема и необязательные напоминания"
     ],
     outro: "Luna создана для развлечения и самопознания и не заменяет консультацию врача, юриста или финансового специалиста. Скачайте Luna: Таро, гороскоп и астрология в одном месте."
   },
@@ -196,7 +196,7 @@ export const A = {
       "Affermazioni quotidiane per iniziare la giornata con intenzione",
       "Carte dei tarocchi in 3D e guida a ogni segno zodiacale",
       "Community mistica: condividi l'intenzione del giorno",
-      "Modalità offline, tema scuro, 8 lingue e promemoria facoltativi"
+      "Modalità offline, tema scuro e promemoria facoltativi"
     ],
     outro: "Luna è pensata per intrattenimento e riflessione personale e non sostituisce consigli medici, legali o finanziari professionali. Scarica Luna: tarocchi, oroscopo e astrologia in un unico posto."
   },
@@ -216,7 +216,7 @@ export const A = {
       "의도를 가지고 하루를 시작하는 데일리 확언",
       "3D 타로 카드와 별자리 가이드",
       "미스틱 커뮤니티: 오늘의 다짐 공유",
-      "오프라인 모드, 다크 모드, 8개 언어, 선택형 데일리 알림"
+      "오프라인 모드, 다크 모드, 선택형 데일리 알림"
     ],
     outro: "Luna는 오락과 자기 성찰을 위해 만들어졌으며 의료, 법률, 금융 전문 상담을 대체하지 않습니다. 타로, 운세, 점성술을 Luna에서 만나보세요."
   }

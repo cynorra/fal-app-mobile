@@ -7,6 +7,8 @@ import android.os.Build
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import com.cynora.luna.core.data.seed.SeedDataLoader
+import com.cynora.luna.core.ui.ads.AdUnits
+import com.cynora.luna.di.AdConfig
 import com.cynora.luna.work.WorkScheduler
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
@@ -27,6 +29,9 @@ class LunaApplication : Application(), Configuration.Provider {
     @Inject
     lateinit var workerFactory: HiltWorkerFactory
 
+    @Inject
+    lateinit var adConfig: AdConfig
+
     private val appScope = CoroutineScope(Job() + Dispatchers.IO)
 
     override val workManagerConfiguration: Configuration
@@ -45,6 +50,11 @@ class LunaApplication : Application(), Configuration.Provider {
                     .build()
             )
         }
+
+        AdUnits.native = adConfig.nativeAdUnitId
+        AdUnits.rewarded = adConfig.rewardedAdUnitId
+        AdUnits.banner = adConfig.bannerAdUnitId
+        AdUnits.interstitial = adConfig.interstitialAdUnitId
 
         createNotificationChannels()
 

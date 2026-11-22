@@ -21,7 +21,7 @@ import kotlinx.coroutines.flow.asStateFlow
 
 class RewardedAdManager(
     private val activity: Activity,
-    private val adUnitId: String = "ca-app-pub-3940256099942544/5224354917"
+    private val adUnitId: String = AdUnits.rewarded
 ) : DefaultLifecycleObserver {
     
     private var rewardedAd: RewardedAd? = null

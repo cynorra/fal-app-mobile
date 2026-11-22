@@ -459,7 +459,7 @@ fun ProfileScreen(
                         try {
                             val intent = Intent(
                                 Intent.ACTION_VIEW,
-                                Uri.parse("https://luna.cynora.com/privacy")
+                                Uri.parse("https://cynorra.github.io/luna/privacy-policy.html")
                             )
                             context.startActivity(intent)
                         } catch (e: Exception) {

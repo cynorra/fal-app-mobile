@@ -39,7 +39,7 @@ import timber.log.Timber
 
 @Composable
 fun NativeAdvancedAd(
-    adUnitId: String = "ca-app-pub-3940256099942544/2247696110",
+    adUnitId: String = AdUnits.native,
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
