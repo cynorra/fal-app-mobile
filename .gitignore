@@ -83,3 +83,7 @@ Thumbs.db
 
 # Graphify output
 graphify-out/
+
+# Firebase service account keys (never commit)
+*-firebase-adminsdk-*.json
+service-account-key.json

@@ -106,8 +106,8 @@ jobs:
             - 8 language support
             
             ### Features
-            - 16 fortune types
-            - 820+ unique readings
+            - 8 reading types: coffee, tarot, lenormand, angel, horoscope, dream, palm, love
+            - 288 hand-checked readings
             - AdMob monetization
             - Firebase backend
             - GDPR/KVKK compliant

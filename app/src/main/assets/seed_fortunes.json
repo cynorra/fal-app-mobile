@@ -3,57 +3,5824 @@
     {
       "id": "coffee_001",
       "type": "coffee",
-      "text": "A path appears in your cup, opening the door to a new chapter in your life. Be brave, the universe awaits you.",
-      "dailyIntention": "Today I am open to new beginnings.",
-      "moodTags": ["hopeful", "excited"],
-      "focusTags": ["career", "general"],
-      "keywordTags": ["path", "new beginning", "opportunity", "courage"],
+      "text": "A small knot sits just under the rim of the cup, and the rim is today, so this reads as a tangle that is close and still loose enough to undo. Before tonight's call with your partner, choose the one thing you actually want to say and leave the rest of the list in the grounds.",
+      "dailyIntention": "I say one clear thing tonight.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "knot",
+        "rim",
+        "call",
+        "partner"
+      ],
       "rarity": "rare",
-      "createdAt": 1704067200000
+      "createdAt": 1795357565124
     },
     {
       "id": "coffee_002",
       "type": "coffee",
-      "text": "A heart symbol shines at the bottom of your cup. An unexpected beauty awaits in your love life.",
-      "dailyIntention": "I keep my heart open to love.",
-      "moodTags": ["hopeful", "peaceful"],
-      "focusTags": ["love"],
-      "keywordTags": ["heart", "love", "relationship", "unexpected"],
+      "text": "Thick grounds heap into a mountain on the handle side of the cup, the side of the self, and heavy grounds are often read as pressure left to pile up. Circle the two tasks on your list that truly cannot move and let the rest wait until Thursday.",
+      "dailyIntention": "I circle two tasks and park the rest.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "mountain",
+        "grounds",
+        "handle",
+        "list"
+      ],
       "rarity": "epic",
-      "createdAt": 1704067200000
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_003",
+      "type": "coffee",
+      "text": "Near the bottom of the cup, where things are far off, the grounds make a spoon, which is read as modest but steady provision. Open the one bill you keep avoiding, since it is usually smaller than the dread around it.",
+      "dailyIntention": "I open the bill I keep avoiding.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "spoon",
+        "bottom",
+        "bill",
+        "grounds"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_004",
+      "type": "coffee",
+      "text": "The grounds left on the saucer form an anchor, read as a call to hold still while everything around you keeps moving. Your shoulders have probably been carrying the week, so drop them away from your ears and walk once around the block without your phone.",
+      "dailyIntention": "I walk around the block without my phone.",
+      "moodTags": [
+        "stressed",
+        "tired"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "anchor",
+        "saucer",
+        "shoulders",
+        "phone"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_005",
+      "type": "coffee",
+      "text": "At the rim of the cup sits a small bird, and the rim is the near future, so this is read as a short message arriving soon. Silence your notifications for an hour, then read what has piled up in one sitting instead of in fragments.",
+      "dailyIntention": "I read my messages in one sitting.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "bird",
+        "rim",
+        "notifications",
+        "message"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_006",
+      "type": "coffee",
+      "text": "Thin streaks run down the inside of the cup like a narrow path, and thin streaks are often read as passages that are open but tight. Give yourself five minutes tonight with the lights low, and sit without hunting for an answer.",
+      "dailyIntention": "I sit in the quiet for five minutes.",
+      "moodTags": [
+        "stressed",
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "streaks",
+        "path",
+        "lights",
+        "cup"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_007",
+      "type": "coffee",
+      "text": "Half a ring closes beside the handle, which is read as a bond that is still taking shape and does not need finishing today. Skip the long conversation tonight and simply sit near the person you care about while the kettle boils.",
+      "dailyIntention": "I sit close without talking tonight.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "ring",
+        "handle",
+        "kettle",
+        "person"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_008",
+      "type": "coffee",
+      "text": "Leaning against the inside wall of the cup, a ladder with faded top rungs is traditionally read as progress that is real but slow. Nobody is owed a sprint this week, so pick one step on the project and count the day as good once it is done.",
+      "dailyIntention": "I take one small step on the project.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "career",
+        "general"
+      ],
+      "keywordTags": [
+        "ladder",
+        "rungs",
+        "project",
+        "cup"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_009",
+      "type": "coffee",
+      "text": "A door stands slightly open low in the cup, which is read as an opportunity that is still a long way off. Nothing about money needs deciding while you are this worn out, so write the question on paper and look at it again after a full night of sleep.",
+      "dailyIntention": "I sleep on every money decision.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "door",
+        "cup",
+        "money",
+        "paper"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_010",
+      "type": "coffee",
+      "text": "A fish swims along the handle side of the cup, and that side is the self, so it is read as vitality that returns when it is given room. Go to bed half an hour earlier than planned and leave the dishes in the sink.",
+      "dailyIntention": "I go to bed half an hour early.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "fish",
+        "handle",
+        "bed",
+        "dishes"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_011",
+      "type": "coffee",
+      "text": "Across the middle of the cup a bridge crosses between two clumps of grounds, read as a gap shorter than it looks from where you stand. Do the smallest part of the thing you have been dreading and stop there.",
+      "dailyIntention": "I do the smallest part and stop.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "bridge",
+        "grounds",
+        "gap",
+        "cup"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_012",
+      "type": "coffee",
+      "text": "Tipped onto the saucer, the grounds shape a key, and the saucer is where cup readers look for the answer. Here the answer is plain permission to rest, so skip the evening routine you feel obliged to keep and sit in the quiet instead.",
+      "dailyIntention": "I skip one obligation and rest.",
+      "moodTags": [
+        "tired",
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "key",
+        "saucer",
+        "routine",
+        "quiet"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_013",
+      "type": "coffee",
+      "text": "An eye opens in the grounds on the handle side of the cup, the side of the self, and it is read as a call to look at your own part first. If a conversation with your partner still confuses you, write down what you felt rather than what they did, and bring that to them.",
+      "dailyIntention": "I write down what I actually felt.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "eye",
+        "grounds",
+        "handle",
+        "partner"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_014",
+      "type": "coffee",
+      "text": "Grounds gather into a crown just under the rim, usually read as recognition on its way, though not always in the form you expect. If your role at work is unclear right now, ask your manager for one sentence on what success looks like this quarter.",
+      "dailyIntention": "I ask what success looks like here.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "crown",
+        "rim",
+        "manager",
+        "role"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_015",
+      "type": "coffee",
+      "text": "On the saucer the grounds roll into a wheel, which is read as money moving in cycles rather than in straight lines. Write your last three months of spending in one list before you decide anything, since patterns are hard to see from memory.",
+      "dailyIntention": "I list three months of spending.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "wheel",
+        "saucer",
+        "spending",
+        "list"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_016",
+      "type": "coffee",
+      "text": "Cloudy streaks drift across the middle of the cup, read as a muddled stretch that clears with time and attention. Notice what you ate and how much sleep you got over the past two days, because a plain note often explains more than guessing does.",
+      "dailyIntention": "I note my food and sleep today.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "streaks",
+        "cup",
+        "sleep",
+        "note"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_017",
+      "type": "coffee",
+      "text": "Branches of a tree climb the side of the cup from the bottom, and a tree is read as slow growth on deep roots. Choose the one question you are weighing and give it a full week before deciding, since some answers need time to settle.",
+      "dailyIntention": "I give one question a full week.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "tree",
+        "branches",
+        "bottom",
+        "question"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_018",
+      "type": "coffee",
+      "text": "One bright star of grounds sits close to the rim of the cup, which is read as clarity arriving in a small flash rather than a long speech. Keep a pen near your bed tonight and write down whatever thought is clearest when you wake.",
+      "dailyIntention": "I keep a pen by my bed tonight.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "star",
+        "rim",
+        "pen",
+        "bed"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_019",
+      "type": "coffee",
+      "text": "Quietly on the handle side of the cup rests a heart, read as affection that is already settled and needs no proving. Send one ordinary message to someone you love today, the kind with no request in it.",
+      "dailyIntention": "I send one message with no request.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "heart",
+        "handle",
+        "message",
+        "cup"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_020",
+      "type": "coffee",
+      "text": "Out on the far side of the cup a small boat sits in still grounds, read as work that moves steadily once you stop pushing it. Do your main task at an easy pace this afternoon and see how much gets done without the rush.",
+      "dailyIntention": "I work at an easy pace today.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "boat",
+        "grounds",
+        "task",
+        "afternoon"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_021",
+      "type": "coffee",
+      "text": "Settled near the bottom of the cup, a small house of grounds is a traditional sign of stability built slowly. Look at one fixed cost in your month, such as rent or a subscription, and simply confirm it still fits your life.",
+      "dailyIntention": "I check one fixed cost this week.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "house",
+        "bottom",
+        "rent",
+        "subscription"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_022",
+      "type": "coffee",
+      "text": "Light along the rim of the cup lies a feather, read as ease and a lighter load in the days just ahead. Take lunch away from your desk, chew slowly, and let the afternoon begin a few minutes late.",
+      "dailyIntention": "I eat lunch away from my desk.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "feather",
+        "rim",
+        "lunch",
+        "desk"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_023",
+      "type": "coffee",
+      "text": "Curving on the saucer, where cup readers look for answers, a thin crescent is read as a quiet beginning that needs no announcement. Leave one evening hour unplanned and notice what you reach for first.",
+      "dailyIntention": "I leave one evening hour unplanned.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "crescent",
+        "saucer",
+        "evening",
+        "hour"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_024",
+      "type": "coffee",
+      "text": "Winding slowly down the inside of the cup, a snake of grounds is traditionally read as caution, and also as skin that has already been outgrown. Notice one habit that feels finished and thank it quietly before you drop it.",
+      "dailyIntention": "I thank one old habit and stop.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "snake",
+        "grounds",
+        "cup",
+        "habit"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_025",
+      "type": "coffee",
+      "text": "Beside the handle a rose of grounds opens slowly, read as affection that has had time to develop and does not need rushing. If someone has been on your mind lately, invite them for coffee this week and keep the plan small.",
+      "dailyIntention": "I invite someone for coffee this week.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "rose",
+        "handle",
+        "grounds",
+        "coffee"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_026",
+      "type": "coffee",
+      "text": "High on the rim of the cup, a sun of grounds is read as visibility and good light on work already done. Update your summary of recent results, then share it with one person who should see it.",
+      "dailyIntention": "I share one result with someone who matters.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "sun",
+        "rim",
+        "results",
+        "summary"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_027",
+      "type": "coffee",
+      "text": "Piled at the bottom of the cup, grounds in the shape of a basket are read as steady gathering over a long stretch. Set a small fixed amount aside on payday and name what it is for, even if it is only a new pair of shoes.",
+      "dailyIntention": "I set aside a small amount on payday.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "basket",
+        "bottom",
+        "payday",
+        "shoes"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_028",
+      "type": "coffee",
+      "text": "Leaf shapes scatter across the cup, and leaves are read as renewal that comes through steady, ordinary habits. Drink a glass of water before your first coffee and take the stairs once today.",
+      "dailyIntention": "I drink water before my first coffee.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "leaf",
+        "cup",
+        "water",
+        "stairs"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_029",
+      "type": "coffee",
+      "text": "Floating near the rim of the cup, a kite of grounds is read as a wish that lifts when you give it a little string. Pick the idea you keep returning to and spend twenty minutes on a first rough version today.",
+      "dailyIntention": "I spend twenty minutes on my idea.",
+      "moodTags": [
+        "hopeful",
+        "excited"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "kite",
+        "rim",
+        "idea",
+        "version"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_030",
+      "type": "coffee",
+      "text": "Glowing on the handle side of the cup, which is the side of the self, a lantern is read as quiet guidance from your own good sense. Sit for ten minutes this evening with a light turned low and put one honest question to yourself.",
+      "dailyIntention": "I ask myself one honest question tonight.",
+      "moodTags": [
+        "hopeful",
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "lantern",
+        "handle",
+        "light",
+        "evening"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_031",
+      "type": "coffee",
+      "text": "Wings of grounds spread beside the rim of the cup in the shape of a butterfly, read as a shift in mood between two people that is already under way. Act on that lift tonight and plan something a little unusual, like a late walk or a cooked dinner.",
+      "dailyIntention": "I plan one unusual evening this week.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "butterfly",
+        "rim",
+        "walk",
+        "dinner"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_032",
+      "type": "coffee",
+      "text": "Galloping across the outer side of the cup, the side of the wider world, a horse is read as fast progress in matters outside the home. Send the proposal or email you have been polishing today, before you tinker with it again.",
+      "dailyIntention": "I send the proposal today.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "horse",
+        "cup",
+        "proposal",
+        "email"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_033",
+      "type": "coffee",
+      "text": "Ringing near the edge of the saucer, a bell of grounds is read as an announcement or an invitation waiting for an answer. If an offer or quote is waiting on you, reply today with one clear number and one clear deadline.",
+      "dailyIntention": "I reply to the offer with one number.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "bell",
+        "saucer",
+        "offer",
+        "deadline"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_034",
+      "type": "coffee",
+      "text": "Open above the saucer, an umbrella of grounds is read as protection that works best when you actually use it. Book the dentist or the stretch class you keep postponing and put it in your calendar before bed.",
+      "dailyIntention": "I book the thing I keep postponing.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "umbrella",
+        "saucer",
+        "dentist",
+        "calendar"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_035",
+      "type": "coffee",
+      "text": "Curled at the bottom of the cup, a cat of grounds is traditionally read as independence and a lucky landing after a small risk. Say yes to the invitation you were unsure about, since you can always leave early.",
+      "dailyIntention": "I say yes to one small invitation.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "cat",
+        "bottom",
+        "invitation",
+        "risk"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "coffee_036",
+      "type": "coffee",
+      "text": "Scissors cut across the saucer, read as a clean separation from something that has run its course. Choose one subscription, group chat or obligation that no longer fits you and quietly leave it today.",
+      "dailyIntention": "I leave one thing that no longer fits.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "scissors",
+        "saucer",
+        "subscription",
+        "chat"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
     },
     {
       "id": "tarot_001",
       "type": "tarot",
-      "text": "The Strength card is drawn. Recognize your inner power, you can overcome any challenge.",
-      "dailyIntention": "I trust my inner strength.",
-      "moodTags": ["stressed", "confused"],
-      "focusTags": ["career", "general"],
-      "keywordTags": ["strength", "power", "courage", "inner strength"],
-      "rarity": "rare",
-      "createdAt": 1704067200000
+      "text": "In the Two of Swords, a blindfolded figure sits before rough water with two blades crossed over the chest, which is read as a temporary truce. You do not need to settle a tense conversation over text while your pulse is high. Tell them you care and will talk after dinner.",
+      "dailyIntention": "I pause tense talks until after dinner.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "two of swords",
+        "blades",
+        "text",
+        "dinner"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
     },
     {
-      "id": "horoscope_001",
-      "type": "horoscope",
-      "text": "The Moon's movement in Aries increases your courage. Don't be afraid to take risks today.",
-      "dailyIntention": "I take bold steps.",
-      "moodTags": ["excited", "hopeful"],
-      "focusTags": ["career", "general"],
-      "keywordTags": ["moon", "aries", "courage", "risk"],
+      "id": "tarot_002",
+      "type": "tarot",
+      "text": "The Ten of Wands shows a hunched figure hauling ten heavy staves toward a distant town, often read as carrying tasks that belong to more than one person. Pick one meeting or side errand on your work calendar today and hand it off or push it to Thursday.",
+      "dailyIntention": "I move one work task to Thursday.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "ten of wands",
+        "staves",
+        "meeting",
+        "calendar"
+      ],
       "rarity": "common",
-      "createdAt": 1704067200000
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_003",
+      "type": "tarot",
+      "text": "Seated outside a walled city while clutching coins to chest and feet, the Four of Pentacles tends to point to tight control driven by worry. Checking your bank balance again before noon will not calm your nerves. Look once to note this week's bills and close the app.",
+      "dailyIntention": "I check my bank app only once today.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "four of pentacles",
+        "coins",
+        "bank balance",
+        "bills"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_004",
+      "type": "tarot",
+      "text": "Leaning on one stave with a bandaged brow before a fence of eight more, the Nine of Wands is read as stubborn endurance near the end of your rope. Your neck and jaw are not built to stay braced all afternoon. Cancel the hard workout tonight and stretch on the living room rug instead.",
+      "dailyIntention": "I trade a hard workout for floor stretching.",
+      "moodTags": [
+        "stressed",
+        "tired"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "nine of wands",
+        "stave",
+        "neck",
+        "rug"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_005",
+      "type": "tarot",
+      "text": "Hanging calmly upside down from a living tree by one foot, the Hanged Man often points to a snag that loosens only when you stop pushing. If an errand or form hits a wall this afternoon, step away for an hour instead of hammering at it.",
+      "dailyIntention": "I step away from one stuck errand.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "hanged man",
+        "tree",
+        "errand",
+        "form"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_006",
+      "type": "tarot",
+      "text": "Standing alone on a snowy peak with a small lantern, the Hermit is read as pulling back from public noise to hear your own judgment. Mute group chats until tomorrow morning and spend twenty minutes reading a paper book.",
+      "dailyIntention": "I mute group chats and read on paper.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "hermit",
+        "lantern",
+        "group chats",
+        "paper book"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_007",
+      "type": "tarot",
+      "text": "Arms folded under a quiet tree, the Four of Cups figure stares at three cups while ignoring a fourth held out from a cloud, which points to emotional fatigue. If you feel flat when someone asks about your day, say you are simply wiped out rather than faking enthusiasm.",
+      "dailyIntention": "I admit I am tired instead of pretending.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "four of cups",
+        "tree",
+        "cups",
+        "cloud"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_008",
+      "type": "tarot",
+      "text": "Pausing with his chin on a hoe beside a bush of seven coins, the Seven of Pentacles tends to mark a slow stretch where effort needs time to settle. Do not start a brand new project late today just to feel productive. Tidy your desk notes and let this week's work sit.",
+      "dailyIntention": "I tidy my desk instead of starting new work.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "seven of pentacles",
+        "hoe",
+        "coins",
+        "desk notes"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_009",
+      "type": "tarot",
+      "text": "Two weary figures trudge through snow past a lit stained glass window in the Five of Pentacles, often read as feeling drained while overlooking simple support nearby. Before ordering expensive takeout tonight out of exhaustion, check what is already in your freezer or ask a friend over for soup.",
+      "dailyIntention": "I cook from my freezer instead of ordering.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "five of pentacles",
+        "snow",
+        "window",
+        "takeout",
+        "freezer"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_010",
+      "type": "tarot",
+      "text": "With one foot in a stream and one on land, Temperance pours water calmly between two cups, which is read as balance built from small daily habits. Skip the third afternoon coffee and drink a tall glass of plain water with a handful of nuts.",
+      "dailyIntention": "I trade afternoon coffee for water and snacks.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "temperance",
+        "stream",
+        "cups",
+        "coffee",
+        "water"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_011",
+      "type": "tarot",
+      "text": "Sitting upright in bed with hands over the face beneath nine swords on a black wall, the Nine of Swords tends to point to worries that grow twice their size after midnight. If your head starts rehearsing tomorrow's errands in the dark, write them on a pad by the lamp and turn off the light.",
+      "dailyIntention": "I write late worries on a bedside pad.",
+      "moodTags": [
+        "tired",
+        "stressed"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "nine of swords",
+        "bed",
+        "lamp",
+        "pad"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_012",
+      "type": "tarot",
+      "text": "Inside a sheltered courtyard, the Six of Cups shows a child handing over a cup brimming with white flowers, often read as comfort found in familiar ground. Put on an old album you knew by heart ten years ago while you fold laundry tonight.",
+      "dailyIntention": "I play an old album while folding laundry.",
+      "moodTags": [
+        "tired",
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "six of cups",
+        "courtyard",
+        "white flowers",
+        "album",
+        "laundry"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_013",
+      "type": "tarot",
+      "text": "Facing seven floating chalices filled with mist in the Seven of Cups, a shadowed figure is read as having too many imagined stories at once. Instead of guessing five motives behind a quiet week from someone, look at what they actually said last time you met.",
+      "dailyIntention": "I rely on real words, not guesses.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "seven of cups",
+        "chalices",
+        "mist",
+        "motives"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_014",
+      "type": "tarot",
+      "text": "Looking out from a stone parapet with a small globe in hand, the Two of Wands often points to standing between two reasonable plans. Write both work options on one index card today and list what each actually asks of your Monday morning.",
+      "dailyIntention": "I compare two work options on paper.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "two of wands",
+        "globe",
+        "index card",
+        "monday"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_015",
+      "type": "tarot",
+      "text": "Holding brass scales in one hand and an upright sword in the other, Justice tends to point to sorting facts without guilt or guesswork. If a split expense or messy budget feels foggy, put every receipt from the past seven days on the table and add them up.",
+      "dailyIntention": "I total this week's receipts on the table.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "justice",
+        "scales",
+        "receipt",
+        "budget"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_016",
+      "type": "tarot",
+      "text": "Ringed by eight upright blades on muddy ground with a loose blindfold, the Eight of Swords is read as feeling stuck inside rules you set yourself. If conflicting advice about food or exercise has left you doing nothing, ignore all of it today. Lace your shoes and walk twenty minutes outside.",
+      "dailyIntention": "I ignore health noise and walk outside.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "eight of swords",
+        "blades",
+        "blindfold",
+        "shoes",
+        "walk"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_017",
+      "type": "tarot",
+      "text": "Beneath a full disc between two pale towers, the Moon shows a winding track where shapes look stranger in dim light, often read as missing information. Delay signing or replying to the unclear message sitting in your inbox until tomorrow afternoon.",
+      "dailyIntention": "I wait for daylight before answering unclear mail.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "the moon",
+        "towers",
+        "inbox",
+        "message"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_018",
+      "type": "tarot",
+      "text": "Between a dark pillar and a white one, the High Priestess holds a half-hidden scroll, which points to answers that arrive only when outside chatter stops. Do not ask three friends what you should do about a personal crossroads today. Take a notebook to a quiet corner and read your own first hunch.",
+      "dailyIntention": "I trust my own quiet notes today.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "high priestess",
+        "pillars",
+        "scroll",
+        "notebook"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_019",
+      "type": "tarot",
+      "text": "Exchanging chalices face to face beneath a winged staff, the Two of Cups tends to point to easy, unforced warmth between equals. Cook something simple together or call a close friend just to hear their voice without an agenda.",
+      "dailyIntention": "I call someone close with no agenda.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "two of cups",
+        "chalices",
+        "friend",
+        "voice"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_020",
+      "type": "tarot",
+      "text": "Bent calmly over a wooden bench carving one coin at a time, the Eight of Pentacles is read as quiet satisfaction in unhurried craft. Close extra browser tabs for an hour today and polish a single document or piece of work from start to finish.",
+      "dailyIntention": "I close extra tabs and finish one piece.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "eight of pentacles",
+        "bench",
+        "browser tabs",
+        "document"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_021",
+      "type": "tarot",
+      "text": "Walking through a sunlit vineyard with a hooded falcon on her gloved hand, the Nine of Pentacles often points to quiet self-reliance. Enjoy something you already own today, like brewing good coffee at home or wearing your favorite coat, instead of browsing stores.",
+      "dailyIntention": "I enjoy what I already own today.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "nine of pentacles",
+        "falcon",
+        "vineyard",
+        "coffee",
+        "coat"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_022",
+      "type": "tarot",
+      "text": "Cradling a gold coin beneath a leafy arch with a rabbit near her feet, the Queen of Pentacles tends to signal grounded bodily care. Treat yourself like a guest you are glad to host tonight by making soup and putting on warm socks.",
+      "dailyIntention": "I make warm soup and wear thick socks.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "queen of pentacles",
+        "rabbit",
+        "soup",
+        "warm socks"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_023",
+      "type": "tarot",
+      "text": "Gliding from choppy water toward a flat shore in a ferry carrying six upright blades, the Six of Swords is read as leaving a noisy stretch behind without drama. Tidy one cluttered chair or hallway shelf tonight so tomorrow morning feels lighter.",
+      "dailyIntention": "I clear one cluttered shelf before bed.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "six of swords",
+        "ferry",
+        "shore",
+        "shelf"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_024",
+      "type": "tarot",
+      "text": "Crowned with a woven garland across four upright staves before a quiet house, the Four of Wands often points to gratitude for a plain shelter. When you open your front door tonight, pause for five seconds on the mat before kicking off your shoes.",
+      "dailyIntention": "I pause at my front door tonight.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "four of wands",
+        "garland",
+        "staves",
+        "front door",
+        "mat"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_025",
+      "type": "tarot",
+      "text": "Surprised by a small fish peeking from a gold chalice beside gentle waves, the Page of Cups is read as an unguarded, slightly shy opening. Send the light check-in text to someone you have been thinking about all week without rehearsing it five times.",
+      "dailyIntention": "I send a warm text without overthinking.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "page of cups",
+        "fish",
+        "chalice",
+        "text"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_026",
+      "type": "tarot",
+      "text": "Watching three ships cross bright water from a high cliff, the Three of Wands often points to early signs that past effort is starting to move. Send one brief follow-up email on a pitch or application you submitted last week.",
+      "dailyIntention": "I send one calm follow-up email today.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "three of wands",
+        "ships",
+        "cliff",
+        "email",
+        "pitch"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_027",
+      "type": "tarot",
+      "text": "Offered from a cloud above a garden archway, the gold coin in the Ace of Pentacles tends to signal a small, practical start rather than a windfall. Move a modest amount into savings today or set up a separate folder for next month's bills.",
+      "dailyIntention": "I move a small sum into savings.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "ace of pentacles",
+        "coin",
+        "savings",
+        "bills"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_028",
+      "type": "tarot",
+      "text": "Kneeling by a clear pool to pour water onto the bank under a bright eight-pointed star, the Star is read as quiet renewal after a dry stretch. Drink a full glass of water before your morning coffee and open a window for fresh air.",
+      "dailyIntention": "I drink water and open a window.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "the star",
+        "pool",
+        "water",
+        "coffee",
+        "window"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_029",
+      "type": "tarot",
+      "text": "Stepping toward a cliff edge with a small bundle over one shoulder and a white dog at his heels, the Fool often points to beginning before every detail is nailed down. Sign up for the local class or try the new route home you have been eyeing for weeks.",
+      "dailyIntention": "I try one small new route home.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "the fool",
+        "bundle",
+        "white dog",
+        "local class",
+        "route"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_030",
+      "type": "tarot",
+      "text": "Overflowing with five steady streams into a pond of water lilies, the Ace of Cups tends to mark a fresh willingness to feel what is actually here. Pause outside for two minutes today and notice the light on the nearest tree or building wall.",
+      "dailyIntention": "I pause outside and notice the light.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "ace of cups",
+        "water lilies",
+        "pond",
+        "light",
+        "tree"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_031",
+      "type": "tarot",
+      "text": "Trotting forward on a white horse with a chalice held steady in one hand, the Knight of Cups is read as turning warm feeling into a direct gesture. Suggest a specific time and place for coffee or an evening walk instead of leaving plans vague.",
+      "dailyIntention": "I suggest a set time for coffee.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "knight of cups",
+        "white horse",
+        "coffee",
+        "walk"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_032",
+      "type": "tarot",
+      "text": "Gripping a freshly sprouted stave over a sunlit valley, the Ace of Wands often points to a burst of creative drive that cools if you wait too long. Open a blank document right now and draft the rough outline of the idea buzzing in your head.",
+      "dailyIntention": "I draft a rough outline right now.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "ace of wands",
+        "stave",
+        "document",
+        "outline"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_033",
+      "type": "tarot",
+      "text": "Showing his architectural sketch to two onlookers under a stone arch, the Three of Pentacles tends to point to skill turned into solid, billable craft. Put your current drive into writing down a clear rate sheet or pitching a paid collaboration you have been sketching.",
+      "dailyIntention": "I write down my rates in plain numbers.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "three of pentacles",
+        "sketch",
+        "stone arch",
+        "rate sheet"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_034",
+      "type": "tarot",
+      "text": "Riding a bareback white horse before a brick wall topped with sunflowers, the Sun is read as bright physical vigor ready to be spent well. Take that restlessness outside for a brisk twenty-minute walk or cook a colorful meal from scratch tonight.",
+      "dailyIntention": "I take a brisk walk outside today.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "the sun",
+        "sunflowers",
+        "brisk walk",
+        "meal"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_035",
+      "type": "tarot",
+      "text": "Steering a stone carriage pulled by one black and one white sphinx outside city walls, the Chariot often points to strong drive that needs one chosen road. Pick the single big errand you have put off all month and finish it before five.",
+      "dailyIntention": "I finish one big errand before five.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "the chariot",
+        "sphinx",
+        "errand",
+        "month"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "tarot_036",
+      "type": "tarot",
+      "text": "Lifted upright against bare mountain peaks with a crown and olive branch at its tip, the Ace of Swords is read as a sudden flash of plain truth. Grab a pen before the feeling fades and write one honest sentence about what you actually want this season.",
+      "dailyIntention": "I write one honest sentence by hand.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "ace of swords",
+        "olive branch",
+        "pen",
+        "sentence"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_001",
+      "type": "lenormand",
+      "text": "Whip in Lenormand is read as friction from repeating the same argument on a loop. Drop the thread you have been rehearsing in your head and tell the person you will pick it up tomorrow after a meal.",
+      "dailyIntention": "I pause one repeating argument until tomorrow.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "whip",
+        "argument",
+        "thread",
+        "meal"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_002",
+      "type": "lenormand",
+      "text": "Mountain is read as a blunt obstacle or delay that will not budge just because you push harder. Stop refreshing the slow approval email today and spend the hour clearing one small administrative task instead.",
+      "dailyIntention": "I stop refreshing one slow work email.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "mountain",
+        "obstacle",
+        "approval email",
+        "task"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_003",
+      "type": "lenormand",
+      "text": "Mice in Lenormand point to quiet erosion through small leaks rather than one big disaster. Scan your last five card charges tonight and switch off one small recurring fee you forgot about.",
+      "dailyIntention": "I turn off one forgotten card charge.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "mice",
+        "card charges",
+        "recurring fee"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_004",
+      "type": "lenormand",
+      "text": "Birds often point to nervous chatter and hurried calls that keep your shoulders tight. Put your phone face down in another room for forty minutes tonight and eat dinner without any background audio.",
+      "dailyIntention": "I eat dinner with zero background audio.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "birds",
+        "shoulders",
+        "phone",
+        "dinner"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_005",
+      "type": "lenormand",
+      "text": "Cross is read literally as a heavy burden or obligation sitting squarely on your back. Say no to one extra favor asked of you today so you can handle the two chores already waiting at home.",
+      "dailyIntention": "I decline one extra favor asked today.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "cross",
+        "favor",
+        "chores",
+        "home"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_006",
+      "type": "lenormand",
+      "text": "Tower in Lenormand tends to point to solitude and the clean boundary of high walls. Close your door for fifteen minutes after work today and sit in a chair without answering anyone or checking a single feed.",
+      "dailyIntention": "I sit behind a closed door for fifteen minutes.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "tower",
+        "walls",
+        "door",
+        "chair"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_007",
+      "type": "lenormand",
+      "text": "House is read as domestic shelter and the plain comfort of familiar rooms. Skip going out tonight and invite your partner or a close friend to share simple toast and tea at the kitchen table.",
+      "dailyIntention": "I share tea at the kitchen table tonight.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "house",
+        "toast",
+        "tea",
+        "kitchen table"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_008",
+      "type": "lenormand",
+      "text": "Coffin in Lenormand points directly to a clean full stop and putting a lid on worn-out effort. Shut down your computer at the exact hour you planned and leave the unfinished draft untouched until morning.",
+      "dailyIntention": "I leave my unfinished draft until morning.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "coffin",
+        "computer",
+        "draft",
+        "morning"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_009",
+      "type": "lenormand",
+      "text": "Bear often points to solid reserves and guarding your practical resources carefully. Put off any nonessential purchase tonight while your focus is low and keep your wallet shut until Saturday.",
+      "dailyIntention": "I keep my wallet shut until Saturday.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "bear",
+        "purchase",
+        "wallet",
+        "saturday"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_010",
+      "type": "lenormand",
+      "text": "Tree in Lenormand is read as physical stamina and slow upkeep that cannot be hurried. Trade late scrolling for an extra hour in bed tonight with a glass of water on the nightstand.",
+      "dailyIntention": "I get into bed an hour earlier.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "tree",
+        "bed",
+        "water",
+        "nightstand"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_011",
+      "type": "lenormand",
+      "text": "Scythe points to a clean, sudden cut that trims away dead weight in one stroke. Cross two optional errands off your evening list right now and do not feel obliged to reschedule either of them.",
+      "dailyIntention": "I cut two optional errands off tonight's list.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "scythe",
+        "errands",
+        "evening list"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_012",
+      "type": "lenormand",
+      "text": "Anchor in Lenormand tends to point to holding fast in one steady spot until rough water passes. Sit by the window tonight with a warm mug in both hands and stay put until the kettle cools completely.",
+      "dailyIntention": "I sit by the window with a warm mug.",
+      "moodTags": [
+        "tired",
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "anchor",
+        "window",
+        "warm mug",
+        "kettle"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_013",
+      "type": "lenormand",
+      "text": "Drawing Snake in Lenormand is read as a detour or complication hiding behind polite wording. Ask the person one direct question about their plans for this weekend instead of piecing clues together from old texts.",
+      "dailyIntention": "I ask one direct question about weekend plans.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "snake",
+        "weekend plans",
+        "texts"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_014",
+      "type": "lenormand",
+      "text": "Fox often points to work politics and reading the fine print before trusting a quick promise. Double-check who actually signs off on your current project today before spending three hours polishing the slides.",
+      "dailyIntention": "I confirm who approves my current project.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "fox",
+        "fine print",
+        "project",
+        "slides"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_015",
+      "type": "lenormand",
+      "text": "When Letter turns up, it tends to point literally to a written invoice or contract holding the missing facts. Pull up the actual PDF statement today instead of guessing the fee from memory.",
+      "dailyIntention": "I read the actual statement instead of guessing.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "letter",
+        "invoice",
+        "statement",
+        "fee"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_016",
+      "type": "lenormand",
+      "text": "Clouds in Lenormand are read as temporary fog where poor sleep or skipped meals blur simple choices. Drink two glasses of water and take a fifteen-minute walk outside before deciding anything about your schedule.",
+      "dailyIntention": "I drink water and walk before deciding.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "clouds",
+        "water",
+        "walk",
+        "schedule"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_017",
+      "type": "lenormand",
+      "text": "Crossroads points directly to two concrete options that cannot both fit into the same week. Write the two choices side by side on a notepad right now and commit to the simpler one before dinner.",
+      "dailyIntention": "I choose the simpler option before dinner.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "crossroads",
+        "options",
+        "notepad",
+        "dinner"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_018",
+      "type": "lenormand",
+      "text": "Closed tight in Lenormand, Book is read as information that has not been revealed yet or study still underway. Stop trying to force a final answer tonight and jot down three plain facts you already know in a journal.",
+      "dailyIntention": "I write down only facts I know tonight.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "book",
+        "study",
+        "facts",
+        "journal"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_019",
+      "type": "lenormand",
+      "text": "Dog in Lenormand points to plain loyalty and the quiet relief of people who keep their word. Send a brief thank-you note today to the friend or partner who reliably shows up for you without fanfare.",
+      "dailyIntention": "I thank someone who reliably shows up.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "dog",
+        "thank-you note",
+        "friend",
+        "partner"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_020",
+      "type": "lenormand",
+      "text": "Turning up in a quiet spread, Man is read as a straightforward, practical presence who prefers plain action over fuss. Clear one routine task on your desk this morning at an unhurried pace without announcing it to the whole team.",
+      "dailyIntention": "I finish one routine task without fuss.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "man",
+        "routine task",
+        "desk",
+        "team"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_021",
+      "type": "lenormand",
+      "text": "Ring tends to point to steady agreements and reliable recurring arrangements that hold their shape. Review your automatic bill payments once today and enjoy the quiet proof that your essentials are already covered.",
+      "dailyIntention": "I review my automatic bills with ease.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "ring",
+        "agreements",
+        "bill payments"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_022",
+      "type": "lenormand",
+      "text": "Lily in Lenormand is read as calm maturity and unhurried bodily ease after busy weeks. Brew a pot of herbal tea after lunch today and sit in the sunniest chair in your home for ten minutes.",
+      "dailyIntention": "I drink herbal tea in a sunny chair.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "lily",
+        "herbal tea",
+        "lunch",
+        "chair"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_023",
+      "type": "lenormand",
+      "text": "In traditional Lenormand, Woman often points to an attentive, observant presence who notices small details others miss. Walk a familiar street today without headphones and pay attention to two shop windows or trees you usually pass by.",
+      "dailyIntention": "I walk a familiar street without headphones.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "woman",
+        "street",
+        "headphones",
+        "shop windows",
+        "trees"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_024",
+      "type": "lenormand",
+      "text": "Stars in Lenormand point directly to clear bearings under an open night sky rather than guesswork. Step onto your balcony or porch after dark tonight and look up at the real sky for sixty quiet seconds before locking the door.",
+      "dailyIntention": "I look at the night sky before locking up.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "stars",
+        "night sky",
+        "balcony",
+        "door"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_025",
+      "type": "lenormand",
+      "text": "A draw of Bouquet is read literally as a small gift or a pleasant gesture offered without strings. Pick up two pastries or a bunch of greens on your way home tonight to share with someone you like.",
+      "dailyIntention": "I bring home a small treat to share.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "bouquet",
+        "gift",
+        "pastries",
+        "greens"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_026",
+      "type": "lenormand",
+      "text": "Traditional readers treat Moon as public recognition and the quiet pull of steady reputation. Share one finished piece of work in today's team channel instead of tucking it away in a private folder.",
+      "dailyIntention": "I share one finished piece with my team.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "moon",
+        "work",
+        "team channel",
+        "folder"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_027",
+      "type": "lenormand",
+      "text": "Spotting Clover points to a small lucky break or a brief practical discount right under your nose. Ask about a lower rate on one service bill today or check for unused store credit before buying groceries.",
+      "dailyIntention": "I ask for a better rate on one bill.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "clover",
+        "discount",
+        "service bill",
+        "groceries"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_028",
+      "type": "lenormand",
+      "text": "Stork tends to signal a welcome change of season and a lighter physical rhythm taking hold. Swap your usual afternoon sit-down for a brisk loop around the nearest park before the light fades.",
+      "dailyIntention": "I walk a brisk loop around the park.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "stork",
+        "park",
+        "loop",
+        "light"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_029",
+      "type": "lenormand",
+      "text": "Because Child stands for something small and brand new, readers often take it as a beginner's fresh start. Spend twenty minutes tonight testing a hobby or recipe you have never tried without caring how neat it looks.",
+      "dailyIntention": "I try one new recipe for twenty minutes.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "child",
+        "hobby",
+        "recipe"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_030",
+      "type": "lenormand",
+      "text": "Plain and direct, Key is read as a practical solution opening right when you stop forcing the lock. Write down one stubborn personal question at the top of a fresh page and list the simplest next step underneath.",
+      "dailyIntention": "I write one simple next step on paper.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "key",
+        "lock",
+        "page",
+        "question"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_031",
+      "type": "lenormand",
+      "text": "Heart points straight to open affection and warmth that likes being shown rather than hinted at. Call or voice-note the person you are excited about right now and suggest meeting for dinner this Friday.",
+      "dailyIntention": "I send a voice note suggesting Friday dinner.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "heart",
+        "voice note",
+        "dinner",
+        "friday"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_032",
+      "type": "lenormand",
+      "text": "Fast on its hooves, Rider often points to incoming news or a message that moves a stalled thread forward. Reply promptly to the lively work email in your inbox and lock in a short call while interest is high.",
+      "dailyIntention": "I answer one lively work email promptly.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "rider",
+        "news",
+        "work email",
+        "call"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_033",
+      "type": "lenormand",
+      "text": "Long linked with trade and money flow, Fish is read as lively movement in your practical finances. Send out the overdue invoice or pitch the paid side gig today instead of letting momentum cool on your desk.",
+      "dailyIntention": "I send my invoice before the day ends.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "fish",
+        "invoice",
+        "side gig",
+        "desk"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_034",
+      "type": "lenormand",
+      "text": "Bright and blunt, Sun tends to point to high physical vitality ready to be put to good use. Channel your extra vigor into a brisk run or bike ride before evening so you sleep deeply tonight.",
+      "dailyIntention": "I go for a brisk run before evening.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "sun",
+        "brisk run",
+        "bike ride",
+        "sleep"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_035",
+      "type": "lenormand",
+      "text": "Built for distance and trade, Ship often points to movement beyond your usual neighborhood. Book the train ticket or map out a Saturday day trip to a neighboring town while your mood is high.",
+      "dailyIntention": "I plan a Saturday day trip by train.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "ship",
+        "train ticket",
+        "day trip",
+        "town"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "lenormand_036",
+      "type": "lenormand",
+      "text": "Set outdoors in public view, Garden is read as shared social life and meeting people outside your own walls. Say yes to a neighborhood gathering or sit at a lively cafe terrace tonight with a notebook and watch the crowd.",
+      "dailyIntention": "I sit at a cafe terrace with my notebook.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "garden",
+        "gathering",
+        "cafe terrace",
+        "notebook"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
     },
     {
       "id": "angel_001",
       "type": "angel",
-      "text": "Archangel Michael protects you. Let go of your fears, you are safe.",
-      "dailyIntention": "I know I am protected.",
-      "moodTags": ["stressed", "peaceful"],
-      "focusTags": ["spiritual", "health"],
-      "keywordTags": ["angel", "michael", "protection", "safety"],
+      "text": "Archangel Raguel is traditionally linked with fairness and easing friction between people who are talking past each other. Send one calm message tonight saying you want to hear their side after you have both had dinner.",
+      "dailyIntention": "I listen to their side after dinner.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "raguel",
+        "fairness",
+        "message",
+        "dinner"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_002",
+      "type": "angel",
+      "text": "In angel traditions, Michael is read as quiet courage and drawing a firm boundary before you burn out. Decline the optional late-afternoon call today and block thirty minutes on your calendar to finish one task.",
+      "dailyIntention": "I decline one optional afternoon work call.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "michael",
+        "boundary",
+        "call",
+        "calendar"
+      ],
       "rarity": "rare",
-      "createdAt": 1704067200000
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_003",
+      "type": "angel",
+      "text": "Uriel often points to practical wisdom and keeping a cool head when numbers feel tangled. Check just your next utility due date over a mug of tea tonight and leave the bigger spreadsheet for Saturday.",
+      "dailyIntention": "I check one due date and stop there.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "uriel",
+        "utility",
+        "tea",
+        "spreadsheet"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_004",
+      "type": "angel",
+      "text": "Long associated with rest and gentle bodily care, Raphael tends to point to slowing down before tension settles deeper. Drop your shoulders from your ears right now and take a slow ten-minute walk outside without checking your watch.",
+      "dailyIntention": "I drop my shoulders and walk slowly.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "raphael",
+        "shoulders",
+        "walk",
+        "watch"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_005",
+      "type": "angel",
+      "text": "Metatron is read as orderly focus and narrowing a crowded mind down to one plain line. Write the single errand that actually matters today on a small sticky note and tuck the longer to-do list inside a drawer.",
+      "dailyIntention": "I put one errand on a sticky note.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "metatron",
+        "sticky note",
+        "errand",
+        "drawer"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_006",
+      "type": "angel",
+      "text": "Known for forgiveness and softening harsh self-talk, Zadkiel often points to dropping a small grudge against yourself. Stop replaying one awkward slip from earlier this week and wash your face with cool water before moving on.",
+      "dailyIntention": "I drop one awkward slip from this week.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "zadkiel",
+        "forgiveness",
+        "cool water",
+        "grudge"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_007",
+      "type": "angel",
+      "text": "Chamuel tends to point to gentle care in close relationships when both people are running low. Ask your partner or friend if you can watch a familiar show together on the couch tonight instead of making elaborate plans.",
+      "dailyIntention": "I choose a quiet couch night together.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "chamuel",
+        "couch",
+        "partner",
+        "show"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_008",
+      "type": "angel",
+      "text": "Associated with clear communication, Gabriel is read as saying one honest sentence instead of pushing through in silence. Send a quick note to your colleague letting them know you will review their file fresh tomorrow morning.",
+      "dailyIntention": "I tell my colleague I will review tomorrow.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "gabriel",
+        "colleague",
+        "file",
+        "note"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_009",
+      "type": "angel",
+      "text": "Linked with nature and steady practical resources, Ariel often points to using what is already in your pantry or cupboards. Cook a simple bowl of pasta or soup from groceries you already bought rather than paying for delivery tonight.",
+      "dailyIntention": "I cook from my pantry instead of ordering.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "ariel",
+        "pantry",
+        "pasta",
+        "delivery"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_010",
+      "type": "angel",
+      "text": "Jophiel is traditionally read as patience with yourself and noticing small ordinary beauty even on slow days. Put on clean soft clothes after work tonight and turn the bright overhead lamp off in favor of a warm side light.",
+      "dailyIntention": "I switch to a warm lamp after work.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "jophiel",
+        "soft clothes",
+        "lamp",
+        "side light"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_011",
+      "type": "angel",
+      "text": "Traditionally tied to quiet transitions, Azrael tends to point to closing one tiring day cleanly without dragging it into the next. Lay out tomorrow's coat by the door tonight and let the rest of the evening stay blank.",
+      "dailyIntention": "I set out tomorrow's coat and rest.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "azrael",
+        "coat",
+        "door",
+        "evening"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_012",
+      "type": "angel",
+      "text": "Sandalphon is read in angel lore as the quiet keeper of music and unspoken prayers that need no polish. Play one slow instrumental track while lying on the floor with your eyes closed for four minutes before bed.",
+      "dailyIntention": "I listen to one slow track before bed.",
+      "moodTags": [
+        "tired",
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "sandalphon",
+        "music",
+        "track",
+        "floor"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_013",
+      "type": "angel",
+      "text": "Jeremiel is read as honest reflection and clearing old baggage before it clouds the room. Separate what actually happened with someone this week from an older hurt by writing both on opposite sides of a napkin.",
+      "dailyIntention": "I separate today's moment from old hurts.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "jeremiel",
+        "napkin",
+        "baggage",
+        "hurt"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_014",
+      "type": "angel",
+      "text": "Raziel often points to hidden knowledge and noticing the one quiet clue everyone else scrolled past. Re-read the original project brief from start to finish today so you spot the missing detail before your afternoon check-in.",
+      "dailyIntention": "I re-read the original brief before checking in.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "raziel",
+        "project brief",
+        "clue",
+        "check-in"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_015",
+      "type": "angel",
+      "text": "Camael tends to point to steady courage when an unclear choice makes you want to look away. Call the billing office or customer desk today to ask for a plain breakdown of the charge you did not understand.",
+      "dailyIntention": "I call and ask about one unclear charge.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "camael",
+        "billing office",
+        "charge",
+        "breakdown"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_016",
+      "type": "angel",
+      "text": "Haniel is traditionally read as quiet intuition and noticing subtle signals without overthinking them. Pause at midday to notice whether your body actually wants a warm lunch or twenty minutes away from screens.",
+      "dailyIntention": "I pause at midday to check what I need.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "haniel",
+        "midday",
+        "warm lunch",
+        "screens"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_017",
+      "type": "angel",
+      "text": "Patron of travelers in older lore, Raphael is read as finding safe passage one mile at a time when the whole map feels blurry. Pick only the very first errand on your list this morning and leave the route for the afternoon undecided until you finish it.",
+      "dailyIntention": "I handle my first errand before planning more.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "raphael",
+        "map",
+        "errand",
+        "route"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_018",
+      "type": "angel",
+      "text": "Cassiel is linked with patience and solitude when an answer simply is not ripe yet. Leave one open personal question unresolved for forty-eight hours and spend ten quiet minutes watering plants or tidying a shelf instead.",
+      "dailyIntention": "I water my plants and let questions wait.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "cassiel",
+        "plants",
+        "shelf",
+        "question"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_019",
+      "type": "angel",
+      "text": "Barachiel often points to household peace and small everyday kindnesses that keep a home warm. Make an extra mug of tea or fold a blanket on the couch today for the person you share your space with.",
+      "dailyIntention": "I make an extra mug of tea at home.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "barachiel",
+        "tea",
+        "blanket",
+        "couch"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_020",
+      "type": "angel",
+      "text": "Jegudiel is traditionally read as steady effort and taking quiet pride in honest work done at a calm pace. Spend the first hour at your desk finishing one clean task without rushing to prove how busy you are.",
+      "dailyIntention": "I work at a calm, unhurried pace today.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "jegudiel",
+        "desk",
+        "task",
+        "work"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_021",
+      "type": "angel",
+      "text": "Honored for seeing beauty in ordinary things, Jophiel tends to point to enjoying what is already around you instead of shopping for more. Cook with the fresh ingredients already in your fridge tonight and set the table properly.",
+      "dailyIntention": "I set the table for a homemade dinner.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "jophiel",
+        "fridge",
+        "ingredients",
+        "table"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_022",
+      "type": "angel",
+      "text": "Close to the natural world in angel lore, Ariel often points to outdoor air and simple bodily rhythm. Eat your afternoon snack near an open window or take a slow stroll past the nearest trees before sunset.",
+      "dailyIntention": "I stroll past the trees before sunset.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "ariel",
+        "snack",
+        "window",
+        "trees",
+        "sunset"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_023",
+      "type": "angel",
+      "text": "Steady courage is Michael's older hallmark, read here as moving through an ordinary day without borrowing anyone else's hurry. Walk to your afternoon errand at your own unhurried stride and let faster commuters pass you on the sidewalk.",
+      "dailyIntention": "I walk at my own unhurried stride today.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "michael",
+        "errand",
+        "commuters",
+        "sidewalk"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_024",
+      "type": "angel",
+      "text": "Selaphiel is read as quiet prayer and the calm stillness that arrives when you stop filling every pause with noise. Sit on the edge of your bed for three silent minutes after waking tomorrow before reaching for your phone.",
+      "dailyIntention": "I sit quietly before reaching for my phone.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "selaphiel",
+        "prayer",
+        "bed",
+        "phone"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_025",
+      "type": "angel",
+      "text": "Finder of lost warmth in older lore, Chamuel is read as rekindling a thread you thought had gone cold. Text the old friend or partner you have been smiling about today and suggest grabbing coffee on Sunday.",
+      "dailyIntention": "I text someone warm to plan Sunday coffee.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "chamuel",
+        "friend",
+        "coffee",
+        "sunday"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_026",
+      "type": "angel",
+      "text": "Herald of fresh announcements, Gabriel often points to putting a promising idea into plain spoken words before it stalls. Bring up your new proposal in today's meeting while everyone is still in the room.",
+      "dailyIntention": "I speak up about my new proposal today.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "gabriel",
+        "proposal",
+        "meeting",
+        "room"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_027",
+      "type": "angel",
+      "text": "Bearer of everyday blessings, Barachiel tends to point to small practical surpluses that grow when you give them a home. Open a labeled jar or sub-account today and drop ten dollars in toward a trip you actually want.",
+      "dailyIntention": "I put ten dollars into my trip jar.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "barachiel",
+        "jar",
+        "sub-account",
+        "trip"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_028",
+      "type": "angel",
+      "text": "Keeper of vitality in angel traditions, Raphael often points to returning to a simple movement habit that leaves you feeling lighter. Roll out a mat for fifteen minutes of gentle stretching before dinner tonight.",
+      "dailyIntention": "I stretch on a mat before dinner.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "raphael",
+        "mat",
+        "stretching",
+        "dinner"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_029",
+      "type": "angel",
+      "text": "Bringing grace and quiet joy in traditional lore, Haniel is read as noticing an ordinary bright spot right inside a busy weekday. Buy yourself a single fresh pastry or take the sunlit side of the street on your lunch break.",
+      "dailyIntention": "I walk the sunny side during lunch.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "haniel",
+        "pastry",
+        "street",
+        "lunch break"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_030",
+      "type": "angel",
+      "text": "Mercy is Zadkiel's older signature, read here as starting a fresh page without hauling last month's regrets across the threshold. Tear out one finished checklist tonight and write a single hopeful goal for next week on clean paper.",
+      "dailyIntention": "I write one goal on clean paper tonight.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "zadkiel",
+        "checklist",
+        "paper",
+        "goal"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_031",
+      "type": "angel",
+      "text": "Guardian of social harmony, Raguel tends to point to turning good spirits into an actual shared table. Invite the person you are excited to see over for homemade tacos or noodles this week instead of leaving it as a vague promise.",
+      "dailyIntention": "I invite someone over for homemade dinner.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "raguel",
+        "table",
+        "tacos",
+        "noodles"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_032",
+      "type": "angel",
+      "text": "Backing dedicated craft in angel lore, Jegudiel is read as putting a strong wave of momentum straight into real work. Block ninety uninterrupted minutes on your calendar today to finish the hardest section of your project.",
+      "dailyIntention": "I block ninety minutes for my hardest task.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "jegudiel",
+        "calendar",
+        "project",
+        "momentum"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_033",
+      "type": "angel",
+      "text": "Sharp practical foresight is Uriel's traditional mark, often pointing to turning enthusiasm into clean numbers before signing anything. Write down your target rate or counteroffer on paper today before sending the email.",
+      "dailyIntention": "I write my counteroffer before emailing.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "uriel",
+        "target rate",
+        "counteroffer",
+        "email"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_034",
+      "type": "angel",
+      "text": "Symbol of physical strength in older traditions, Camael tends to point to spending high vigor cleanly through real movement. Lace up your sneakers before evening and take the steep uphill route on your walk or run.",
+      "dailyIntention": "I take the uphill route on my walk.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "camael",
+        "sneakers",
+        "uphill route",
+        "walk"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_035",
+      "type": "angel",
+      "text": "Scribe of structured plans in angel lore, Metatron often points to catching fast ideas before they scatter across ten tabs. Open one clean notebook page right now and map the first three days of the plan you are buzzing about.",
+      "dailyIntention": "I map three days in a clean notebook.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "metatron",
+        "notebook page",
+        "tabs",
+        "plan"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "angel_036",
+      "type": "angel",
+      "text": "Tied to music and celebration in older lore, Sandalphon is read as letting real gladness take up room in the house. Put on a bright record while you cook tonight and sing along out loud without checking who is listening.",
+      "dailyIntention": "I play a bright record while cooking.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "sandalphon",
+        "music",
+        "record",
+        "house"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_001",
+      "type": "horoscope",
+      "text": "A square between Venus and Saturn is traditionally read as cool distance or guarded feelings during a busy stretch. Skip trying to fix a stiff mood over text today and suggest sitting together quietly after dinner instead.",
+      "dailyIntention": "I skip tense texts and talk after dinner.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "venus",
+        "saturn",
+        "square",
+        "text",
+        "dinner"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_002",
+      "type": "horoscope",
+      "text": "Mars in a hard square to Saturn often points to pushing against a locked door while your patience runs thin. Step back from the stalled work approval today and spend thirty minutes organizing one simple folder instead.",
+      "dailyIntention": "I organize one folder instead of forcing delays.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "mars",
+        "saturn",
+        "approval",
+        "folder"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_003",
+      "type": "horoscope",
+      "text": "In traditional astrology, pressure in the second house tends to point to money worries amplified by fatigue rather than sudden ruin. Write down only the two bills actually due before Friday and close your spreadsheet.",
+      "dailyIntention": "I list only Friday's bills and stop.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "second house",
+        "bills",
+        "spreadsheet",
+        "friday"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_004",
+      "type": "horoscope",
+      "text": "The sixth house governs daily routines and physical upkeep, often read as a signal to pare back when your shoulders feel tight. Take a twenty-minute lunch away from your keyboard today and stretch your wrists before returning.",
+      "dailyIntention": "I eat lunch away from my keyboard.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "sixth house",
+        "shoulders",
+        "lunch",
+        "keyboard",
+        "wrists"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_005",
+      "type": "horoscope",
+      "text": "Mercury moving backward is traditionally read as crossed wires and small mix-ups that punish haste. Re-read the address and time on your afternoon appointment once before heading out the door.",
+      "dailyIntention": "I double-check my appointment address before leaving.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "mercury",
+        "backward",
+        "appointment",
+        "address"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_006",
+      "type": "horoscope",
+      "text": "Quiet twelfth-house themes are read in column lore as a need for private retreat away from public chatter. Turn off notifications for one full hour tonight and sit near a dim lamp with nothing scheduled.",
+      "dailyIntention": "I mute notifications for one quiet hour.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "twelfth house",
+        "notifications",
+        "dim lamp"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_007",
+      "type": "horoscope",
+      "text": "Fourth-house astrology points to home life and the quiet comfort of familiar walls when your energy is low. Tell someone you love that you would rather share simple soup at home tonight than dress up for a noisy restaurant.",
+      "dailyIntention": "I suggest homemade soup instead of going out.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "fourth house",
+        "soup",
+        "home",
+        "restaurant"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_008",
+      "type": "horoscope",
+      "text": "During a balsamic Moon, the dark sliver before a new cycle tends to favor winding down rather than starting fresh work. Close out one small lingering email today and leave ambitious planning for next Monday.",
+      "dailyIntention": "I clear one small email and stop.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "balsamic moon",
+        "email",
+        "monday"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_009",
+      "type": "horoscope",
+      "text": "When the Moon moves through an earth sign, columnists often read it as favoring plain, grounded habits over restless spending. Put your phone on the charger across the room tonight so tired browsing does not turn into a midnight order.",
+      "dailyIntention": "I charge my phone across the room.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "moon",
+        "earth sign",
+        "phone",
+        "charger"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_010",
+      "type": "horoscope",
+      "text": "Under a waning gibbous Moon, traditional lunar timing points to tapering effort and giving a tired body real rest. Skip late caffeine after two today and turn in thirty minutes earlier than your usual bedtime.",
+      "dailyIntention": "I skip afternoon caffeine and sleep earlier.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "waning moon",
+        "caffeine",
+        "bedtime"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_011",
+      "type": "horoscope",
+      "text": "An opposition involving Saturn is often read as heavy outer demands reminding you that one day holds only so many hours. Cross one nonessential errand off your afternoon and give yourself permission to sit on the porch instead.",
+      "dailyIntention": "I drop one errand and sit outside.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "saturn",
+        "opposition",
+        "errand",
+        "porch"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_012",
+      "type": "horoscope",
+      "text": "Soft trines from Neptune tend to point to loosening tight schedules and letting a weary mind drift without a checklist. Brew a mug of chamomile after dark tonight and listen to the street outside through a cracked window.",
+      "dailyIntention": "I drink chamomile by a cracked window.",
+      "moodTags": [
+        "tired",
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "neptune",
+        "trine",
+        "chamomile",
+        "window"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_013",
+      "type": "horoscope",
+      "text": "Seventh-house astrology centers on one-to-one bonds and often points to noticing where assumptions replace actual dialogue. Ask your partner or date one plain question over coffee today instead of guessing what they meant yesterday.",
+      "dailyIntention": "I ask one plain question over coffee.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "seventh house",
+        "partner",
+        "coffee",
+        "dialogue"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_014",
+      "type": "horoscope",
+      "text": "Columnists read a Mercury-Neptune square as foggy wording where two coworkers leave the same call with different notes. Send a three-line recap email after today's meeting so everyone agrees on who owns the next step.",
+      "dailyIntention": "I send a short recap after meetings.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "mercury",
+        "neptune",
+        "square",
+        "recap email",
+        "meeting"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_015",
+      "type": "horoscope",
+      "text": "Shared expenses and joint bills belong to the eighth house, which tends to point to clarifying mixed numbers before resentment builds. Sit down tonight with the household receipts and write each person's share on one clean sheet.",
+      "dailyIntention": "I write down shared bills on one sheet.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "eighth house",
+        "joint bills",
+        "receipts",
+        "sheet"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_016",
+      "type": "horoscope",
+      "text": "Moving through a mutable sign, the Moon often points to scattered rhythms where changing plans crowd out basic meals. Pick one fixed time for lunch today and step away from your desk when the clock hits it.",
+      "dailyIntention": "I eat lunch at one fixed hour today.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "moon",
+        "mutable sign",
+        "lunch",
+        "desk",
+        "clock"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_017",
+      "type": "horoscope",
+      "text": "At the last quarter Moon, lunar lore favors editing out clutter so a crowded week becomes readable again. Open your calendar right now and cross off one tentative plan that only creates friction around your Tuesday.",
+      "dailyIntention": "I delete one tentative plan from my calendar.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "last quarter moon",
+        "calendar",
+        "tuesday",
+        "clutter"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_018",
+      "type": "horoscope",
+      "text": "Pluto in opposition is traditionally read as quiet pressure that peels back an outdated habit you stopped questioning. Write down one routine you keep out of obligation and ask yourself over tea tonight if it still fits.",
+      "dailyIntention": "I question one routine over tea tonight.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "pluto",
+        "opposition",
+        "routine",
+        "tea"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_019",
+      "type": "horoscope",
+      "text": "Venus in an easy trine to the Moon tends to point to unhurried affection and comfort in simple shared company. Put your phone aside during dinner tonight and enjoy listening without trying to solve anything.",
+      "dailyIntention": "I listen over dinner without my phone.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "venus",
+        "moon",
+        "trine",
+        "dinner",
+        "phone"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_020",
+      "type": "horoscope",
+      "text": "Tenth-house themes govern public craft and reputation, often read in calmer stretches as steady competence that needs no loud display. Finish one careful piece of work before lunch today and take a real break afterward.",
+      "dailyIntention": "I finish one task well and take a break.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "tenth house",
+        "work",
+        "lunch",
+        "break"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_021",
+      "type": "horoscope",
+      "text": "Passing through a fixed sign, the Moon is read as favoring steady habits and quiet pleasure in what is already paid for. Brew your own coffee at home this morning and enjoy the slow start without opening a single shopping app.",
+      "dailyIntention": "I brew coffee at home without browsing shops.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "moon",
+        "fixed sign",
+        "coffee",
+        "shopping app"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_022",
+      "type": "horoscope",
+      "text": "Water-sign Moons are traditionally linked with softer pacing and letting a busy body unwind without force. Take a warm shower after dinner tonight and keep the lamps low for the last hour before sleep.",
+      "dailyIntention": "I take a warm shower and dim lamps.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "water sign",
+        "moon",
+        "warm shower",
+        "lamps",
+        "sleep"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_023",
+      "type": "horoscope",
+      "text": "Neighborhood streets and short local errands belong to the third house, often read as finding ease close to your own block. Walk to the corner bakery or postbox today and exchange two unhurried words with whoever is at the counter.",
+      "dailyIntention": "I walk to a nearby shop and chat briefly.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "third house",
+        "bakery",
+        "postbox",
+        "counter"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_024",
+      "type": "horoscope",
+      "text": "Wider horizons and unhurried study belong to the ninth house, which tends to point to perspective gained from looking beyond today's inbox. Read ten pages of a print essay or history book by a bright window this afternoon with your phone in another room.",
+      "dailyIntention": "I read ten print pages by a window.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "ninth house",
+        "print essay",
+        "history book",
+        "window",
+        "phone"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_025",
+      "type": "horoscope",
+      "text": "Fifth-house astrology governs play and lighthearted romance, often read as taking the pressure off how a date should look. Suggest grabbing ice cream or playing a card game at a quiet cafe this week instead of staging a formal evening.",
+      "dailyIntention": "I suggest a playful, low-pressure date.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "fifth house",
+        "ice cream",
+        "card game",
+        "cafe"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_026",
+      "type": "horoscope",
+      "text": "Waxing crescent Moons are traditionally read as early sprouts that reward small, steady follow-through over grand announcements. Send one short message today to a colleague whose project you want to join next month.",
+      "dailyIntention": "I message a colleague about next month's work.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "waxing crescent",
+        "moon",
+        "colleague",
+        "project"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_027",
+      "type": "horoscope",
+      "text": "Traditional columns treat a Venus-Jupiter conjunction as warm optimism around resources that still works best with a clear cap. Set aside a modest treat budget for this weekend today so you enjoy it without second-guessing Monday's balance.",
+      "dailyIntention": "I set a clear weekend treat budget.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "venus",
+        "jupiter",
+        "conjunction",
+        "treat budget",
+        "weekend"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_028",
+      "type": "horoscope",
+      "text": "New Moon symbolism tends to point to a clean slate for small daily habits rather than dramatic overhauls. Fill a water bottle before bed tonight and leave your walking shoes by the front door for tomorrow morning.",
+      "dailyIntention": "I set out my walking shoes tonight.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "new moon",
+        "water bottle",
+        "walking shoes",
+        "front door"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_029",
+      "type": "horoscope",
+      "text": "Eleventh-house themes point to friendships and shared community plans that feel lighter in good company. Text two friends today about meeting at the weekend street market before everyone's calendar fills up.",
+      "dailyIntention": "I invite two friends to the weekend market.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "eleventh house",
+        "friends",
+        "street market",
+        "calendar"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_030",
+      "type": "horoscope",
+      "text": "Air-sign Moons are often read as fresh curiosity and clearing stale thoughts by trading notes with someone thoughtful. Ask an older relative or friend today about a book that genuinely changed how they look at ordinary life.",
+      "dailyIntention": "I ask a friend for a favorite book.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "air sign",
+        "moon",
+        "relative",
+        "book"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_031",
+      "type": "horoscope",
+      "text": "Full Moon lore points to bright visibility where warm feelings want to be spoken aloud instead of kept polite. Tell the person you are excited about one specific thing you genuinely admire in them before the evening ends.",
+      "dailyIntention": "I voice one specific compliment out loud.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "full moon",
+        "admire",
+        "person",
+        "evening"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_032",
+      "type": "horoscope",
+      "text": "First-quarter Moons are read in astrology columns as an action hinge that rewards moving from planning into visible work. Ship the rough prototype or first draft to your manager before three today so real feedback can begin.",
+      "dailyIntention": "I send my first draft before three.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "first quarter moon",
+        "prototype",
+        "first draft",
+        "manager"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_033",
+      "type": "horoscope",
+      "text": "Linking Mercury and Jupiter in a trine often points to big-picture thinking that turns bright when backed by real figures. Draft the email asking for a raise or higher project rate today while your recent wins are fresh.",
+      "dailyIntention": "I draft my rate email with fresh numbers.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "mercury",
+        "jupiter",
+        "trine",
+        "email",
+        "raise"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_034",
+      "type": "horoscope",
+      "text": "Fire-sign Moons tend to point to a bright burst of physical spark that feels best when spent outdoors. Trade your usual indoor scroll after work for a fast forty-minute walk or bike ride while your pace is naturally high.",
+      "dailyIntention": "I take a fast bike ride after work.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "fire sign",
+        "moon",
+        "walk",
+        "bike ride"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_035",
+      "type": "horoscope",
+      "text": "First-house astrology centers on personal initiative and stepping forward without waiting for a formal invitation. Make the first phone call or sign up for the evening workshop today instead of waiting for a friend to go with you.",
+      "dailyIntention": "I sign up for the workshop on my own.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "first house",
+        "phone call",
+        "workshop",
+        "friend"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "horoscope_036",
+      "type": "horoscope",
+      "text": "Uranus in an easy trine is traditionally read as a lively jolt of fresh perspective that breaks up stale habits playfully. Take an unfamiliar bus line or walk three blocks in the opposite direction tonight just to wake up your attention.",
+      "dailyIntention": "I walk three blocks in a new direction.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "uranus",
+        "trine",
+        "bus line",
+        "blocks"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_001",
+      "type": "dream",
+      "text": "A dream about losing your phone is often read in symbol traditions as worrying that someone close is slipping out of reach. Send one short plain text to your partner or friend tonight instead of stewing over a quiet afternoon.",
+      "dailyIntention": "I send one short text instead of worrying.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "dream",
+        "phone",
+        "text",
+        "partner"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_002",
+      "type": "dream",
+      "text": "Being late for an exam in a dream tends to point to feeling judged at work before you have had time to prepare. Pick just the top two slides or talking points for today's meeting and let the rest stay rough.",
+      "dailyIntention": "I prepare two main points and stop there.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "dream",
+        "exam",
+        "slides",
+        "meeting"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_003",
+      "type": "dream",
+      "text": "In dream lore, loose teeth often point to strain over practical security rather than anything literal. Pay one small lingering bill today and close your banking tabs before dinner.",
+      "dailyIntention": "I pay one bill and close banking tabs.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "dream",
+        "loose teeth",
+        "bill",
+        "banking tabs"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_004",
+      "type": "dream",
+      "text": "When you dream of a car without brakes, symbol readers often treat it as a pace that has outrun your body's natural rhythm. Step away from your desk for fifteen minutes this afternoon and eat a proper snack sitting down.",
+      "dailyIntention": "I sit down for an afternoon snack break.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "dream",
+        "car",
+        "brakes",
+        "desk",
+        "snack"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_005",
+      "type": "dream",
+      "text": "Running from a pursuer in a dream is read as dodging one uncomfortable errand that grows louder the longer it waits. Make the five-minute phone call you have been putting off before lunch so the afternoon feels lighter.",
+      "dailyIntention": "I make one postponed phone call before lunch.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "dream",
+        "pursuer",
+        "errand",
+        "phone call"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_006",
+      "type": "dream",
+      "text": "Rising floodwater in a dream tends to point to feelings spilling over after too many days of staying composed. Wash your hands in warm water tonight and sit quietly on the edge of the bed for five minutes with the lights dimmed.",
+      "dailyIntention": "I sit in dim light for five minutes.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "dream",
+        "floodwater",
+        "warm water",
+        "bed"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_007",
+      "type": "dream",
+      "text": "Losing your voice in a dream often points to feeling too worn out to explain yourself clearly to someone close. Tell your partner or friend tonight that you care about them and just need a quiet evening without heavy talk.",
+      "dailyIntention": "I ask for an easy evening without talk.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "dream",
+        "voice",
+        "partner",
+        "quiet evening"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_008",
+      "type": "dream",
+      "text": "Missing a train in a dream is traditionally read as worrying that you fell behind while running low on steam. Pick one routine email to answer before closing your laptop today and leave every bigger deadline for tomorrow morning.",
+      "dailyIntention": "I answer one email and close my laptop.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "dream",
+        "train",
+        "email",
+        "laptop"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_009",
+      "type": "dream",
+      "text": "Dragging heavy luggage through a dream tends to point to carrying too many small financial chores while your battery is flat. Skip comparing prices online tonight and let any nonessential purchase wait until next week.",
+      "dailyIntention": "I delay nonessential purchases until next week.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "dream",
+        "luggage",
+        "prices",
+        "purchase"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_010",
+      "type": "dream",
+      "text": "Sudden falling in a dream is read in older symbol books as a tired nervous system finally dropping its guard. Skip late screens tonight and climb under the covers forty minutes earlier than usual.",
+      "dailyIntention": "I skip screens and get under covers early.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "dream",
+        "falling",
+        "screens",
+        "covers"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_011",
+      "type": "dream",
+      "text": "Climbing endless stairs in a dream often points to chores that blur together when you have not paused all week. Leave the laundry basket untouched tonight and make yourself a warm piece of toast instead.",
+      "dailyIntention": "I leave the laundry basket alone tonight.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "dream",
+        "stairs",
+        "laundry basket",
+        "toast"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_012",
+      "type": "dream",
+      "text": "Finding locked doors along a hallway in a dream is read as quiet resistance telling a worn-out mind to stop forcing answers tonight. Pour a mug of warm herbal tea after dark and let tomorrow's questions stay unopened until morning.",
+      "dailyIntention": "I pour herbal tea and leave tomorrow unopened.",
+      "moodTags": [
+        "tired",
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "dream",
+        "locked doors",
+        "hallway",
+        "herbal tea"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_013",
+      "type": "dream",
+      "text": "Symbol traditions often read a snake in a dream as mixed signals or an old story ready to be shed. Ask the person you have been wondering about one plain question today instead of reading between the lines of last week's chat.",
+      "dailyIntention": "I ask directly instead of reading between lines.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "dream",
+        "snake",
+        "question",
+        "chat"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_014",
+      "type": "dream",
+      "text": "Returning to an old school when you dream tends to point to measuring today's job against habits you already outgrew. Write down what your current role actually asks of you this week rather than trying to pass an imaginary test.",
+      "dailyIntention": "I list what my job actually needs today.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "dream",
+        "old school",
+        "role",
+        "test"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_015",
+      "type": "dream",
+      "text": "If you dreamt of a stopped clock, older dream books read it as fuzzy timing around obligations that feel overdue. Check your upcoming subscription and bill dates on one calendar page today so nothing catches you off guard.",
+      "dailyIntention": "I put my bill dates on one calendar.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "dreamt",
+        "clock",
+        "bill dates",
+        "calendar"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_016",
+      "type": "dream",
+      "text": "Older dream guides treat a foggy road as a fuzzy head brought on by uneven sleep or skipped meals rather than a bad omen. Drink a tall glass of water and eat a simple warm lunch before making any afternoon decisions.",
+      "dailyIntention": "I eat warm lunch before making decisions.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "dream",
+        "foggy road",
+        "water",
+        "warm lunch"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_017",
+      "type": "dream",
+      "text": "Wandering a maze of hallways while you dream is read as circling too many options without choosing an exit. Pick only the closest errand on your list this afternoon and leave the rest unscheduled until tomorrow.",
+      "dailyIntention": "I do the closest errand and stop.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "dream",
+        "maze",
+        "hallways",
+        "errand"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_018",
+      "type": "dream",
+      "text": "Traditional dream interpreters read a foggy mirror as sorting your own plain view from the noise of other people's advice. Close social feeds tonight and spend ten minutes writing down one honest sentence about what feels right to you.",
+      "dailyIntention": "I close social feeds and write honestly.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "dream",
+        "mirror",
+        "social feeds",
+        "sentence"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_019",
+      "type": "dream",
+      "text": "Welcoming an unexpected guest in a calm dream often points to warm openness toward the people already in your orbit. Invite a friend or partner to drop by for tea this evening without worrying if the kitchen is spotless.",
+      "dailyIntention": "I invite someone for tea without tidying.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "dream",
+        "guest",
+        "tea",
+        "kitchen"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_020",
+      "type": "dream",
+      "text": "Images of a quiet library in a dream tend to point to unhurried concentration and work done for its own sake. Put on headphones with no lyrics for an hour today and finish one thoughtful task without checking chat.",
+      "dailyIntention": "I work one focused hour without chat.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "dream",
+        "library",
+        "headphones",
+        "task"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_021",
+      "type": "dream",
+      "text": "Folk dream traditions read a stocked pantry as quiet sufficiency and relief from chasing what you do not need. Cook dinner from ingredients already in your kitchen tonight and skip opening any store apps.",
+      "dailyIntention": "I cook from my kitchen without browsing apps.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "dream",
+        "pantry",
+        "ingredients",
+        "store apps"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_022",
+      "type": "dream",
+      "text": "Seeing a still lake when you dream is traditionally read as a settled nervous system and unhurried bodily rhythm. Take a slow twenty-minute walk near water or under trees after work today without tracking your steps.",
+      "dailyIntention": "I walk after work without tracking steps.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "dream",
+        "lake",
+        "walk",
+        "trees"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_023",
+      "type": "dream",
+      "text": "Discovering extra rooms inside a familiar house you dreamt of often points to quiet breathing space hiding inside ordinary routines. Spend thirty unscheduled minutes tonight reading or sketching in a corner of your home you rarely sit in.",
+      "dailyIntention": "I sit in an unused corner to read.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "dreamt",
+        "extra rooms",
+        "house",
+        "corner"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_024",
+      "type": "dream",
+      "text": "Soft rain tapping a roof in dream symbolism tends to mark quiet clearing and the simple comfort of being indoors. Stand by an open window for two silent minutes before bed tonight and listen to the evening air.",
+      "dailyIntention": "I listen to evening air by the window.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "dream",
+        "rain",
+        "roof",
+        "window",
+        "evening air"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_025",
+      "type": "dream",
+      "text": "Gathering around a warm campfire when you dream tends to point to simple closeness that needs no fancy setting. Ask your partner or a favorite friend to share a pot of soup at your kitchen table this week.",
+      "dailyIntention": "I invite someone close for homemade soup.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "dream",
+        "campfire",
+        "soup",
+        "kitchen table"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_026",
+      "type": "dream",
+      "text": "Crossing a sturdy bridge over clear water is often read in dream lore as moving calmly from preparation into real work. Send the portfolio sample or updated resume you polished last week to one solid contact today.",
+      "dailyIntention": "I send my updated work sample today.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "dream",
+        "bridge",
+        "portfolio",
+        "resume"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_027",
+      "type": "dream",
+      "text": "Planting seeds in dark soil while you dream is traditionally read as small practical habits taking root slowly. Set up a modest weekly transfer into your savings account today and leave it running quietly.",
+      "dailyIntention": "I set up one small weekly transfer.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "dream",
+        "seeds",
+        "soil",
+        "savings account"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_028",
+      "type": "dream",
+      "text": "Gliding through clear water you dreamt of often points to bodily ease returning after a stiff stretch. Spend fifteen minutes stretching your hips and back tonight before drinking a tall glass of water.",
+      "dailyIntention": "I stretch my back and drink water.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "dreamt",
+        "clear water",
+        "hips",
+        "back",
+        "water"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_029",
+      "type": "dream",
+      "text": "Spotting a brass key on a windowsill is read by dream writers as noticing a simple fix you overlooked last week. Tackle the one household repair or stuck form today with fresh patience and finish it in twenty minutes.",
+      "dailyIntention": "I finish one small repair in twenty minutes.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "dream",
+        "brass key",
+        "windowsill",
+        "repair"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_030",
+      "type": "dream",
+      "text": "Watching dawn break over open fields when you dream tends to mark quiet readiness for a new season without rushing it. Step outside for five minutes right after waking tomorrow and feel the cool morning air on your face.",
+      "dailyIntention": "I step outside into the morning air.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "dream",
+        "dawn",
+        "open fields",
+        "morning air"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_031",
+      "type": "dream",
+      "text": "Standing inside a lively lit train station is read in dream symbolism as bright anticipation and welcoming fresh company. Text the person you are eager to see tonight and lock in a fun neighborhood dinner for Saturday.",
+      "dailyIntention": "I book a lively Saturday dinner together.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "dream",
+        "train station",
+        "dinner",
+        "saturday"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_032",
+      "type": "dream",
+      "text": "Reaching an open rooftop when you dream often points to a wider view and eager momentum ready for a bold step. Send the pitch email or share your fresh idea with your manager before lunch while the spark is sharp.",
+      "dailyIntention": "I pitch my fresh idea before lunch.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "dream",
+        "rooftop",
+        "pitch email",
+        "manager"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_033",
+      "type": "dream",
+      "text": "Picking up silver coins along a sunlit lane you dreamt of tends to point to practical opportunities waiting for direct follow-up. Reply to the freelance inquiry or list the unused gear you meant to sell before evening.",
+      "dailyIntention": "I list unused gear for sale tonight.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "dreamt",
+        "silver coins",
+        "freelance inquiry",
+        "gear"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_034",
+      "type": "dream",
+      "text": "Classic dream traditions read flying as buoyant physical vigor and shaking off old heaviness. Spend that bright lift on a brisk afternoon jog or lively swim so your body feels cleanly spent by bedtime.",
+      "dailyIntention": "I go for a brisk afternoon jog.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "dream",
+        "flying",
+        "jog",
+        "swim",
+        "bedtime"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_035",
+      "type": "dream",
+      "text": "Packing a light suitcase while you dream is read as genuine readiness for a change of scenery. Book the weekend bus ticket or pick one nearby trail you have never walked and put it on Saturday's calendar.",
+      "dailyIntention": "I put a new trail on Saturday's calendar.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "dream",
+        "suitcase",
+        "bus ticket",
+        "trail"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "dream_036",
+      "type": "dream",
+      "text": "A lighthouse beam sweeping across dark water in a dream often points to sudden crisp focus cutting through weeks of hesitation. Open a clean notebook tonight and write down the one honest project you want to build over the next three months.",
+      "dailyIntention": "I name one three-month project in my notebook.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "dream",
+        "lighthouse",
+        "notebook",
+        "project"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_001",
+      "type": "palm",
+      "text": "The girdle of Venus arching across the upper palm is traditionally read as sharp sensitivity to another person's mood. Wait twenty minutes before answering a terse text tonight so you reply to the words instead of the static.",
+      "dailyIntention": "I pause twenty minutes before answering texts.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "girdle of venus",
+        "palm",
+        "text",
+        "mood"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_002",
+      "type": "palm",
+      "text": "A faint chain along the head line is read in palmistry as mental static from juggling too many open threads at once. Pick one document to finish before lunch today and minimize every other window on your screen.",
+      "dailyIntention": "I minimize extra windows until lunch.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "head line",
+        "chain",
+        "document",
+        "screen"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_003",
+      "type": "palm",
+      "text": "Low thumb flexibility on the hand often points to holding tightly to routines when money feels tight. Pay the single bill due this week tonight and step away from your budget sheet until Sunday afternoon.",
+      "dailyIntention": "I pay this week's bill and close the sheet.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "thumb flexibility",
+        "hand",
+        "bill",
+        "budget sheet"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_004",
+      "type": "palm",
+      "text": "Fine cross-lines over the mount of Venus at the base of the thumb tend to point to carried tension sitting in the body. Unclench both hands from your keyboard right now and rinse your wrists under cool tap water.",
+      "dailyIntention": "I unclench my hands and rinse my wrists.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "mount of venus",
+        "hands",
+        "keyboard",
+        "wrists",
+        "tap water"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_005",
+      "type": "palm",
+      "text": "Palmistry reads a small island on the fate line as a temporary bottleneck in everyday obligations rather than permanent trouble. Cancel one optional errand this afternoon so you can handle the two tasks that actually belong to today.",
+      "dailyIntention": "I cancel one errand to ease my afternoon.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "fate line",
+        "island",
+        "errand",
+        "afternoon"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_006",
+      "type": "palm",
+      "text": "Beneath the middle finger, the mount of Saturn is traditionally linked with heavy duty and carrying the whole room's seriousness. Sit on the floor against your sofa for ten quiet minutes tonight with both palms resting open on your knees.",
+      "dailyIntention": "I rest open palms on my knees tonight.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "mount of saturn",
+        "palms",
+        "sofa",
+        "knees"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_007",
+      "type": "palm",
+      "text": "When the heart line looks lightly chained across the upper palm, readers often take it as emotional fatigue from trying too hard to please. Tell someone close that you are low on steam tonight and just want to share a quiet dinner on the couch.",
+      "dailyIntention": "I ask for a quiet dinner on the couch.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "heart line",
+        "palm",
+        "dinner",
+        "couch"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_008",
+      "type": "palm",
+      "text": "In hand reading, a short break in the fate line tends to point to pausing a worn-out work pace so your focus can reset. Close your work chat at five sharp today and leave the nonurgent request waiting until tomorrow morning.",
+      "dailyIntention": "I close work chat at five sharp today.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "fate line",
+        "hand",
+        "work chat",
+        "request"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_009",
+      "type": "palm",
+      "text": "Running faintly toward the little finger, the Mercury line often points to practical money alertness dipping when you are worn out. Skip comparing deals or signing up for anything new tonight and leave your card in your wallet.",
+      "dailyIntention": "I leave my card in my wallet tonight.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "mercury line",
+        "card",
+        "wallet",
+        "deals"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_010",
+      "type": "palm",
+      "text": "Curving around the thumb, a lighter stretch of the life line is read strictly as temporary low vitality rather than anything permanent. Eat a warm bowl of soup tonight and turn off your bedside lamp half an hour earlier than usual.",
+      "dailyIntention": "I eat warm soup and turn off lamps early.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "life line",
+        "thumb",
+        "soup",
+        "bedside lamp"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_011",
+      "type": "palm",
+      "text": "Sloping gently downward from the head line, a fine branch tends to mark attention drifting after a long week of decisions. Leave the unopened mail stacked neatly on the hallway table tonight and read it with fresh eyes tomorrow.",
+      "dailyIntention": "I leave unopened mail until tomorrow morning.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "head line",
+        "branch",
+        "mail",
+        "hallway table"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_012",
+      "type": "palm",
+      "text": "Resting soft along the outer heel of the palm, the mount of the Moon is read as quiet dreaming and stepping back from daytime noise. Rub a drop of hand cream slowly into your palms before bed tonight and let the evening stay unhurried.",
+      "dailyIntention": "I slow down with hand cream before bed.",
+      "moodTags": [
+        "tired",
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "moon",
+        "palm",
+        "hand cream",
+        "bed"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_013",
+      "type": "palm",
+      "text": "Splitting neatly at its tip, a forked heart line is read as weighing warm affection alongside plain practical sense. Ask the person on your mind one direct question about this weekend rather than bouncing between two stories in your head.",
+      "dailyIntention": "I ask one direct question about the weekend.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "heart line",
+        "fork",
+        "question",
+        "weekend"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_014",
+      "type": "palm",
+      "text": "Traditional palmists call a forked head line a writer's fork, pointing to a mind that sees both sides of a work choice too clearly. Write the two options on a scrap of paper today and circle the one you would rather explain on Monday.",
+      "dailyIntention": "I circle one work choice on paper.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "head line",
+        "writer's fork",
+        "paper",
+        "monday"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_015",
+      "type": "palm",
+      "text": "Wide space between the start of the head line and life line tends to point to independent choices that benefit from a quick reality check. Read the return policy and total price twice today before clicking confirm on a big purchase.",
+      "dailyIntention": "I check return policies before big purchases.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "head line",
+        "life line",
+        "return policy",
+        "purchase"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_016",
+      "type": "palm",
+      "text": "Long fingers relative to the palm are often read as careful attention to detail that can overcomplicate simple daily habits. Skip tweaking your routine today and stick to one glass of water and a plain twenty-minute walk after lunch.",
+      "dailyIntention": "I stick to water and a lunch walk.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "long fingers",
+        "palm",
+        "water",
+        "walk",
+        "lunch"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_017",
+      "type": "palm",
+      "text": "Between the heart line and head line lies the quadrangle, read in palmistry as the meeting place of practical sense and honest preference. Write down the one errand you keep stalling on and decide in two minutes whether to do it or drop it.",
+      "dailyIntention": "I decide to do or drop one errand.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "heart line",
+        "head line",
+        "quadrangle",
+        "errand"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_018",
+      "type": "palm",
+      "text": "Arcing faintly along the outer edge of the palm, the intuition line often points to quiet hunches that get drowned out by asking too many people. Put your phone aside for twenty minutes tonight and write down what your very first instinct said.",
+      "dailyIntention": "I write down my first quiet instinct.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "intuition line",
+        "palm",
+        "phone",
+        "instinct"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_019",
+      "type": "palm",
+      "text": "Sweeping smoothly beneath the fingers, a clear heart line tends to point to steady, unhurried affection that needs no drama. Hold your partner's hand on a short evening walk or send a warm photo to someone you miss without expecting an instant reply.",
+      "dailyIntention": "I send a warm photo with no rush.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "heart line",
+        "hand",
+        "evening walk",
+        "photo"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_020",
+      "type": "palm",
+      "text": "Square palm proportions are traditionally read as grounded craft and quiet satisfaction in finishing ordinary tasks well. Spend an unhurried hour organizing your main workspace today and leave a clean desk for tomorrow morning.",
+      "dailyIntention": "I leave a clean desk for tomorrow.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "square palm",
+        "workspace",
+        "desk",
+        "morning"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_021",
+      "type": "palm",
+      "text": "Full and warm at the thumb's base, the mount of Venus is read as enjoying simple physical comforts rather than chasing status. Brew tea in your favorite mug tonight and skip scrolling sales while dinner simmers on the stove.",
+      "dailyIntention": "I brew tea and skip scrolling sales.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "mount of venus",
+        "tea",
+        "mug",
+        "stove"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_022",
+      "type": "palm",
+      "text": "Tracing closely inside the life line, a quiet sister line is read in palmistry as steady physical resilience and paced stamina. Keep your shoulders loose during a slow neighborhood walk before dusk and drink water when you get back.",
+      "dailyIntention": "I take a slow walk before dusk.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "life line",
+        "sister line",
+        "shoulders",
+        "walk",
+        "water"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_023",
+      "type": "palm",
+      "text": "Smooth finger joints on the hand often point to moving through everyday errands by feel rather than fussing over every minute. Leave your watch at home during a short afternoon outing today and walk back when the light starts to soften.",
+      "dailyIntention": "I leave my watch home on an outing.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "finger joints",
+        "hand",
+        "watch",
+        "outing",
+        "light"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_024",
+      "type": "palm",
+      "text": "Circling softly beneath the index finger, the ring of Solomon is traditionally read as quiet reflection and patient empathy. Hold a warm cup between both palms for two silent minutes tonight and notice how steady your breathing already feels.",
+      "dailyIntention": "I hold a warm cup in silent palms.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "ring of solomon",
+        "index finger",
+        "warm cup",
+        "palms"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_025",
+      "type": "palm",
+      "text": "Rising gently from the heart line toward the fingers, a small upward branch is read as warm openness after a cautious stretch. Send a friendly note today to someone you enjoyed talking with last week and suggest grabbing coffee soon.",
+      "dailyIntention": "I invite someone pleasant out for coffee.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "heart line",
+        "upward branch",
+        "note",
+        "coffee"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_026",
+      "type": "palm",
+      "text": "Climbing vertically toward the ring finger, the sun line often points to quiet pride in craft and work that earns genuine notice. Share one finished sample of your work with a colleague or mentor today instead of keeping it tucked in drafts.",
+      "dailyIntention": "I share one finished draft with a mentor.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "sun line",
+        "ring finger",
+        "sample",
+        "drafts"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_027",
+      "type": "palm",
+      "text": "Under the little finger, the mount of Mercury tends to point to practical wit and negotiating everyday deals with a light touch. Call your phone or internet provider today to ask politely for their current promotional rate.",
+      "dailyIntention": "I call one provider for a lower rate.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "mount of mercury",
+        "little finger",
+        "provider",
+        "rate"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_028",
+      "type": "palm",
+      "text": "Branching upward from the life line across the palm, a crisp line is read strictly as rising physical vitality and steadier daily drive. Celebrate that lift by cooking a fresh vegetable dinner tonight and taking a brisk twenty-minute stroll afterward.",
+      "dailyIntention": "I cook fresh vegetables and stroll tonight.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "life line",
+        "palm",
+        "vegetable dinner",
+        "stroll"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_029",
+      "type": "palm",
+      "text": "Horizontal travel lines along the outer edge of the palm often point to curiosity that perks up whenever your scenery changes. Take a different street home from work today or pick one new neighborhood bakery to visit this weekend.",
+      "dailyIntention": "I take a new street home today.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "travel lines",
+        "palm",
+        "street",
+        "bakery"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_030",
+      "type": "palm",
+      "text": "Softly rounded beneath the ring finger, the mount of Apollo is traditionally read as creative warmth and noticing small bright details. Spend fifteen minutes tonight writing a handwritten postcard or sketching by a warm lamp.",
+      "dailyIntention": "I write one handwritten postcard tonight.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "mount of apollo",
+        "ring finger",
+        "postcard",
+        "lamp"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_031",
+      "type": "palm",
+      "text": "Bending back easily on the hand, a supple thumb tends to point to spontaneous generosity and saying yes to lively company. Text the person you are excited to see right now and suggest catching an evening show or street market together.",
+      "dailyIntention": "I suggest a lively show or market.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "supple thumb",
+        "hand",
+        "show",
+        "street market"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_032",
+      "type": "palm",
+      "text": "Prominent beneath the index finger, the mount of Jupiter is read in palmistry as healthy ambition and stepping forward to lead. Volunteer to run the first ten minutes of tomorrow's meeting or send out the crisp project outline you drafted.",
+      "dailyIntention": "I send my project outline and lead.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "career"
+      ],
+      "keywordTags": [
+        "mount of jupiter",
+        "index finger",
+        "meeting",
+        "project outline"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_033",
+      "type": "palm",
+      "text": "Shooting upward off the fate line toward the fingers, a crisp branch often points to eager momentum ready to become concrete income. Price your side project clearly today and send the proposal to two real prospects before dinner.",
+      "dailyIntention": "I price my side project and pitch today.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "money"
+      ],
+      "keywordTags": [
+        "fate line",
+        "branch",
+        "side project",
+        "proposal"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_034",
+      "type": "palm",
+      "text": "Opening wide from the side of the palm, a broad thumb angle is read as active physical drive that hates sitting still all afternoon. Spend forty minutes on a lively bike ride or brisk park loop today before dinner.",
+      "dailyIntention": "I take a forty-minute bike ride today.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "health"
+      ],
+      "keywordTags": [
+        "thumb angle",
+        "palm",
+        "bike ride",
+        "park loop"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_035",
+      "type": "palm",
+      "text": "Short fingers relative to the palm tend to point to swift big-picture action without getting bogged down in tiny snags. Pick the one bold household project you have been sketching and buy the paint or materials before the store closes.",
+      "dailyIntention": "I buy materials for my home project today.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "general"
+      ],
+      "keywordTags": [
+        "short fingers",
+        "palm",
+        "paint",
+        "materials"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "palm_036",
+      "type": "palm",
+      "text": "Crowning the top of the sun line, a three-pronged trident is a rare palmistry mark read as bright creative focus spilling outward into shared joy. Use your hands to make something tangible tonight, like baking bread or sketching a page, and give half of it away.",
+      "dailyIntention": "I make something by hand and share half.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "spiritual"
+      ],
+      "keywordTags": [
+        "sun line",
+        "trident",
+        "hands",
+        "bread"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_001",
+      "type": "love",
+      "text": "Rewriting the same text three times often points to trying to manage someone else's reaction while your own nerves are high. Put the phone down for an hour today and send two plain sentences once your shoulders have dropped.",
+      "dailyIntention": "I send two plain sentences after cooling off.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "text",
+        "phone",
+        "shoulders",
+        "sentences"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_002",
+      "type": "love",
+      "text": "Carrying office tension straight into an evening chat tends to turn a warm partner or friend into an accidental sounding board for work. Take a ten-minute walk around the block after logging off tonight before calling or walking through the door.",
+      "dailyIntention": "I walk ten minutes before evening talks.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "career",
+        "love"
+      ],
+      "keywordTags": [
+        "office tension",
+        "walk",
+        "partner",
+        "door"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_003",
+      "type": "love",
+      "text": "Keeping quiet about a tight budget before a date is often read as mistaking an expensive restaurant for real warmth. Suggest coffee and a neighborhood walk this week so you can actually enjoy the company without eyeing the check.",
+      "dailyIntention": "I suggest a coffee walk over pricey dinners.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "money",
+        "love"
+      ],
+      "keywordTags": [
+        "budget",
+        "date",
+        "coffee",
+        "check"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_004",
+      "type": "love",
+      "text": "Checking your screen every five minutes for a reply tends to point to holding romantic worry right in your chest and jaw. Leave your phone charging in the kitchen for forty minutes tonight while you stretch on the floor and drink a glass of water.",
+      "dailyIntention": "I leave my phone in the kitchen tonight.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "health",
+        "love"
+      ],
+      "keywordTags": [
+        "screen",
+        "jaw",
+        "phone",
+        "kitchen",
+        "water"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_005",
+      "type": "love",
+      "text": "An invitation sitting unanswered for days often points to fearing that saying not this week will sound like a rejection. Send a brief warm reply today offering one concrete day next week when your schedule actually has room.",
+      "dailyIntention": "I answer one postponed invitation honestly today.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "general",
+        "love"
+      ],
+      "keywordTags": [
+        "invitation",
+        "reply",
+        "schedule"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_006",
+      "type": "love",
+      "text": "Rehearsing an old argument in the shower is read as trying to win a moment that already closed months ago. Make yourself a hot drink tonight and write one kind line on paper about what you need right now.",
+      "dailyIntention": "I stop rehearsing old arguments in my head.",
+      "moodTags": [
+        "stressed"
+      ],
+      "focusTags": [
+        "spiritual",
+        "love"
+      ],
+      "keywordTags": [
+        "argument",
+        "shower",
+        "hot drink",
+        "paper"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_007",
+      "type": "love",
+      "text": "Sharing a quiet evening without trying to fill every silence tends to point to real comfort rather than fading interest. Put on a soft lamp tonight and sit side by side on the sofa with tea instead of pushing for a long talk.",
+      "dailyIntention": "I enjoy quiet company with a soft lamp.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "quiet evening",
+        "lamp",
+        "sofa",
+        "tea"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_008",
+      "type": "love",
+      "text": "Glancing at work emails over dinner often points to giving your leftover attention to the people who matter most. Switch your work phone to silent at six tonight so even thirty minutes together actually feels undivided.",
+      "dailyIntention": "I silence my work phone at six.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "career",
+        "love"
+      ],
+      "keywordTags": [
+        "work emails",
+        "dinner",
+        "work phone"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_009",
+      "type": "love",
+      "text": "Buying a pricey gift or fancy takeout when you are exhausted often points to paying with your wallet for time you did not have. Cook simple eggs on toast or bring home one small pastry tonight instead of overspending out of guilt.",
+      "dailyIntention": "I offer simple food instead of pricey gifts.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "money",
+        "love"
+      ],
+      "keywordTags": [
+        "gift",
+        "takeout",
+        "wallet",
+        "toast",
+        "pastry"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_010",
+      "type": "love",
+      "text": "Scrolling old chats or someone's photos after midnight is read as trading real sleep for an answer that never comes at two in the morning. Plug your phone in outside the bedroom tonight and get under the blankets early.",
+      "dailyIntention": "I charge my phone outside the bedroom.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "health",
+        "love"
+      ],
+      "keywordTags": [
+        "old chats",
+        "sleep",
+        "phone",
+        "bedroom",
+        "blankets"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_011",
+      "type": "love",
+      "text": "A small boundary left unsaid tends to turn a pleasant evening into quiet exhaustion by nine o'clock. Tell the person you are seeing that you need to head home early tonight so you can look forward to next time.",
+      "dailyIntention": "I say when I need to head home.",
+      "moodTags": [
+        "tired"
+      ],
+      "focusTags": [
+        "general",
+        "love"
+      ],
+      "keywordTags": [
+        "boundary",
+        "evening",
+        "home"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_012",
+      "type": "love",
+      "text": "The quiet pause before replying when your heart feels flat is read as self-respect rather than coldness. Give yourself tonight to read a few pages under a warm blanket and answer messages tomorrow when your voice feels like your own again.",
+      "dailyIntention": "I rest under a blanket before replying.",
+      "moodTags": [
+        "tired",
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual",
+        "love"
+      ],
+      "keywordTags": [
+        "pause",
+        "blanket",
+        "pages",
+        "messages"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_013",
+      "type": "love",
+      "text": "Staring at a terse reply and trying to read its mood often points to filling a blank space with your own worst guess. Call for three minutes today or wait until you see their face instead of decoding punctuation.",
+      "dailyIntention": "I call instead of decoding short texts.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "reply",
+        "punctuation",
+        "call",
+        "mood"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_014",
+      "type": "love",
+      "text": "Squeezing a new connection between back-to-back work deadlines tends to blur whether you like someone or simply feel rushed. Look at your calendar today and offer one unhurried Saturday morning coffee instead of a frantic weekday drink.",
+      "dailyIntention": "I book unhurried weekend coffee over weekday drinks.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "career",
+        "love"
+      ],
+      "keywordTags": [
+        "deadlines",
+        "calendar",
+        "saturday",
+        "coffee"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_015",
+      "type": "love",
+      "text": "Guessing who paid for groceries last week is read as a small money fog that quietly builds awkwardness at home. Spend ten minutes at the kitchen table tonight writing down shared expenses plainly so neither of you keeps score in your head.",
+      "dailyIntention": "I list shared expenses plainly at home.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "money",
+        "love"
+      ],
+      "keywordTags": [
+        "groceries",
+        "kitchen table",
+        "shared expenses"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_016",
+      "type": "love",
+      "text": "Skipping proper meals while your mind spins over a crush or past breakup often turns ordinary uncertainty into sharp jitters. Make yourself a real hot lunch away from your phone today before deciding how you feel about anyone.",
+      "dailyIntention": "I eat a hot lunch away from my phone.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "health",
+        "love"
+      ],
+      "keywordTags": [
+        "meals",
+        "hot lunch",
+        "phone",
+        "crush"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_017",
+      "type": "love",
+      "text": "Saying maybe to two different weekend plans tends to point to not knowing whether you want lively company or a quiet night in. Pick the option that makes your shoulders relax when you imagine Friday at seven and text back before noon.",
+      "dailyIntention": "I pick the plan that relaxes my shoulders.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "general",
+        "love"
+      ],
+      "keywordTags": [
+        "weekend plans",
+        "shoulders",
+        "friday",
+        "text"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_018",
+      "type": "love",
+      "text": "Forwarding one message to three friends for a verdict often points to drowning out your own plain gut feeling. Close the group chat tonight and write two honest sentences in a notebook about what you actually noticed in person.",
+      "dailyIntention": "I trust my own view over group chats.",
+      "moodTags": [
+        "confused"
+      ],
+      "focusTags": [
+        "spiritual",
+        "love"
+      ],
+      "keywordTags": [
+        "message",
+        "friends",
+        "group chat",
+        "notebook"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_019",
+      "type": "love",
+      "text": "Listening to someone tell a small story without planning your next remark tends to point to unhurried affection. Put your fork down for a moment over dinner tonight and hear them all the way to the end of their sentence.",
+      "dailyIntention": "I listen all the way through dinner.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "story",
+        "fork",
+        "dinner",
+        "sentence"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_020",
+      "type": "love",
+      "text": "Leaving your laptop closed after six is read as protecting the quiet hours where personal warmth actually grows. Spend thirty minutes tonight cooking or talking without mentioning a single office project.",
+      "dailyIntention": "I keep office talk out of dinner tonight.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "career",
+        "love"
+      ],
+      "keywordTags": [
+        "laptop",
+        "cooking",
+        "office project"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_021",
+      "type": "love",
+      "text": "Making a simple homemade pot of pasta for one or two often points to real care that has nothing to do with spending much. Lay out cloth napkins or light one plain candle at your own table tonight and eat slowly.",
+      "dailyIntention": "I light a plain candle for homemade pasta.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "money",
+        "love"
+      ],
+      "keywordTags": [
+        "pasta",
+        "cloth napkins",
+        "candle",
+        "table"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_022",
+      "type": "love",
+      "text": "Walking side by side at an easy pace after dinner tends to settle both a busy body and a quiet heart. Step outside for twenty minutes after clearing the plates tonight without checking your phone or tracking the distance.",
+      "dailyIntention": "I take an easy walk after clearing plates.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "health",
+        "love"
+      ],
+      "keywordTags": [
+        "walk",
+        "dinner",
+        "plates",
+        "phone"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_023",
+      "type": "love",
+      "text": "Noticing how someone remembers the exact way you take your morning coffee is read as quiet devotion hiding in plain sight. Return one small attentive detail today, like picking up their favorite bread on your way past the corner shop.",
+      "dailyIntention": "I pick up someone's favorite bread today.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "general",
+        "love"
+      ],
+      "keywordTags": [
+        "morning coffee",
+        "bread",
+        "corner shop"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_024",
+      "type": "love",
+      "text": "Sitting comfortably at a small cafe table alone with a paperback often points to self-respect that makes every future bond steadier. Order a warm drink for yourself this afternoon and watch the street without reaching for your phone.",
+      "dailyIntention": "I sit alone at a cafe with my book.",
+      "moodTags": [
+        "peaceful"
+      ],
+      "focusTags": [
+        "spiritual",
+        "love"
+      ],
+      "keywordTags": [
+        "cafe table",
+        "paperback",
+        "warm drink",
+        "street"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_025",
+      "type": "love",
+      "text": "Sending the first hello after a pleasant chat often points to easy warmth when you stop keeping score of whose turn it is. Drop a short message today mentioning one small detail you remembered from your last talk.",
+      "dailyIntention": "I send the first hello without keeping score.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "hello",
+        "chat",
+        "message",
+        "detail"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_026",
+      "type": "love",
+      "text": "Telling someone close about a small victory at work tends to point to letting affection share ordinary weekdays alongside big milestones. Call your partner or a favorite friend tonight and mention one thing that went smoothly at your desk.",
+      "dailyIntention": "I share one small work win tonight.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "career",
+        "love"
+      ],
+      "keywordTags": [
+        "work",
+        "partner",
+        "friend",
+        "desk"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_027",
+      "type": "love",
+      "text": "Tucking away modest change for a future outing is read as turning quiet optimism into something concrete you can look forward to. Put twenty dollars aside today for a Saturday picnic or bakery run with someone you enjoy.",
+      "dailyIntention": "I set aside cash for a Saturday picnic.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "money",
+        "love"
+      ],
+      "keywordTags": [
+        "change",
+        "outing",
+        "picnic",
+        "bakery"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_028",
+      "type": "love",
+      "text": "Reaching for the shirt or jacket that actually feels comfortable on your shoulders often points to treating yourself like someone worth showing up for. Wear your favorite clean outfit today even if your only plan is grabbing groceries.",
+      "dailyIntention": "I wear my favorite outfit for errands.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "health",
+        "love"
+      ],
+      "keywordTags": [
+        "shirt",
+        "jacket",
+        "shoulders",
+        "outfit",
+        "groceries"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_029",
+      "type": "love",
+      "text": "Accepting a casual dinner invitation with friends of friends tends to point to warming back up to lively rooms at your own pace. Reply yes to one relaxed gathering this week and arrive with a bottle of sparkling water or fruit to share.",
+      "dailyIntention": "I say yes to one casual gathering.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "general",
+        "love"
+      ],
+      "keywordTags": [
+        "dinner invitation",
+        "gathering",
+        "sparkling water",
+        "fruit"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_030",
+      "type": "love",
+      "text": "Writing a three-line note of thanks to someone who stood by you is read as keeping real affection circulating in plain sight. Send a handwritten card or thoughtful text today naming one specific moment they made easier for you.",
+      "dailyIntention": "I thank someone for one specific kindness.",
+      "moodTags": [
+        "hopeful"
+      ],
+      "focusTags": [
+        "spiritual",
+        "love"
+      ],
+      "keywordTags": [
+        "note",
+        "card",
+        "text",
+        "moment"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_031",
+      "type": "love",
+      "text": "Offering an unpolished compliment the moment you think it often points to letting real enthusiasm out before shyness edits it down. Tell the person you are excited about one concrete thing that made you grin this week.",
+      "dailyIntention": "I share an unedited compliment out loud.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "love"
+      ],
+      "keywordTags": [
+        "compliment",
+        "enthusiasm",
+        "grin"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_032",
+      "type": "love",
+      "text": "Finishing your afternoon tasks an hour early for a planned date tends to point to putting lively momentum behind your personal life too. Clear your top work item before three today so you can step out the door right on time.",
+      "dailyIntention": "I finish work early for tonight's plans.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "career",
+        "love"
+      ],
+      "keywordTags": [
+        "date",
+        "work item",
+        "door",
+        "afternoon"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_033",
+      "type": "love",
+      "text": "Booking two tickets to a local show or weekend exhibit is read as turning bright anticipation into an actual date on the wall calendar. Pick one affordable event this month and grab the seats tonight before they sell out.",
+      "dailyIntention": "I book two seats for a local show.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "money",
+        "love"
+      ],
+      "keywordTags": [
+        "tickets",
+        "show",
+        "exhibit",
+        "wall calendar"
+      ],
+      "rarity": "rare",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_034",
+      "type": "love",
+      "text": "Planning an outdoor walk or bike ride together often points to turning high spirits into fresh air and easy conversation. Suggest meeting at the park trail or waterfront this weekend with thermoses of hot coffee.",
+      "dailyIntention": "I suggest a park walk with hot coffee.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "health",
+        "love"
+      ],
+      "keywordTags": [
+        "bike ride",
+        "park trail",
+        "waterfront",
+        "coffee"
+      ],
+      "rarity": "common",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_035",
+      "type": "love",
+      "text": "Picking a brand-new corner spot you have never tried together tends to point to keeping shared curiosity awake. Suggest the dumpling shop or bookshop two neighborhoods over tonight instead of defaulting to your usual street.",
+      "dailyIntention": "I try a new corner shop tonight.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "general",
+        "love"
+      ],
+      "keywordTags": [
+        "dumpling shop",
+        "bookshop",
+        "street"
+      ],
+      "rarity": "epic",
+      "createdAt": 1795357565124
+    },
+    {
+      "id": "love_036",
+      "type": "love",
+      "text": "Turning up an old favorite track while dinner simmers on the stove is read as letting gladness take up space in an ordinary room. Dance two songs in your socks tonight, solo or with someone you adore, before you set the plates down.",
+      "dailyIntention": "I dance two songs in my kitchen socks.",
+      "moodTags": [
+        "excited"
+      ],
+      "focusTags": [
+        "spiritual",
+        "love"
+      ],
+      "keywordTags": [
+        "track",
+        "stove",
+        "socks",
+        "plates"
+      ],
+      "rarity": "legendary",
+      "createdAt": 1795357565124
     }
   ]
 }

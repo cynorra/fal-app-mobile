@@ -3,6 +3,7 @@ package com.cynora.luna.core.data.seed
 import android.content.Context
 import com.cynora.luna.core.data.mapper.toEntity
 import com.cynora.luna.core.database.dao.FortuneDao
+import com.cynora.luna.core.database.entity.FortuneEntity
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -20,27 +21,31 @@ class SeedDataLoader @Inject constructor(
     private val gson = Gson()
 
     suspend fun loadSeedDataIfNeeded() {
+        val entities = readSeedEntities()
+        if (entities.isEmpty()) return
+
         val count = fortuneDao.count()
-        if (count == 0) {
-            loadSeedData()
+        // Load when the local table is smaller than the bundled seed: a first install, or an
+        // app update that ships more fortunes. insertAll replaces rows that share an id.
+        if (count < entities.size) {
+            withContext(Dispatchers.IO) { fortuneDao.insertAll(entities) }
+            Timber.d("✅ Loaded ${entities.size} seed fortunes (had $count)")
         } else {
             Timber.d("Seed data already loaded: $count fortunes")
         }
     }
 
-    private suspend fun loadSeedData() = withContext(Dispatchers.IO) {
+    private suspend fun readSeedEntities(): List<FortuneEntity> = withContext(Dispatchers.IO) {
         try {
             val jsonString = context.assets.open("seed_fortunes.json")
                 .bufferedReader()
                 .use { it.readText() }
 
             val seedData: SeedDataWrapper = gson.fromJson(jsonString, SeedDataWrapper::class.java)
-            val entities = seedData.fortunes.map { it.toEntity() }
-            fortuneDao.insertAll(entities)
-            
-            Timber.d("✅ Loaded ${entities.size} seed fortunes")
+            seedData.fortunes.map { it.toEntity() }
         } catch (e: Exception) {
             Timber.e(e, "❌ Seed data load failed")
+            emptyList()
         }
     }
 }
