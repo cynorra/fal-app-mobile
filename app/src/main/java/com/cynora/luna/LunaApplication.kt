@@ -11,6 +11,7 @@ import com.cynora.luna.core.ui.ads.AdUnits
 import com.cynora.luna.di.AdConfig
 import com.cynora.luna.work.WorkScheduler
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.RequestConfiguration
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
@@ -49,7 +50,7 @@ class LunaApplication : Application(), Configuration.Provider {
             Timber.plant(Timber.DebugTree())
             MobileAds.setRequestConfiguration(
                 RequestConfiguration.Builder()
-                    .setTestDeviceIds(listOf(RequestConfiguration.DEVICE_ID_EMULATOR))
+                    .setTestDeviceIds(listOf(AdRequest.DEVICE_ID_EMULATOR))
                     .build()
             )
         }
