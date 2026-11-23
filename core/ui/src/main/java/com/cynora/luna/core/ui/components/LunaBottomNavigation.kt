@@ -59,11 +59,12 @@ fun LunaBottomNavigation(
 ) {
     val adsAllowed = rememberAdsAllowed()
     Column(modifier = modifier.fillMaxWidth()) {
-        LunaDock(items, selectedRoute, onItemSelected)
-        // Banner sits below the dock, at the very bottom of the screen
+        // Banner sits ABOVE the dock so the dock stays pinned to the bottom edge instead of
+        // floating over an empty (or loading) ad strip.
         if (showBanner && adsAllowed) {
             AdaptiveBannerAd(adUnitId = AdUnits.banner)
         }
+        LunaDock(items, selectedRoute, onItemSelected)
     }
 }
 

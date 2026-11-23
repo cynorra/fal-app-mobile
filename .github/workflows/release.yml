@@ -94,7 +94,6 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: >
           ./gradlew assembleRelease
-          -PLUNA_FORCE_TEST_ADS=true
           -PLUNA_STORE_FILE="$LUNA_STORE_FILE"
           -PLUNA_STORE_PASSWORD="$LUNA_STORE_PASSWORD"
           -PLUNA_KEY_ALIAS="$LUNA_KEY_ALIAS"

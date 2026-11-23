@@ -49,7 +49,7 @@ class LunaApplication : Application(), Configuration.Provider {
             Timber.plant(Timber.DebugTree())
             MobileAds.setRequestConfiguration(
                 RequestConfiguration.Builder()
-                    .setTestDeviceIds(listOf("EMULATOR_ID"))
+                    .setTestDeviceIds(listOf(RequestConfiguration.DEVICE_ID_EMULATOR))
                     .build()
             )
         }
