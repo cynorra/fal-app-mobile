@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ui_onb_welcome_title">Luna'ya Hoş Geldin</string>
+    <string name="ui_onb_welcome_title">Luna\'ya Hoş Geldin</string>
     <string name="ui_onb_welcome_body">Tarot, burçlar ve rüyalar için kişisel kozmik rehberin</string>
     <string name="ui_onb_begin">Yolculuğa Başla</string>
     <string name="ui_onb_sign_title">Burcun Hangisi?</string>

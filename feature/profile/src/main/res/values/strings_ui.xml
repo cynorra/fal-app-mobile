@@ -33,8 +33,8 @@
     <string name="ui_profile_invite_title">Invite a friend</string>
     <string name="ui_profile_invite_share">Share Luna with a friend</string>
     <string name="ui_profile_invite_preparing">Preparing your invite link...</string>
-    <string name="ui_profile_invite_perk">Friend perk unlocked: tomorrow's horoscope and the 3-card spread</string>
-    <string name="ui_profile_invite_pending">When a friend joins with your link, you both unlock tomorrow's horoscope and the 3-card spread</string>
+    <string name="ui_profile_invite_perk">Friend perk unlocked: tomorrow\'s horoscope and the 3-card spread</string>
+    <string name="ui_profile_invite_pending">When a friend joins with your link, you both unlock tomorrow\'s horoscope and the 3-card spread</string>
     <string name="ui_profile_friends_joined">Friends joined</string>
     <string name="ui_profile_about">About</string>
     <string name="ui_profile_privacy">Privacy Policy</string>

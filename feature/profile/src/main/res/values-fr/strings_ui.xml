@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ui_profile_perm_title">Autorisation de notification requise</string>
-    <string name="ui_profile_perm_body">Les messages quotidiens de fortune et d'intention nécessitent l'autorisation de notification. Vous pouvez l'activer dans les paramètres.</string>
+    <string name="ui_profile_perm_body">Les messages quotidiens de fortune et d\'intention nécessitent l\'autorisation de notification. Vous pouvez l\'activer dans les paramètres.</string>
     <string name="ui_profile_allow">Autoriser</string>
     <string name="ui_profile_cancel">Annuler</string>
     <string name="ui_profile_select_language">Choisir la langue</string>
     <string name="ui_profile_about_title">À propos de Luna ✨</string>
     <string name="ui_profile_about_version">Luna v%1$s</string>
-    <string name="ui_profile_about_body">Votre guide cosmique personnel pour le tarot, l'astrologie, les thèmes natals, la carte du jour et les nombres angéliques.</string>
+    <string name="ui_profile_about_body">Votre guide cosmique personnel pour le tarot, l\'astrologie, les thèmes natals, la carte du jour et les nombres angéliques.</string>
     <string name="ui_profile_about_copyright">© 2026 Cynora Studio. Tous droits réservés.</string>
     <string name="ui_profile_close">Fermer</string>
     <string name="ui_profile_delete_title">Supprimer le compte et les données ?</string>
@@ -18,7 +18,7 @@
     <string name="ui_profile_stat_days">%1$d jours</string>
     <string name="ui_profile_stat_rare">Cartes rares</string>
     <string name="ui_profile_account">Compte</string>
-    <string name="ui_profile_avatar">Avatar de l'utilisateur</string>
+    <string name="ui_profile_avatar">Avatar de l\'utilisateur</string>
     <string name="ui_profile_traveler">Voyageur cosmique</string>
     <string name="ui_profile_sign_out">Se déconnecter</string>
     <string name="ui_profile_sync_title">Sauvegardez et synchronisez votre voyage cosmique</string>
@@ -32,15 +32,15 @@
     <string name="ui_profile_language">Langue</string>
     <string name="ui_profile_invite_title">Inviter un ami</string>
     <string name="ui_profile_invite_share">Partagez Luna avec un ami</string>
-    <string name="ui_profile_invite_preparing">Préparation de votre lien d'invitation...</string>
-    <string name="ui_profile_invite_perk">Avantage ami débloqué : l'horoscope de demain et le tirage à 3 cartes</string>
-    <string name="ui_profile_invite_pending">Quand un ami rejoint avec votre lien, vous débloquez tous les deux l'horoscope de demain et le tirage à 3 cartes</string>
+    <string name="ui_profile_invite_preparing">Préparation de votre lien d\'invitation...</string>
+    <string name="ui_profile_invite_perk">Avantage ami débloqué : l\'horoscope de demain et le tirage à 3 cartes</string>
+    <string name="ui_profile_invite_pending">Quand un ami rejoint avec votre lien, vous débloquez tous les deux l\'horoscope de demain et le tirage à 3 cartes</string>
     <string name="ui_profile_friends_joined">Amis inscrits</string>
     <string name="ui_profile_about">À propos</string>
     <string name="ui_profile_privacy">Politique de confidentialité</string>
     <string name="ui_profile_delete_account">Supprimer le compte et les données</string>
     <string name="ui_profile_deleting">Suppression...</string>
-    <string name="ui_profile_about_app">À propos de l'appli</string>
+    <string name="ui_profile_about_app">À propos de l\'appli</string>
     <string name="ui_profile_version">Version</string>
     <string name="ui_profile_welcome_snack">Bienvenue %1$s ! ✨</string>
     <string name="ui_profile_signin_failed">Échec de la connexion : %1$s</string>
@@ -49,6 +49,6 @@
     <string name="ui_profile_relogin">Par sécurité, déconnectez-vous, reconnectez-vous puis réessayez.</string>
     <string name="ui_profile_delete_failed">Impossible de supprimer le compte. Vérifiez votre connexion et réessayez.</string>
     <string name="ui_profile_client_id_missing">ID client Google introuvable. Vérifiez que google-services.json est configuré.</string>
-    <string name="ui_profile_unexpected_cred">Format d'identifiants inattendu reçu.</string>
+    <string name="ui_profile_unexpected_cred">Format d\'identifiants inattendu reçu.</string>
     <string name="ui_profile_signin_error">Erreur de connexion</string>
 </resources>

@@ -25,11 +25,7 @@
     <string name="ui_fortune_bc_title">Geburtshoroskop 🌌</string>
     <string name="ui_fortune_bc_share">Meine Big Three teilen</string>
     <string name="ui_fortune_bc_share_title">Meine Big Three</string>
-    <string name="ui_fortune_bc_share_body">Sonne: %1$s
-Mond: %2$s
-Aszendent: %3$s
-
-%4$s</string>
+    <string name="ui_fortune_bc_share_body">Sonne: %1$s\nMond: %2$s\nAszendent: %3$s\n\n%4$s</string>
     <string name="ui_fortune_bc_share_footer">Und deine?</string>
     <string name="ui_fortune_bc_another">Weitere berechnen</string>
     <string name="ui_fortune_bc_heading">🌌 Dein Geburtshoroskop</string>
@@ -64,9 +60,7 @@ Aszendent: %3$s
     <string name="ui_fortune_cp_calculate">Kompatibilität berechnen 💕</string>
     <string name="ui_fortune_cp_share">Mit deinem Partner teilen</string>
     <string name="ui_fortune_cp_share_title">%1$s + %2$s: %3$d%% kompatibel</string>
-    <string name="ui_fortune_cp_share_body">Liebe %1$d%%  |  Freundschaft %2$d%%  |  Vertrauen %3$d%%
-
-%4$s</string>
+    <string name="ui_fortune_cp_share_body">Liebe %1$d%%  |  Freundschaft %2$d%%  |  Vertrauen %3$d%%\n\n%4$s</string>
     <string name="ui_fortune_cp_share_footer">Wie gut passt ihr zusammen?</string>
     <string name="ui_fortune_cp_another">Weitere ausprobieren</string>
     <string name="ui_fortune_cp_overall">Gesamtkompatibilität</string>
@@ -77,8 +71,7 @@ Aszendent: %3$s
     <string name="ui_fortune_cp_challenges">🌱 Herausforderungen</string>
     <string name="ui_fortune_cp_advice">💡 Rat</string>
     <string name="ui_fortune_dc_title">Karte des Tages 🎯</string>
-    <string name="ui_fortune_dc_tap">Tippe, um deine
-Karte zu enthüllen</string>
+    <string name="ui_fortune_dc_tap">Tippe, um deine\nKarte zu enthüllen</string>
     <string name="ui_fortune_dc_breathe">Atme tief durch und tippe auf die Karte</string>
     <string name="ui_fortune_dc_general">✨ Allgemein</string>
     <string name="ui_fortune_dc_advice">💡 Rat für heute</string>
@@ -111,10 +104,7 @@ Karte zu enthüllen</string>
     <string name="ui_fortune_or_touch">Kugel berühren</string>
     <string name="ui_fortune_or_channelling">Die Sterne werden befragt...</string>
     <string name="ui_fortune_or_consult">✨ Das Orakel befragen</string>
-    <string name="ui_fortune_or_share_text">Frage: \"%1$s\"
-Antwort: %2$s — %3$s
-
-%4$s</string>
+    <string name="ui_fortune_or_share_text">Frage: \"%1$s\"\nAntwort: %2$s — %3$s\n\n%4$s</string>
     <string name="ui_fortune_or_my_path">Mein Weg</string>
     <string name="ui_fortune_or_type">Ja/Nein-Orakel</string>
     <string name="ui_fortune_or_new">Neue Frage</string>

@@ -25,11 +25,7 @@
     <string name="ui_fortune_bc_title">خريطة الميلاد 🌌</string>
     <string name="ui_fortune_bc_share">شارك أهم ثلاثة أبراج لي</string>
     <string name="ui_fortune_bc_share_title">أبراجي الثلاثة الكبرى</string>
-    <string name="ui_fortune_bc_share_body">الشمس: %1$s
-القمر: %2$s
-الطالع: %3$s
-
-%4$s</string>
+    <string name="ui_fortune_bc_share_body">الشمس: %1$s\nالقمر: %2$s\nالطالع: %3$s\n\n%4$s</string>
     <string name="ui_fortune_bc_share_footer">وما هو لك؟</string>
     <string name="ui_fortune_bc_another">احسب خريطة أخرى</string>
     <string name="ui_fortune_bc_heading">🌌 خريطة ميلادك</string>
@@ -64,9 +60,7 @@
     <string name="ui_fortune_cp_calculate">احسب التوافق 💕</string>
     <string name="ui_fortune_cp_share">شارك مع شريكك</string>
     <string name="ui_fortune_cp_share_title">%1$s + %2$s: متوافقان بنسبة %3$d%%</string>
-    <string name="ui_fortune_cp_share_body">الحب %1$d%%  |  الصداقة %2$d%%  |  الثقة %3$d%%
-
-%4$s</string>
+    <string name="ui_fortune_cp_share_body">الحب %1$d%%  |  الصداقة %2$d%%  |  الثقة %3$d%%\n\n%4$s</string>
     <string name="ui_fortune_cp_share_footer">ما مدى توافقكما؟</string>
     <string name="ui_fortune_cp_another">جرّب آخر</string>
     <string name="ui_fortune_cp_overall">التوافق العام</string>
@@ -77,8 +71,7 @@
     <string name="ui_fortune_cp_challenges">🌱 التحديات</string>
     <string name="ui_fortune_cp_advice">💡 نصيحة</string>
     <string name="ui_fortune_dc_title">بطاقة اليوم 🎯</string>
-    <string name="ui_fortune_dc_tap">المس لكشف
-بطاقتك</string>
+    <string name="ui_fortune_dc_tap">المس لكشف\nبطاقتك</string>
     <string name="ui_fortune_dc_breathe">خذ نفساً عميقاً واضغط على البطاقة</string>
     <string name="ui_fortune_dc_general">✨ عام</string>
     <string name="ui_fortune_dc_advice">💡 نصيحة اليوم</string>
@@ -111,10 +104,7 @@
     <string name="ui_fortune_or_touch">المس الكرة</string>
     <string name="ui_fortune_or_channelling">جارٍ استحضار النجوم...</string>
     <string name="ui_fortune_or_consult">✨ استشر العرّاف</string>
-    <string name="ui_fortune_or_share_text">السؤال: \"%1$s\"
-الجواب: %2$s — %3$s
-
-%4$s</string>
+    <string name="ui_fortune_or_share_text">السؤال: \"%1$s\"\nالجواب: %2$s — %3$s\n\n%4$s</string>
     <string name="ui_fortune_or_my_path">طريقي</string>
     <string name="ui_fortune_or_type">عرّاف نعم/لا</string>
     <string name="ui_fortune_or_new">سؤال جديد</string>

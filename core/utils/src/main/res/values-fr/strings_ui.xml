@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ui_share_intention_prefix">Intention : %1$s</string>
-    <string name="ui_share_fortune_text">%1$s par Luna
-
-Obtenez votre propre lecture : %2$s</string>
-    <string name="ui_share_card_text">%1$s par Luna
-
-Essayez vous-même : %2$s</string>
+    <string name="ui_share_fortune_text">%1$s par Luna\n\nObtenez votre propre lecture : %2$s</string>
+    <string name="ui_share_card_text">%1$s par Luna\n\nEssayez vous-même : %2$s</string>
     <string name="ui_share_chooser">Partager via</string>
     <string name="ui_share_intention_card_title">Intention du jour</string>
-    <string name="ui_share_intention_text">Mon intention du jour, par Luna
-
-%1$s</string>
-    <string name="ui_share_intention_chooser">Partager l'intention</string>
-    <string name="ui_share_invite_text">J'utilise Luna pour ma carte du jour et mon horoscope, et j'ai pensé que cela pourrait vous plaire. Installez-la avec mon lien et nous débloquons tous les deux un petit bonus : %1$s</string>
+    <string name="ui_share_intention_text">Mon intention du jour, par Luna\n\n%1$s</string>
+    <string name="ui_share_intention_chooser">Partager l\'intention</string>
+    <string name="ui_share_invite_text">J\'utilise Luna pour ma carte du jour et mon horoscope, et j\'ai pensé que cela pourrait vous plaire. Installez-la avec mon lien et nous débloquons tous les deux un petit bonus : %1$s</string>
     <string name="ui_share_invite_chooser">Inviter un ami</string>
     <string name="ui_share_cta">Téléchargez Luna sur Google Play</string>
 </resources>

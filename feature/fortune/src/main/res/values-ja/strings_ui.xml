@@ -25,11 +25,7 @@
     <string name="ui_fortune_bc_title">出生図 🌌</string>
     <string name="ui_fortune_bc_share">私のビッグスリーをシェア</string>
     <string name="ui_fortune_bc_share_title">私のビッグスリー</string>
-    <string name="ui_fortune_bc_share_body">太陽：%1$s
-月：%2$s
-ライジング：%3$s
-
-%4$s</string>
+    <string name="ui_fortune_bc_share_body">太陽：%1$s\n月：%2$s\nライジング：%3$s\n\n%4$s</string>
     <string name="ui_fortune_bc_share_footer">あなたはどうですか？</string>
     <string name="ui_fortune_bc_another">別の人を計算</string>
     <string name="ui_fortune_bc_heading">🌌 あなたの出生図</string>
@@ -64,9 +60,7 @@
     <string name="ui_fortune_cp_calculate">相性を計算 💕</string>
     <string name="ui_fortune_cp_share">パートナーとシェア</string>
     <string name="ui_fortune_cp_share_title">%1$s + %2$s：相性%3$d%%</string>
-    <string name="ui_fortune_cp_share_body">愛 %1$d%%  |  友情 %2$d%%  |  信頼 %3$d%%
-
-%4$s</string>
+    <string name="ui_fortune_cp_share_body">愛 %1$d%%  |  友情 %2$d%%  |  信頼 %3$d%%\n\n%4$s</string>
     <string name="ui_fortune_cp_share_footer">2人の相性は？</string>
     <string name="ui_fortune_cp_another">別の組み合わせ</string>
     <string name="ui_fortune_cp_overall">総合相性</string>
@@ -77,8 +71,7 @@
     <string name="ui_fortune_cp_challenges">🌱 課題</string>
     <string name="ui_fortune_cp_advice">💡 アドバイス</string>
     <string name="ui_fortune_dc_title">今日のカード 🎯</string>
-    <string name="ui_fortune_dc_tap">タップして
-カードを表示</string>
+    <string name="ui_fortune_dc_tap">タップして\nカードを表示</string>
     <string name="ui_fortune_dc_breathe">深呼吸して、カードをタップしてください</string>
     <string name="ui_fortune_dc_general">✨ 総合</string>
     <string name="ui_fortune_dc_advice">💡 今日のアドバイス</string>
@@ -111,10 +104,7 @@
     <string name="ui_fortune_or_touch">オーブに触れる</string>
     <string name="ui_fortune_or_channelling">星々と交信中...</string>
     <string name="ui_fortune_or_consult">✨ オラクルに尋ねる</string>
-    <string name="ui_fortune_or_share_text">質問：「%1$s」
-答え：%2$s — %3$s
-
-%4$s</string>
+    <string name="ui_fortune_or_share_text">質問：「%1$s」\n答え：%2$s — %3$s\n\n%4$s</string>
     <string name="ui_fortune_or_my_path">私の道</string>
     <string name="ui_fortune_or_type">イエス/ノー・オラクル</string>
     <string name="ui_fortune_or_new">新しい質問</string>

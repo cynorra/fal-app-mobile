@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ui_share_intention_prefix">Intention: %1$s</string>
-    <string name="ui_share_fortune_text">%1$s von Luna
-
-Hol dir deine eigene Deutung: %2$s</string>
-    <string name="ui_share_card_text">%1$s von Luna
-
-Probier es selbst aus: %2$s</string>
+    <string name="ui_share_fortune_text">%1$s von Luna\n\nHol dir deine eigene Deutung: %2$s</string>
+    <string name="ui_share_card_text">%1$s von Luna\n\nProbier es selbst aus: %2$s</string>
     <string name="ui_share_chooser">Teilen über</string>
     <string name="ui_share_intention_card_title">Intention des Tages</string>
-    <string name="ui_share_intention_text">Meine Intention für heute, von Luna
-
-%1$s</string>
+    <string name="ui_share_intention_text">Meine Intention für heute, von Luna\n\n%1$s</string>
     <string name="ui_share_intention_chooser">Intention teilen</string>
     <string name="ui_share_invite_text">Ich nutze Luna für meine Tageskarte und mein Horoskop und dachte, es könnte dir gefallen. Installiere es über meinen Link und wir schalten beide etwas Extra frei: %1$s</string>
     <string name="ui_share_invite_chooser">Freund einladen</string>

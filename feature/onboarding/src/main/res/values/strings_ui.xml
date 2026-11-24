@@ -3,14 +3,14 @@
     <string name="ui_onb_welcome_title">Welcome to Luna</string>
     <string name="ui_onb_welcome_body">Your personal cosmic guide to tarot, horoscopes and dreams</string>
     <string name="ui_onb_begin">Begin Journey</string>
-    <string name="ui_onb_sign_title">What's Your Sign?</string>
+    <string name="ui_onb_sign_title">What\'s Your Sign?</string>
     <string name="ui_onb_sign_body">Select your zodiac for personalized readings</string>
     <string name="ui_onb_continue">Continue</string>
     <string name="ui_onb_notif_title">Stay Connected</string>
     <string name="ui_onb_notif_body">Receive daily fortune readings and intention messages</string>
     <string name="ui_onb_allow">Allow Notifications</string>
     <string name="ui_onb_not_now">Not Now</string>
-    <string name="ui_onb_ready_title">You're Ready!</string>
-    <string name="ui_onb_ready_body">Discover the stars' personalized messages for you</string>
+    <string name="ui_onb_ready_title">You\'re Ready!</string>
+    <string name="ui_onb_ready_body">Discover the stars\' personalized messages for you</string>
     <string name="ui_onb_start">Start Exploring</string>
 </resources>

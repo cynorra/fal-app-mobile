@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ui_share_intention_prefix">意図：%1$s</string>
-    <string name="ui_share_fortune_text">Luna による %1$s
-
-あなたも鑑定してみましょう：%2$s</string>
-    <string name="ui_share_card_text">Luna による %1$s
-
-あなたも試してみましょう：%2$s</string>
+    <string name="ui_share_fortune_text">Luna による %1$s\n\nあなたも鑑定してみましょう：%2$s</string>
+    <string name="ui_share_card_text">Luna による %1$s\n\nあなたも試してみましょう：%2$s</string>
     <string name="ui_share_chooser">共有先</string>
     <string name="ui_share_intention_card_title">今日の意図</string>
-    <string name="ui_share_intention_text">今日の私の意図（Luna より）
-
-%1$s</string>
+    <string name="ui_share_intention_text">今日の私の意図（Luna より）\n\n%1$s</string>
     <string name="ui_share_intention_chooser">意図をシェア</string>
     <string name="ui_share_invite_text">毎日のカードと星占いに Luna を使っていて、あなたも気に入るかもと思いました。私のリンクからインストールすると、2人ともちょっとした特典が解放されます：%1$s</string>
     <string name="ui_share_invite_chooser">友だちを招待</string>

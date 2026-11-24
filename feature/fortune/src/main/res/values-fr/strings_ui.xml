@@ -12,8 +12,8 @@
     <string name="ui_fortune_lbl_spiritual">🙏 Spirituel</string>
     <string name="ui_fortune_lbl_strengths">💪 Forces</string>
     <string name="ui_fortune_loading">Lecture du cosmos...</string>
-    <string name="ui_fortune_title">Que cherchez-vous aujourd'hui ?</string>
-    <string name="ui_fortune_subtitle">Choisissez votre humeur et votre focus, recevez le message de l'univers</string>
+    <string name="ui_fortune_title">Que cherchez-vous aujourd\'hui ?</string>
+    <string name="ui_fortune_subtitle">Choisissez votre humeur et votre focus, recevez le message de l\'univers</string>
     <string name="ui_fortune_type">Type de fortune</string>
     <string name="ui_fortune_mood">Humeur actuelle</string>
     <string name="ui_fortune_focus">Domaine de focus</string>
@@ -25,11 +25,7 @@
     <string name="ui_fortune_bc_title">Thème natal 🌌</string>
     <string name="ui_fortune_bc_share">Partager mes Big Three</string>
     <string name="ui_fortune_bc_share_title">Mes Big Three</string>
-    <string name="ui_fortune_bc_share_body">Soleil : %1$s
-Lune : %2$s
-Ascendant : %3$s
-
-%4$s</string>
+    <string name="ui_fortune_bc_share_body">Soleil : %1$s\nLune : %2$s\nAscendant : %3$s\n\n%4$s</string>
     <string name="ui_fortune_bc_share_footer">Et les vôtres ?</string>
     <string name="ui_fortune_bc_another">Calculer un autre</string>
     <string name="ui_fortune_bc_heading">🌌 Votre thème natal</string>
@@ -64,9 +60,7 @@ Ascendant : %3$s
     <string name="ui_fortune_cp_calculate">Calculer la compatibilité 💕</string>
     <string name="ui_fortune_cp_share">Partager avec votre partenaire</string>
     <string name="ui_fortune_cp_share_title">%1$s + %2$s : %3$d%% compatibles</string>
-    <string name="ui_fortune_cp_share_body">Amour %1$d%%  |  Amitié %2$d%%  |  Confiance %3$d%%
-
-%4$s</string>
+    <string name="ui_fortune_cp_share_body">Amour %1$d%%  |  Amitié %2$d%%  |  Confiance %3$d%%\n\n%4$s</string>
     <string name="ui_fortune_cp_share_footer">Êtes-vous compatibles tous les deux ?</string>
     <string name="ui_fortune_cp_another">Essayer un autre</string>
     <string name="ui_fortune_cp_overall">Compatibilité globale</string>
@@ -77,8 +71,7 @@ Ascendant : %3$s
     <string name="ui_fortune_cp_challenges">🌱 Défis</string>
     <string name="ui_fortune_cp_advice">💡 Conseil</string>
     <string name="ui_fortune_dc_title">Carte du jour 🎯</string>
-    <string name="ui_fortune_dc_tap">Touchez pour révéler
-votre carte</string>
+    <string name="ui_fortune_dc_tap">Touchez pour révéler\nvotre carte</string>
     <string name="ui_fortune_dc_breathe">Respirez profondément et touchez la carte</string>
     <string name="ui_fortune_dc_general">✨ Général</string>
     <string name="ui_fortune_dc_advice">💡 Conseil du jour</string>
@@ -108,13 +101,10 @@ votre carte</string>
     <string name="ui_fortune_or_title">Oracle Oui / Non</string>
     <string name="ui_fortune_or_intro">Concentrez votre intention sur une seule question. Le cosmos révélera si les courants sont alignés.</string>
     <string name="ui_fortune_or_hint">Que souhaite savoir votre âme ?</string>
-    <string name="ui_fortune_or_touch">Touchez l'orbe</string>
+    <string name="ui_fortune_or_touch">Touchez l\'orbe</string>
     <string name="ui_fortune_or_channelling">Canalisation des étoiles...</string>
-    <string name="ui_fortune_or_consult">✨ Consulter l'oracle</string>
-    <string name="ui_fortune_or_share_text">Question : « %1$s »
-Réponse : %2$s — %3$s
-
-%4$s</string>
+    <string name="ui_fortune_or_consult">✨ Consulter l\'oracle</string>
+    <string name="ui_fortune_or_share_text">Question : « %1$s »\nRéponse : %2$s — %3$s\n\n%4$s</string>
     <string name="ui_fortune_or_my_path">Mon chemin</string>
     <string name="ui_fortune_or_type">Oracle Oui/Non</string>
     <string name="ui_fortune_or_new">Nouvelle question</string>
@@ -132,7 +122,7 @@ Réponse : %2$s — %3$s
     <string name="ui_fortune_tr_shuffling">Mélange des 22 arcanes majeurs...</string>
     <string name="ui_fortune_tr_shuffle_again">✨ Mélanger et tirer à nouveau</string>
     <string name="ui_fortune_tr_shuffle">✨ Mélanger et tirer les cartes</string>
-    <string name="ui_fortune_tr_intention">Avancez en harmonie avec les énergies tirées aujourd'hui.</string>
+    <string name="ui_fortune_tr_intention">Avancez en harmonie avec les énergies tirées aujourd\'hui.</string>
     <string name="ui_fortune_tr_type">Lecture de tarot</string>
     <string name="ui_fortune_tr_share">Partager la lecture de tarot</string>
     <string name="ui_fortune_tr_reversed">🔄 Inversée</string>

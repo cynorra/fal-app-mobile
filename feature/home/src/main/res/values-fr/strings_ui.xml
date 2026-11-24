@@ -9,7 +9,7 @@
     <string name="ui_home_cmdk_zodiac_title">Les 12 signes du zodiaque</string>
     <string name="ui_home_cmdk_zodiac_sub">Éléments, modalités, planètes maîtresses et profils</string>
     <string name="ui_home_cmdk_birth_sub">Soleil, Lune, Ascendant et positions planétaires</string>
-    <string name="ui_home_cmdk_daily_sub">Guidance et intention pour aujourd'hui</string>
+    <string name="ui_home_cmdk_daily_sub">Guidance et intention pour aujourd\'hui</string>
     <string name="ui_home_cmdk_compat_title">Compatibilité des signes</string>
     <string name="ui_home_cmdk_compat_sub">Amour, amitié, confiance et communication</string>
     <string name="ui_home_cmdk_angel_sub">Messages spirituels derrière 111, 444, 777</string>
@@ -46,7 +46,7 @@
     <string name="ui_home_planet_theme">%1$s • Idéal pour %2$s</string>
     <string name="ui_home_daily_guidance">%1$s Guidance quotidienne %2$s</string>
     <string name="ui_home_yesterday">Hier</string>
-    <string name="ui_home_today">Aujourd'hui</string>
+    <string name="ui_home_today">Aujourd\'hui</string>
     <string name="ui_home_tomorrow">Demain</string>
     <string name="ui_home_locked">Verrouillé</string>
     <string name="ui_home_lucky_number">Chiffre chanceux</string>
@@ -56,8 +56,8 @@
     <string name="ui_home_moon_phase">Phase lunaire</string>
     <string name="ui_home_planet">Planète</string>
     <string name="ui_home_lucky_hour">Heure chanceuse</string>
-    <string name="ui_home_horo_yesterday">Les leçons d'hier ont posé les bases solides des avancées d'aujourd'hui.</string>
-    <string name="ui_home_horo_tomorrow">L'alignement planétaire de demain ouvre une opportunité financière ou créative inattendue.</string>
+    <string name="ui_home_horo_yesterday">Les leçons d\'hier ont posé les bases solides des avancées d\'aujourd\'hui.</string>
+    <string name="ui_home_horo_tomorrow">L\'alignement planétaire de demain ouvre une opportunité financière ou créative inattendue.</string>
     <string name="ui_home_color_gold">Or champagne</string>
     <string name="ui_home_color_lavender">Lavande douce</string>
     <string name="ui_home_color_blue">Bleu céleste</string>

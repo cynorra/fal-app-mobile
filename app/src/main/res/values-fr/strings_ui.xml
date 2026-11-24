@@ -4,15 +4,15 @@
     <string name="ui_app_nav_fortune">Fortune</string>
     <string name="ui_app_nav_community">Communauté</string>
     <string name="ui_app_nav_profile">Profil</string>
-    <string name="ui_app_today">Aujourd'hui</string>
+    <string name="ui_app_today">Aujourd\'hui</string>
     <string name="ui_app_nudge_streak_a_title">Le jour %1$d vous attend</string>
-    <string name="ui_app_nudge_streak_a_body">Votre rituel de %1$d jours brille encore. Venez voir la carte du jour, cela prend moins d'une minute.</string>
+    <string name="ui_app_nudge_streak_a_body">Votre rituel de %1$d jours brille encore. Venez voir la carte du jour, cela prend moins d\'une minute.</string>
     <string name="ui_app_nudge_streak_b_title">Gardez votre série de %1$d jours</string>
     <string name="ui_app_nudge_streak_b_body">Une minute calme avec la lecture du jour entretient votre rituel. Venez jeter un œil.</string>
     <string name="ui_app_nudge_1_title">Votre carte du jour est prête</string>
     <string name="ui_app_nudge_1_body">Venez jeter un œil. Un petit moment de réflexion pour bien commencer la journée.</string>
     <string name="ui_app_nudge_2_title">%1$s, le ciel a un message pour vous</string>
-    <string name="ui_app_nudge_2_body">Venez voir ce que la lecture du jour vous réserve. Cela ne prend qu'une minute.</string>
+    <string name="ui_app_nudge_2_body">Venez voir ce que la lecture du jour vous réserve. Cela ne prend qu\'une minute.</string>
     <string name="ui_app_nudge_3_title">Un nouveau jour, une nouvelle lecture</string>
     <string name="ui_app_nudge_3_body">Venez voir votre carte du jour et fixez votre intention.</string>
     <string name="ui_app_nudge_4_title">Votre intention du jour vous attend</string>
@@ -20,7 +20,7 @@
     <string name="ui_app_ch_daily">Fortune du jour</string>
     <string name="ui_app_ch_daily_desc">Lectures quotidiennes de fortune</string>
     <string name="ui_app_ch_hourly">Pouls cosmique horaire</string>
-    <string name="ui_app_ch_hourly_desc">Heures planétaires, affirmations et fenêtres d'énergie chanceuse chaque heure</string>
+    <string name="ui_app_ch_hourly_desc">Heures planétaires, affirmations et fenêtres d\'énergie chanceuse chaque heure</string>
     <string name="ui_app_ch_social">Communauté</string>
     <string name="ui_app_ch_social_desc">Interactions de la communauté</string>
     <string name="ui_app_ch_calendar">Calendrier mystique</string>

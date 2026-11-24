@@ -25,11 +25,7 @@
     <string name="ui_fortune_bc_title">Carta natal 🌌</string>
     <string name="ui_fortune_bc_share">Compartir mis tres grandes</string>
     <string name="ui_fortune_bc_share_title">Mis tres grandes</string>
-    <string name="ui_fortune_bc_share_body">Sol: %1$s
-Luna: %2$s
-Ascendente: %3$s
-
-%4$s</string>
+    <string name="ui_fortune_bc_share_body">Sol: %1$s\nLuna: %2$s\nAscendente: %3$s\n\n%4$s</string>
     <string name="ui_fortune_bc_share_footer">¿Cuál es el tuyo?</string>
     <string name="ui_fortune_bc_another">Calcular otra</string>
     <string name="ui_fortune_bc_heading">🌌 Tu carta natal</string>
@@ -64,9 +60,7 @@ Ascendente: %3$s
     <string name="ui_fortune_cp_calculate">Calcular compatibilidad 💕</string>
     <string name="ui_fortune_cp_share">Comparte con tu pareja</string>
     <string name="ui_fortune_cp_share_title">%1$s + %2$s: %3$d%% compatibles</string>
-    <string name="ui_fortune_cp_share_body">Amor %1$d%%  |  Amistad %2$d%%  |  Confianza %3$d%%
-
-%4$s</string>
+    <string name="ui_fortune_cp_share_body">Amor %1$d%%  |  Amistad %2$d%%  |  Confianza %3$d%%\n\n%4$s</string>
     <string name="ui_fortune_cp_share_footer">¿Qué tan compatibles son ustedes dos?</string>
     <string name="ui_fortune_cp_another">Probar otra</string>
     <string name="ui_fortune_cp_overall">Compatibilidad general</string>
@@ -77,8 +71,7 @@ Ascendente: %3$s
     <string name="ui_fortune_cp_challenges">🌱 Desafíos</string>
     <string name="ui_fortune_cp_advice">💡 Consejo</string>
     <string name="ui_fortune_dc_title">Carta del día 🎯</string>
-    <string name="ui_fortune_dc_tap">Toca para revelar
-tu carta</string>
+    <string name="ui_fortune_dc_tap">Toca para revelar\ntu carta</string>
     <string name="ui_fortune_dc_breathe">Respira hondo y toca la carta</string>
     <string name="ui_fortune_dc_general">✨ General</string>
     <string name="ui_fortune_dc_advice">💡 Consejo de hoy</string>
@@ -111,10 +104,7 @@ tu carta</string>
     <string name="ui_fortune_or_touch">Toca el orbe</string>
     <string name="ui_fortune_or_channelling">Canalizando las estrellas...</string>
     <string name="ui_fortune_or_consult">✨ Consultar al oráculo</string>
-    <string name="ui_fortune_or_share_text">Pregunta: \"%1$s\"
-Respuesta: %2$s — %3$s
-
-%4$s</string>
+    <string name="ui_fortune_or_share_text">Pregunta: \"%1$s\"\nRespuesta: %2$s — %3$s\n\n%4$s</string>
     <string name="ui_fortune_or_my_path">Mi camino</string>
     <string name="ui_fortune_or_type">Oráculo Sí/No</string>
     <string name="ui_fortune_or_new">Nueva pregunta</string>

@@ -13,7 +13,7 @@
     <string name="ui_fortune_lbl_strengths">💪 Strengths</string>
     <string name="ui_fortune_loading">Reading the cosmos...</string>
     <string name="ui_fortune_title">What do you seek today?</string>
-    <string name="ui_fortune_subtitle">Choose your mood and focus, receive the universe's message</string>
+    <string name="ui_fortune_subtitle">Choose your mood and focus, receive the universe\'s message</string>
     <string name="ui_fortune_type">Fortune Type</string>
     <string name="ui_fortune_mood">Current Mood</string>
     <string name="ui_fortune_focus">Focus Area</string>
@@ -25,11 +25,7 @@
     <string name="ui_fortune_bc_title">Birth Chart 🌌</string>
     <string name="ui_fortune_bc_share">Share my Big Three</string>
     <string name="ui_fortune_bc_share_title">My Big Three</string>
-    <string name="ui_fortune_bc_share_body">Sun: %1$s
-Moon: %2$s
-Rising: %3$s
-
-%4$s</string>
+    <string name="ui_fortune_bc_share_body">Sun: %1$s\nMoon: %2$s\nRising: %3$s\n\n%4$s</string>
     <string name="ui_fortune_bc_share_footer">What is yours?</string>
     <string name="ui_fortune_bc_another">Calculate Another</string>
     <string name="ui_fortune_bc_heading">🌌 Your Birth Chart</string>
@@ -60,13 +56,11 @@ Rising: %3$s
     <string name="ui_fortune_bc_growth">🌱 Growth</string>
     <string name="ui_fortune_cp_title">Zodiac Compatibility 💑</string>
     <string name="ui_fortune_cp_your_sign">Your Sign</string>
-    <string name="ui_fortune_cp_partner_sign">Partner's Sign</string>
+    <string name="ui_fortune_cp_partner_sign">Partner\'s Sign</string>
     <string name="ui_fortune_cp_calculate">Calculate Compatibility 💕</string>
     <string name="ui_fortune_cp_share">Share with your partner</string>
     <string name="ui_fortune_cp_share_title">%1$s + %2$s: %3$d%% compatible</string>
-    <string name="ui_fortune_cp_share_body">Love %1$d%%  |  Friendship %2$d%%  |  Trust %3$d%%
-
-%4$s</string>
+    <string name="ui_fortune_cp_share_body">Love %1$d%%  |  Friendship %2$d%%  |  Trust %3$d%%\n\n%4$s</string>
     <string name="ui_fortune_cp_share_footer">How compatible are you two?</string>
     <string name="ui_fortune_cp_another">Try Another</string>
     <string name="ui_fortune_cp_overall">Overall Compatibility</string>
@@ -77,11 +71,10 @@ Rising: %3$s
     <string name="ui_fortune_cp_challenges">🌱 Challenges</string>
     <string name="ui_fortune_cp_advice">💡 Advice</string>
     <string name="ui_fortune_dc_title">Card of the Day 🎯</string>
-    <string name="ui_fortune_dc_tap">Tap to reveal
-your card</string>
+    <string name="ui_fortune_dc_tap">Tap to reveal\nyour card</string>
     <string name="ui_fortune_dc_breathe">Take a deep breath and tap the card</string>
     <string name="ui_fortune_dc_general">✨ General</string>
-    <string name="ui_fortune_dc_advice">💡 Today's Advice</string>
+    <string name="ui_fortune_dc_advice">💡 Today\'s Advice</string>
     <string name="ui_fortune_dc_affirmation">🌟 Affirmation</string>
     <string name="ui_fortune_dc_share_title">My card of the day: %1$s</string>
     <string name="ui_fortune_dc_share">Share my card</string>
@@ -101,9 +94,9 @@ your card</string>
     <string name="ui_fortune_ln_element">🌍 Lucky Element</string>
     <string name="ui_fortune_ln_planet">🪐 Lucky Planet</string>
     <string name="ui_fortune_ln_crystal">💎 Lucky Crystal</string>
-    <string name="ui_fortune_ln_message">✨ Today's Message</string>
+    <string name="ui_fortune_ln_message">✨ Today\'s Message</string>
     <string name="ui_fortune_af_title">Daily Affirmations 💫</string>
-    <string name="ui_fortune_af_today">✨ Today's Affirmation</string>
+    <string name="ui_fortune_af_today">✨ Today\'s Affirmation</string>
     <string name="ui_fortune_af_browse">Browse by Category</string>
     <string name="ui_fortune_or_title">Yes / No Oracle</string>
     <string name="ui_fortune_or_intro">Focus your intention on a single question. The cosmos will reveal whether the currents flow in alignment.</string>
@@ -111,10 +104,7 @@ your card</string>
     <string name="ui_fortune_or_touch">Touch Orb</string>
     <string name="ui_fortune_or_channelling">Channelling the Stars...</string>
     <string name="ui_fortune_or_consult">✨ Consult the Oracle</string>
-    <string name="ui_fortune_or_share_text">Question: \"%1$s\"
-Answer: %2$s — %3$s
-
-%4$s</string>
+    <string name="ui_fortune_or_share_text">Question: \"%1$s\"\nAnswer: %2$s — %3$s\n\n%4$s</string>
     <string name="ui_fortune_or_my_path">My Path</string>
     <string name="ui_fortune_or_type">Yes/No Oracle</string>
     <string name="ui_fortune_or_new">New Question</string>
@@ -132,7 +122,7 @@ Answer: %2$s — %3$s
     <string name="ui_fortune_tr_shuffling">Shuffling 22 Major Arcana...</string>
     <string name="ui_fortune_tr_shuffle_again">✨ Shuffle &amp; Draw Again</string>
     <string name="ui_fortune_tr_shuffle">✨ Shuffle &amp; Draw Cards</string>
-    <string name="ui_fortune_tr_intention">Walk in alignment with today's drawn energies.</string>
+    <string name="ui_fortune_tr_intention">Walk in alignment with today\'s drawn energies.</string>
     <string name="ui_fortune_tr_type">Tarot Reading</string>
     <string name="ui_fortune_tr_share">Share Tarot Reading</string>
     <string name="ui_fortune_tr_reversed">🔄 Reversed</string>

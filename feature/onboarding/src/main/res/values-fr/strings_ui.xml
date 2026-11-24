@@ -7,10 +7,10 @@
     <string name="ui_onb_sign_body">Choisissez votre signe pour des lectures personnalisées</string>
     <string name="ui_onb_continue">Continuer</string>
     <string name="ui_onb_notif_title">Restez connecté</string>
-    <string name="ui_onb_notif_body">Recevez des lectures quotidiennes et des messages d'intention</string>
+    <string name="ui_onb_notif_body">Recevez des lectures quotidiennes et des messages d\'intention</string>
     <string name="ui_onb_allow">Autoriser les notifications</string>
     <string name="ui_onb_not_now">Pas maintenant</string>
     <string name="ui_onb_ready_title">Vous êtes prêt !</string>
     <string name="ui_onb_ready_body">Découvrez les messages personnalisés des étoiles pour vous</string>
-    <string name="ui_onb_start">Commencer l'exploration</string>
+    <string name="ui_onb_start">Commencer l\'exploration</string>
 </resources>

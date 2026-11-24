@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ui_share_intention_prefix">Intenção: %1$s</string>
-    <string name="ui_share_fortune_text">%1$s por Luna
-
-Faça sua própria leitura: %2$s</string>
-    <string name="ui_share_card_text">%1$s por Luna
-
-Experimente você mesmo: %2$s</string>
+    <string name="ui_share_fortune_text">%1$s por Luna\n\nFaça sua própria leitura: %2$s</string>
+    <string name="ui_share_card_text">%1$s por Luna\n\nExperimente você mesmo: %2$s</string>
     <string name="ui_share_chooser">Compartilhar via</string>
     <string name="ui_share_intention_card_title">Intenção de hoje</string>
-    <string name="ui_share_intention_text">Minha intenção de hoje, do Luna
-
-%1$s</string>
+    <string name="ui_share_intention_text">Minha intenção de hoje, do Luna\n\n%1$s</string>
     <string name="ui_share_intention_chooser">Compartilhar intenção</string>
     <string name="ui_share_invite_text">Tenho usado o Luna para minha carta diária e horóscopo e achei que você poderia gostar. Instale pelo meu link e nós dois desbloqueamos um extra: %1$s</string>
     <string name="ui_share_invite_chooser">Convide um amigo</string>
