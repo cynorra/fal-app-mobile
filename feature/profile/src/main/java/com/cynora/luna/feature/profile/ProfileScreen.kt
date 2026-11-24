@@ -1,5 +1,6 @@
 package com.cynora.luna.feature.profile
 
+import androidx.compose.ui.res.stringResource
 import android.Manifest
 import android.content.Context
 import android.content.Intent
@@ -139,19 +140,19 @@ fun ProfileScreen(
     if (state.showPermissionDialog) {
         AlertDialog(
             onDismissRequest = { viewModel.onIntent(ProfileIntent.DismissPermissionDialog) },
-            title = { Text("Notification Permission Required") },
-            text = { Text("Daily fortune and intention messages require notification permission. You can allow it from settings.") },
+            title = { Text(stringResource(R.string.ui_profile_perm_title)) },
+            text = { Text(stringResource(R.string.ui_profile_perm_body)) },
             confirmButton = {
                 TextButton(onClick = {
                     viewModel.onIntent(ProfileIntent.DismissPermissionDialog)
                     notificationPermission?.launchPermissionRequest()
                 }) {
-                    Text("Allow", color = LunaColors.Gold)
+                    Text(stringResource(R.string.ui_profile_allow), color = LunaColors.Gold)
                 }
             },
             dismissButton = {
                 TextButton(onClick = { viewModel.onIntent(ProfileIntent.DismissPermissionDialog) }) {
-                    Text("Cancel", color = Color.White.copy(alpha = 0.6f))
+                    Text(stringResource(R.string.ui_profile_cancel), color = Color.White.copy(alpha = 0.6f))
                 }
             }
         )
@@ -160,7 +161,7 @@ fun ProfileScreen(
     if (showLanguageDialog) {
         AlertDialog(
             onDismissRequest = { showLanguageDialog = false },
-            title = { Text("Select Language") },
+            title = { Text(stringResource(R.string.ui_profile_select_language)) },
             text = {
                 Column {
                     SupportedLanguages.forEach { (displayName, code) ->
@@ -175,7 +176,7 @@ fun ProfileScreen(
             },
             confirmButton = {
                 TextButton(onClick = { showLanguageDialog = false }) {
-                    Text("Cancel", color = LunaColors.Gold)
+                    Text(stringResource(R.string.ui_profile_cancel), color = LunaColors.Gold)
                 }
             }
         )
@@ -184,24 +185,24 @@ fun ProfileScreen(
     if (showAboutDialog) {
         AlertDialog(
             onDismissRequest = { showAboutDialog = false },
-            title = { Text("About Luna ✨") },
+            title = { Text(stringResource(R.string.ui_profile_about_title)) },
             text = {
                 Column {
                     Text(
-                        text = "Luna v$versionName",
+                        text = stringResource(R.string.ui_profile_about_version, versionName),
                         fontWeight = FontWeight.Bold,
                         color = LunaColors.Gold,
                         fontSize = 16.sp
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        text = "Your personal cosmic guide for tarot, astrology, birth charts, daily card readings, and angel numbers.",
+                        text = stringResource(R.string.ui_profile_about_body),
                         color = Color.White.copy(alpha = 0.8f),
                         fontSize = 14.sp
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                     Text(
-                        text = "© 2026 Cynora Studio. All rights reserved.",
+                        text = stringResource(R.string.ui_profile_about_copyright),
                         color = Color.White.copy(alpha = 0.5f),
                         fontSize = 12.sp
                     )
@@ -209,7 +210,7 @@ fun ProfileScreen(
             },
             confirmButton = {
                 TextButton(onClick = { showAboutDialog = false }) {
-                    Text("Close", color = LunaColors.Gold)
+                    Text(stringResource(R.string.ui_profile_close), color = LunaColors.Gold)
                 }
             }
         )
@@ -218,12 +219,10 @@ fun ProfileScreen(
     if (showDeleteDialog) {
         AlertDialog(
             onDismissRequest = { showDeleteDialog = false },
-            title = { Text("Delete account and data?") },
+            title = { Text(stringResource(R.string.ui_profile_delete_title)) },
             text = {
                 Text(
-                    "This permanently deletes your community posts and your Luna account, and clears " +
-                        "everything stored on this device (preferences, history and streak). " +
-                        "This cannot be undone."
+                    stringResource(R.string.ui_profile_delete_body)
                 )
             },
             confirmButton = {
@@ -234,12 +233,12 @@ fun ProfileScreen(
                     },
                     enabled = !state.isDeletingAccount
                 ) {
-                    Text("Delete", color = Color(0xFFEF5350))
+                    Text(stringResource(R.string.ui_profile_delete), color = Color(0xFFEF5350))
                 }
             },
             dismissButton = {
                 TextButton(onClick = { showDeleteDialog = false }) {
-                    Text("Cancel", color = Color.White.copy(alpha = 0.6f))
+                    Text(stringResource(R.string.ui_profile_cancel), color = Color.White.copy(alpha = 0.6f))
                 }
             }
         )
@@ -291,16 +290,16 @@ fun ProfileScreen(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceEvenly
                     ) {
-                        ProfileStat("Fortunes Read", state.fortuneCount.toString())
-                        ProfileStat("Daily Streak", "${state.streak} days")
-                        ProfileStat("Rare Cards", state.rareCards.toString())
+                        ProfileStat(stringResource(R.string.ui_profile_stat_fortunes), state.fortuneCount.toString())
+                        ProfileStat(stringResource(R.string.ui_profile_stat_streak), stringResource(R.string.ui_profile_stat_days, state.streak))
+                        ProfileStat(stringResource(R.string.ui_profile_stat_rare), state.rareCards.toString())
                     }
                 }
             }
 
             // Google Hesabı Kartı
             Text(
-                text = "Account",
+                text = stringResource(R.string.ui_profile_account),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = LunaColors.Gold,
@@ -327,7 +326,7 @@ fun ProfileScreen(
                             if (!user.photoUrl.isNullOrEmpty()) {
                                 AsyncImage(
                                     model = user.photoUrl,
-                                    contentDescription = "User Avatar",
+                                    contentDescription = stringResource(R.string.ui_profile_avatar),
                                     modifier = Modifier
                                         .size(48.dp)
                                         .clip(CircleShape),
@@ -354,7 +353,7 @@ fun ProfileScreen(
 
                             Column(modifier = Modifier.weight(1f)) {
                                 Text(
-                                    text = user.displayName ?: "Cosmic Traveler",
+                                    text = user.displayName ?: stringResource(R.string.ui_profile_traveler),
                                     fontSize = 16.sp,
                                     fontWeight = FontWeight.Bold,
                                     color = Color.White
@@ -369,20 +368,20 @@ fun ProfileScreen(
                             TextButton(
                                 onClick = { viewModel.onIntent(ProfileIntent.SignOut) }
                             ) {
-                                Text("Sign Out", color = LunaColors.Gold, fontSize = 13.sp)
+                                Text(stringResource(R.string.ui_profile_sign_out), color = LunaColors.Gold, fontSize = 13.sp)
                             }
                         }
                     } else {
                         Column {
                             Text(
-                                text = "Save & Sync Your Cosmic Journey",
+                                text = stringResource(R.string.ui_profile_sync_title),
                                 fontSize = 15.sp,
                                 fontWeight = FontWeight.SemiBold,
                                 color = Color.White
                             )
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(
-                                text = "Sign in with Google to sync your fortune readings, streaks, and preferences across devices.",
+                                text = stringResource(R.string.ui_profile_sync_body),
                                 fontSize = 13.sp,
                                 color = Color.White.copy(alpha = 0.6f)
                             )
@@ -421,7 +420,7 @@ fun ProfileScreen(
                                     shape = RoundedCornerShape(24.dp)
                                 ) {
                                     Text(
-                                        text = "G  Sign in with Google",
+                                        text = stringResource(R.string.ui_profile_sign_in_google),
                                         fontWeight = FontWeight.Bold,
                                         color = Color.Black,
                                         fontSize = 15.sp
@@ -437,7 +436,7 @@ fun ProfileScreen(
 
             // Ayarlar Bölümü
             Text(
-                text = "Settings",
+                text = stringResource(R.string.ui_profile_settings),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = LunaColors.Gold,
@@ -449,28 +448,28 @@ fun ProfileScreen(
             SettingsSection {
                 SettingsToggleItem(
                     icon = Icons.Default.Notifications,
-                    title = "Daily Notifications (08:30)",
+                    title = stringResource(R.string.ui_profile_notif_daily),
                     isChecked = state.notificationsEnabled,
                     onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleNotifications(it)) }
                 )
 
                 SettingsToggleItem(
                     icon = Icons.Default.Star,
-                    title = "Hourly Cosmic Pulse (09:00 - 22:00)",
+                    title = stringResource(R.string.ui_profile_notif_hourly),
                     isChecked = state.hourlyNotificationsEnabled,
                     onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleHourlyNotifications(it)) }
                 )
 
                 SettingsToggleItem(
                     icon = Icons.Default.Lock,
-                    title = "Quiet Hours (Mute 22:00 - 09:00)",
+                    title = stringResource(R.string.ui_profile_notif_quiet),
                     isChecked = state.quietHoursEnabled,
                     onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleQuietHours(it)) }
                 )
 
                 SettingsToggleItem(
                     icon = Icons.Default.Settings,
-                    title = "Dark Mode",
+                    title = stringResource(R.string.ui_profile_dark_mode),
                     isChecked = state.darkModeEnabled,
                     onCheckedChange = { viewModel.onIntent(ProfileIntent.ToggleDarkMode(it)) }
                 )
@@ -478,7 +477,7 @@ fun ProfileScreen(
                 if (LANGUAGE_SWITCHER_ENABLED) {
                     SettingsClickItem(
                         icon = Icons.Default.Info,
-                        title = "Language",
+                        title = stringResource(R.string.ui_profile_language),
                         subtitle = state.language,
                         onClick = { showLanguageDialog = true }
                     )
@@ -489,7 +488,7 @@ fun ProfileScreen(
 
             // Invite a friend
             Text(
-                text = "Invite a friend",
+                text = stringResource(R.string.ui_profile_invite_title),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = LunaColors.Gold,
@@ -501,11 +500,11 @@ fun ProfileScreen(
             SettingsSection {
                 SettingsClickItem(
                     icon = Icons.Default.Share,
-                    title = "Share Luna with a friend",
+                    title = stringResource(R.string.ui_profile_invite_share),
                     subtitle = when {
-                        state.inviteCode == null -> "Preparing your invite link..."
-                        state.invitePerk -> "Friend perk unlocked: tomorrow's horoscope and the 3-card spread"
-                        else -> "When a friend joins with your link, you both unlock tomorrow's horoscope and the 3-card spread"
+                        state.inviteCode == null -> stringResource(R.string.ui_profile_invite_preparing)
+                        state.invitePerk -> stringResource(R.string.ui_profile_invite_perk)
+                        else -> stringResource(R.string.ui_profile_invite_pending)
                     },
                     onClick = {
                         state.inviteCode?.let { com.cynora.luna.core.utils.ShareUtils.shareInvite(context, it) }
@@ -514,7 +513,7 @@ fun ProfileScreen(
                 if (state.invitedCount > 0) {
                     SettingsInfoItem(
                         icon = Icons.Default.Star,
-                        title = "Friends joined",
+                        title = stringResource(R.string.ui_profile_friends_joined),
                         subtitle = state.invitedCount.toString()
                     )
                 }
@@ -524,7 +523,7 @@ fun ProfileScreen(
 
             // Hakkında Bölümü
             Text(
-                text = "About",
+                text = stringResource(R.string.ui_profile_about),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = LunaColors.Gold,
@@ -536,7 +535,7 @@ fun ProfileScreen(
             SettingsSection {
                 SettingsClickItem(
                     icon = Icons.Default.Lock,
-                    title = "Privacy Policy",
+                    title = stringResource(R.string.ui_profile_privacy),
                     onClick = {
                         try {
                             val intent = Intent(
@@ -552,20 +551,20 @@ fun ProfileScreen(
 
                 SettingsClickItem(
                     icon = Icons.Default.Delete,
-                    title = "Delete account and data",
-                    subtitle = if (state.isDeletingAccount) "Deleting..." else null,
+                    title = stringResource(R.string.ui_profile_delete_account),
+                    subtitle = if (state.isDeletingAccount) stringResource(R.string.ui_profile_deleting) else null,
                     onClick = { showDeleteDialog = true }
                 )
 
                 SettingsClickItem(
                     icon = Icons.Default.Info,
-                    title = "About App",
+                    title = stringResource(R.string.ui_profile_about_app),
                     onClick = { showAboutDialog = true }
                 )
 
                 SettingsInfoItem(
                     icon = Icons.Default.Star,
-                    title = "Version",
+                    title = stringResource(R.string.ui_profile_version),
                     subtitle = versionName
                 )
             }
@@ -591,7 +590,7 @@ private fun triggerGoogleSignIn(
     )
 
     if (webClientIdResId == 0) {
-        onError("Google Client ID not found. Please ensure google-services.json is configured.")
+        onError(context.getString(R.string.ui_profile_client_id_missing))
         return
     }
 
@@ -621,17 +620,17 @@ private fun triggerGoogleSignIn(
                 val googleIdTokenCredential = GoogleIdTokenCredential.createFrom(credential.data)
                 onIdTokenReceived(googleIdTokenCredential.idToken)
             } else {
-                onError("Unexpected credential format received.")
+                onError(context.getString(R.string.ui_profile_unexpected_cred))
             }
         } catch (e: GetCredentialCancellationException) {
             // Kullanıcı seçimi iptal etti
             Timber.d("Google Sign-In was cancelled by user")
         } catch (e: GetCredentialException) {
             Timber.e(e, "Google Sign-In Credential error")
-            onError(e.message ?: "Sign-in error")
+            onError(e.message ?: context.getString(R.string.ui_profile_signin_error))
         } catch (e: Exception) {
             Timber.e(e, "Google Sign-In failed")
-            onError(e.message ?: "Sign-in error")
+            onError(e.message ?: context.getString(R.string.ui_profile_signin_error))
         }
     }
 }

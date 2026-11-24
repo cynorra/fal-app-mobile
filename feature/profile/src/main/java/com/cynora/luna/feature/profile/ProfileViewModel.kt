@@ -235,11 +235,11 @@ class ProfileViewModel @Inject constructor(
                     result.fold(
                         onSuccess = { user ->
                             _state.update { it.copy(isAuthLoading = false, currentUser = user) }
-                            _effects.tryEmit(ProfileEffect.ShowSnackbar("Welcome ${user.displayName ?: ""}! ✨"))
+                            _effects.tryEmit(ProfileEffect.ShowSnackbar(context.getString(R.string.ui_profile_welcome_snack, user.displayName ?: "")))
                         },
                         onFailure = { error ->
                             _state.update { it.copy(isAuthLoading = false, authErrorMessage = error.message) }
-                            _effects.tryEmit(ProfileEffect.ShowSnackbar("Sign in failed: ${error.localizedMessage}"))
+                            _effects.tryEmit(ProfileEffect.ShowSnackbar(context.getString(R.string.ui_profile_signin_failed, error.localizedMessage ?: "")))
                         }
                     )
                 }
@@ -247,7 +247,7 @@ class ProfileViewModel @Inject constructor(
             is ProfileIntent.SignOut -> {
                 viewModelScope.launch {
                     authRepository.signOut()
-                    _effects.tryEmit(ProfileEffect.ShowSnackbar("Signed out successfully."))
+                    _effects.tryEmit(ProfileEffect.ShowSnackbar(context.getString(R.string.ui_profile_signed_out)))
                 }
             }
             is ProfileIntent.DeleteAccount -> {
@@ -258,15 +258,15 @@ class ProfileViewModel @Inject constructor(
                         onSuccess = {
                             _state.update { it.copy(isDeletingAccount = false, currentUser = null) }
                             _effects.tryEmit(
-                                ProfileEffect.ShowSnackbar("Your account and community posts were deleted.")
+                                ProfileEffect.ShowSnackbar(context.getString(R.string.ui_profile_deleted))
                             )
                         },
                         onFailure = { error ->
                             _state.update { it.copy(isDeletingAccount = false) }
                             val message = if (error.message == ERROR_RECENT_LOGIN_REQUIRED) {
-                                "For security, please sign out, sign in again and retry."
+                                context.getString(R.string.ui_profile_relogin)
                             } else {
-                                "Could not delete the account. Check your connection and try again."
+                                context.getString(R.string.ui_profile_delete_failed)
                             }
                             _effects.tryEmit(ProfileEffect.ShowSnackbar(message))
                         }
