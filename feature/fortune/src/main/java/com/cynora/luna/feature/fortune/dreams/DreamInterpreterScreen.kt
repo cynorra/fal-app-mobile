@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune.dreams
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -78,13 +80,13 @@ fun DreamInterpreterScreen(
             IconButton(onClick = onBack) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back",
+                    contentDescription = stringResource(R.string.ui_fortune_back),
                     tint = Color.White
                 )
             }
             Spacer(modifier = Modifier.width(8.dp))
             Text(
-                text = "Dream Interpreter 💭",
+                text = stringResource(R.string.ui_fortune_dr_title),
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
@@ -98,15 +100,15 @@ fun DreamInterpreterScreen(
             value = state.searchQuery,
             onValueChange = viewModel::onSearchQueryChanged,
             placeholder = {
-                Text("Search symbols (e.g. water, snake, teeth...)", color = Color.White.copy(alpha = 0.4f), fontSize = 14.sp)
+                Text(stringResource(R.string.ui_fortune_dr_search), color = Color.White.copy(alpha = 0.4f), fontSize = 14.sp)
             },
             leadingIcon = {
-                Icon(Icons.Default.Search, contentDescription = "Search", tint = LunaColors.Gold)
+                Icon(Icons.Default.Search, contentDescription = stringResource(R.string.ui_fortune_search), tint = LunaColors.Gold)
             },
             trailingIcon = {
                 if (state.searchQuery.isNotEmpty()) {
                     IconButton(onClick = { viewModel.onSearchQueryChanged("") }) {
-                        Icon(Icons.Default.Close, contentDescription = "Clear", tint = Color.White.copy(alpha = 0.6f))
+                        Icon(Icons.Default.Close, contentDescription = stringResource(R.string.ui_fortune_clear), tint = Color.White.copy(alpha = 0.6f))
                     }
                 }
             },
@@ -134,7 +136,7 @@ fun DreamInterpreterScreen(
             FilterChip(
                 selected = state.selectedCategory == null,
                 onClick = { viewModel.onCategorySelected(null) },
-                label = { Text("All Symbols") },
+                label = { Text(stringResource(R.string.ui_fortune_dr_all)) },
                 colors = FilterChipDefaults.filterChipColors(
                     selectedContainerColor = LunaColors.Gold,
                     selectedLabelColor = Color.Black,
@@ -169,7 +171,7 @@ fun DreamInterpreterScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "No dream symbols found matching \"${state.searchQuery}\"",
+                    text = stringResource(R.string.ui_fortune_dr_none, state.searchQuery),
                     color = Color.White.copy(alpha = 0.6f),
                     fontSize = 14.sp
                 )
@@ -232,7 +234,7 @@ fun DreamInterpreterScreen(
                     ) {
                         Column {
                             Text(
-                                text = "✨ Cosmic Guidance:",
+                                text = stringResource(R.string.ui_fortune_dr_guidance),
                                 fontSize = 12.sp,
                                 fontWeight = FontWeight.Bold,
                                 color = LunaColors.Gold
@@ -250,7 +252,7 @@ fun DreamInterpreterScreen(
             },
             confirmButton = {
                 TextButton(onClick = { viewModel.selectSymbol(null) }) {
-                    Text("Close", color = LunaColors.Gold, fontWeight = FontWeight.Bold)
+                    Text(stringResource(R.string.ui_fortune_close), color = LunaColors.Gold, fontWeight = FontWeight.Bold)
                 }
             }
         )

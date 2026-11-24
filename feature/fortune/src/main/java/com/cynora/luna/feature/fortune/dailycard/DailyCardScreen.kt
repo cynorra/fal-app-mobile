@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune.dailycard
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
@@ -75,10 +77,10 @@ fun DailyCardScreen(
         containerColor = androidx.compose.ui.graphics.Color.Transparent,
         topBar = {
             TopAppBar(
-                title = { Text("Card of the Day 🎯") },
+                title = { Text(stringResource(R.string.ui_fortune_dc_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = Color.White)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.ui_fortune_back), tint = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -127,7 +129,7 @@ fun DailyCardScreen(
                             Text("✨", fontSize = 64.sp)
                             Spacer(modifier = Modifier.height(16.dp))
                             Text(
-                                "Tap to reveal\nyour card",
+                                stringResource(R.string.ui_fortune_dc_tap),
                                 fontSize = 18.sp,
                                 color = LunaColors.Gold,
                                 textAlign = TextAlign.Center,
@@ -137,7 +139,7 @@ fun DailyCardScreen(
                     }
                 }
                 Spacer(modifier = Modifier.height(24.dp))
-                Text("Take a deep breath and tap the card", fontSize = 14.sp, color = Color.White.copy(alpha = 0.6f))
+                Text(stringResource(R.string.ui_fortune_dc_breathe), fontSize = 14.sp, color = Color.White.copy(alpha = 0.6f))
             } else {
                 state.card?.let { card ->
                     Card(
@@ -173,10 +175,10 @@ fun DailyCardScreen(
                     
                     Spacer(modifier = Modifier.height(24.dp))
                     
-                    MeaningSection("✨ General", card.generalMeaning)
-                    MeaningSection("💕 Love", card.loveMeaning)
-                    MeaningSection("💼 Career", card.careerMeaning)
-                    MeaningSection("🙏 Spiritual", card.spiritualMeaning)
+                    MeaningSection(stringResource(R.string.ui_fortune_dc_general), card.generalMeaning)
+                    MeaningSection(stringResource(R.string.ui_fortune_lbl_love), card.loveMeaning)
+                    MeaningSection(stringResource(R.string.ui_fortune_lbl_career), card.careerMeaning)
+                    MeaningSection(stringResource(R.string.ui_fortune_lbl_spiritual), card.spiritualMeaning)
                     
                     Spacer(modifier = Modifier.height(16.dp))
                     
@@ -186,7 +188,7 @@ fun DailyCardScreen(
                         shape = RoundedCornerShape(16.dp)
                     ) {
                         Column(modifier = Modifier.padding(16.dp)) {
-                            Text("💡 Today's Advice", fontSize = 14.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
+                            Text(stringResource(R.string.ui_fortune_dc_advice), fontSize = 14.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
                             Spacer(modifier = Modifier.height(8.dp))
                             Text(card.advice, fontSize = 14.sp, color = Color.White)
                         }
@@ -200,7 +202,7 @@ fun DailyCardScreen(
                         shape = RoundedCornerShape(16.dp)
                     ) {
                         Column(modifier = Modifier.padding(16.dp)) {
-                            Text("🌟 Affirmation", fontSize = 14.sp, fontWeight = FontWeight.Bold, color = LunaColors.MysticPurple)
+                            Text(stringResource(R.string.ui_fortune_dc_affirmation), fontSize = 14.sp, fontWeight = FontWeight.Bold, color = LunaColors.MysticPurple)
                             Spacer(modifier = Modifier.height(8.dp))
                             Text(
                                 "\"${card.affirmation}\"",
@@ -220,7 +222,7 @@ fun DailyCardScreen(
                         onClick = {
                             com.cynora.luna.core.utils.ShareUtils.shareCard(
                                 context = shareContext,
-                                title = "My card of the day: ${card.name}",
+                                title = shareContext.getString(R.string.ui_fortune_dc_share_title, card.name),
                                 body = card.generalMeaning + "\n\n" + card.advice,
                                 footer = "\"${card.affirmation}\"",
                                 medium = "daily_card"
@@ -229,7 +231,7 @@ fun DailyCardScreen(
                         modifier = Modifier.fillMaxWidth(),
                         colors = ButtonDefaults.buttonColors(containerColor = LunaColors.MysticPurple)
                     ) {
-                        Text("Share my card", color = Color.White)
+                        Text(stringResource(R.string.ui_fortune_dc_share), color = Color.White)
                     }
 
                     Spacer(modifier = Modifier.height(12.dp))
@@ -248,7 +250,7 @@ fun DailyCardScreen(
                         modifier = Modifier.fillMaxWidth(),
                         colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold)
                     ) {
-                        Text("Draw Another Card", color = Color.Black)
+                        Text(stringResource(R.string.ui_fortune_dc_another), color = Color.Black)
                     }
                 }
             }

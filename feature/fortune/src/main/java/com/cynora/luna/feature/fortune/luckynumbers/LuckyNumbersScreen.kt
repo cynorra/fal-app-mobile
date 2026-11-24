@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune.luckynumbers
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -55,15 +57,15 @@ fun LuckyNumbersScreen(
         containerColor = androidx.compose.ui.graphics.Color.Transparent,
         topBar = {
             TopAppBar(
-                title = { Text("Lucky Numbers 🍀") },
+                title = { Text(stringResource(R.string.ui_fortune_ln_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = Color.White)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.ui_fortune_back), tint = Color.White)
                     }
                 },
                 actions = {
                     IconButton(onClick = { viewModel.onIntent(LuckyNumbersIntent.Refresh) }) {
-                        Icon(Icons.Default.Refresh, "Refresh", tint = LunaColors.Gold)
+                        Icon(Icons.Default.Refresh, stringResource(R.string.ui_fortune_refresh), tint = LunaColors.Gold)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -83,7 +85,7 @@ fun LuckyNumbersScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                "Your Lucky Numbers",
+                stringResource(R.string.ui_fortune_ln_your),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
@@ -92,7 +94,7 @@ fun LuckyNumbersScreen(
             Spacer(modifier = Modifier.height(8.dp))
             
             Text(
-                "For ${state.userSign.displayName}",
+                stringResource(R.string.ui_fortune_ln_for, state.userSign.displayName),
                 fontSize = 14.sp,
                 color = LunaColors.Gold
             )
@@ -110,7 +112,7 @@ fun LuckyNumbersScreen(
                         modifier = Modifier.padding(20.dp),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Text("Main Numbers", color = LunaColors.Gold, fontSize = 14.sp)
+                        Text(stringResource(R.string.ui_fortune_ln_main), color = LunaColors.Gold, fontSize = 14.sp)
                         Spacer(modifier = Modifier.height(12.dp))
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             result.mainNumbers.forEach { num ->
@@ -133,7 +135,7 @@ fun LuckyNumbersScreen(
                         
                         Spacer(modifier = Modifier.height(16.dp))
                         
-                        Text("Bonus", color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp)
+                        Text(stringResource(R.string.ui_fortune_ln_bonus), color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp)
                         Spacer(modifier = Modifier.height(8.dp))
                         Box(
                             modifier = Modifier
@@ -161,11 +163,11 @@ fun LuckyNumbersScreen(
                     shape = RoundedCornerShape(24.dp)
                 ) {
                     Column(modifier = Modifier.padding(20.dp)) {
-                        LuckyRow("🎨 Lucky Color", result.luckyColor)
-                        LuckyRow("📅 Lucky Day", result.luckyDay)
-                        LuckyRow("🌍 Lucky Element", result.luckyElement)
-                        LuckyRow("🪐 Lucky Planet", result.luckyPlanet)
-                        LuckyRow("💎 Lucky Crystal", result.luckyCrystal)
+                        LuckyRow(stringResource(R.string.ui_fortune_ln_color), result.luckyColor)
+                        LuckyRow(stringResource(R.string.ui_fortune_ln_day), result.luckyDay)
+                        LuckyRow(stringResource(R.string.ui_fortune_ln_element), result.luckyElement)
+                        LuckyRow(stringResource(R.string.ui_fortune_ln_planet), result.luckyPlanet)
+                        LuckyRow(stringResource(R.string.ui_fortune_ln_crystal), result.luckyCrystal)
                     }
                 }
                 
@@ -177,7 +179,7 @@ fun LuckyNumbersScreen(
                     shape = RoundedCornerShape(24.dp)
                 ) {
                     Column(modifier = Modifier.padding(20.dp)) {
-                        Text("✨ Today's Message", color = LunaColors.Gold, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                        Text(stringResource(R.string.ui_fortune_ln_message), color = LunaColors.Gold, fontSize = 14.sp, fontWeight = FontWeight.Bold)
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
                             result.dailyMessage,

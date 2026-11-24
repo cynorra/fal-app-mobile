@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune.affirmations
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -54,10 +56,10 @@ fun AffirmationsScreen(
         containerColor = androidx.compose.ui.graphics.Color.Transparent,
         topBar = {
             TopAppBar(
-                title = { Text("Daily Affirmations 💫") },
+                title = { Text(stringResource(R.string.ui_fortune_af_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = Color.White)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.ui_fortune_back), tint = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -87,7 +89,7 @@ fun AffirmationsScreen(
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            "✨ Today's Affirmation",
+                            stringResource(R.string.ui_fortune_af_today),
                             color = LunaColors.Gold,
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold
@@ -115,7 +117,7 @@ fun AffirmationsScreen(
             Spacer(modifier = Modifier.height(24.dp))
             
             Text(
-                "Browse by Category",
+                stringResource(R.string.ui_fortune_af_browse),
                 color = Color.White,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold

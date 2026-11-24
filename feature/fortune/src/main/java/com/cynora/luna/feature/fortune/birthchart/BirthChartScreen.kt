@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune.birthchart
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -63,10 +65,10 @@ fun BirthChartScreen(
         containerColor = androidx.compose.ui.graphics.Color.Transparent,
         topBar = {
             TopAppBar(
-                title = { Text("Birth Chart 🌌") },
+                title = { Text(stringResource(R.string.ui_fortune_bc_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = Color.White)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.ui_fortune_back), tint = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -93,17 +95,20 @@ fun BirthChartScreen(
                 Spacer(modifier = Modifier.height(16.dp))
                 val shareContext = androidx.compose.ui.platform.LocalContext.current
                 LunaPrimaryButton(
-                    text = "Share my Big Three",
+                    text = stringResource(R.string.ui_fortune_bc_share),
                     onClick = {
                         val chart = state.birthChart!!
                         com.cynora.luna.core.utils.ShareUtils.shareCard(
                             context = shareContext,
-                            title = "My Big Three",
-                            body = "Sun: ${chart.sunSign.symbol} ${chart.sunSign.displayName}\n" +
-                                "Moon: ${chart.moonSign.symbol} ${chart.moonSign.displayName}\n" +
-                                "Rising: ${chart.risingSign.symbol} ${chart.risingSign.displayName}\n\n" +
-                                chart.personality,
-                            footer = "What is yours?",
+                            title = shareContext.getString(R.string.ui_fortune_bc_share_title),
+                            body = shareContext.getString(
+                                R.string.ui_fortune_bc_share_body,
+                                "${chart.sunSign.symbol} ${chart.sunSign.displayName}",
+                                "${chart.moonSign.symbol} ${chart.moonSign.displayName}",
+                                "${chart.risingSign.symbol} ${chart.risingSign.displayName}",
+                                chart.personality
+                            ),
+                            footer = shareContext.getString(R.string.ui_fortune_bc_share_footer),
                             medium = "big_three"
                         )
                     },
@@ -111,7 +116,7 @@ fun BirthChartScreen(
                 )
                 Spacer(modifier = Modifier.height(12.dp))
                 LunaPrimaryButton(
-                    text = "Calculate Another",
+                    text = stringResource(R.string.ui_fortune_bc_another),
                     onClick = { viewModel.onIntent(BirthChartIntent.Reset) },
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -143,27 +148,27 @@ private fun BirthInfoForm(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                "🌌 Your Birth Chart",
+                stringResource(R.string.ui_fortune_bc_heading),
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 color = LunaColors.Gold
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                "Discover the cosmic blueprint of your soul",
+                stringResource(R.string.ui_fortune_bc_subtitle),
                 fontSize = 14.sp,
                 color = Color.White.copy(alpha = 0.7f),
                 textAlign = TextAlign.Center
             )
             Spacer(modifier = Modifier.height(24.dp))
             
-            Text("Birth Date", color = LunaColors.Gold, fontSize = 14.sp)
+            Text(stringResource(R.string.ui_fortune_bc_date), color = LunaColors.Gold, fontSize = 14.sp)
             Spacer(modifier = Modifier.height(8.dp))
             
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 OutlinedTextField(
                     value = day, onValueChange = { day = it },
-                    label = { Text("Day") },
+                    label = { Text(stringResource(R.string.ui_fortune_bc_day)) },
                     modifier = Modifier.weight(1f),
                     colors = TextFieldDefaults.colors(
                         focusedTextColor = Color.White, unfocusedTextColor = Color.White,
@@ -172,7 +177,7 @@ private fun BirthInfoForm(
                 )
                 OutlinedTextField(
                     value = month, onValueChange = { month = it },
-                    label = { Text("Month") },
+                    label = { Text(stringResource(R.string.ui_fortune_bc_month)) },
                     modifier = Modifier.weight(1f),
                     colors = TextFieldDefaults.colors(
                         focusedTextColor = Color.White, unfocusedTextColor = Color.White,
@@ -181,7 +186,7 @@ private fun BirthInfoForm(
                 )
                 OutlinedTextField(
                     value = year, onValueChange = { year = it },
-                    label = { Text("Year") },
+                    label = { Text(stringResource(R.string.ui_fortune_bc_year)) },
                     modifier = Modifier.weight(1f),
                     colors = TextFieldDefaults.colors(
                         focusedTextColor = Color.White, unfocusedTextColor = Color.White,
@@ -191,13 +196,13 @@ private fun BirthInfoForm(
             }
             
             Spacer(modifier = Modifier.height(16.dp))
-            Text("Birth Time (optional)", color = LunaColors.Gold, fontSize = 14.sp)
+            Text(stringResource(R.string.ui_fortune_bc_time), color = LunaColors.Gold, fontSize = 14.sp)
             Spacer(modifier = Modifier.height(8.dp))
             
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 OutlinedTextField(
                     value = hour, onValueChange = { hour = it },
-                    label = { Text("Hour") },
+                    label = { Text(stringResource(R.string.ui_fortune_bc_hour)) },
                     modifier = Modifier.weight(1f),
                     colors = TextFieldDefaults.colors(
                         focusedTextColor = Color.White, unfocusedTextColor = Color.White,
@@ -206,7 +211,7 @@ private fun BirthInfoForm(
                 )
                 OutlinedTextField(
                     value = minute, onValueChange = { minute = it },
-                    label = { Text("Minute") },
+                    label = { Text(stringResource(R.string.ui_fortune_bc_minute)) },
                     modifier = Modifier.weight(1f),
                     colors = TextFieldDefaults.colors(
                         focusedTextColor = Color.White, unfocusedTextColor = Color.White,
@@ -216,12 +221,12 @@ private fun BirthInfoForm(
             }
             
             Spacer(modifier = Modifier.height(16.dp))
-            Text("Birth Place (optional)", color = LunaColors.Gold, fontSize = 14.sp)
+            Text(stringResource(R.string.ui_fortune_bc_place), color = LunaColors.Gold, fontSize = 14.sp)
             Spacer(modifier = Modifier.height(8.dp))
             
             OutlinedTextField(
                 value = place, onValueChange = { place = it },
-                label = { Text("City, Country") },
+                label = { Text(stringResource(R.string.ui_fortune_bc_city)) },
                 modifier = Modifier.fillMaxWidth(),
                 colors = TextFieldDefaults.colors(
                     focusedTextColor = Color.White, unfocusedTextColor = Color.White,
@@ -247,7 +252,7 @@ private fun BirthInfoForm(
                 colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold),
                 shape = RoundedCornerShape(28.dp)
             ) {
-                Text("Reveal My Chart ✨", color = Color.Black, fontWeight = FontWeight.Bold)
+                Text(stringResource(R.string.ui_fortune_bc_reveal), color = Color.Black, fontWeight = FontWeight.Bold)
             }
         }
     }
@@ -270,12 +275,12 @@ private fun BirthChartResult(birthChart: BirthChartData) {
             modifier = Modifier.padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Your Big Three", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
+            Text(stringResource(R.string.ui_fortune_bc_big3), fontSize = 20.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
             Spacer(modifier = Modifier.height(20.dp))
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-                BigThreeItem("☀️ Sun", birthChart.sunSign.symbol + " " + birthChart.sunSign.displayName)
-                BigThreeItem("🌙 Moon", birthChart.moonSign.symbol + " " + birthChart.moonSign.displayName)
-                BigThreeItem("⬆️ Rising", birthChart.risingSign.symbol + " " + birthChart.risingSign.displayName)
+                BigThreeItem(stringResource(R.string.ui_fortune_bc_sun), birthChart.sunSign.symbol + " " + birthChart.sunSign.displayName)
+                BigThreeItem(stringResource(R.string.ui_fortune_bc_moon), birthChart.moonSign.symbol + " " + birthChart.moonSign.displayName)
+                BigThreeItem(stringResource(R.string.ui_fortune_bc_rising), birthChart.risingSign.symbol + " " + birthChart.risingSign.displayName)
             }
         }
     }
@@ -289,11 +294,11 @@ private fun BirthChartResult(birthChart: BirthChartData) {
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
-            Text("Planets", fontSize = 18.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
+            Text(stringResource(R.string.ui_fortune_bc_planets), fontSize = 18.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
             Spacer(modifier = Modifier.height(12.dp))
-            PlanetRow("☿ Mercury", birthChart.mercurySign.symbol + " " + birthChart.mercurySign.displayName)
-            PlanetRow("♀ Venus", birthChart.venusSign.symbol + " " + birthChart.venusSign.displayName)
-            PlanetRow("♂ Mars", birthChart.marsSign.symbol + " " + birthChart.marsSign.displayName)
+            PlanetRow(stringResource(R.string.ui_fortune_bc_mercury), birthChart.mercurySign.symbol + " " + birthChart.mercurySign.displayName)
+            PlanetRow(stringResource(R.string.ui_fortune_bc_venus), birthChart.venusSign.symbol + " " + birthChart.venusSign.displayName)
+            PlanetRow(stringResource(R.string.ui_fortune_bc_mars), birthChart.marsSign.symbol + " " + birthChart.marsSign.displayName)
         }
     }
     
@@ -306,11 +311,11 @@ private fun BirthChartResult(birthChart: BirthChartData) {
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
-            Text("Additional Insights", fontSize = 18.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
+            Text(stringResource(R.string.ui_fortune_bc_additional), fontSize = 18.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
             Spacer(modifier = Modifier.height(12.dp))
-            InfoRow("🔢 Life Path", birthChart.numerologyLifePath.toString())
-            InfoRow("🐉 Chinese Zodiac", birthChart.chineseZodiac)
-            InfoRow("🎴 Birth Card", birthChart.birthCard)
+            InfoRow(stringResource(R.string.ui_fortune_bc_life_path), birthChart.numerologyLifePath.toString())
+            InfoRow(stringResource(R.string.ui_fortune_bc_chinese), birthChart.chineseZodiac)
+            InfoRow(stringResource(R.string.ui_fortune_bc_birth_card), birthChart.birthCard)
         }
     }
     
@@ -323,7 +328,7 @@ private fun BirthChartResult(birthChart: BirthChartData) {
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
-            Text("✨ Your Personality", fontSize = 18.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
+            Text(stringResource(R.string.ui_fortune_bc_personality), fontSize = 18.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
             Spacer(modifier = Modifier.height(12.dp))
             Text(birthChart.personality, fontSize = 14.sp, color = Color.White.copy(alpha = 0.9f), lineHeight = 22.sp)
         }
@@ -339,7 +344,7 @@ private fun BirthChartResult(birthChart: BirthChartData) {
             shape = RoundedCornerShape(24.dp)
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
-                Text("💪 Strengths", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
+                Text(stringResource(R.string.ui_fortune_lbl_strengths), fontSize = 16.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
                 Spacer(modifier = Modifier.height(8.dp))
                 birthChart.strengths.forEach { Text("• $it", fontSize = 13.sp, color = Color.White.copy(alpha = 0.8f)) }
             }
@@ -351,7 +356,7 @@ private fun BirthChartResult(birthChart: BirthChartData) {
             shape = RoundedCornerShape(24.dp)
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
-                Text("🌱 Growth", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
+                Text(stringResource(R.string.ui_fortune_bc_growth), fontSize = 16.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
                 Spacer(modifier = Modifier.height(8.dp))
                 birthChart.challenges.forEach { Text("• $it", fontSize = 13.sp, color = Color.White.copy(alpha = 0.8f)) }
             }

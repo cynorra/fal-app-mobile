@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune.angelnumbers
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -57,10 +59,10 @@ fun AngelNumbersScreen(
         containerColor = androidx.compose.ui.graphics.Color.Transparent,
         topBar = {
             TopAppBar(
-                title = { Text("Angel Numbers 🔮") },
+                title = { Text(stringResource(R.string.ui_fortune_an_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = Color.White)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.ui_fortune_back), tint = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -80,7 +82,7 @@ fun AngelNumbersScreen(
             OutlinedTextField(
                 value = state.searchQuery,
                 onValueChange = { viewModel.onIntent(AngelNumbersIntent.Search(it)) },
-                placeholder = { Text("Search (e.g. 111, 222...)") },
+                placeholder = { Text(stringResource(R.string.ui_fortune_an_search)) },
                 leadingIcon = { Icon(Icons.Default.Search, null, tint = LunaColors.Gold) },
                 modifier = Modifier.fillMaxWidth(),
                 colors = TextFieldDefaults.colors(
@@ -149,7 +151,7 @@ private fun AngelNumberDetail(number: AngelNumber, onBack: () -> Unit) {
             .verticalScroll(rememberScrollState())
     ) {
         TextButton(onClick = onBack) {
-            Text("← Back to list", color = LunaColors.Gold)
+            Text(stringResource(R.string.ui_fortune_an_back_list), color = LunaColors.Gold)
         }
         
         Text(
@@ -162,11 +164,11 @@ private fun AngelNumberDetail(number: AngelNumber, onBack: () -> Unit) {
         
         Spacer(modifier = Modifier.height(16.dp))
         
-        DetailCard("✨ Meaning", number.meaning)
-        DetailCard("💕 Love", number.loveMessage)
-        DetailCard("💼 Career", number.careerMessage)
-        DetailCard("🙏 Spiritual", number.spiritualMessage)
-        DetailCard("🎯 Action", number.action)
+        DetailCard(stringResource(R.string.ui_fortune_an_meaning), number.meaning)
+        DetailCard(stringResource(R.string.ui_fortune_lbl_love), number.loveMessage)
+        DetailCard(stringResource(R.string.ui_fortune_lbl_career), number.careerMessage)
+        DetailCard(stringResource(R.string.ui_fortune_lbl_spiritual), number.spiritualMessage)
+        DetailCard(stringResource(R.string.ui_fortune_an_action), number.action)
     }
 }
 

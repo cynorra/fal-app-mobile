@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune
 
+import dagger.hilt.android.qualifiers.ApplicationContext
+import android.content.Context
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -51,6 +53,7 @@ sealed interface FortuneEffect {
 
 @HiltViewModel
 class FortuneViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val repository: FortuneRepository,
     private val dataStore: UserPreferencesDataStore
 ) : ViewModel() {
@@ -108,7 +111,7 @@ class FortuneViewModel @Inject constructor(
                 },
                 onFailure = { error ->
                     _state.update { it.copy(isLoading = false, error = error.message) }
-                    _effects.tryEmit(FortuneEffect.ShowSnackbar(error.message ?: "Could not load reading"))
+                    _effects.tryEmit(FortuneEffect.ShowSnackbar(error.message ?: context.getString(R.string.ui_fortune_err_load)))
                 }
             )
         }
@@ -133,7 +136,7 @@ class FortuneViewModel @Inject constructor(
                 onFailure = { error ->
                     _state.update { it.copy(isLoading = false, error = error.message) }
                     // ✅ tryEmit kullanıldı
-                    _effects.tryEmit(FortuneEffect.ShowSnackbar(error.message ?: "Fortune failed"))
+                    _effects.tryEmit(FortuneEffect.ShowSnackbar(error.message ?: context.getString(R.string.ui_fortune_err_fortune)))
                 }
             )
         }

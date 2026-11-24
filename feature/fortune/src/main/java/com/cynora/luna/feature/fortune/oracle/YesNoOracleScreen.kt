@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune.oracle
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
@@ -98,13 +100,13 @@ fun YesNoOracleScreen(
             IconButton(onClick = onBack) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back",
+                    contentDescription = stringResource(R.string.ui_fortune_back),
                     tint = Color.White
                 )
             }
             Spacer(modifier = Modifier.width(8.dp))
             Text(
-                text = "Yes / No Oracle",
+                text = stringResource(R.string.ui_fortune_or_title),
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
@@ -114,7 +116,7 @@ fun YesNoOracleScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Focus your intention on a single question. The cosmos will reveal whether the currents flow in alignment.",
+            text = stringResource(R.string.ui_fortune_or_intro),
             fontSize = 14.sp,
             color = Color.White.copy(alpha = 0.7f),
             lineHeight = 20.sp
@@ -127,7 +129,7 @@ fun YesNoOracleScreen(
             value = state.questionInput,
             onValueChange = viewModel::onQuestionChange,
             placeholder = {
-                Text("What does your soul seek to know?", color = Color.White.copy(alpha = 0.4f), fontSize = 14.sp)
+                Text(stringResource(R.string.ui_fortune_or_hint), color = Color.White.copy(alpha = 0.4f), fontSize = 14.sp)
             },
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
@@ -208,7 +210,7 @@ fun YesNoOracleScreen(
                         )
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
-                            text = "Touch Orb",
+                            text = stringResource(R.string.ui_fortune_or_touch),
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Medium,
                             color = LunaColors.Gold
@@ -233,7 +235,7 @@ fun YesNoOracleScreen(
             containerColor = LunaColors.Gold
         ) {
             Text(
-                text = if (state.isConsulting) "Channelling the Stars..." else "✨ Consult the Oracle",
+                text = if (state.isConsulting) stringResource(R.string.ui_fortune_or_channelling) else stringResource(R.string.ui_fortune_or_consult),
                 fontWeight = FontWeight.Bold,
                 fontSize = 16.sp,
                 color = Color.Black
@@ -330,9 +332,15 @@ fun YesNoOracleScreen(
                                 onClick = {
                                     ShareUtils.shareFortune(
                                         context = context,
-                                        fortuneText = "Question: \"${state.questionInput.ifBlank { "My Path" }}\"\nAnswer: ${reading.outcome.displayName} — ${reading.headline}\n\n${reading.spiritualAdvice}",
+                                        fortuneText = context.getString(
+                                            R.string.ui_fortune_or_share_text,
+                                            state.questionInput.ifBlank { context.getString(R.string.ui_fortune_or_my_path) },
+                                            reading.outcome.displayName,
+                                            reading.headline,
+                                            reading.spiritualAdvice
+                                        ),
                                         dailyIntention = reading.luckyAspect,
-                                        fortuneType = "Yes/No Oracle"
+                                        fortuneType = context.getString(R.string.ui_fortune_or_type)
                                     )
                                 },
                                 colors = ButtonDefaults.buttonColors(
@@ -341,9 +349,9 @@ fun YesNoOracleScreen(
                                 ),
                                 shape = RoundedCornerShape(12.dp)
                             ) {
-                                Icon(Icons.Default.Share, contentDescription = "Share", modifier = Modifier.size(18.dp))
+                                Icon(Icons.Default.Share, contentDescription = stringResource(R.string.ui_fortune_share), modifier = Modifier.size(18.dp))
                                 Spacer(modifier = Modifier.width(6.dp))
-                                Text("Share")
+                                Text(stringResource(R.string.ui_fortune_share))
                             }
 
                             Button(
@@ -354,7 +362,7 @@ fun YesNoOracleScreen(
                                 ),
                                 shape = RoundedCornerShape(12.dp)
                             ) {
-                                Text("New Question")
+                                Text(stringResource(R.string.ui_fortune_or_new))
                             }
                         }
                     }

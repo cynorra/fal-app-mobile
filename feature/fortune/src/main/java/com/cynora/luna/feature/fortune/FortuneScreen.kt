@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateIntAsState
@@ -139,7 +141,7 @@ fun FortuneScreen(
                         DotMatrixLoader(loaderSize = 80.dp)
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
-                            "Reading the cosmos...",
+                            stringResource(R.string.ui_fortune_loading),
                             color = LunaColors.Gold,
                             fontSize = 16.sp
                         )
@@ -170,7 +172,7 @@ private fun FortuneSelectionContent(
                 Spacer(modifier = Modifier.height(8.dp))
 
                 KineticReveal(
-                    text = "What do you seek today?",
+                    text = stringResource(R.string.ui_fortune_title),
                     style = TextStyle(
                         fontSize = 28.sp,
                         fontWeight = FontWeight.Bold,
@@ -184,7 +186,7 @@ private fun FortuneSelectionContent(
                 Spacer(modifier = Modifier.height(8.dp))
 
                 Text(
-                    text = "Choose your mood and focus, receive the universe's message",
+                    text = stringResource(R.string.ui_fortune_subtitle),
                     fontSize = 15.sp,
                     color = Color.White.copy(alpha = 0.62f),
                     textAlign = TextAlign.Center
@@ -192,7 +194,7 @@ private fun FortuneSelectionContent(
 
                 Spacer(modifier = Modifier.height(28.dp))
 
-                FortuneSectionLabel("Fortune Type")
+                FortuneSectionLabel(stringResource(R.string.ui_fortune_type))
                 FlowRow(
                     modifier = Modifier.fillMaxWidth(),
                     maxItemsInEachRow = typeColumns,
@@ -208,7 +210,7 @@ private fun FortuneSelectionContent(
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                FortuneSectionLabel("Current Mood")
+                FortuneSectionLabel(stringResource(R.string.ui_fortune_mood))
                 FlowRow(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -223,7 +225,7 @@ private fun FortuneSelectionContent(
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                FortuneSectionLabel("Focus Area")
+                FortuneSectionLabel(stringResource(R.string.ui_fortune_focus))
                 FlowRow(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -239,7 +241,7 @@ private fun FortuneSelectionContent(
                 Spacer(modifier = Modifier.height(32.dp))
 
                 LunaPrimaryButton(
-                    text = "✨ Read My Fortune",
+                    text = stringResource(R.string.ui_fortune_read),
                     onClick = { onIntent(FortuneIntent.GetFortune) },
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -344,7 +346,7 @@ private fun FortuneResultContent(
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            text = "✨ Daily Intention",
+                            text = stringResource(R.string.ui_fortune_daily_intention),
                             fontSize = 12.sp,
                             fontWeight = FontWeight.SemiBold,
                             color = LunaColors.Gold
@@ -383,7 +385,7 @@ private fun FortuneResultContent(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                text = "Try Again",
+                                text = stringResource(R.string.ui_fortune_try_again),
                                 fontSize = 17.sp,
                                 fontWeight = FontWeight.SemiBold,
                                 color = LunaColors.Gold
@@ -392,7 +394,7 @@ private fun FortuneResultContent(
                     }
 
                     LunaPrimaryButton(
-                        text = "Share",
+                        text = stringResource(R.string.ui_fortune_share),
                         onClick = {
                             ShareUtils.shareFortune(
                                 context = context,

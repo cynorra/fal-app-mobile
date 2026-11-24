@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune.compatibility
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -67,10 +69,10 @@ fun CompatibilityScreen(
         containerColor = androidx.compose.ui.graphics.Color.Transparent,
         topBar = {
             TopAppBar(
-                title = { Text("Zodiac Compatibility 💑") },
+                title = { Text(stringResource(R.string.ui_fortune_cp_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = Color.White)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.ui_fortune_back), tint = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -90,20 +92,20 @@ fun CompatibilityScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             if (state.result == null) {
-                Text("Your Sign", color = LunaColors.Gold, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                Text(stringResource(R.string.ui_fortune_cp_your_sign), color = LunaColors.Gold, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                 Spacer(modifier = Modifier.height(8.dp))
                 ZodiacGrid(selected = state.sign1) { viewModel.onIntent(CompatibilityIntent.SelectSign1(it)) }
                 
                 Spacer(modifier = Modifier.height(24.dp))
                 
-                Text("Partner's Sign", color = LunaColors.Gold, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                Text(stringResource(R.string.ui_fortune_cp_partner_sign), color = LunaColors.Gold, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                 Spacer(modifier = Modifier.height(8.dp))
                 ZodiacGrid(selected = state.sign2) { viewModel.onIntent(CompatibilityIntent.SelectSign2(it)) }
                 
                 Spacer(modifier = Modifier.height(24.dp))
                 
                 LunaPrimaryButton(
-                    text = "Calculate Compatibility 💕",
+                    text = stringResource(R.string.ui_fortune_cp_calculate),
                     onClick = { viewModel.onIntent(CompatibilityIntent.Calculate) },
                     enabled = state.sign1 != null && state.sign2 != null,
                     modifier = Modifier.fillMaxWidth().height(56.dp)
@@ -113,16 +115,19 @@ fun CompatibilityScreen(
                 Spacer(modifier = Modifier.height(16.dp))
                 val shareContext = androidx.compose.ui.platform.LocalContext.current
                 LunaPrimaryButton(
-                    text = "Share with your partner",
+                    text = stringResource(R.string.ui_fortune_cp_share),
                     onClick = {
                         val res = state.result!!
                         val a = state.sign1?.displayName ?: ""
                         val b = state.sign2?.displayName ?: ""
                         com.cynora.luna.core.utils.ShareUtils.shareCard(
                             context = shareContext,
-                            title = "$a + $b: ${res.overallScore}% compatible",
-                            body = "Love ${res.loveScore}%  |  Friendship ${res.friendshipScore}%  |  Trust ${res.trustScore}%\n\n${res.advice}",
-                            footer = "How compatible are you two?",
+                            title = shareContext.getString(R.string.ui_fortune_cp_share_title, a, b, res.overallScore),
+                            body = shareContext.getString(
+                                R.string.ui_fortune_cp_share_body,
+                                res.loveScore, res.friendshipScore, res.trustScore, res.advice
+                            ),
+                            footer = shareContext.getString(R.string.ui_fortune_cp_share_footer),
                             medium = "compatibility"
                         )
                     },
@@ -130,7 +135,7 @@ fun CompatibilityScreen(
                 )
                 Spacer(modifier = Modifier.height(12.dp))
                 LunaPrimaryButton(
-                    text = "Try Another",
+                    text = stringResource(R.string.ui_fortune_cp_another),
                     onClick = { viewModel.onIntent(CompatibilityIntent.Reset) },
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -186,7 +191,7 @@ private fun CompatibilityResultView(result: CompatibilityResult) {
             modifier = Modifier.padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Overall Compatibility", color = LunaColors.Gold, fontSize = 16.sp)
+            Text(stringResource(R.string.ui_fortune_cp_overall), color = LunaColors.Gold, fontSize = 16.sp)
             Spacer(modifier = Modifier.height(8.dp))
             Text("${result.overallScore}%", fontSize = 48.sp, fontWeight = FontWeight.Bold, color = Color.White)
             Text(result.element, fontSize = 14.sp, color = Color.White.copy(alpha = 0.7f))
@@ -202,11 +207,11 @@ private fun CompatibilityResultView(result: CompatibilityResult) {
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
-            ScoreRow("💕 Love", result.loveScore)
-            ScoreRow("🤝 Friendship", result.friendshipScore)
-            ScoreRow("💬 Communication", result.communicationScore)
-            ScoreRow("🤞 Trust", result.trustScore)
-            ScoreRow("🔥 Passion", result.passionScore)
+            ScoreRow(stringResource(R.string.ui_fortune_lbl_love), result.loveScore)
+            ScoreRow(stringResource(R.string.ui_fortune_cp_friendship), result.friendshipScore)
+            ScoreRow(stringResource(R.string.ui_fortune_cp_comm), result.communicationScore)
+            ScoreRow(stringResource(R.string.ui_fortune_cp_trust), result.trustScore)
+            ScoreRow(stringResource(R.string.ui_fortune_cp_passion), result.passionScore)
         }
     }
     
@@ -219,7 +224,7 @@ private fun CompatibilityResultView(result: CompatibilityResult) {
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
-            Text("💪 Strengths", color = LunaColors.Gold, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            Text(stringResource(R.string.ui_fortune_lbl_strengths), color = LunaColors.Gold, fontSize = 16.sp, fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(8.dp))
             result.strengths.forEach { Text("• $it", color = Color.White.copy(alpha = 0.9f), fontSize = 14.sp) }
         }
@@ -234,7 +239,7 @@ private fun CompatibilityResultView(result: CompatibilityResult) {
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
-            Text("🌱 Challenges", color = LunaColors.Gold, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            Text(stringResource(R.string.ui_fortune_cp_challenges), color = LunaColors.Gold, fontSize = 16.sp, fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(8.dp))
             result.challenges.forEach { Text("• $it", color = Color.White.copy(alpha = 0.9f), fontSize = 14.sp) }
         }
@@ -248,7 +253,7 @@ private fun CompatibilityResultView(result: CompatibilityResult) {
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
-            Text("💡 Advice", color = LunaColors.Gold, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            Text(stringResource(R.string.ui_fortune_cp_advice), color = LunaColors.Gold, fontSize = 16.sp, fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(8.dp))
             Text(result.advice, color = Color.White, fontSize = 14.sp, lineHeight = 22.sp)
         }

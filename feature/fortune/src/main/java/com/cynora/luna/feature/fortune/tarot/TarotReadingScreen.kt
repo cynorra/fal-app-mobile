@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune.tarot
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import android.app.Activity
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -91,13 +93,13 @@ fun TarotReadingScreen(
             IconButton(onClick = onBack) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back",
+                    contentDescription = stringResource(R.string.ui_fortune_back),
                     tint = Color.White
                 )
             }
             Spacer(modifier = Modifier.width(8.dp))
             Text(
-                text = "Tarot Divination 🎴",
+                text = stringResource(R.string.ui_fortune_tr_title),
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
@@ -125,17 +127,17 @@ fun TarotReadingScreen(
             Tab(
                 selected = state.spreadMode == TarotSpreadMode.DAILY_ONE_CARD,
                 onClick = { viewModel.setSpreadMode(TarotSpreadMode.DAILY_ONE_CARD) },
-                text = { Text("Daily 1-Card", fontWeight = FontWeight.SemiBold) }
+                text = { Text(stringResource(R.string.ui_fortune_tr_daily), fontWeight = FontWeight.SemiBold) }
             )
             Tab(
                 selected = state.spreadMode == TarotSpreadMode.THREE_CARD_SPREAD,
                 onClick = { viewModel.setSpreadMode(TarotSpreadMode.THREE_CARD_SPREAD) },
                 text = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text("3-Card Spread", fontWeight = FontWeight.SemiBold)
+                        Text(stringResource(R.string.ui_fortune_tr_three), fontWeight = FontWeight.SemiBold)
                         if (!state.isThreeCardUnlocked) {
                             Spacer(modifier = Modifier.width(4.dp))
-                            Icon(Icons.Default.Lock, contentDescription = "Locked", modifier = Modifier.size(14.dp), tint = LunaColors.Gold)
+                            Icon(Icons.Default.Lock, contentDescription = stringResource(R.string.ui_fortune_locked), modifier = Modifier.size(14.dp), tint = LunaColors.Gold)
                         }
                     }
                 }
@@ -160,10 +162,10 @@ fun TarotReadingScreen(
                     modifier = Modifier.padding(24.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text("🔒 3-Card Spread (Past / Present / Future)", fontSize = 18.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold, textAlign = TextAlign.Center)
+                    Text(stringResource(R.string.ui_fortune_tr_lock_title), fontSize = 18.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold, textAlign = TextAlign.Center)
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        "Unlock the full past, present, and emerging destiny spread by viewing a short sponsor message.",
+                        stringResource(R.string.ui_fortune_tr_lock_body),
                         fontSize = 14.sp,
                         color = Color.White.copy(alpha = 0.8f),
                         textAlign = TextAlign.Center,
@@ -183,7 +185,7 @@ fun TarotReadingScreen(
                         colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold, contentColor = Color.Black),
                         shape = RoundedCornerShape(14.dp)
                     ) {
-                        Text("Watch Sponsor to Unlock", fontWeight = FontWeight.Bold)
+                        Text(stringResource(R.string.ui_fortune_tr_watch), fontWeight = FontWeight.Bold)
                     }
                 }
             }
@@ -202,10 +204,10 @@ fun TarotReadingScreen(
                 if (state.isShuffling) {
                     CircularProgressIndicator(modifier = Modifier.size(22.dp), color = Color.Black, strokeWidth = 2.dp)
                     Spacer(modifier = Modifier.width(10.dp))
-                    Text("Shuffling 22 Major Arcana...", fontWeight = FontWeight.Bold, color = Color.Black)
+                    Text(stringResource(R.string.ui_fortune_tr_shuffling), fontWeight = FontWeight.Bold, color = Color.Black)
                 } else {
                     Text(
-                        if (state.isCardRevealed) "✨ Shuffle & Draw Again" else "✨ Shuffle & Draw Cards",
+                        if (state.isCardRevealed) stringResource(R.string.ui_fortune_tr_shuffle_again) else stringResource(R.string.ui_fortune_tr_shuffle),
                         fontWeight = FontWeight.Bold,
                         fontSize = 16.sp,
                         color = Color.Black
@@ -236,8 +238,8 @@ fun TarotReadingScreen(
                         ShareUtils.shareFortune(
                             context = context,
                             fortuneText = cardDetails,
-                            dailyIntention = "Walk in alignment with today's drawn energies.",
-                            fortuneType = "Tarot Reading"
+                            dailyIntention = context.getString(R.string.ui_fortune_tr_intention),
+                            fortuneType = context.getString(R.string.ui_fortune_tr_type)
                         )
                     },
                     modifier = Modifier.fillMaxWidth(),
@@ -247,9 +249,9 @@ fun TarotReadingScreen(
                     ),
                     shape = RoundedCornerShape(14.dp)
                 ) {
-                    Icon(Icons.Default.Share, contentDescription = "Share", modifier = Modifier.size(18.dp))
+                    Icon(Icons.Default.Share, contentDescription = stringResource(R.string.ui_fortune_share), modifier = Modifier.size(18.dp))
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("Share Tarot Reading", fontWeight = FontWeight.Medium)
+                    Text(stringResource(R.string.ui_fortune_tr_share), fontWeight = FontWeight.Medium)
                 }
             }
         }
@@ -325,7 +327,7 @@ private fun TarotCard3DView(drawn: DrawnTarotCard) {
                         )
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
-                            text = if (drawn.isReversed) "🔄 Reversed" else "✨ Upright",
+                            text = if (drawn.isReversed) stringResource(R.string.ui_fortune_tr_reversed) else stringResource(R.string.ui_fortune_tr_upright),
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Medium,
                             color = if (drawn.isReversed) Color(0xFFFFB74D) else Color(0xFF81C784)
@@ -343,14 +345,14 @@ private fun TarotCard3DView(drawn: DrawnTarotCard) {
                             Text("🔮", fontSize = 36.sp)
                             Spacer(modifier = Modifier.height(6.dp))
                             Text(
-                                text = "Element: ${drawn.card.element}",
+                                text = stringResource(R.string.ui_fortune_tr_element, drawn.card.element),
                                 fontSize = 13.sp,
                                 color = LunaColors.MysticPurple,
                                 fontWeight = FontWeight.SemiBold
                             )
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(
-                                text = "Tap to view front",
+                                text = stringResource(R.string.ui_fortune_tr_tap_front),
                                 fontSize = 11.sp,
                                 color = Color.White.copy(alpha = 0.5f)
                             )
@@ -398,9 +400,9 @@ private fun TarotCard3DView(drawn: DrawnTarotCard) {
                     .background(Color.White.copy(alpha = 0.04f))
                     .padding(12.dp)
             ) {
-                Text(text = "💕 Love: ${drawn.card.loveAdvice}", fontSize = 12.sp, color = Color.White.copy(alpha = 0.8f))
+                Text(text = stringResource(R.string.ui_fortune_tr_love_advice, drawn.card.loveAdvice), fontSize = 12.sp, color = Color.White.copy(alpha = 0.8f))
                 Spacer(modifier = Modifier.height(4.dp))
-                Text(text = "💼 Career: ${drawn.card.careerAdvice}", fontSize = 12.sp, color = Color.White.copy(alpha = 0.8f))
+                Text(text = stringResource(R.string.ui_fortune_tr_career_advice, drawn.card.careerAdvice), fontSize = 12.sp, color = Color.White.copy(alpha = 0.8f))
             }
         }
     }

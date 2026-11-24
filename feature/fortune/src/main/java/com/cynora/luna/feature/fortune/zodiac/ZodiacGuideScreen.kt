@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.fortune.zodiac
 
+import com.cynora.luna.feature.fortune.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -72,13 +74,13 @@ fun ZodiacGuideScreen(
             IconButton(onClick = onBack) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back",
+                    contentDescription = stringResource(R.string.ui_fortune_back),
                     tint = Color.White
                 )
             }
             Spacer(modifier = Modifier.width(8.dp))
             Text(
-                text = "12 Zodiac Signs ♈",
+                text = stringResource(R.string.ui_fortune_zg_title),
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
@@ -97,7 +99,7 @@ fun ZodiacGuideScreen(
             FilterChip(
                 selected = state.selectedElementFilter == null,
                 onClick = { viewModel.filterByElement(null) },
-                label = { Text("All Elements") },
+                label = { Text(stringResource(R.string.ui_fortune_zg_all_elements)) },
                 colors = FilterChipDefaults.filterChipColors(
                     selectedContainerColor = LunaColors.Gold,
                     selectedLabelColor = Color.Black,
@@ -175,15 +177,15 @@ fun ZodiacGuideScreen(
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Column {
-                            Text("Ruler:", fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
+                            Text(stringResource(R.string.ui_fortune_zg_ruler), fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
                             Text(detail.rulingPlanet, fontSize = 13.sp, fontWeight = FontWeight.SemiBold, color = Color.White)
                         }
                         Column {
-                            Text("Modality:", fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
+                            Text(stringResource(R.string.ui_fortune_zg_modality), fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
                             Text(detail.modality.displayName, fontSize = 13.sp, fontWeight = FontWeight.SemiBold, color = Color.White)
                         }
                         Column {
-                            Text("Tarot:", fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
+                            Text(stringResource(R.string.ui_fortune_zg_tarot), fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
                             Text(detail.tarotCard, fontSize = 13.sp, fontWeight = FontWeight.SemiBold, color = LunaColors.MysticPurple)
                         }
                     }
@@ -197,20 +199,20 @@ fun ZodiacGuideScreen(
                             .padding(12.dp)
                     ) {
                         Column {
-                            Text("✨ Strengths: ${detail.strengths.joinToString(", ")}", fontSize = 12.sp, color = Color(0xFF81C784))
+                            Text(stringResource(R.string.ui_fortune_zg_strengths, detail.strengths.joinToString(", ")), fontSize = 12.sp, color = Color(0xFF81C784))
                             Spacer(modifier = Modifier.height(4.dp))
-                            Text("⚠️ Shadow: ${detail.weaknesses.joinToString(", ")}", fontSize = 12.sp, color = Color(0xFFFF8A80))
+                            Text(stringResource(R.string.ui_fortune_zg_shadow, detail.weaknesses.joinToString(", ")), fontSize = 12.sp, color = Color(0xFFFF8A80))
                         }
                     }
 
                     // Profiles
-                    Text("💕 Love & Bonds", fontSize = 14.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
+                    Text(stringResource(R.string.ui_fortune_zg_love_bonds), fontSize = 14.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
                     Text(detail.loveProfile, fontSize = 13.sp, lineHeight = 20.sp, color = Color.White.copy(alpha = 0.85f))
 
-                    Text("💼 Career & Ambition", fontSize = 14.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
+                    Text(stringResource(R.string.ui_fortune_zg_career), fontSize = 14.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
                     Text(detail.careerProfile, fontSize = 13.sp, lineHeight = 20.sp, color = Color.White.copy(alpha = 0.85f))
 
-                    Text("💑 Most Compatible Signs:", fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = Color.White)
+                    Text(stringResource(R.string.ui_fortune_zg_compatible), fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = Color.White)
                     Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                         detail.compatibleSigns.forEach { comp ->
                             Box(
@@ -227,7 +229,7 @@ fun ZodiacGuideScreen(
             },
             confirmButton = {
                 TextButton(onClick = { viewModel.selectSign(null) }) {
-                    Text("Close", color = LunaColors.Gold, fontWeight = FontWeight.Bold)
+                    Text(stringResource(R.string.ui_fortune_close), color = LunaColors.Gold, fontWeight = FontWeight.Bold)
                 }
             }
         )
