@@ -1,5 +1,6 @@
 package com.cynora.luna.feature.home
 
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -86,21 +87,19 @@ fun HomeScreen(
     val nebulaEnabled = shouldEnableNebula()
     val shootingStarInterval = if (shouldEnableShootingStars()) 8000L else Long.MAX_VALUE
 
-    val cmdkActions = remember {
-        listOf(
-            CmdkAction("Tarot Divination", "1-Card daily draw & 3-card spread", "🎴", "Divination", onNavigateToTarotReading),
-            CmdkAction("Yes / No Oracle", "Ask a question and channel celestial clarity", "🔮", "Oracle", onNavigateToYesNoOracle),
-            CmdkAction("Dream Interpreter", "Search dictionary of dream symbols & meanings", "💭", "Dreams", onNavigateToDreamInterpreter),
-            CmdkAction("12 Zodiac Signs", "Elements, modalities, ruling planets & profiles", "♈", "Astrology", onNavigateToZodiacGuide),
-            CmdkAction("Birth Chart", "Sun, Moon, Rising & planetary placements", "🌌", "Astrology", onNavigateToBirthChart),
-            CmdkAction("Daily Card", "Guidance & intention for today", "🎯", "Daily", onNavigateToDailyCard),
-            CmdkAction("Zodiac Compatibility", "Love, friendship, trust & communication sync", "💑", "Love", onNavigateToCompatibility),
-            CmdkAction("Angel Numbers", "Spiritual messages behind 111, 444, 777", "🔢", "Numerology", onNavigateToAngelNumbers),
-            CmdkAction("Lucky Numbers", "Daily lucky numbers & fortune matrix", "🍀", "Daily", onNavigateToLuckyNumbers),
-            CmdkAction("Daily Affirmations", "Empowering celestial affirmations", "💫", "Daily", onNavigateToAffirmations),
-            CmdkAction("Full Fortune Reading", "Coffee, Tarot, Lenormand & Palmistry", "☕", "Divination", onNavigateToFortune)
-        )
-    }
+    val cmdkActions = listOf(
+        CmdkAction(stringResource(R.string.ui_home_cmdk_tarot_title), stringResource(R.string.ui_home_cmdk_tarot_sub), "🎴", stringResource(R.string.ui_home_cat_divination), onNavigateToTarotReading),
+        CmdkAction(stringResource(R.string.ui_home_cmdk_oracle_title), stringResource(R.string.ui_home_cmdk_oracle_sub), "🔮", stringResource(R.string.ui_home_cat_oracle), onNavigateToYesNoOracle),
+        CmdkAction(stringResource(R.string.ui_home_cmdk_dream_title), stringResource(R.string.ui_home_cmdk_dream_sub), "💭", stringResource(R.string.ui_home_cat_dreams), onNavigateToDreamInterpreter),
+        CmdkAction(stringResource(R.string.ui_home_cmdk_zodiac_title), stringResource(R.string.ui_home_cmdk_zodiac_sub), "♈", stringResource(R.string.ui_home_cat_astrology), onNavigateToZodiacGuide),
+        CmdkAction(stringResource(R.string.ui_home_birth_chart), stringResource(R.string.ui_home_cmdk_birth_sub), "🌌", stringResource(R.string.ui_home_cat_astrology), onNavigateToBirthChart),
+        CmdkAction(stringResource(R.string.ui_home_daily_card), stringResource(R.string.ui_home_cmdk_daily_sub), "🎯", stringResource(R.string.ui_home_cat_daily), onNavigateToDailyCard),
+        CmdkAction(stringResource(R.string.ui_home_cmdk_compat_title), stringResource(R.string.ui_home_cmdk_compat_sub), "💑", stringResource(R.string.ui_home_cat_love), onNavigateToCompatibility),
+        CmdkAction(stringResource(R.string.ui_home_angel_numbers), stringResource(R.string.ui_home_cmdk_angel_sub), "🔢", stringResource(R.string.ui_home_cat_numerology), onNavigateToAngelNumbers),
+        CmdkAction(stringResource(R.string.ui_home_lucky_numbers), stringResource(R.string.ui_home_cmdk_lucky_sub), "🍀", stringResource(R.string.ui_home_cat_daily), onNavigateToLuckyNumbers),
+        CmdkAction(stringResource(R.string.ui_home_cmdk_affirm_title), stringResource(R.string.ui_home_cmdk_affirm_sub), "💫", stringResource(R.string.ui_home_cat_daily), onNavigateToAffirmations),
+        CmdkAction(stringResource(R.string.ui_home_cmdk_full_title), stringResource(R.string.ui_home_cmdk_full_sub), "☕", stringResource(R.string.ui_home_cat_divination), onNavigateToFortune)
+    )
 
     // The animated LunaBackdrop (aurora, stars, dot grid) is drawn by the navigation host.
     Box(modifier = Modifier.fillMaxSize()) {
@@ -127,7 +126,7 @@ fun HomeScreen(
             ) {
                 Column {
                     Text(
-                        text = "Welcome, ${state.userName} ✨",
+                        text = stringResource(R.string.ui_home_welcome, state.userName),
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.White
@@ -161,9 +160,9 @@ fun HomeScreen(
                         .padding(horizontal = 12.dp, vertical = 8.dp)
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(Icons.Default.Search, contentDescription = "Search", tint = LunaColors.Gold, modifier = Modifier.size(16.dp))
+                        Icon(Icons.Default.Search, contentDescription = stringResource(R.string.ui_home_search), tint = LunaColors.Gold, modifier = Modifier.size(16.dp))
                         Spacer(modifier = Modifier.width(6.dp))
-                        Text("⌘ Search", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                        Text(stringResource(R.string.ui_home_search_pill), fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
             }
@@ -225,7 +224,7 @@ fun HomeScreen(
 
             // Divination & Quick Actions
             Text(
-                text = "Cosmic Divination & Tools",
+                text = stringResource(R.string.ui_home_tools_title),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = Color.White
@@ -235,27 +234,27 @@ fun HomeScreen(
 
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    QuickActionCard("Tarot Spread", "🎴", Modifier.weight(1f), onNavigateToTarotReading)
-                    QuickActionCard("Yes / No Oracle", "🔮", Modifier.weight(1f), onNavigateToYesNoOracle)
+                    QuickActionCard(stringResource(R.string.ui_home_qa_tarot), "🎴", Modifier.weight(1f), onNavigateToTarotReading)
+                    QuickActionCard(stringResource(R.string.ui_home_cmdk_oracle_title), "🔮", Modifier.weight(1f), onNavigateToYesNoOracle)
                 }
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    QuickActionCard("Dream Guide", "💭", Modifier.weight(1f), onNavigateToDreamInterpreter)
-                    QuickActionCard("12 Zodiac Signs", "♈", Modifier.weight(1f), onNavigateToZodiacGuide)
+                    QuickActionCard(stringResource(R.string.ui_home_qa_dream), "💭", Modifier.weight(1f), onNavigateToDreamInterpreter)
+                    QuickActionCard(stringResource(R.string.ui_home_cmdk_zodiac_title), "♈", Modifier.weight(1f), onNavigateToZodiacGuide)
                 }
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    QuickActionCard("Birth Chart", "🌌", Modifier.weight(1f), onNavigateToBirthChart)
-                    QuickActionCard("Daily Card", "🎯", Modifier.weight(1f), onNavigateToDailyCard)
+                    QuickActionCard(stringResource(R.string.ui_home_birth_chart), "🌌", Modifier.weight(1f), onNavigateToBirthChart)
+                    QuickActionCard(stringResource(R.string.ui_home_daily_card), "🎯", Modifier.weight(1f), onNavigateToDailyCard)
                 }
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    QuickActionCard("Compatibility", "💑", Modifier.weight(1f), onNavigateToCompatibility)
-                    QuickActionCard("Angel Numbers", "🔢", Modifier.weight(1f), onNavigateToAngelNumbers)
+                    QuickActionCard(stringResource(R.string.ui_home_qa_compat), "💑", Modifier.weight(1f), onNavigateToCompatibility)
+                    QuickActionCard(stringResource(R.string.ui_home_angel_numbers), "🔢", Modifier.weight(1f), onNavigateToAngelNumbers)
                 }
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    QuickActionCard("Lucky Numbers", "🍀", Modifier.weight(1f), onNavigateToLuckyNumbers)
-                    QuickActionCard("Affirmations", "💫", Modifier.weight(1f), onNavigateToAffirmations)
+                    QuickActionCard(stringResource(R.string.ui_home_lucky_numbers), "🍀", Modifier.weight(1f), onNavigateToLuckyNumbers)
+                    QuickActionCard(stringResource(R.string.ui_home_qa_affirm), "💫", Modifier.weight(1f), onNavigateToAffirmations)
                 }
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    QuickActionCard("Full Reading", "☕", Modifier.weight(1f), onNavigateToFortune)
+                    QuickActionCard(stringResource(R.string.ui_home_qa_full), "☕", Modifier.weight(1f), onNavigateToFortune)
                 }
             }
 
@@ -287,7 +286,7 @@ private fun CosmicMetricsCard(
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
-                text = "✨ Daily Cosmic Metrics",
+                text = stringResource(R.string.ui_home_metrics_title),
                 fontSize = 15.sp,
                 fontWeight = FontWeight.Bold,
                 color = LunaColors.Gold
@@ -297,9 +296,9 @@ private fun CosmicMetricsCard(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceAround
             ) {
-                MetricGauge(label = "Love", score = loveScore, color = Color(0xFFE91E63))
-                MetricGauge(label = "Career", score = careerScore, color = LunaColors.Gold)
-                MetricGauge(label = "Energy", score = energyScore, color = LunaColors.MysticPurple)
+                MetricGauge(label = stringResource(R.string.ui_home_love), score = loveScore, color = Color(0xFFE91E63))
+                MetricGauge(label = stringResource(R.string.ui_home_career), score = careerScore, color = LunaColors.Gold)
+                MetricGauge(label = stringResource(R.string.ui_home_energy), score = energyScore, color = LunaColors.MysticPurple)
             }
         }
     }
@@ -357,7 +356,7 @@ private fun PlanetaryHourCard(planetaryHour: PlanetaryHourInfo) {
             Column {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
-                        text = "${planetaryHour.planet.displayName} Hour",
+                        text = stringResource(R.string.ui_home_planet_hour, planetaryHour.planet.displayName),
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.White
@@ -371,7 +370,7 @@ private fun PlanetaryHourCard(planetaryHour: PlanetaryHourInfo) {
                 }
                 Spacer(modifier = Modifier.height(2.dp))
                 Text(
-                    text = "${planetaryHour.planet.theme} • Best for ${planetaryHour.planet.bestFor}",
+                    text = stringResource(R.string.ui_home_planet_theme, planetaryHour.planet.theme, planetaryHour.planet.bestFor),
                     fontSize = 12.sp,
                     color = Color.White.copy(alpha = 0.7f),
                     lineHeight = 16.sp
@@ -401,7 +400,7 @@ private fun HoroscopeTabsCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "${state.zodiacSign.symbol} ${state.zodiacSign.displayName} Daily Guidance",
+                    text = stringResource(R.string.ui_home_daily_guidance, state.zodiacSign.symbol, state.zodiacSign.displayName),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     color = LunaColors.Gold
@@ -427,22 +426,22 @@ private fun HoroscopeTabsCard(
                 Tab(
                     selected = state.selectedHoroscopeDay == 0,
                     onClick = { onSelectTab(0) },
-                    text = { Text("Yesterday", fontSize = 12.sp) }
+                    text = { Text(stringResource(R.string.ui_home_yesterday), fontSize = 12.sp) }
                 )
                 Tab(
                     selected = state.selectedHoroscopeDay == 1,
                     onClick = { onSelectTab(1) },
-                    text = { Text("Today", fontSize = 12.sp, fontWeight = FontWeight.Bold) }
+                    text = { Text(stringResource(R.string.ui_home_today), fontSize = 12.sp, fontWeight = FontWeight.Bold) }
                 )
                 Tab(
                     selected = state.selectedHoroscopeDay == 2,
                     onClick = { onSelectTab(2) },
                     text = {
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            Text("Tomorrow", fontSize = 12.sp)
+                            Text(stringResource(R.string.ui_home_tomorrow), fontSize = 12.sp)
                             if (!state.isTomorrowUnlocked) {
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Icon(Icons.Default.Lock, contentDescription = "Locked", modifier = Modifier.size(11.dp), tint = LunaColors.Gold)
+                                Icon(Icons.Default.Lock, contentDescription = stringResource(R.string.ui_home_locked), modifier = Modifier.size(11.dp), tint = LunaColors.Gold)
                             }
                         }
                     }
@@ -487,17 +486,17 @@ private fun DailyLuckyStrip(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("Lucky Number", fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
+                Text(stringResource(R.string.ui_home_lucky_number), fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
                 Text("$luckyNumber", fontSize = 14.sp, fontWeight = FontWeight.Bold, color = LunaColors.Gold)
             }
             Box(modifier = Modifier.width(1.dp).height(24.dp).background(Color.White.copy(alpha = 0.1f)))
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("Lucky Color", fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
+                Text(stringResource(R.string.ui_home_lucky_color), fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
                 Text(luckyColor, fontSize = 13.sp, fontWeight = FontWeight.Bold, color = Color.White)
             }
             Box(modifier = Modifier.width(1.dp).height(24.dp).background(Color.White.copy(alpha = 0.1f)))
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("Compatible Sign", fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
+                Text(stringResource(R.string.ui_home_compatible_sign), fontSize = 11.sp, color = Color.White.copy(alpha = 0.5f))
                 Text(compatibleSign, fontSize = 13.sp, fontWeight = FontWeight.Bold, color = LunaColors.MysticPurple)
             }
         }
@@ -528,19 +527,19 @@ private fun MysticCalendarWidget(
         ) {
             Column {
                 Text(
-                    text = "🌙 Mystic Calendar",
+                    text = stringResource(R.string.ui_home_calendar_title),
                     fontSize = 15.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = LunaColors.Gold
                 )
                 Spacer(modifier = Modifier.height(14.dp))
-                CalendarInfoRow("🌕", "Moon Phase", moonPhase)
+                CalendarInfoRow("🌕", stringResource(R.string.ui_home_moon_phase), moonPhase)
                 Spacer(modifier = Modifier.height(10.dp))
-                CalendarInfoRow("🪐", "Planet", planetInfo)
+                CalendarInfoRow("🪐", stringResource(R.string.ui_home_planet), planetInfo)
                 Spacer(modifier = Modifier.height(10.dp))
-                CalendarInfoRow("✨", "Energy", dailyEnergy)
+                CalendarInfoRow("✨", stringResource(R.string.ui_home_energy), dailyEnergy)
                 Spacer(modifier = Modifier.height(10.dp))
-                CalendarInfoRow("⏰", "Lucky Hour", luckyHour)
+                CalendarInfoRow("⏰", stringResource(R.string.ui_home_lucky_hour), luckyHour)
             }
         }
     }

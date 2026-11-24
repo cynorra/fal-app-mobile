@@ -86,6 +86,8 @@ class HomeViewModel @Inject constructor(
                     it.copy(
                         zodiacSign = zodiac,
                         horoscopeToday = getHoroscopeForZodiac(zodiac),
+                        horoscopeYesterday = context.getString(R.string.ui_home_horo_yesterday),
+                        horoscopeTomorrow = context.getString(R.string.ui_home_horo_tomorrow),
                         luckyNumber = getLuckyNumber(zodiac),
                         luckyColor = getLuckyColor(zodiac),
                         compatibleSign = getCompatibleSign(zodiac),
@@ -153,7 +155,15 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun getLuckyColor(zodiac: ZodiacSign): String {
-        val colors = listOf("Champagne Gold", "Soft Lavender", "Celestial Blue", "Emerald Green", "Crimson", "Moonlight White", "Muted Silver")
-        return colors[zodiac.ordinal % colors.size]
+        val colors = listOf(
+            R.string.ui_home_color_gold,
+            R.string.ui_home_color_lavender,
+            R.string.ui_home_color_blue,
+            R.string.ui_home_color_green,
+            R.string.ui_home_color_crimson,
+            R.string.ui_home_color_white,
+            R.string.ui_home_color_silver
+        )
+        return context.getString(colors[zodiac.ordinal % colors.size])
     }
 }
