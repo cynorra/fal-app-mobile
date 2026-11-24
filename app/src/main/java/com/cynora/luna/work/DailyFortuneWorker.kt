@@ -50,24 +50,24 @@ class DailyFortuneWorker @AssistedInject constructor(
 
     private fun buildCopy(streak: Int, sign: String?): Pair<String, String> {
         val dayOfYear = Calendar.getInstance().get(Calendar.DAY_OF_YEAR)
-        val who = sign ?: "Today"
+        val who = sign ?: context.getString(R.string.ui_app_today)
         if (streak >= 2) {
             return when (dayOfYear % 2) {
-                0 -> "Day ${streak + 1} is waiting for you" to
-                    "Your $streak-day ritual is still glowing. Come and see today's card, it takes under a minute."
-                else -> "Keep your $streak-day streak alive" to
-                    "A quiet minute with today's reading keeps your ritual going. Come take a look."
+                0 -> context.getString(R.string.ui_app_nudge_streak_a_title, streak + 1) to
+                    context.getString(R.string.ui_app_nudge_streak_a_body, streak)
+                else -> context.getString(R.string.ui_app_nudge_streak_b_title, streak) to
+                    context.getString(R.string.ui_app_nudge_streak_b_body)
             }
         }
         val options = listOf(
-            "Your card for today is ready" to
-                "Come take a look. A small moment of reflection to start the day.",
-            "$who, the sky has a message for you" to
-                "Come and see what today's reading holds. It only takes a minute.",
-            "A new day, a fresh reading" to
-                "Come take a look at your daily card and set your intention.",
-            "Your daily intention is waiting" to
-                "Take a calm minute for yourself. Come and see today's card."
+            context.getString(R.string.ui_app_nudge_1_title) to
+                context.getString(R.string.ui_app_nudge_1_body),
+            context.getString(R.string.ui_app_nudge_2_title, who) to
+                context.getString(R.string.ui_app_nudge_2_body),
+            context.getString(R.string.ui_app_nudge_3_title) to
+                context.getString(R.string.ui_app_nudge_3_body),
+            context.getString(R.string.ui_app_nudge_4_title) to
+                context.getString(R.string.ui_app_nudge_4_body)
         )
         return options[dayOfYear % options.size]
     }

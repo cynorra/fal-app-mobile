@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_app_nav_home">Ana Sayfa</string>
+    <string name="ui_app_nav_fortune">Fal</string>
+    <string name="ui_app_nav_community">Topluluk</string>
+    <string name="ui_app_nav_profile">Profil</string>
+    <string name="ui_app_today">Bugün</string>
+    <string name="ui_app_nudge_streak_a_title">%1$d. gün seni bekliyor</string>
+    <string name="ui_app_nudge_streak_a_body">%1$d günlük ritüelin hâlâ parlıyor. Gel, bugünün kartına bak; bir dakikadan az sürer.</string>
+    <string name="ui_app_nudge_streak_b_title">%1$d günlük serini canlı tut</string>
+    <string name="ui_app_nudge_streak_b_body">Bugünkü okumayla geçireceğin sakin bir dakika ritüelini sürdürür. Gel, bir bak.</string>
+    <string name="ui_app_nudge_1_title">Bugünün kartın hazır</string>
+    <string name="ui_app_nudge_1_body">Gel, bir bak. Güne başlarken küçük bir iç yolculuk anı.</string>
+    <string name="ui_app_nudge_2_title">%1$s, gökyüzünün sana bir mesajı var</string>
+    <string name="ui_app_nudge_2_body">Bugünkü okumanın neler sakladığına bak. Sadece bir dakika sürer.</string>
+    <string name="ui_app_nudge_3_title">Yeni bir gün, yeni bir okuma</string>
+    <string name="ui_app_nudge_3_body">Günün kartına bak ve niyetini belirle.</string>
+    <string name="ui_app_nudge_4_title">Günlük niyetin seni bekliyor</string>
+    <string name="ui_app_nudge_4_body">Kendine sakin bir dakika ayır. Gel, bugünün kartına bak.</string>
+    <string name="ui_app_ch_daily">Günlük Fal</string>
+    <string name="ui_app_ch_daily_desc">Günlük fal okumaları</string>
+    <string name="ui_app_ch_hourly">Saatlik Kozmik Nabız</string>
+    <string name="ui_app_ch_hourly_desc">Saatlik gezegen saatleri, olumlamalar ve şanslı enerji pencereleri</string>
+    <string name="ui_app_ch_social">Topluluk</string>
+    <string name="ui_app_ch_social_desc">Topluluk etkileşimleri</string>
+    <string name="ui_app_ch_calendar">Mistik Takvim</string>
+    <string name="ui_app_ch_calendar_desc">Ay evreleri</string>
+    <string name="ui_app_ch_special">Özel Olaylar</string>
+    <string name="ui_app_ch_special_desc">Kozmik olaylar</string>
+</resources>

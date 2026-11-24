@@ -1,5 +1,7 @@
 package com.cynora.luna.core.ui.effects
 
+import com.cynora.luna.core.ui.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloat
@@ -102,7 +104,7 @@ fun CosmicPullToRefresh(
         if (isRefreshing) {
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = "Reading the cosmos...",
+                text = stringResource(R.string.ui_core_reading_cosmos),
                 fontSize = 12.sp,
                 color = LunaColors.Gold.copy(alpha = 0.7f),
                 fontWeight = FontWeight.Medium

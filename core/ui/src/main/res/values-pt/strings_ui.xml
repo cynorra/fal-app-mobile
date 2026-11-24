@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_core_tagline">Seu guia cósmico pessoal</string>
+    <string name="ui_core_reading_cosmos">Lendo o cosmos...</string>
+    <string name="ui_core_cmdk_hint">Digite um comando ou pesquise ferramentas cósmicas...</string>
+    <string name="ui_core_search">Pesquisar</string>
+    <string name="ui_core_close">Fechar</string>
+</resources>

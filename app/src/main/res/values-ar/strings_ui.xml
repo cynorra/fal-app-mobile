@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_app_nav_home">الرئيسية</string>
+    <string name="ui_app_nav_fortune">الحظ</string>
+    <string name="ui_app_nav_community">المجتمع</string>
+    <string name="ui_app_nav_profile">الملف الشخصي</string>
+    <string name="ui_app_today">اليوم</string>
+    <string name="ui_app_nudge_streak_a_title">اليوم %1$d في انتظارك</string>
+    <string name="ui_app_nudge_streak_a_body">طقسك المستمر منذ %1$d أيام لا يزال متوهجاً. تعال وشاهد بطاقة اليوم، فهي تستغرق أقل من دقيقة.</string>
+    <string name="ui_app_nudge_streak_b_title">حافظ على سلسلتك المستمرة منذ %1$d أيام</string>
+    <string name="ui_app_nudge_streak_b_body">دقيقة هادئة مع قراءة اليوم تُبقي طقسك مستمراً. تعال وألقِ نظرة.</string>
+    <string name="ui_app_nudge_1_title">بطاقتك لهذا اليوم جاهزة</string>
+    <string name="ui_app_nudge_1_body">تعال وألقِ نظرة. لحظة تأمل صغيرة لبدء يومك.</string>
+    <string name="ui_app_nudge_2_title">%1$s، للسماء رسالة لك</string>
+    <string name="ui_app_nudge_2_body">تعال وشاهد ما تحمله قراءة اليوم. تستغرق دقيقة واحدة فقط.</string>
+    <string name="ui_app_nudge_3_title">يوم جديد، قراءة جديدة</string>
+    <string name="ui_app_nudge_3_body">تعال وألقِ نظرة على بطاقتك اليومية وحدد نيّتك.</string>
+    <string name="ui_app_nudge_4_title">نيّتك اليومية في انتظارك</string>
+    <string name="ui_app_nudge_4_body">خذ دقيقة هادئة لنفسك. تعال وشاهد بطاقة اليوم.</string>
+    <string name="ui_app_ch_daily">الحظ اليومي</string>
+    <string name="ui_app_ch_daily_desc">قراءات الحظ اليومية</string>
+    <string name="ui_app_ch_hourly">النبض الكوني كل ساعة</string>
+    <string name="ui_app_ch_hourly_desc">الساعات الكوكبية والتأكيدات ونوافذ الطاقة المحظوظة كل ساعة</string>
+    <string name="ui_app_ch_social">المجتمع</string>
+    <string name="ui_app_ch_social_desc">تفاعلات المجتمع</string>
+    <string name="ui_app_ch_calendar">التقويم الغامض</string>
+    <string name="ui_app_ch_calendar_desc">أطوار القمر</string>
+    <string name="ui_app_ch_special">أحداث خاصة</string>
+    <string name="ui_app_ch_special_desc">أحداث كونية</string>
+</resources>

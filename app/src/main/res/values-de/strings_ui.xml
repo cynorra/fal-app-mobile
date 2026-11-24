@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_app_nav_home">Start</string>
+    <string name="ui_app_nav_fortune">Glück</string>
+    <string name="ui_app_nav_community">Community</string>
+    <string name="ui_app_nav_profile">Profil</string>
+    <string name="ui_app_today">Heute</string>
+    <string name="ui_app_nudge_streak_a_title">Tag %1$d wartet auf dich</string>
+    <string name="ui_app_nudge_streak_a_body">Dein %1$d-Tage-Ritual leuchtet noch. Sieh dir die heutige Karte an, es dauert weniger als eine Minute.</string>
+    <string name="ui_app_nudge_streak_b_title">Halte deine %1$d-Tage-Serie am Leben</string>
+    <string name="ui_app_nudge_streak_b_body">Eine ruhige Minute mit der heutigen Deutung hält dein Ritual am Laufen. Schau vorbei.</string>
+    <string name="ui_app_nudge_1_title">Deine Karte für heute ist bereit</string>
+    <string name="ui_app_nudge_1_body">Schau vorbei. Ein kleiner Moment der Besinnung zum Start in den Tag.</string>
+    <string name="ui_app_nudge_2_title">%1$s, der Himmel hat eine Botschaft für dich</string>
+    <string name="ui_app_nudge_2_body">Sieh nach, was die heutige Deutung bereithält. Es dauert nur eine Minute.</string>
+    <string name="ui_app_nudge_3_title">Ein neuer Tag, eine frische Deutung</string>
+    <string name="ui_app_nudge_3_body">Wirf einen Blick auf deine Tageskarte und setze deine Intention.</string>
+    <string name="ui_app_nudge_4_title">Deine tägliche Intention wartet</string>
+    <string name="ui_app_nudge_4_body">Nimm dir eine ruhige Minute für dich. Sieh dir die heutige Karte an.</string>
+    <string name="ui_app_ch_daily">Tägliches Glück</string>
+    <string name="ui_app_ch_daily_desc">Tägliche Wahrsagungen</string>
+    <string name="ui_app_ch_hourly">Stündlicher kosmischer Puls</string>
+    <string name="ui_app_ch_hourly_desc">Stündliche Planetenstunden, Affirmationen und Glücksenergie-Fenster</string>
+    <string name="ui_app_ch_social">Community</string>
+    <string name="ui_app_ch_social_desc">Community-Interaktionen</string>
+    <string name="ui_app_ch_calendar">Mystischer Kalender</string>
+    <string name="ui_app_ch_calendar_desc">Mondphasen</string>
+    <string name="ui_app_ch_special">Besondere Ereignisse</string>
+    <string name="ui_app_ch_special_desc">Kosmische Ereignisse</string>
+</resources>

@@ -1,5 +1,7 @@
 package com.cynora.luna.core.ui.effects
 
+import com.cynora.luna.core.ui.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateFloatAsState
@@ -117,7 +119,7 @@ fun LunaSplashScreen(
                 Spacer(modifier = Modifier.height(8.dp))
                 
                 Text(
-                    text = "Your Personal Cosmic Guide",
+                    text = stringResource(R.string.ui_core_tagline),
                     fontSize = 14.sp,
                     color = Color.White.copy(alpha = textAlpha * 0.7f),
                     modifier = Modifier

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_core_tagline">دليلك الكوني الشخصي</string>
+    <string name="ui_core_reading_cosmos">جارٍ قراءة الكون...</string>
+    <string name="ui_core_cmdk_hint">اكتب أمراً أو ابحث في الأدوات الكونية...</string>
+    <string name="ui_core_search">بحث</string>
+    <string name="ui_core_close">إغلاق</string>
+</resources>

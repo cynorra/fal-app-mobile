@@ -1,5 +1,7 @@
 package com.cynora.luna.navigation
 
+import com.cynora.luna.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -73,10 +75,10 @@ fun LunaNavHost(
     val appState by appVM.state.collectAsStateWithLifecycle()
 
     val items = listOf(
-        BottomNavItem(Routes.HOME, Icons.Default.Home, "Home"),
-        BottomNavItem(Routes.FORTUNE, Icons.Default.Star, "Fortune"),
-        BottomNavItem(Routes.SOCIAL, Icons.Default.Favorite, "Community"),
-        BottomNavItem(Routes.PROFILE, Icons.Default.Person, "Profile")
+        BottomNavItem(Routes.HOME, Icons.Default.Home, stringResource(R.string.ui_app_nav_home)),
+        BottomNavItem(Routes.FORTUNE, Icons.Default.Star, stringResource(R.string.ui_app_nav_fortune)),
+        BottomNavItem(Routes.SOCIAL, Icons.Default.Favorite, stringResource(R.string.ui_app_nav_community)),
+        BottomNavItem(Routes.PROFILE, Icons.Default.Person, stringResource(R.string.ui_app_nav_profile))
     )
 
     val backStack by nav.currentBackStackEntryAsState()

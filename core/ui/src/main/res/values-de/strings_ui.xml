@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_core_tagline">Dein persönlicher kosmischer Begleiter</string>
+    <string name="ui_core_reading_cosmos">Der Kosmos wird gelesen...</string>
+    <string name="ui_core_cmdk_hint">Befehl eingeben oder kosmische Werkzeuge suchen...</string>
+    <string name="ui_core_search">Suchen</string>
+    <string name="ui_core_close">Schließen</string>
+</resources>

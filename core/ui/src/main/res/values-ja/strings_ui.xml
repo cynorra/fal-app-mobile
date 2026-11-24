@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_core_tagline">あなた専用のコズミックガイド</string>
+    <string name="ui_core_reading_cosmos">宇宙を読み取っています...</string>
+    <string name="ui_core_cmdk_hint">コマンドを入力、またはコズミックツールを検索...</string>
+    <string name="ui_core_search">検索</string>
+    <string name="ui_core_close">閉じる</string>
+</resources>

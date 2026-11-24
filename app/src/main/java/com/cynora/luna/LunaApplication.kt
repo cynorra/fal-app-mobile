@@ -90,46 +90,46 @@ class LunaApplication : Application(), Configuration.Provider {
             val channels = listOf(
                 NotificationChannel(
                     "luna_daily_fortune",
-                    "Daily Fortune",
+                    getString(R.string.ui_app_ch_daily),
                     NotificationManager.IMPORTANCE_DEFAULT
                 ).apply {
-                    description = "Daily fortune readings"
+                    description = getString(R.string.ui_app_ch_daily_desc)
                     enableLights(true)
                     enableVibration(true)
                     lightColor = 0xFFD4AF37.toInt()
                 },
                 NotificationChannel(
                     "luna_hourly_cosmic",
-                    "Hourly Cosmic Pulse",
+                    getString(R.string.ui_app_ch_hourly),
                     NotificationManager.IMPORTANCE_DEFAULT
                 ).apply {
-                    description = "Hourly planetary hours, affirmations, and lucky energy windows"
+                    description = getString(R.string.ui_app_ch_hourly_desc)
                     enableLights(true)
                     enableVibration(true)
                     lightColor = 0xFF9D8DF1.toInt()
                 },
                 NotificationChannel(
                     "luna_social",
-                    "Community",
+                    getString(R.string.ui_app_ch_social),
                     NotificationManager.IMPORTANCE_LOW
                 ).apply {
-                    description = "Community interactions"
+                    description = getString(R.string.ui_app_ch_social_desc)
                 },
                 NotificationChannel(
                     "luna_calendar",
-                    "Mystic Calendar",
+                    getString(R.string.ui_app_ch_calendar),
                     NotificationManager.IMPORTANCE_DEFAULT
                 ).apply {
-                    description = "Moon phases"
+                    description = getString(R.string.ui_app_ch_calendar_desc)
                     enableLights(true)
                     lightColor = 0xFF9D76C1.toInt()
                 },
                 NotificationChannel(
                     "luna_special",
-                    "Special Events",
+                    getString(R.string.ui_app_ch_special),
                     NotificationManager.IMPORTANCE_HIGH
                 ).apply {
-                    description = "Cosmic events"
+                    description = getString(R.string.ui_app_ch_special_desc)
                     enableVibration(true)
                 }
             )

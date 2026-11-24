@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_app_nav_home">Inicio</string>
+    <string name="ui_app_nav_fortune">Fortuna</string>
+    <string name="ui_app_nav_community">Comunidad</string>
+    <string name="ui_app_nav_profile">Perfil</string>
+    <string name="ui_app_today">Hoy</string>
+    <string name="ui_app_nudge_streak_a_title">El día %1$d te espera</string>
+    <string name="ui_app_nudge_streak_a_body">Tu ritual de %1$d días sigue brillando. Ven a ver la carta de hoy, lleva menos de un minuto.</string>
+    <string name="ui_app_nudge_streak_b_title">Mantén viva tu racha de %1$d días</string>
+    <string name="ui_app_nudge_streak_b_body">Un minuto tranquilo con la lectura de hoy mantiene tu ritual. Ven a echar un vistazo.</string>
+    <string name="ui_app_nudge_1_title">Tu carta de hoy está lista</string>
+    <string name="ui_app_nudge_1_body">Ven a verla. Un pequeño momento de reflexión para empezar el día.</string>
+    <string name="ui_app_nudge_2_title">%1$s, el cielo tiene un mensaje para ti</string>
+    <string name="ui_app_nudge_2_body">Ven a ver qué te depara la lectura de hoy. Solo toma un minuto.</string>
+    <string name="ui_app_nudge_3_title">Un nuevo día, una lectura fresca</string>
+    <string name="ui_app_nudge_3_body">Ven a ver tu carta diaria y establece tu intención.</string>
+    <string name="ui_app_nudge_4_title">Tu intención diaria te espera</string>
+    <string name="ui_app_nudge_4_body">Tómate un minuto de calma para ti. Ven a ver la carta de hoy.</string>
+    <string name="ui_app_ch_daily">Fortuna diaria</string>
+    <string name="ui_app_ch_daily_desc">Lecturas diarias de fortuna</string>
+    <string name="ui_app_ch_hourly">Pulso cósmico por hora</string>
+    <string name="ui_app_ch_hourly_desc">Horas planetarias, afirmaciones y ventanas de energía afortunada cada hora</string>
+    <string name="ui_app_ch_social">Comunidad</string>
+    <string name="ui_app_ch_social_desc">Interacciones de la comunidad</string>
+    <string name="ui_app_ch_calendar">Calendario místico</string>
+    <string name="ui_app_ch_calendar_desc">Fases lunares</string>
+    <string name="ui_app_ch_special">Eventos especiales</string>
+    <string name="ui_app_ch_special_desc">Eventos cósmicos</string>
+</resources>

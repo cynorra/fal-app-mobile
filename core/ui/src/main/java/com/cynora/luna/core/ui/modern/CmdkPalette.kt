@@ -1,5 +1,7 @@
 package com.cynora.luna.core.ui.modern
 
+import com.cynora.luna.core.ui.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -107,14 +109,14 @@ fun CmdkPalette(
                         value = query,
                         onValueChange = { query = it },
                         placeholder = {
-                            Text("Type a command or search cosmic tools...", color = Color.White.copy(alpha = 0.4f), fontSize = 14.sp)
+                            Text(stringResource(R.string.ui_core_cmdk_hint), color = Color.White.copy(alpha = 0.4f), fontSize = 14.sp)
                         },
                         leadingIcon = {
-                            Icon(Icons.Default.Search, contentDescription = "Search", tint = LunaColors.Gold)
+                            Icon(Icons.Default.Search, contentDescription = stringResource(R.string.ui_core_search), tint = LunaColors.Gold)
                         },
                         trailingIcon = {
                             IconButton(onClick = onDismiss) {
-                                Icon(Icons.Default.Close, contentDescription = "Close", tint = Color.White.copy(alpha = 0.6f))
+                                Icon(Icons.Default.Close, contentDescription = stringResource(R.string.ui_core_close), tint = Color.White.copy(alpha = 0.6f))
                             }
                         },
                         modifier = Modifier.fillMaxWidth(),
