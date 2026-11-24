@@ -1,5 +1,6 @@
 package com.cynora.luna.feature.onboarding
 
+import androidx.compose.ui.res.stringResource
 import android.Manifest
 import android.os.Build
 import androidx.compose.animation.AnimatedContent
@@ -189,15 +190,15 @@ private fun WelcomePage(onNext: () -> Unit) {
     PageScaffold {
         DotMatrixLoader(loaderSize = 96.dp)
         Spacer(modifier = Modifier.height(28.dp))
-        CascadeText(text = "Welcome to Luna", style = PageTitleStyle)
+        CascadeText(text = stringResource(R.string.ui_onb_welcome_title), style = PageTitleStyle)
         Spacer(modifier = Modifier.height(14.dp))
         KineticReveal(
-            text = "Your personal cosmic guide to tarot, horoscopes and dreams",
+            text = stringResource(R.string.ui_onb_welcome_body),
             style = PageBodyStyle,
             centered = true
         )
         Spacer(modifier = Modifier.height(40.dp))
-        LunaPrimaryButton(text = "Begin Journey", onClick = onNext, modifier = Modifier.fillMaxWidth())
+        LunaPrimaryButton(text = stringResource(R.string.ui_onb_begin), onClick = onNext, modifier = Modifier.fillMaxWidth())
     }
 }
 
@@ -213,10 +214,10 @@ private fun ZodiacPage(
             .padding(horizontal = 20.dp, vertical = 20.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        CascadeText(text = "What's Your Sign?", style = PageTitleStyle.copy(fontSize = 26.sp))
+        CascadeText(text = stringResource(R.string.ui_onb_sign_title), style = PageTitleStyle.copy(fontSize = 26.sp))
         Spacer(modifier = Modifier.height(6.dp))
         Text(
-            text = "Select your zodiac for personalized readings",
+            text = stringResource(R.string.ui_onb_sign_body),
             style = PageBodyStyle.copy(fontSize = 15.sp)
         )
         Spacer(modifier = Modifier.height(16.dp))
@@ -235,7 +236,7 @@ private fun ZodiacPage(
         Spacer(modifier = Modifier.height(14.dp))
 
         LunaPrimaryButton(
-            text = "Continue",
+            text = stringResource(R.string.ui_onb_continue),
             onClick = onNext,
             enabled = selectedZodiac != null,
             modifier = Modifier.fillMaxWidth()
@@ -274,18 +275,18 @@ private fun PermissionPage(onAllow: () -> Unit, onSkip: () -> Unit) {
     PageScaffold {
         Text(text = "🔔", fontSize = 72.sp)
         Spacer(modifier = Modifier.height(24.dp))
-        CascadeText(text = "Stay Connected", style = PageTitleStyle)
+        CascadeText(text = stringResource(R.string.ui_onb_notif_title), style = PageTitleStyle)
         Spacer(modifier = Modifier.height(14.dp))
         KineticReveal(
-            text = "Receive daily fortune readings and intention messages",
+            text = stringResource(R.string.ui_onb_notif_body),
             style = PageBodyStyle,
             centered = true
         )
         Spacer(modifier = Modifier.height(36.dp))
-        LunaPrimaryButton(text = "Allow Notifications", onClick = onAllow, modifier = Modifier.fillMaxWidth())
+        LunaPrimaryButton(text = stringResource(R.string.ui_onb_allow), onClick = onAllow, modifier = Modifier.fillMaxWidth())
         Spacer(modifier = Modifier.height(8.dp))
         TextButton(onClick = onSkip) {
-            Text("Not Now", fontSize = 16.sp, color = Color.White.copy(alpha = 0.65f))
+            Text(stringResource(R.string.ui_onb_not_now), fontSize = 16.sp, color = Color.White.copy(alpha = 0.65f))
         }
     }
 }
@@ -295,14 +296,14 @@ private fun FinalPage(onFinish: () -> Unit) {
     PageScaffold {
         Text(text = "🌟", fontSize = 72.sp)
         Spacer(modifier = Modifier.height(24.dp))
-        CascadeText(text = "You're Ready!", style = PageTitleStyle)
+        CascadeText(text = stringResource(R.string.ui_onb_ready_title), style = PageTitleStyle)
         Spacer(modifier = Modifier.height(14.dp))
         KineticReveal(
-            text = "Discover the stars' personalized messages for you",
+            text = stringResource(R.string.ui_onb_ready_body),
             style = PageBodyStyle,
             centered = true
         )
         Spacer(modifier = Modifier.height(36.dp))
-        LunaPrimaryButton(text = "Start Exploring", onClick = onFinish, modifier = Modifier.fillMaxWidth())
+        LunaPrimaryButton(text = stringResource(R.string.ui_onb_start), onClick = onFinish, modifier = Modifier.fillMaxWidth())
     }
 }

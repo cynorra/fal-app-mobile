@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_social_reason_spam">Spam or advertising</string>
+    <string name="ui_social_reason_harass">Harassment or hate</string>
+    <string name="ui_social_reason_sexual">Sexual or violent content</string>
+    <string name="ui_social_reason_personal">Personal information</string>
+    <string name="ui_social_reason_other">Something else</string>
+    <string name="ui_social_report_title">Report this post</string>
+    <string name="ui_social_report_why">Why are you reporting it? The post will be hidden for you.</string>
+    <string name="ui_social_cancel">Cancel</string>
+    <string name="ui_social_title">✨ Mystic Community</string>
+    <string name="ui_social_hint">Write today's intention...</string>
+    <string name="ui_social_rules">Be kind. Harassment, hate, spam and personal information are not allowed. Posts are public and can be reported and removed.</string>
+    <string name="ui_social_send">Send</string>
+    <string name="ui_social_share">Share</string>
+    <string name="ui_social_empty">No posts yet. Share your first intention ✨</string>
+    <string name="ui_social_report_post">Report post</string>
+    <string name="ui_social_hide_post">Hide post</string>
+    <string name="ui_social_block_user">Block this user</string>
+    <string name="ui_social_like">Like</string>
+    <string name="ui_social_just_now">Just now</string>
+    <string name="ui_social_min_ago">%1$d min ago</string>
+    <string name="ui_social_hours_ago">%1$d hours ago</string>
+    <string name="ui_social_days_ago">%1$d days ago</string>
+    <string name="ui_social_err_load">Could not load posts</string>
+    <string name="ui_social_err_post">Post failed</string>
+    <string name="ui_social_err_like">Like failed</string>
+    <string name="ui_social_report_thanks">Thanks for the report. The post is hidden for you and our team will review it.</string>
+    <string name="ui_social_report_failed">The post is hidden for you. We could not send the report, please try again later.</string>
+    <string name="ui_social_post_hidden">Post hidden.</string>
+    <string name="ui_social_user_blocked">You will no longer see posts from this user.</string>
+</resources>

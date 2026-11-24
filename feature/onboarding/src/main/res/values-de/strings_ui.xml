@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_onb_welcome_title">Willkommen bei Luna</string>
+    <string name="ui_onb_welcome_body">Dein persönlicher kosmischer Begleiter für Tarot, Horoskope und Träume</string>
+    <string name="ui_onb_begin">Reise beginnen</string>
+    <string name="ui_onb_sign_title">Was ist dein Sternzeichen?</string>
+    <string name="ui_onb_sign_body">Wähle dein Sternzeichen für persönliche Deutungen</string>
+    <string name="ui_onb_continue">Weiter</string>
+    <string name="ui_onb_notif_title">Bleib verbunden</string>
+    <string name="ui_onb_notif_body">Erhalte tägliche Wahrsagungen und Intentionsbotschaften</string>
+    <string name="ui_onb_allow">Benachrichtigungen erlauben</string>
+    <string name="ui_onb_not_now">Nicht jetzt</string>
+    <string name="ui_onb_ready_title">Du bist bereit!</string>
+    <string name="ui_onb_ready_body">Entdecke die persönlichen Botschaften der Sterne für dich</string>
+    <string name="ui_onb_start">Entdecken beginnen</string>
+</resources>

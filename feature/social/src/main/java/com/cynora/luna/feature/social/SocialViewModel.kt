@@ -1,5 +1,7 @@
 package com.cynora.luna.feature.social
 
+import dagger.hilt.android.qualifiers.ApplicationContext
+import android.content.Context
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -37,6 +39,7 @@ sealed interface SocialIntent {
 
 @HiltViewModel
 class SocialViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val repository: SocialRepository
 ) : ViewModel() {
 
@@ -65,7 +68,7 @@ class SocialViewModel @Inject constructor(
             }.catch { error ->
                 // A failed Firestore listener must not crash the app: show the empty/error state.
                 Timber.e(error, "Observing posts failed")
-                _state.update { it.copy(isLoading = false, error = "Could not load posts") }
+                _state.update { it.copy(isLoading = false, error = context.getString(R.string.ui_social_err_load)) }
             }.collect { visiblePosts ->
                 _state.update { it.copy(posts = visiblePosts, isLoading = false, error = null) }
             }
@@ -105,11 +108,11 @@ class SocialViewModel @Inject constructor(
                     timestamp = System.currentTimeMillis()
                 )
                 repository.addPost(newPost).onFailure {
-                    _state.update { s -> s.copy(error = "Post failed") }
+                    _state.update { s -> s.copy(error = context.getString(R.string.ui_social_err_post)) }
                 }
             } catch (e: Exception) {
                 Timber.e(e, "Post intention failed")
-                _state.update { it.copy(error = "Post failed") }
+                _state.update { it.copy(error = context.getString(R.string.ui_social_err_post)) }
             }
         }
     }
@@ -139,7 +142,7 @@ class SocialViewModel @Inject constructor(
                 repository.toggleLike(postId)
             } catch (e: Exception) {
                 Timber.e(e, "Like post failed")
-                _state.update { it.copy(error = "Like failed") }
+                _state.update { it.copy(error = context.getString(R.string.ui_social_err_like)) }
             }
         }
     }
@@ -148,9 +151,9 @@ class SocialViewModel @Inject constructor(
         viewModelScope.launch {
             val result = repository.reportPost(post, reason)
             val message = if (result.isSuccess) {
-                "Thanks for the report. The post is hidden for you and our team will review it."
+                context.getString(R.string.ui_social_report_thanks)
             } else {
-                "The post is hidden for you. We could not send the report, please try again later."
+                context.getString(R.string.ui_social_report_failed)
             }
             _state.update { it.copy(notice = message) }
         }
@@ -159,7 +162,7 @@ class SocialViewModel @Inject constructor(
     private fun hidePost(post: IntentionPost) {
         viewModelScope.launch {
             repository.hidePost(post.id)
-            _state.update { it.copy(notice = "Post hidden.") }
+            _state.update { it.copy(notice = context.getString(R.string.ui_social_post_hidden)) }
         }
     }
 
@@ -167,10 +170,10 @@ class SocialViewModel @Inject constructor(
         viewModelScope.launch {
             if (post.authorUid.isBlank()) {
                 repository.hidePost(post.id)
-                _state.update { it.copy(notice = "Post hidden.") }
+                _state.update { it.copy(notice = context.getString(R.string.ui_social_post_hidden)) }
             } else {
                 repository.blockAuthor(post.authorUid)
-                _state.update { it.copy(notice = "You will no longer see posts from this user.") }
+                _state.update { it.copy(notice = context.getString(R.string.ui_social_user_blocked)) }
             }
         }
     }

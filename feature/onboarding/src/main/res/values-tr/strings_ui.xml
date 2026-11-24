@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_onb_welcome_title">Luna'ya Hoş Geldin</string>
+    <string name="ui_onb_welcome_body">Tarot, burçlar ve rüyalar için kişisel kozmik rehberin</string>
+    <string name="ui_onb_begin">Yolculuğa Başla</string>
+    <string name="ui_onb_sign_title">Burcun Hangisi?</string>
+    <string name="ui_onb_sign_body">Kişiselleştirilmiş okumalar için burcunu seç</string>
+    <string name="ui_onb_continue">Devam</string>
+    <string name="ui_onb_notif_title">Bağlantıda Kal</string>
+    <string name="ui_onb_notif_body">Günlük fal yorumları ve niyet mesajları al</string>
+    <string name="ui_onb_allow">Bildirimlere İzin Ver</string>
+    <string name="ui_onb_not_now">Şimdi Değil</string>
+    <string name="ui_onb_ready_title">Hazırsın!</string>
+    <string name="ui_onb_ready_body">Yıldızların senin için hazırladığı kişisel mesajları keşfet</string>
+    <string name="ui_onb_start">Keşfetmeye Başla</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_social_reason_spam">スパム・広告</string>
+    <string name="ui_social_reason_harass">嫌がらせ・ヘイト</string>
+    <string name="ui_social_reason_sexual">性的・暴力的な内容</string>
+    <string name="ui_social_reason_personal">個人情報</string>
+    <string name="ui_social_reason_other">その他</string>
+    <string name="ui_social_report_title">この投稿を報告</string>
+    <string name="ui_social_report_why">報告の理由は何ですか？この投稿はあなたには非表示になります。</string>
+    <string name="ui_social_cancel">キャンセル</string>
+    <string name="ui_social_title">✨ ミスティック・コミュニティ</string>
+    <string name="ui_social_hint">今日の意図を書きましょう...</string>
+    <string name="ui_social_rules">思いやりを持ちましょう。嫌がらせ、ヘイト、スパム、個人情報は禁止です。投稿は公開され、報告・削除される場合があります。</string>
+    <string name="ui_social_send">送信</string>
+    <string name="ui_social_share">シェア</string>
+    <string name="ui_social_empty">まだ投稿がありません。最初の意図をシェアしましょう ✨</string>
+    <string name="ui_social_report_post">投稿を報告</string>
+    <string name="ui_social_hide_post">投稿を非表示</string>
+    <string name="ui_social_block_user">このユーザーをブロック</string>
+    <string name="ui_social_like">いいね</string>
+    <string name="ui_social_just_now">たった今</string>
+    <string name="ui_social_min_ago">%1$d分前</string>
+    <string name="ui_social_hours_ago">%1$d時間前</string>
+    <string name="ui_social_days_ago">%1$d日前</string>
+    <string name="ui_social_err_load">投稿を読み込めませんでした</string>
+    <string name="ui_social_err_post">投稿に失敗しました</string>
+    <string name="ui_social_err_like">いいねに失敗しました</string>
+    <string name="ui_social_report_thanks">ご報告ありがとうございます。この投稿は非表示になり、チームが確認します。</string>
+    <string name="ui_social_report_failed">この投稿は非表示になりました。報告を送信できませんでした。後でもう一度お試しください。</string>
+    <string name="ui_social_post_hidden">投稿を非表示にしました。</string>
+    <string name="ui_social_user_blocked">このユーザーの投稿は表示されなくなります。</string>
+</resources>

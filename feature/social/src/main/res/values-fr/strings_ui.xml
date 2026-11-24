@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_social_reason_spam">Spam ou publicité</string>
+    <string name="ui_social_reason_harass">Harcèlement ou haine</string>
+    <string name="ui_social_reason_sexual">Contenu sexuel ou violent</string>
+    <string name="ui_social_reason_personal">Informations personnelles</string>
+    <string name="ui_social_reason_other">Autre chose</string>
+    <string name="ui_social_report_title">Signaler cette publication</string>
+    <string name="ui_social_report_why">Pourquoi le signalez-vous ? La publication sera masquée pour vous.</string>
+    <string name="ui_social_cancel">Annuler</string>
+    <string name="ui_social_title">✨ Communauté mystique</string>
+    <string name="ui_social_hint">Écrivez l'intention du jour...</string>
+    <string name="ui_social_rules">Soyez bienveillant. Le harcèlement, la haine, le spam et les informations personnelles sont interdits. Les publications sont publiques et peuvent être signalées et supprimées.</string>
+    <string name="ui_social_send">Envoyer</string>
+    <string name="ui_social_share">Partager</string>
+    <string name="ui_social_empty">Aucune publication pour l'instant. Partagez votre première intention ✨</string>
+    <string name="ui_social_report_post">Signaler la publication</string>
+    <string name="ui_social_hide_post">Masquer la publication</string>
+    <string name="ui_social_block_user">Bloquer cet utilisateur</string>
+    <string name="ui_social_like">J'aime</string>
+    <string name="ui_social_just_now">À l'instant</string>
+    <string name="ui_social_min_ago">il y a %1$d min</string>
+    <string name="ui_social_hours_ago">il y a %1$d h</string>
+    <string name="ui_social_days_ago">il y a %1$d j</string>
+    <string name="ui_social_err_load">Impossible de charger les publications</string>
+    <string name="ui_social_err_post">Échec de la publication</string>
+    <string name="ui_social_err_like">Échec du « J'aime »</string>
+    <string name="ui_social_report_thanks">Merci pour votre signalement. La publication est masquée pour vous et notre équipe l'examinera.</string>
+    <string name="ui_social_report_failed">La publication est masquée pour vous. Impossible d'envoyer le signalement, réessayez plus tard.</string>
+    <string name="ui_social_post_hidden">Publication masquée.</string>
+    <string name="ui_social_user_blocked">Vous ne verrez plus les publications de cet utilisateur.</string>
+</resources>

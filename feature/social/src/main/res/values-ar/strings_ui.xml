@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_social_reason_spam">بريد مزعج أو إعلانات</string>
+    <string name="ui_social_reason_harass">مضايقة أو كراهية</string>
+    <string name="ui_social_reason_sexual">محتوى جنسي أو عنيف</string>
+    <string name="ui_social_reason_personal">معلومات شخصية</string>
+    <string name="ui_social_reason_other">شيء آخر</string>
+    <string name="ui_social_report_title">الإبلاغ عن هذا المنشور</string>
+    <string name="ui_social_report_why">لماذا تبلّغ عنه؟ سيتم إخفاء المنشور عنك.</string>
+    <string name="ui_social_cancel">إلغاء</string>
+    <string name="ui_social_title">✨ المجتمع الغامض</string>
+    <string name="ui_social_hint">اكتب نيّة اليوم...</string>
+    <string name="ui_social_rules">كن لطيفاً. يُمنع التحرش والكراهية والبريد المزعج والمعلومات الشخصية. المنشورات عامة ويمكن الإبلاغ عنها وحذفها.</string>
+    <string name="ui_social_send">إرسال</string>
+    <string name="ui_social_share">مشاركة</string>
+    <string name="ui_social_empty">لا توجد منشورات بعد. شارك نيّتك الأولى ✨</string>
+    <string name="ui_social_report_post">الإبلاغ عن المنشور</string>
+    <string name="ui_social_hide_post">إخفاء المنشور</string>
+    <string name="ui_social_block_user">حظر هذا المستخدم</string>
+    <string name="ui_social_like">إعجاب</string>
+    <string name="ui_social_just_now">الآن</string>
+    <string name="ui_social_min_ago">منذ %1$d دقيقة</string>
+    <string name="ui_social_hours_ago">منذ %1$d ساعة</string>
+    <string name="ui_social_days_ago">منذ %1$d يوم</string>
+    <string name="ui_social_err_load">تعذّر تحميل المنشورات</string>
+    <string name="ui_social_err_post">فشل النشر</string>
+    <string name="ui_social_err_like">فشل الإعجاب</string>
+    <string name="ui_social_report_thanks">شكراً على البلاغ. المنشور مخفي عنك وسيراجعه فريقنا.</string>
+    <string name="ui_social_report_failed">المنشور مخفي عنك. تعذّر إرسال البلاغ، يرجى المحاولة لاحقاً.</string>
+    <string name="ui_social_post_hidden">تم إخفاء المنشور.</string>
+    <string name="ui_social_user_blocked">لن ترى بعد الآن منشورات هذا المستخدم.</string>
+</resources>

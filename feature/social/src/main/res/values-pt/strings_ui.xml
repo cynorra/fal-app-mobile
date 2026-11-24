@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_social_reason_spam">Spam ou publicidade</string>
+    <string name="ui_social_reason_harass">Assédio ou ódio</string>
+    <string name="ui_social_reason_sexual">Conteúdo sexual ou violento</string>
+    <string name="ui_social_reason_personal">Informações pessoais</string>
+    <string name="ui_social_reason_other">Outro motivo</string>
+    <string name="ui_social_report_title">Denunciar esta publicação</string>
+    <string name="ui_social_report_why">Por que você está denunciando? A publicação será ocultada para você.</string>
+    <string name="ui_social_cancel">Cancelar</string>
+    <string name="ui_social_title">✨ Comunidade mística</string>
+    <string name="ui_social_hint">Escreva a intenção de hoje...</string>
+    <string name="ui_social_rules">Seja gentil. Assédio, ódio, spam e informações pessoais não são permitidos. As publicações são públicas e podem ser denunciadas e removidas.</string>
+    <string name="ui_social_send">Enviar</string>
+    <string name="ui_social_share">Compartilhar</string>
+    <string name="ui_social_empty">Ainda não há publicações. Compartilhe sua primeira intenção ✨</string>
+    <string name="ui_social_report_post">Denunciar publicação</string>
+    <string name="ui_social_hide_post">Ocultar publicação</string>
+    <string name="ui_social_block_user">Bloquear este usuário</string>
+    <string name="ui_social_like">Curtir</string>
+    <string name="ui_social_just_now">Agora mesmo</string>
+    <string name="ui_social_min_ago">há %1$d min</string>
+    <string name="ui_social_hours_ago">há %1$d horas</string>
+    <string name="ui_social_days_ago">há %1$d dias</string>
+    <string name="ui_social_err_load">Não foi possível carregar as publicações</string>
+    <string name="ui_social_err_post">Falha ao publicar</string>
+    <string name="ui_social_err_like">Falha ao curtir</string>
+    <string name="ui_social_report_thanks">Obrigado pela denúncia. A publicação está oculta para você e nossa equipe irá analisá-la.</string>
+    <string name="ui_social_report_failed">A publicação está oculta para você. Não foi possível enviar a denúncia, tente novamente mais tarde.</string>
+    <string name="ui_social_post_hidden">Publicação oculta.</string>
+    <string name="ui_social_user_blocked">Você não verá mais publicações deste usuário.</string>
+</resources>

@@ -1,5 +1,6 @@
 package com.cynora.luna.feature.social
 
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -53,12 +54,13 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.cynora.luna.core.data.repository.IntentionPost
 import com.cynora.luna.core.ui.theme.LunaColors
 
+// Pair of (label resource, English reason code sent to moderation).
 private val ReportReasons = listOf(
-    "Spam or advertising",
-    "Harassment or hate",
-    "Sexual or violent content",
-    "Personal information",
-    "Something else"
+    R.string.ui_social_reason_spam to "Spam or advertising",
+    R.string.ui_social_reason_harass to "Harassment or hate",
+    R.string.ui_social_reason_sexual to "Sexual or violent content",
+    R.string.ui_social_reason_personal to "Personal information",
+    R.string.ui_social_reason_other to "Something else"
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -74,30 +76,30 @@ fun SocialScreen(
     reportTarget?.let { target ->
         AlertDialog(
             onDismissRequest = { reportTarget = null },
-            title = { Text("Report this post") },
+            title = { Text(stringResource(R.string.ui_social_report_title)) },
             text = {
                 Column {
                     Text(
-                        "Why are you reporting it? The post will be hidden for you.",
+                        stringResource(R.string.ui_social_report_why),
                         color = Color.White.copy(alpha = 0.7f),
                         fontSize = 14.sp
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    ReportReasons.forEach { reason ->
+                    ReportReasons.forEach { (reasonLabel, reason) ->
                         TextButton(
                             onClick = {
                                 viewModel.onIntent(SocialIntent.ReportPost(target, reason))
                                 reportTarget = null
                             }
                         ) {
-                            Text(reason, color = Color.White)
+                            Text(stringResource(reasonLabel), color = Color.White)
                         }
                     }
                 }
             },
             confirmButton = {
                 TextButton(onClick = { reportTarget = null }) {
-                    Text("Cancel", color = LunaColors.Gold)
+                    Text(stringResource(R.string.ui_social_cancel), color = LunaColors.Gold)
                 }
             }
         )
@@ -109,7 +111,7 @@ fun SocialScreen(
             
     ) {
         Text(
-            text = "✨ Mystic Community",
+            text = stringResource(R.string.ui_social_title),
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White,
@@ -149,7 +151,7 @@ fun SocialScreen(
                 TextField(
                     value = intentionText,
                     onValueChange = { if (it.length <= MAX_POST_LENGTH) intentionText = it },
-                    placeholder = { Text("Write today's intention...", color = Color.White.copy(alpha = 0.4f)) },
+                    placeholder = { Text(stringResource(R.string.ui_social_hint), color = Color.White.copy(alpha = 0.4f)) },
                     colors = TextFieldDefaults.colors(
                         focusedContainerColor = Color.Transparent,
                         unfocusedContainerColor = Color.Transparent,
@@ -163,8 +165,7 @@ fun SocialScreen(
                 Spacer(modifier = Modifier.height(4.dp))
 
                 Text(
-                    text = "Be kind. Harassment, hate, spam and personal information are not allowed. " +
-                        "Posts are public and can be reported and removed.",
+                    text = stringResource(R.string.ui_social_rules),
                     fontSize = 11.sp,
                     color = Color.White.copy(alpha = 0.45f)
                 )
@@ -191,9 +192,9 @@ fun SocialScreen(
                         enabled = intentionText.isNotBlank(),
                         colors = ButtonDefaults.buttonColors(containerColor = LunaColors.Gold)
                     ) {
-                        Icon(Icons.AutoMirrored.Filled.Send, contentDescription = "Send", modifier = Modifier.size(16.dp))
+                        Icon(Icons.AutoMirrored.Filled.Send, contentDescription = stringResource(R.string.ui_social_send), modifier = Modifier.size(16.dp))
                         Spacer(modifier = Modifier.width(4.dp))
-                        Text("Share")
+                        Text(stringResource(R.string.ui_social_share))
                     }
                 }
             }
@@ -208,7 +209,7 @@ fun SocialScreen(
         } else if (state.posts.isEmpty()) {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text(
-                    "No posts yet. Share your first intention ✨",
+                    stringResource(R.string.ui_social_empty),
                     color = Color.White.copy(alpha = 0.6f),
                     fontSize = 14.sp
                 )
@@ -290,21 +291,21 @@ private fun IntentionPostCard(
                         }
                         DropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
                             DropdownMenuItem(
-                                text = { Text("Report post") },
+                                text = { Text(stringResource(R.string.ui_social_report_post)) },
                                 onClick = {
                                     menuOpen = false
                                     onReport()
                                 }
                             )
                             DropdownMenuItem(
-                                text = { Text("Hide post") },
+                                text = { Text(stringResource(R.string.ui_social_hide_post)) },
                                 onClick = {
                                     menuOpen = false
                                     onHide()
                                 }
                             )
                             DropdownMenuItem(
-                                text = { Text("Block this user") },
+                                text = { Text(stringResource(R.string.ui_social_block_user)) },
                                 onClick = {
                                     menuOpen = false
                                     onBlock()
@@ -333,7 +334,7 @@ private fun IntentionPostCard(
                 IconButton(onClick = { onLike(isLiked) }) {
                     Icon(
                         imageVector = if (isLiked) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                        contentDescription = "Like",
+                        contentDescription = stringResource(R.string.ui_social_like),
                         tint = if (isLiked) Color(0xFFE91E63) else Color.White.copy(alpha = 0.6f)
                     )
                 }
@@ -347,6 +348,7 @@ private fun IntentionPostCard(
     }
 }
 
+@Composable
 private fun formatTimeAgo(timestamp: Long): String {
     val diff = System.currentTimeMillis() - timestamp
     val minutes = diff / 60000
@@ -354,9 +356,9 @@ private fun formatTimeAgo(timestamp: Long): String {
     val days = hours / 24
 
     return when {
-        minutes < 1 -> "Just now"
-        minutes < 60 -> "$minutes min ago"
-        hours < 24 -> "$hours hours ago"
-        else -> "$days days ago"
+        minutes < 1 -> stringResource(R.string.ui_social_just_now)
+        minutes < 60 -> stringResource(R.string.ui_social_min_ago, minutes.toInt())
+        hours < 24 -> stringResource(R.string.ui_social_hours_ago, hours.toInt())
+        else -> stringResource(R.string.ui_social_days_ago, days.toInt())
     }
 }

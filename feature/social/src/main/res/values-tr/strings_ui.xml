@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_social_reason_spam">Spam veya reklam</string>
+    <string name="ui_social_reason_harass">Taciz veya nefret</string>
+    <string name="ui_social_reason_sexual">Cinsel veya şiddet içeriği</string>
+    <string name="ui_social_reason_personal">Kişisel bilgi</string>
+    <string name="ui_social_reason_other">Başka bir şey</string>
+    <string name="ui_social_report_title">Bu gönderiyi bildir</string>
+    <string name="ui_social_report_why">Neden bildiriyorsun? Gönderi senin için gizlenecek.</string>
+    <string name="ui_social_cancel">İptal</string>
+    <string name="ui_social_title">✨ Mistik Topluluk</string>
+    <string name="ui_social_hint">Bugünün niyetini yaz...</string>
+    <string name="ui_social_rules">Nazik ol. Taciz, nefret, spam ve kişisel bilgi paylaşımı yasaktır. Gönderiler herkese açıktır; bildirilebilir ve kaldırılabilir.</string>
+    <string name="ui_social_send">Gönder</string>
+    <string name="ui_social_share">Paylaş</string>
+    <string name="ui_social_empty">Henüz gönderi yok. İlk niyetini paylaş ✨</string>
+    <string name="ui_social_report_post">Gönderiyi bildir</string>
+    <string name="ui_social_hide_post">Gönderiyi gizle</string>
+    <string name="ui_social_block_user">Bu kullanıcıyı engelle</string>
+    <string name="ui_social_like">Beğen</string>
+    <string name="ui_social_just_now">Az önce</string>
+    <string name="ui_social_min_ago">%1$d dk önce</string>
+    <string name="ui_social_hours_ago">%1$d saat önce</string>
+    <string name="ui_social_days_ago">%1$d gün önce</string>
+    <string name="ui_social_err_load">Gönderiler yüklenemedi</string>
+    <string name="ui_social_err_post">Gönderi paylaşılamadı</string>
+    <string name="ui_social_err_like">Beğeni başarısız</string>
+    <string name="ui_social_report_thanks">Bildirdiğin için teşekkürler. Gönderi senin için gizlendi ve ekibimiz inceleyecek.</string>
+    <string name="ui_social_report_failed">Gönderi senin için gizlendi. Bildirim gönderilemedi, lütfen daha sonra tekrar dene.</string>
+    <string name="ui_social_post_hidden">Gönderi gizlendi.</string>
+    <string name="ui_social_user_blocked">Artık bu kullanıcının gönderilerini görmeyeceksin.</string>
+</resources>

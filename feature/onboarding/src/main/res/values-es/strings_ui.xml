@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_onb_welcome_title">Bienvenido/a a Luna</string>
+    <string name="ui_onb_welcome_body">Tu guía cósmica personal de tarot, horóscopos y sueños</string>
+    <string name="ui_onb_begin">Comenzar el viaje</string>
+    <string name="ui_onb_sign_title">¿Cuál es tu signo?</string>
+    <string name="ui_onb_sign_body">Selecciona tu signo para lecturas personalizadas</string>
+    <string name="ui_onb_continue">Continuar</string>
+    <string name="ui_onb_notif_title">Mantente conectado/a</string>
+    <string name="ui_onb_notif_body">Recibe lecturas diarias de fortuna y mensajes de intención</string>
+    <string name="ui_onb_allow">Permitir notificaciones</string>
+    <string name="ui_onb_not_now">Ahora no</string>
+    <string name="ui_onb_ready_title">¡Estás listo/a!</string>
+    <string name="ui_onb_ready_body">Descubre los mensajes personalizados de las estrellas para ti</string>
+    <string name="ui_onb_start">Empezar a explorar</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_social_reason_spam">Spam oder Werbung</string>
+    <string name="ui_social_reason_harass">Belästigung oder Hass</string>
+    <string name="ui_social_reason_sexual">Sexuelle oder gewalttätige Inhalte</string>
+    <string name="ui_social_reason_personal">Persönliche Informationen</string>
+    <string name="ui_social_reason_other">Etwas anderes</string>
+    <string name="ui_social_report_title">Diesen Beitrag melden</string>
+    <string name="ui_social_report_why">Warum meldest du ihn? Der Beitrag wird für dich ausgeblendet.</string>
+    <string name="ui_social_cancel">Abbrechen</string>
+    <string name="ui_social_title">✨ Mystische Community</string>
+    <string name="ui_social_hint">Schreibe die heutige Intention...</string>
+    <string name="ui_social_rules">Sei freundlich. Belästigung, Hass, Spam und persönliche Informationen sind nicht erlaubt. Beiträge sind öffentlich und können gemeldet und entfernt werden.</string>
+    <string name="ui_social_send">Senden</string>
+    <string name="ui_social_share">Teilen</string>
+    <string name="ui_social_empty">Noch keine Beiträge. Teile deine erste Intention ✨</string>
+    <string name="ui_social_report_post">Beitrag melden</string>
+    <string name="ui_social_hide_post">Beitrag ausblenden</string>
+    <string name="ui_social_block_user">Diesen Nutzer blockieren</string>
+    <string name="ui_social_like">Gefällt mir</string>
+    <string name="ui_social_just_now">Gerade eben</string>
+    <string name="ui_social_min_ago">vor %1$d Min.</string>
+    <string name="ui_social_hours_ago">vor %1$d Std.</string>
+    <string name="ui_social_days_ago">vor %1$d Tagen</string>
+    <string name="ui_social_err_load">Beiträge konnten nicht geladen werden</string>
+    <string name="ui_social_err_post">Veröffentlichen fehlgeschlagen</string>
+    <string name="ui_social_err_like">Gefällt-mir fehlgeschlagen</string>
+    <string name="ui_social_report_thanks">Danke für deine Meldung. Der Beitrag ist für dich ausgeblendet und unser Team prüft ihn.</string>
+    <string name="ui_social_report_failed">Der Beitrag ist für dich ausgeblendet. Die Meldung konnte nicht gesendet werden, bitte versuche es später erneut.</string>
+    <string name="ui_social_post_hidden">Beitrag ausgeblendet.</string>
+    <string name="ui_social_user_blocked">Du siehst keine Beiträge dieses Nutzers mehr.</string>
+</resources>

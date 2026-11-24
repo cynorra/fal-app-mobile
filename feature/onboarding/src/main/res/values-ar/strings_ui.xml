@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_onb_welcome_title">مرحباً بك في لونا</string>
+    <string name="ui_onb_welcome_body">دليلك الكوني الشخصي للتاروت والأبراج والأحلام</string>
+    <string name="ui_onb_begin">ابدأ الرحلة</string>
+    <string name="ui_onb_sign_title">ما هو برجك؟</string>
+    <string name="ui_onb_sign_body">اختر برجك للحصول على قراءات مخصصة</string>
+    <string name="ui_onb_continue">متابعة</string>
+    <string name="ui_onb_notif_title">ابقَ على اتصال</string>
+    <string name="ui_onb_notif_body">احصل على قراءات الحظ اليومية ورسائل النيّة</string>
+    <string name="ui_onb_allow">السماح بالإشعارات</string>
+    <string name="ui_onb_not_now">ليس الآن</string>
+    <string name="ui_onb_ready_title">أنت جاهز!</string>
+    <string name="ui_onb_ready_body">اكتشف رسائل النجوم المخصصة لك</string>
+    <string name="ui_onb_start">ابدأ الاستكشاف</string>
+</resources>

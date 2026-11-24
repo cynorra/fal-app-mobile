@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_onb_welcome_title">Lunaへようこそ</string>
+    <string name="ui_onb_welcome_body">タロット・星座占い・夢占いのためのあなた専用コズミックガイド</string>
+    <string name="ui_onb_begin">旅を始める</string>
+    <string name="ui_onb_sign_title">あなたの星座は？</string>
+    <string name="ui_onb_sign_body">あなた専用の鑑定のために星座を選んでください</string>
+    <string name="ui_onb_continue">続ける</string>
+    <string name="ui_onb_notif_title">つながり続けよう</string>
+    <string name="ui_onb_notif_body">毎日の運勢と意図のメッセージを受け取る</string>
+    <string name="ui_onb_allow">通知を許可</string>
+    <string name="ui_onb_not_now">今はしない</string>
+    <string name="ui_onb_ready_title">準備完了です！</string>
+    <string name="ui_onb_ready_body">星々からあなたへの特別なメッセージを見つけましょう</string>
+    <string name="ui_onb_start">探索を始める</string>
+</resources>
