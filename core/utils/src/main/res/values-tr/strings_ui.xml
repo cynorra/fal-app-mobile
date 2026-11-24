@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_share_intention_prefix">Niyet: %1$s</string>
+    <string name="ui_share_fortune_text">Luna ile %1$s
+
+Sen de kendi okumanı al: %2$s</string>
+    <string name="ui_share_card_text">Luna ile %1$s
+
+Sen de dene: %2$s</string>
+    <string name="ui_share_chooser">Şununla paylaş</string>
+    <string name="ui_share_intention_card_title">Bugünün Niyeti</string>
+    <string name="ui_share_intention_text">Bugünkü niyetim, Luna'dan
+
+%1$s</string>
+    <string name="ui_share_intention_chooser">Niyeti paylaş</string>
+    <string name="ui_share_invite_text">Luna'yı günlük kartım ve burç yorumum için kullanıyorum, hoşuna gideceğini düşündüm. Benim bağlantımla yüklersen ikimiz de ekstra bir ayrıcalık kazanırız: %1$s</string>
+    <string name="ui_share_invite_chooser">Arkadaşını davet et</string>
+    <string name="ui_share_cta">Luna'yı Google Play'den indir</string>
+</resources>

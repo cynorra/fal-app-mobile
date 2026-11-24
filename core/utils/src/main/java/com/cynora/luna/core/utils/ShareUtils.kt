@@ -47,36 +47,36 @@ object ShareUtils {
         val image = shareImage ?: renderCard(
             title = fortuneType,
             body = fortuneText,
-            footer = dailyIntention.takeIf { it.isNotBlank() }?.let { "Intention: $it" }
+            footer = dailyIntention.takeIf { it.isNotBlank() }?.let { context.getString(R.string.ui_share_intention_prefix, it) },
+            ctaText = context.getString(R.string.ui_share_cta)
         )
         val link = playLink("luna_share", fortuneType.lowercase().replace(Regex("[^a-z0-9]+"), "_").trim('_'))
-        val shareText = "$fortuneType by Luna\n\nGet your own reading: $link"
-        send(context, shareText, image, "luna_share.png", "Share via")
+        val shareText = context.getString(R.string.ui_share_fortune_text, fortuneType, link)
+        send(context, shareText, image, "luna_share.png", context.getString(R.string.ui_share_chooser))
     }
 
     /** Free-form card: compatibility result, birth chart, daily card... */
     fun shareCard(context: Context, title: String, body: String, footer: String?, medium: String) {
-        val image = renderCard(title, body, footer)
+        val image = renderCard(title, body, footer, context.getString(R.string.ui_share_cta))
         val link = playLink("luna_share", medium)
-        send(context, "$title by Luna\n\nTry it yourself: $link", image, "luna_card.png", "Share via")
+        send(context, context.getString(R.string.ui_share_card_text, title, link), image, "luna_card.png", context.getString(R.string.ui_share_chooser))
     }
 
     fun shareIntention(context: Context, intention: String) {
-        val image = renderCard("Today's Intention", intention, null)
+        val image = renderCard(context.getString(R.string.ui_share_intention_card_title), intention, null, context.getString(R.string.ui_share_cta))
         val link = playLink("luna_share", "intention")
-        send(context, "My intention for today, from Luna\n\n$link", image, "luna_intention.png", "Share intention")
+        send(context, context.getString(R.string.ui_share_intention_text, link), image, "luna_intention.png", context.getString(R.string.ui_share_intention_chooser))
     }
 
     fun shareInvite(context: Context, code: String) {
         val link = playLink("luna_invite", "share", code)
-        val text = "I have been using Luna for my daily card and horoscope, and thought you might enjoy it. " +
-            "Install it with my link and we both unlock a little extra: $link"
+        val text = context.getString(R.string.ui_share_invite_text, link)
         val intent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
             putExtra(Intent.EXTRA_TEXT, text)
         }
         context.startActivity(
-            Intent.createChooser(intent, "Invite a friend").apply { addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) }
+            Intent.createChooser(intent, context.getString(R.string.ui_share_invite_chooser)).apply { addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) }
         )
     }
 
@@ -95,7 +95,7 @@ object ShareUtils {
     }
 
     /** Branded 1080x1350 share card: night gradient, gold accents, wrapped text. */
-    fun renderCard(title: String, body: String, footer: String?): Bitmap {
+    fun renderCard(title: String, body: String, footer: String?, ctaText: String = "Get Luna on Google Play"): Bitmap {
         val w = 1080
         val h = 1350
         val bmp = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
@@ -163,7 +163,7 @@ object ShareUtils {
         val cta = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
             color = Color.argb(200, 255, 255, 255); textSize = 36f; typeface = Typeface.SANS_SERIF
         }
-        c.drawText("Get Luna on Google Play", pad, h - 110f, cta)
+        c.drawText(ctaText, pad, h - 110f, cta)
         return bmp
     }
 

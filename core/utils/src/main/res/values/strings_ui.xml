@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_share_intention_prefix">Intention: %1$s</string>
+    <string name="ui_share_fortune_text">%1$s by Luna
+
+Get your own reading: %2$s</string>
+    <string name="ui_share_card_text">%1$s by Luna
+
+Try it yourself: %2$s</string>
+    <string name="ui_share_chooser">Share via</string>
+    <string name="ui_share_intention_card_title">Today's Intention</string>
+    <string name="ui_share_intention_text">My intention for today, from Luna
+
+%1$s</string>
+    <string name="ui_share_intention_chooser">Share intention</string>
+    <string name="ui_share_invite_text">I have been using Luna for my daily card and horoscope, and thought you might enjoy it. Install it with my link and we both unlock a little extra: %1$s</string>
+    <string name="ui_share_invite_chooser">Invite a friend</string>
+    <string name="ui_share_cta">Get Luna on Google Play</string>
+</resources>
